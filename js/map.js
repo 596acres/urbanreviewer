@@ -12,16 +12,38 @@ $(document).ready(function () {
         maxZoom: 18
     }).addTo(map);
 
-    $.getJSON('data/data.geojson', function (data) {
-        L.geoJson(data, {
-            onEachFeature: function (feature, layer) {
-                layer.on('click', function () {
-                    $.get('plans/' + feature.properties.borough + '/' + feature.properties.name, function (content) {
-                        layer.bindPopup(content).openPopup();
-                    });
-                });
-            }
-        }).addTo(map);
+    cartodb.createLayer(map, {
+        cartodb_logo: false,
+        user_name: 'urbanreviewer',
+        type: 'cartodb',
+        sublayers: [{
+            cartocss: '#plans{ polygon-fill: #FF6600; polygon-opacity: 0.7; line-color: #FFF; line-width: 1; line-opacity: 1; }',
+            interactivity: 'borough,block,lot,urpc_r3__3',
+            sql: 'SELECT * FROM plans'
+        }]
+    })
+    .addTo(map)
+    .done(function (layer) {
+        layer.getSubLayer(0).setInteraction(true);
+        layer.on('featureClick', function (e, latlng, pos, data, sublayerIndex) {
+            $.get('plans/' + data.borough + '/' + data.urpc_r3__3, function (content) {
+                L.popup()
+                    .setLatLng(latlng)
+                    .setContent(content)
+                    .openOn(map);
+            });
+        });
+
+        // Update mouse cursor when over a feature
+        layer.on('featureOver', function () {
+            $('#' + map._container.id).css('cursor', 'pointer');
+        });
+        layer.on('featureOut', function () {
+            $('#' + map._container.id).css('cursor', 'grab');
+        });
+
+        map.addLayer(layer, false);
     });
+
 
 });
