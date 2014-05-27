@@ -5,6 +5,7 @@ $(document).ready(function () {
     }).setView([40.739974, -73.946228], 12);
 
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
+    var hash = new L.Hash(map);
 
     L.tileLayer('http://{s}.tiles.mapbox.com/v3/{mapId}/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
