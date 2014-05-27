@@ -1,3 +1,4 @@
 name: Prototype
 markdown: redcarpet
 include: [plans]
+relative_permalinks: true
