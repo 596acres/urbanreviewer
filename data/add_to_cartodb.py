@@ -45,10 +45,19 @@ def format_plan_date(year):
 
 def insert_plans(cursor, filename):
     """Insert plans into CartoDB."""
-    table_headers = ('name', 'adopted', 'expires', 'updated',)
+    table_headers = ('borough', 'name', 'adopted', 'expires', 'updated',)
     values = []
+
+    boroughs = {
+        '1': 'Manhattan',
+        '2': 'Bronx',
+        '3': 'Brooklyn',
+        '4': 'Queens',
+        '5': 'Staten Island',
+    }
     for row in csv.DictReader(open(filename, 'r')):
         values.append('(%s)' % ','.join((
+            "'%s'" % boroughs[row['Borough']],
             "'%s'" % row['Name of Plan'],
             format_plan_date(row['Date Adopted']),
             format_plan_date(row['Expiration']),
@@ -96,15 +105,14 @@ def insert_lots(cursor, filename, plans):
         properties = lot['properties']
         values.append('(%s)' % ','.join((
             "'SRID=4326;%s'" % wkt.dumps(lot['geometry']),
-            '%d' % properties['Block'],
-            "'%s'" % properties['Borough'],
-            '%d' % properties['Lot'],
-            get_plan_id(properties['URPC-R3-_3']),
+            '%d' % properties['block'],
+            '%d' % properties['lot'],
+            get_plan_id(properties['plan_name']),
         )))
 
     sql = 'INSERT INTO %s (%s) VALUES %s' % (
         LOTS_TABLE,
-        ','.join(('the_geom', 'block', 'borough', 'lot', 'plan_id',)),
+        ','.join(('the_geom', 'block', 'lot', 'plan_id',)),
         ','.join(values),
     )
     try:
