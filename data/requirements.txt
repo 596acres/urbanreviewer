@@ -1,0 +1,4 @@
+click>=1.1
+cartodb>=0.7
+geojson>=1.0.7
+git+git://github.com/larsbutler/geomet.git@master
