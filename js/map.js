@@ -18,9 +18,9 @@ $(document).ready(function () {
         user_name: 'urbanreviewer',
         type: 'cartodb',
         sublayers: [{
-            cartocss: '#plans{ polygon-fill: #FF6600; polygon-opacity: 0.7; line-color: #FFF; line-width: 1; line-opacity: 1; }',
-            interactivity: 'borough,block,lot,urpc_r3__3',
-            sql: 'SELECT * FROM plans'
+            cartocss: '#lots{ polygon-fill: #FF6600; polygon-opacity: 0.7; line-color: #FFF; line-width: 1; line-opacity: 1; }',
+            interactivity: 'borough, block, lot, plan_name',
+            sql: 'SELECT l.*, p.name AS plan_name FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id'
         }]
     })
     .addTo(map)
@@ -34,7 +34,7 @@ $(document).ready(function () {
             $('#right-pane').append(templateContent);
             $('#right-pane').show();
 
-            $.get('plans/' + data.borough + '/' + data.urpc_r3__3, function (content) {
+            $.get('plans/' + data.borough + '/' + data.plan_name, function (content) {
                 $('#right-pane #plan-details').append(content);
             });
         });
