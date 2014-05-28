@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     var map = L.map('map', {
+        maxZoom: 18,
         zoomControl: false
     }).setView([40.739974, -73.946228], 12);
 
