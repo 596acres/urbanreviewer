@@ -1,3 +1,7 @@
+var urbanreviewer = {
+    sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql'
+};
+
 $(document).ready(function () {
 
     var map = L.map('map', {
@@ -39,7 +43,8 @@ $(document).ready(function () {
                 $('#right-pane #plan-details').append(content);
             });
 
-            $.get("http://urbanreviewer.cartodb.com/api/v2/sql?q=SELECT p.borough AS borough, l.block AS block, l.lot AS lot FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id WHERE p.name='" + data.plan_name + "' ORDER BY l.block, l.lot", function (data) {
+            var sql = "SELECT p.borough AS borough, l.block AS block, l.lot AS lot FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id WHERE p.name='" + data.plan_name + "' ORDER BY l.block, l.lot";
+            $.get(urbanreviewer.sql_api_base + "?q=" + sql, function (data) {
                 var lots_template = JST['handlebars_templates/lots.hbs'];
                 var content = lots_template(data);
                 $('#lots-content').append(content);
