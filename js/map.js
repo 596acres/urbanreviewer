@@ -38,6 +38,12 @@ $(document).ready(function () {
             $.get('plans/' + data.borough + '/' + data.plan_name, function (content) {
                 $('#right-pane #plan-details').append(content);
             });
+
+            $.get("http://urbanreviewer.cartodb.com/api/v2/sql?q=SELECT p.borough AS borough, l.block AS block, l.lot AS lot FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id WHERE p.name='" + data.plan_name + "' ORDER BY l.block, l.lot", function (data) {
+                var lots_template = JST['handlebars_templates/lots.hbs'];
+                var content = lots_template(data);
+                $('#lots-content').append(content);
+            });
         });
 
         // Update mouse cursor when over a feature

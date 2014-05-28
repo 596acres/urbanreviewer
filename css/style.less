@@ -60,6 +60,7 @@ a {
     background: white;
     display: none;
     height: 100%;
+    overflow-y: auto;
     padding: 15px;
     position: absolute;
     right: 0;
@@ -67,4 +68,34 @@ a {
     top: 0;
     width: 50%;
     z-index: 2001;
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        text-transform: uppercase;
+    }
+
+    section {
+        border-top: 2px solid black;
+        padding-top: 5px;
+    }
+
+    #lots-content {
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lot {
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+
+        .lot h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    }
 }
