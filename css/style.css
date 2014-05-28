@@ -75,6 +75,13 @@ a:visited {
   border-top: 2px solid black;
   padding-top: 5px;
 }
+#right-pane .borough {
+  font-size: 18px;
+}
+#right-pane #plan-details {
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
 #right-pane #lots-content ul {
   list-style: none;
   padding: 0;
