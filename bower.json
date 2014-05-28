@@ -14,6 +14,7 @@
   ],
   "dependencies": {
     "cartodb.js": "~3.8.11",
-    "leaflet-hash": "https://github.com/mlevans/leaflet-hash.git#d73fc84d8cac7f1ea7068e4fe1dcf70f93791837"
+    "leaflet-hash": "https://github.com/mlevans/leaflet-hash.git#d73fc84d8cac7f1ea7068e4fe1dcf70f93791837",
+    "handlebars": "~1.3.0"
   }
 }

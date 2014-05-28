@@ -19,15 +19,30 @@ module.exports = function(grunt) {
             }
         },
 
+        handlebars: {
+            compile: {
+                files: {
+                    "handlebars_templates/handlebars_templates.js" : "handlebars_templates/*.hbs"
+                }
+            }
+        },
+
         watch: {
             less: {
                 files: ["css/*.less", "css/*/*.less"],
                 tasks: ["less", "cssmin"]
+            },
+
+            handlebars: {
+                files: ["handlebars_templates/*.hbs"],
+                tasks: ['handlebars']
             }
+
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
 };

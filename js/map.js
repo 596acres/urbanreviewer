@@ -27,11 +27,15 @@ $(document).ready(function () {
     .done(function (layer) {
         layer.getSubLayer(0).setInteraction(true);
         layer.on('featureClick', function (e, latlng, pos, data, sublayerIndex) {
+            $('#right-pane *').remove();
+
+            var template = JST['handlebars_templates/plan.hbs'];
+            templateContent = template(data);
+            $('#right-pane').append(templateContent);
+            $('#right-pane').show();
+
             $.get('plans/' + data.borough + '/' + data.urpc_r3__3, function (content) {
-                L.popup()
-                    .setLatLng(latlng)
-                    .setContent(content)
-                    .openOn(map);
+                $('#right-pane #plan-details').append(content);
             });
         });
 
