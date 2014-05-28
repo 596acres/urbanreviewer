@@ -43,7 +43,11 @@ $(document).ready(function () {
                 $('#right-pane #plan-details').append(content);
             });
 
-            var sql = "SELECT p.borough AS borough, l.block AS block, l.lot AS lot FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id WHERE p.name='" + data.plan_name + "' ORDER BY l.block, l.lot";
+            var sql = 
+                "SELECT p.borough AS borough, l.block AS block, l.lot AS lot " +
+                "FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id " +
+                "WHERE p.name='" + data.plan_name + "' " +
+                "ORDER BY l.block, l.lot";
             $.get(urbanreviewer.sql_api_base + "?q=" + sql, function (data) {
                 var lots_template = JST['handlebars_templates/lots.hbs'];
                 var content = lots_template(data);
