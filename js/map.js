@@ -48,6 +48,7 @@ $(document).ready(function () {
                 var lots_template = JST['handlebars_templates/lots.hbs'];
                 var content = lots_template(data);
                 $('#lots-content').append(content);
+                $('.lot-count').text(data.rows.length);
             });
         });
 
