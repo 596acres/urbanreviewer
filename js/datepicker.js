@@ -9,7 +9,11 @@ module.exports = {
             $end = $dialog.find('#date-picker-end');
         $dialog.find('select').change(function (e) {
             e.stopPropagation();
-            $dialog.trigger('change', [$start.val(), $end.val()]);
+            var start = $start.val(),
+                end = $end.val();
+            $button.find('.date-picker-start-display').text(start);
+            $button.find('.date-picker-end-display').text(end);
+            $dialog.trigger('change', [start, end]);
         });
     }
 
