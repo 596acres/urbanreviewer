@@ -1,54 +1,13 @@
-var querystring = require('querystring');
+var hash = require('./hash');
+
 
 var urbanreviewer = {
     sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
-
-    parseHash: function(hash) {
-        // Parse hash for the map. Based on OSM's parseHash.
-        var args = {};
-
-        var i = hash.indexOf('#');
-        if (i < 0) {
-            return args;
-        }
-
-        hash = querystring.parse(hash.substr(i + 1));
-
-        var map = (hash.map || '').split('/'),
-            zoom = parseInt(map[0], 10),
-            lat = parseFloat(map[1]),
-            lon = parseFloat(map[2]);
-
-        if (!isNaN(zoom) && !isNaN(lat) && !isNaN(lon)) {
-            args.center = new L.LatLng(lat, lon);
-            args.zoom = zoom;
-        }
-
-        return args;
-    },
-
-    formatHash: function(args) {
-        // Format hash for the map. Based on OSM's formatHash.
-        var center, zoom;
-
-        if (args instanceof L.Map) {
-            center = args.getCenter();
-            zoom = args.getZoom();
-        }
-        center = center.wrap();
-
-        var precision = 4,
-            hash = '#map=' + zoom +
-                '/' + center.lat.toFixed(precision) +
-                '/' + center.lng.toFixed(precision);
-
-        return hash;
-    }
 };
 
 $(document).ready(function () {
 
-    var parsedHash = urbanreviewer.parseHash(window.location.hash),
+    var parsedHash = hash.parseHash(window.location.hash),
         zoom = parsedHash.zoom || 12,
         center = parsedHash.center || [40.739974, -73.946228];
 
@@ -58,7 +17,7 @@ $(document).ready(function () {
     }).setView(center, zoom);
 
     map.on('moveend', function () {
-        window.location.hash = urbanreviewer.formatHash(map);
+        window.location.hash = hash.formatHash(map);
     });
 
     L.control.zoom({ position: 'bottomleft' }).addTo(map);

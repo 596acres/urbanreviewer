@@ -1,8 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var querystring = require('querystring');
 
-var urbanreviewer = {
-    sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
+module.exports = {
 
     parseHash: function(hash) {
         // Parse hash for the map. Based on OSM's parseHash.
@@ -45,11 +44,20 @@ var urbanreviewer = {
 
         return hash;
     }
+
+};
+
+},{"querystring":5}],2:[function(require,module,exports){
+var hash = require('./hash');
+
+
+var urbanreviewer = {
+    sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
 };
 
 $(document).ready(function () {
 
-    var parsedHash = urbanreviewer.parseHash(window.location.hash),
+    var parsedHash = hash.parseHash(window.location.hash),
         zoom = parsedHash.zoom || 12,
         center = parsedHash.center || [40.739974, -73.946228];
 
@@ -59,7 +67,7 @@ $(document).ready(function () {
     }).setView(center, zoom);
 
     map.on('moveend', function () {
-        window.location.hash = urbanreviewer.formatHash(map);
+        window.location.hash = hash.formatHash(map);
     });
 
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
@@ -123,7 +131,7 @@ $(document).ready(function () {
 
 });
 
-},{"querystring":4}],2:[function(require,module,exports){
+},{"./hash":1}],3:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -209,7 +217,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -296,10 +304,10 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":2,"./encode":3}]},{},[1])
+},{"./decode":3,"./encode":4}]},{},[2])
