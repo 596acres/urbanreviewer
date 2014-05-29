@@ -26,14 +26,10 @@ module.exports = {
         return args;
     },
 
-    formatHash: function(args) {
+    formatHash: function(map) {
         // Format hash for the map. Based on OSM's formatHash.
-        var center, zoom;
-
-        if (args instanceof L.Map) {
-            center = args.getCenter();
-            zoom = args.getZoom();
-        }
+        var center = map.getCenter(),
+            zoom = map.getZoom();
         center = center.wrap();
 
         var precision = 4,
