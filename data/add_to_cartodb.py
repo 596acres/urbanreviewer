@@ -55,9 +55,14 @@ def insert_plans(cursor, filename):
         '4': 'Queens',
         '5': 'Staten Island',
     }
+    def get_borough_name(key):
+        try:
+            return "'%s'" % boroughs[key]
+        except KeyError:
+            return 'NULL'
     for row in csv.DictReader(open(filename, 'r')):
         values.append('(%s)' % ','.join((
-            "'%s'" % boroughs[row['Borough']],
+            get_borough_name(row['Borough']),
             "'%s'" % row['Name of Plan'],
             format_plan_date(row['Date Adopted']),
             format_plan_date(row['Expiration']),

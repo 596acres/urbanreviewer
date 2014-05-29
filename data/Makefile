@@ -16,5 +16,5 @@ geojson: simplify
 plan_table:
 	csvcut -c "Borough,Name of Plan,Date Adopted,Status,Expiration,Last Updated" 20140524.csv | uniq > plans.csv
 
-add_to_cartodb: geojson
+add_to_cartodb: geojson plan_table
 	python add_to_cartodb.py --plans plans.csv --lots lots.geojson
