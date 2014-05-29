@@ -1,8 +1,36 @@
 var hash = require('./hash');
 
+var currentPlan;
 
 var urbanreviewer = {
     sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
+
+    loadPlanInformation: function (data) {
+        $('#right-pane *').remove();
+
+        var template = JST['handlebars_templates/plan.hbs'];
+        templateContent = template(data);
+        $('#right-pane').append(templateContent);
+        $('#right-pane').show();
+
+        // TODO If we don't have borough, get it first
+
+        $.get('plans/' + data.borough + '/' + data.plan_name, function (content) {
+            $('#right-pane #plan-details').append(content);
+        });
+
+        var sql = 
+            "SELECT p.borough AS borough, l.block AS block, l.lot AS lot " +
+            "FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id " +
+            "WHERE p.name='" + data.plan_name + "' " +
+            "ORDER BY l.block, l.lot";
+        $.get(urbanreviewer.sql_api_base + "?q=" + sql, function (data) {
+            var lots_template = JST['handlebars_templates/lots.hbs'];
+            var content = lots_template(data);
+            $('#lots-content').append(content);
+            $('.lot-count').text(data.rows.length);
+        });
+    }
 };
 
 $(document).ready(function () {
@@ -10,6 +38,11 @@ $(document).ready(function () {
     var parsedHash = hash.parseHash(window.location.hash),
         zoom = parsedHash.zoom || 12,
         center = parsedHash.center || [40.739974, -73.946228];
+    currentPlan = parsedHash.plan;
+
+    if (currentPlan) {
+        urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
+    }
 
     var map = L.map('map', {
         maxZoom: 18,
@@ -17,7 +50,7 @@ $(document).ready(function () {
     }).setView(center, zoom);
 
     map.on('moveend', function () {
-        window.location.hash = hash.formatHash(map);
+        window.location.hash = hash.formatHash(map, currentPlan);
     });
 
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
@@ -42,30 +75,9 @@ $(document).ready(function () {
     .done(function (layer) {
         layer.getSubLayer(0).setInteraction(true);
         layer.on('featureClick', function (e, latlng, pos, data, sublayerIndex) {
-            $('#right-pane *').remove();
-
-            //history.pushState(null, null, '/plans/');
-
-            var template = JST['handlebars_templates/plan.hbs'];
-            templateContent = template(data);
-            $('#right-pane').append(templateContent);
-            $('#right-pane').show();
-
-            $.get('plans/' + data.borough + '/' + data.plan_name, function (content) {
-                $('#right-pane #plan-details').append(content);
-            });
-
-            var sql = 
-                "SELECT p.borough AS borough, l.block AS block, l.lot AS lot " +
-                "FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id " +
-                "WHERE p.name='" + data.plan_name + "' " +
-                "ORDER BY l.block, l.lot";
-            $.get(urbanreviewer.sql_api_base + "?q=" + sql, function (data) {
-                var lots_template = JST['handlebars_templates/lots.hbs'];
-                var content = lots_template(data);
-                $('#lots-content').append(content);
-                $('.lot-count').text(data.rows.length);
-            });
+            currentPlan = data.plan_name;
+            window.location.hash = hash.formatHash(map, currentPlan);
+            urbanreviewer.loadPlanInformation(data);
         });
 
         // Update mouse cursor when over a feature
