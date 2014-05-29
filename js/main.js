@@ -5,6 +5,12 @@ var currentPlan;
 var urbanreviewer = {
     sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
 
+    addPlanContent: function ($location, borough, planName) {
+        $.get('plans/' + borough + '/' + planName, function (content) {
+            $location.append(content);
+        });
+    },
+
     loadPlanInformation: function (data) {
         $('#right-pane *').remove();
 
@@ -13,11 +19,19 @@ var urbanreviewer = {
         $('#right-pane').append(templateContent);
         $('#right-pane').show();
 
-        // TODO If we don't have borough, get it first
-
-        $.get('plans/' + data.borough + '/' + data.plan_name, function (content) {
-            $('#right-pane #plan-details').append(content);
-        });
+        // If we don't have borough, get it first
+        if (data.borough) {
+            urbanreviewer.addPlanContent($('#right-pane #plan-details'),
+                                         data.borough, data.plan_name);
+        }
+        else {
+            var sql = "SELECT * FROM plans WHERE name = '" + data.plan_name + "'";
+            $.get(urbanreviewer.sql_api_base + '?q=' + sql, function (results) {
+                data = results.rows[0];
+                urbanreviewer.addPlanContent($('#right-pane #plan-details'),
+                                             data.borough, data.name);
+            });
+        }
 
         var sql = 
             "SELECT p.borough AS borough, l.block AS block, l.lot AS lot " +
