@@ -28,7 +28,7 @@ module.exports = {
         return args;
     },
 
-    formatHash: function(map, plan_name) {
+    formatHash: function(map, planName) {
         // Format hash for the map. Based on OSM's formatHash.
         var center = map.getCenter(),
             zoom = map.getZoom();
@@ -39,8 +39,8 @@ module.exports = {
                 '/' + center.lat.toFixed(precision) +
                 '/' + center.lng.toFixed(precision);
 
-        if (plan_name) {
-            hash += '&plan=' + plan_name;
+        if (planName) {
+            hash += '&plan=' + planName;
         }
 
         return hash;
