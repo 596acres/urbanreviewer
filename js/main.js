@@ -1,16 +1,67 @@
+var querystring = require('querystring');
+
 var urbanreviewer = {
-    sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql'
+    sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
+
+    parseHash: function(hash) {
+        // Parse hash for the map. Based on OSM's parseHash.
+        var args = {};
+
+        var i = hash.indexOf('#');
+        if (i < 0) {
+            return args;
+        }
+
+        hash = querystring.parse(hash.substr(i + 1));
+
+        var map = (hash.map || '').split('/'),
+            zoom = parseInt(map[0], 10),
+            lat = parseFloat(map[1]),
+            lon = parseFloat(map[2]);
+
+        if (!isNaN(zoom) && !isNaN(lat) && !isNaN(lon)) {
+            args.center = new L.LatLng(lat, lon);
+            args.zoom = zoom;
+        }
+
+        return args;
+    },
+
+    formatHash: function(args) {
+        // Format hash for the map. Based on OSM's formatHash.
+        var center, zoom;
+
+        if (args instanceof L.Map) {
+            center = args.getCenter();
+            zoom = args.getZoom();
+        }
+        center = center.wrap();
+
+        var precision = 4,
+            hash = '#map=' + zoom +
+                '/' + center.lat.toFixed(precision) +
+                '/' + center.lng.toFixed(precision);
+
+        return hash;
+    }
 };
 
 $(document).ready(function () {
 
+    var parsedHash = urbanreviewer.parseHash(window.location.hash),
+        zoom = parsedHash.zoom || 12,
+        center = parsedHash.center || [40.739974, -73.946228];
+
     var map = L.map('map', {
         maxZoom: 18,
         zoomControl: false
-    }).setView([40.739974, -73.946228], 12);
+    }).setView(center, zoom);
+
+    map.on('moveend', function () {
+        window.location.hash = urbanreviewer.formatHash(map);
+    });
 
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
-    var hash = new L.Hash(map);
 
     L.tileLayer('http://{s}.tiles.mapbox.com/v3/{mapId}/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
@@ -33,6 +84,8 @@ $(document).ready(function () {
         layer.getSubLayer(0).setInteraction(true);
         layer.on('featureClick', function (e, latlng, pos, data, sublayerIndex) {
             $('#right-pane *').remove();
+
+            //history.pushState(null, null, '/plans/');
 
             var template = JST['handlebars_templates/plan.hbs'];
             templateContent = template(data);

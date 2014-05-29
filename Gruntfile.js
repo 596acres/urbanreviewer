@@ -1,5 +1,12 @@
 module.exports = function(grunt) {
     grunt.initConfig({
+        browserify: {
+            standalone: {
+                src: ['js/main.js'],
+                dest: 'js/bundle.js'
+            }
+        },
+
         cssmin: {
             minify: {
                 src: 'css/style.css',
@@ -28,6 +35,11 @@ module.exports = function(grunt) {
         },
 
         watch: {
+            browserify: {
+                files: ["js/main.js"],
+                tasks: ["browserify"]
+            },
+
             less: {
                 files: ["css/*.less", "css/*/*.less"],
                 tasks: ["less", "cssmin"]
@@ -41,6 +53,7 @@ module.exports = function(grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-contrib-less');
