@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 
         watch: {
             browserify: {
-                files: ["js/hash.js", "js/main.js"],
+                files: ["js/datepicker.js", "js/hash.js", "js/main.js"],
                 tasks: ["browserify"]
             },
 

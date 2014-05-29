@@ -1,7 +1,9 @@
 var hash = require('./hash');
+var datePicker = require('./datepicker');
 
-var currentPlan;
-var planOutline;
+var currentPlan,
+    planOutline,
+    lotsLayer;
 
 var urbanreviewer = {
     sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
@@ -110,7 +112,8 @@ $(document).ready(function () {
     })
     .addTo(map)
     .done(function (layer) {
-        layer.getSubLayer(0).setInteraction(true);
+        lotsLayer = layer.getSubLayer(0);
+        lotsLayer.setInteraction(true);
         layer.on('featureClick', function (e, latlng, pos, data, sublayerIndex) {
             currentPlan = data.plan_name;
             window.location.hash = hash.formatHash(map, currentPlan);
@@ -130,4 +133,12 @@ $(document).ready(function () {
         map.addLayer(layer, false);
     });
 
+    datePicker.init($('#date-picker-button'), $('#date-picker-dialog'));
+    $('#date-picker-dialog').on('change', function (e, start, end) {
+        var sql = "SELECT l.*, p.name AS plan_name, p.borough AS borough " +
+            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
+            "WHERE p.adopted >= '" + start + "-01-01' " +
+                "AND p.adopted <= '" + end + "-01-01'";
+        lotsLayer.setSQL(sql);
+    });
 });
