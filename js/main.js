@@ -1,6 +1,7 @@
 var hash = require('./hash');
 
 var currentPlan;
+var planOutline;
 
 var urbanreviewer = {
     sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
@@ -8,6 +9,27 @@ var urbanreviewer = {
     addPlanContent: function ($location, borough, planName) {
         $.get('plans/' + borough + '/' + planName, function (content) {
             $location.append(content);
+        });
+    },
+
+    addPlanOutline: function (map, planName) {
+        if (planOutline) {
+            planOutline.clearLayers();
+        }
+        var sql = "SELECT ST_Buffer(ST_ConvexHull(ST_Union(l.the_geom)), 0.0001) AS the_geom " + 
+                  "FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id " +
+                  "WHERE p.name = '" + planName + "'";
+        $.get(urbanreviewer.sql_api_base + "?q=" + sql + '&format=GeoJSON', function (data) {
+            planOutline = L.geoJson(data, {
+                style: function (feature) {
+                    return {
+                        color: '#f00',
+                        dashArray: '10 10 1 10',
+                        fill: false,
+                        stroke: true
+                    };
+                }
+            }).addTo(map);
         });
     },
 
@@ -54,10 +76,6 @@ $(document).ready(function () {
         center = parsedHash.center || [40.739974, -73.946228];
     currentPlan = parsedHash.plan;
 
-    if (currentPlan) {
-        urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
-    }
-
     var map = L.map('map', {
         maxZoom: 18,
         zoomControl: false
@@ -66,6 +84,11 @@ $(document).ready(function () {
     map.on('moveend', function () {
         window.location.hash = hash.formatHash(map, currentPlan);
     });
+
+    if (currentPlan) {
+        urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
+        urbanreviewer.addPlanOutline(map, currentPlan);
+    }
 
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
@@ -92,6 +115,7 @@ $(document).ready(function () {
             currentPlan = data.plan_name;
             window.location.hash = hash.formatHash(map, currentPlan);
             urbanreviewer.loadPlanInformation(data);
+            urbanreviewer.addPlanOutline(map, currentPlan);
         });
 
         // Update mouse cursor when over a feature
