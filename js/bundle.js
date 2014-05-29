@@ -175,7 +175,8 @@ $(document).ready(function () {
             $('#' + map._container.id).css('cursor', 'pointer');
         });
         layer.on('featureOut', function () {
-            $('#' + map._container.id).css('cursor', 'grab');
+            var grabStyle = 'cursor: grab; cursor: -moz-grab; cursor: -webkit-grab;';
+            $('#' + map._container.id).attr('style',  grabStyle);
         });
 
         map.addLayer(layer, false);
