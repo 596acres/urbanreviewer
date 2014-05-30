@@ -23,6 +23,5 @@ plan_geojsons: simplify
 	rm -rf geojson/us/ny/nyc/*
 	mkdir -p geojson/us/ny/nyc
 	python create_plan_geojsons.py --plans plans.csv --lots lots.geojson --dst geojson/us/ny/nyc
-	# TODO:
-	#python create_borough_geojsons.py --plans plans.csv --lots lots.geojson --dir geojson/us/ny/nyc
+	python create_borough_geojsons.py --plans plans.csv --lots lots.geojson --dst geojson/us/ny/nyc
 	cp lots.geojson geojson/us/ny/nyc/nyc.geojson
