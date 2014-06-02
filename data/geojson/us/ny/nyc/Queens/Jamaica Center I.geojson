@@ -1,1 +1,1 @@
-{"type": "FeatureCollection", "features": []}
+{"type": "FeatureCollection", "features": [{"geometry": {"type": "Polygon", "coordinates": [[[-73.79861055698606, 40.70283413211712], [-73.7997989810667, 40.70261731190645], [-73.80000088178963, 40.703273632775186], [-73.79918176529226, 40.70361048934747], [-73.79861055698606, 40.70283413211712]]]}, "type": "Feature", "id": null, "properties": {"plan_name": "Jamaica Center I", "lot": 1, "block": 10100}}]}
