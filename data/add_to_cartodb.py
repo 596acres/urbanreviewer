@@ -108,10 +108,19 @@ def insert_lots(cursor, filename, plans):
             return 'NULL'
     for lot in lots:
         properties = lot['properties']
+        try:
+            block = '%d' % properties['block']
+        except TypeError:
+            block = 'NULL'
+        try:
+            lot_number = '%d' % properties['lot']
+        except TypeError:
+            lot_number = 'NULL'
+
         values.append('(%s)' % ','.join((
             "'SRID=4326;%s'" % wkt.dumps(lot['geometry']),
-            '%d' % properties['block'],
-            '%d' % properties['lot'],
+            block,
+            lot_number,
             get_plan_id(properties['plan_name']),
         )))
 
