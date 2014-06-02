@@ -38,9 +38,10 @@ def delete_plans(cursor):
 
 
 def format_plan_date(year):
-    if year:
-        return "'%s-01-01'" % year
-    return 'NULL'
+    try:
+        return "'%d-01-01'" % int(year)
+    except (TypeError, ValueError):
+        return 'NULL'
 
 
 def insert_plans(cursor, filename):
