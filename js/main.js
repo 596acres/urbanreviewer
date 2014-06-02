@@ -1,5 +1,4 @@
 var hash = require('./hash');
-var datePicker = require('./datepicker');
 
 var currentPlan,
     planOutline,
@@ -163,6 +162,7 @@ $(document).ready(function () {
     });
 
     $('#date-range-picker').dateRangeSlider({
+        arrows: false,
         defaultValues: {
             min: new Date(1940, 0, 1),
             max: new Date(2014, 0, 1)

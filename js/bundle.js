@@ -1,26 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports = {
-
-    init: function ($button, $dialog) {
-        $button.click(function () {
-            $dialog.toggle();
-        });
-
-        var $start = $dialog.find('#date-picker-start'),
-            $end = $dialog.find('#date-picker-end');
-        $dialog.find('select').change(function (e) {
-            e.stopPropagation();
-            var start = $start.val(),
-                end = $end.val();
-            $button.find('.date-picker-start-display').text(start);
-            $button.find('.date-picker-end-display').text(end);
-            $dialog.trigger('change', [start, end]);
-        });
-    }
-
-};
-
-},{}],2:[function(require,module,exports){
 var querystring = require('querystring');
 
 module.exports = {
@@ -71,9 +49,8 @@ module.exports = {
 
 };
 
-},{"querystring":6}],3:[function(require,module,exports){
+},{"querystring":5}],2:[function(require,module,exports){
 var hash = require('./hash');
-var datePicker = require('./datepicker');
 
 var currentPlan,
     planOutline,
@@ -237,6 +214,7 @@ $(document).ready(function () {
     });
 
     $('#date-range-picker').dateRangeSlider({
+        arrows: false,
         defaultValues: {
             min: new Date(1940, 0, 1),
             max: new Date(2014, 0, 1)
@@ -264,7 +242,7 @@ $(document).ready(function () {
 
 });
 
-},{"./datepicker":1,"./hash":2}],4:[function(require,module,exports){
+},{"./hash":1}],3:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -350,7 +328,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -437,10 +415,10 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":4,"./encode":5}]},{},[3])
+},{"./decode":3,"./encode":4}]},{},[2])

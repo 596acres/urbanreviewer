@@ -57,11 +57,50 @@ a {
     height: 100%;
 }
 
+#date-range-picker-label {
+    bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
 #date-range-picker {
     position: absolute;
     bottom: 25px;
     left: 10%;
     width: 80%;
+
+    .ui-rangeSlider-bar {
+        background: black;
+        height: 5px;
+        margin-top: 8px;
+    }
+
+    .ui-rangeSlider-handle {
+        background: black;
+        border: 3px solid white;
+        border-radius: 20px;
+        height: 20px;
+        width: 20px;
+    }
+
+    .ui-rangeSlider-innerBar {
+        background: gray;
+        height: 5px;
+        margin-top: 8px;
+    }
+
+    .ui-rangeSlider-label {
+        background: black;
+        background-image: none;
+        bottom: 25px;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
 }
 
 #right-pane {
