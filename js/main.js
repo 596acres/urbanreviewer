@@ -146,15 +146,6 @@ $(document).ready(function () {
         map.addLayer(layer, false);
     });
 
-    datePicker.init($('#date-picker-button'), $('#date-picker-dialog'));
-    $('#date-picker-dialog').on('change', function (e, start, end) {
-        var sql = "SELECT l.*, p.name AS plan_name, p.borough AS borough " +
-            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
-            "WHERE p.adopted >= '" + start + "-01-01' " +
-                "AND p.adopted <= '" + end + "-01-01'";
-        lotsLayer.setSQL(sql);
-    });
-
     $('#right-pane').on('hide', function () {
         currentPlan = null;
         window.location.hash = hash.formatHash(map, currentPlan);
@@ -170,4 +161,31 @@ $(document).ready(function () {
             urbanreviewer.addPlanOutline(map, currentPlan);
         }
     });
+
+    $('#date-range-picker').dateRangeSlider({
+        defaultValues: {
+            min: new Date(1940, 0, 1),
+            max: new Date(2014, 0, 1)
+        },
+        bounds: {
+            min: new Date(1940, 0, 1),
+            max: new Date(2014, 0, 1)
+        },
+        formatter: function (value) {
+            return value.getFullYear();
+        },
+        step: {
+            years: 1
+        }
+    })
+    .bind('valuesChanged', function (e, data) {
+        var start = data.values.min.getFullYear(), 
+            end = data.values.max.getFullYear();
+        var sql = "SELECT l.*, p.name AS plan_name, p.borough AS borough " +
+            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
+            "WHERE p.adopted >= '" + start + "-01-01' " +
+                "AND p.adopted <= '" + end + "-01-01'";
+        lotsLayer.setSQL(sql);
+    });
+
 });

@@ -1,0 +1,11 @@
+/.DS_Store
+/.settings/
+/.project
+.tmp_*
+.DS_Store
+/jQRangeSlider-min.js
+/jQAllRangeSliders-min.js
+/node_modules/
+/out/
+/dest/
+/*.2.9-1.zip

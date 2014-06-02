@@ -1,0 +1,15 @@
+{
+  "name": "jqrangeslider",
+  "homepage": "https://github.com/ghusse/jQRangeSlider",
+  "version": "5.7.0",
+  "_release": "5.7.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "5.7.0",
+    "commit": "68d694c6ee166989a7398da021977ea589cef060"
+  },
+  "_source": "git://github.com/ghusse/jQRangeSlider.git",
+  "_target": "~5.7.0",
+  "_originalSource": "jqrangeslider",
+  "_direct": true
+}

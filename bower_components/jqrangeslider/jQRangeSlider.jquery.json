@@ -1,0 +1,40 @@
+{
+	"name": "jQRangeSlider",
+	"version": "5.7.0",
+	"title": "jQRangeSlider",
+	"description": "A javascript slider selector that supports dates",
+	"author": {
+			"name": "Guillaume Gautreau",
+			"url": "http://www.ghusse.com",
+			"email": "guillaume+jqrangeslider@ghusse.com"
+	},
+	"licenses": [
+		{
+			"type": "GPLv3",
+			"url": "https://raw.github.com/ghusse/jQRangeSlider/master/GPL-License.txt"
+		},
+		{
+			"type": "MIT",
+			"url": "https://raw.github.com/ghusse/jQRangeSlider/master/MIT-License.txt"
+		}
+	],
+	"dependencies":{
+		"jquery": ">=1.3",
+		"jquery-ui-core": ">=1.7",
+		"jquery-ui-widget": ">=1.7",
+		"jquery-mousewheel": ">=3.0.6"
+	},
+	"homepage": "http://ghusse.github.com/jQRangeSlider/",
+	"demo": "http://ghusse.github.com/jQRangeSlider/demo.html",
+	"download":"http://ghusse.github.com/jQRangeSlider/download.html",
+	"bugs": "https://jqrangeslider.uservoice.com/",
+	"docs": "http://ghusse.github.com/jQRangeSlider/documentation.html",
+	"maintainers":[
+		{
+			"name": "Guillaume Gautreau",
+			"url": "http://www.ghusse.com",
+			"email": "guillaume+jqrangeslider@ghusse.com"
+		}
+	],
+	"keywords": ["date", "slider", "range", "value", "selection", "select", "ui", "widget", "number", "scroll"]
+}

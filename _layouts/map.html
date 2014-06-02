@@ -8,13 +8,24 @@
 
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
 
+        <link rel="stylesheet" href="bower_components/jqrangeslider/css/classic.css">
         <link rel="stylesheet" href="css/style.min.css">
 
         <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
         <script src="bower_components/cartodb.js/dist/cartodb.noleaflet.js"></script>
         <script src="bower_components/leaflet-hash/leaflet-hash.js"></script>
         <script src="bower_components/handlebars/handlebars.runtime.min.js"></script>
+
+        <script src="bower_components/jqrangeslider/jQRangeSliderMouseTouch.js"></script>
+        <script src="bower_components/jqrangeslider/jQRangeSliderDraggable.js"></script>
+        <script src="bower_components/jqrangeslider/jQRangeSliderHandle.js"></script>
+        <script src="bower_components/jqrangeslider/jQRangeSliderBar.js"></script>
+        <script src="bower_components/jqrangeslider/jQRangeSliderLabel.js"></script>
+        <script src="bower_components/jqrangeslider/jQRangeSlider.js"></script>
+        <script src="bower_components/jqrangeslider/jQDateRangeSliderHandle.js"></script>
+        <script src="bower_components/jqrangeslider/jQDateRangeSlider.js"></script>
 
         <script src="handlebars_templates/handlebars_templates.js"></script>
         <script src="js/bundle.js"></script>
@@ -23,31 +34,9 @@
     <body>
         <header>
             <div>Urban<br />Reviewer</div>
-            <div id="date-picker-button">
-                <span class="date-picker-start-display">1940</span> -
-                <span class="date-picker-end-display">2010</span>
-            </div>
-            <div id="date-picker-dialog">
-                <select id="date-picker-start">
-                    <option value="1940" selected>1940</option>
-                    <option value="1950">1950</option>
-                    <option value="1960">1960</option>
-                    <option value="1970">1970</option>
-                    <option value="1980">1980</option>
-                    <option value="1990">1990</option>
-                    <option value="2000">2000</option>
-                </select>
-                <select id="date-picker-end">
-                    <option value="1950">1950</option>
-                    <option value="1960">1960</option>
-                    <option value="1970">1970</option>
-                    <option value="1980">1980</option>
-                    <option value="2000">2000</option>
-                    <option value="2010" selected>2010</option>
-                </select>
-            </div>
         </header>
         <div id="map"></div>
         <div id="right-pane"></div>
+        <div id="date-range-picker"></div>
     </body>
 </html>
