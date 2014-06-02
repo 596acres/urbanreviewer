@@ -19,7 +19,7 @@ plan_table:
 add_to_cartodb: geojson plan_table
 	python add_to_cartodb.py --plans plans.csv --lots lots.geojson
 
-plan_geojsons: geojson
+plan_geojsons: geojson plan_table
 	rm -rf geojson/us/ny/nyc/*
 	mkdir -p geojson/us/ny/nyc
 	python create_plan_geojsons.py --plans plans.csv --lots lots.geojson --dst geojson/us/ny/nyc
