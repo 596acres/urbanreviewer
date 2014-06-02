@@ -177,7 +177,7 @@ $(document).ready(function () {
 
     L.tileLayer('http://{s}.tiles.mapbox.com/v3/{mapId}/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
-        mapId: 'ebrelsford.ho06j5h0',
+        mapId: 'urbanreviewer.idebc7lb',
         maxZoom: 18
     }).addTo(map);
 
