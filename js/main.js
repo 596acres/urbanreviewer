@@ -14,6 +14,12 @@ var urbanreviewer = {
         });
     },
 
+    clearPlanOutline: function (map) {
+        if (planOutline) {
+            planOutline.clearLayers();
+        }
+    },
+
     addPlanOutline: function (map, planName) {
         if (planOutline) {
             planOutline.clearLayers();
@@ -152,6 +158,7 @@ $(document).ready(function () {
     $('#right-pane').on('hide', function () {
         currentPlan = null;
         window.location.hash = hash.formatHash(map, currentPlan);
+        urbanreviewer.clearPlanOutline(map);
     });
 
     $(window).on('popstate', function (e) {
