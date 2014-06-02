@@ -18,11 +18,8 @@ var urbanreviewer = {
         if (planOutline) {
             planOutline.clearLayers();
         }
-        var sql = "SELECT ST_Buffer(ST_ConvexHull(ST_Union(l.the_geom)), 0.0001) AS the_geom " + 
-                  "FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id " +
-                  "WHERE p.name = '" + planName + "'";
-        $.get(urbanreviewer.sql_api_base + "?q=" + sql + '&format=GeoJSON', function (data) {
-            planOutline = L.geoJson(data, {
+        else {
+            planOutline = L.geoJson(null, {
                 style: function (feature) {
                     return {
                         color: '#f00',
@@ -32,6 +29,12 @@ var urbanreviewer = {
                     };
                 }
             }).addTo(map);
+        }
+        var sql = "SELECT ST_Buffer(ST_ConvexHull(ST_Union(l.the_geom)), 0.0001) AS the_geom " + 
+                  "FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id " +
+                  "WHERE p.name = '" + planName + "'";
+        $.get(urbanreviewer.sql_api_base + "?q=" + sql + '&format=GeoJSON', function (data) {
+            planOutline.addData(data);
         });
     },
 
@@ -149,5 +152,15 @@ $(document).ready(function () {
     $('#right-pane').on('hide', function () {
         currentPlan = null;
         window.location.hash = hash.formatHash(map, currentPlan);
+    });
+
+    $(window).on('popstate', function (e) {
+        var parsedHash = hash.parseHash(window.location.hash);
+        map.setView(parsedHash.center, parsedHash.zoom);
+        currentPlan = parsedHash.plan;
+        if (currentPlan) {
+            urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
+            urbanreviewer.addPlanOutline(map, currentPlan);
+        }
     });
 });
