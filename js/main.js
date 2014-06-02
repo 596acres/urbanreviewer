@@ -68,6 +68,10 @@ var urbanreviewer = {
             $('#lots-content').append(content);
             $('.lot-count').text(data.rows.length);
         });
+
+        $('#right-pane .panel-toggle').click(function () {
+            $('#right-pane').trigger('hide').hide();
+        });
     }
 };
 
@@ -140,5 +144,10 @@ $(document).ready(function () {
             "WHERE p.adopted >= '" + start + "-01-01' " +
                 "AND p.adopted <= '" + end + "-01-01'";
         lotsLayer.setSQL(sql);
+    });
+
+    $('#right-pane').on('hide', function () {
+        currentPlan = null;
+        window.location.hash = hash.formatHash(map, currentPlan);
     });
 });
