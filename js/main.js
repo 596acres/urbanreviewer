@@ -158,7 +158,13 @@ $(document).ready(function () {
         map.addLayer(layer, false);
     });
 
+    $('#right-pane').on('open', function () {
+        $('#date-range-picker-container').hide();
+    });
+
     $('#right-pane').on('close', function () {
+        $('#date-range-picker-container').show();
+
         currentPlan = null;
         window.location.hash = hash.formatHash(map, currentPlan);
         urbanreviewer.clearPlanOutline(map);

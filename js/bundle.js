@@ -210,7 +210,13 @@ $(document).ready(function () {
         map.addLayer(layer, false);
     });
 
+    $('#right-pane').on('open', function () {
+        $('#date-range-picker-container').hide();
+    });
+
     $('#right-pane').on('close', function () {
+        $('#date-range-picker-container').show();
+
         currentPlan = null;
         window.location.hash = hash.formatHash(map, currentPlan);
         urbanreviewer.clearPlanOutline(map);
@@ -263,14 +269,14 @@ module.exports = {
         $(selector + ' *').remove();
         $(selector)
             .append(content)
-            .show();
+            .show()
+            .trigger('open');
     },
 
     close: function (selector) {
         $(selector)
             .trigger('close')
             .hide();
-
     }
 
 };
