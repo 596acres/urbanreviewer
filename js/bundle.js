@@ -185,7 +185,7 @@ $(document).ready(function () {
             urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
         })
         .on('planlotover', function (data) {
-            if (currentPlan) {
+            if (currentPlan && data.plan_name === currentPlan) {
                 if (data.block !== currentLot.block || data.lot !== currentLot.lot) {
                     currentLot = {
                         block: data.block,
