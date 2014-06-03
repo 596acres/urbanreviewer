@@ -98,6 +98,7 @@ $(document).ready(function () {
 
     var map = L.map('map', {
         maxZoom: 18,
+        minZoom: 10,
         zoomControl: false
     })
     .setActiveArea({
