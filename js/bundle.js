@@ -146,6 +146,9 @@ var urbanreviewer = {
 
 $(document).ready(function () {
 
+    /*
+     * Initialize map
+     */
     var parsedHash = hash.parseHash(window.location.hash),
         zoom = parsedHash.zoom || defaultZoom,
         center = parsedHash.center || defaultCenter;
@@ -180,6 +183,10 @@ $(document).ready(function () {
         urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
     });
 
+
+    /*
+     * Initialize sidebar
+     */
     $('#right-pane').on('open', function () {
         $('#date-range-picker-container').hide();
         plansmap.setActiveArea(map, { area: 'left' });
@@ -194,6 +201,10 @@ $(document).ready(function () {
         urbanreviewer.clearPlanOutline(map);
     });
 
+
+    /*
+     * Listen for popstate
+     */
     $(window).on('popstate', function (e) {
         var parsedHash = hash.parseHash(window.location.hash),
             previousPlan = currentPlan;
@@ -205,6 +216,10 @@ $(document).ready(function () {
         }
     });
 
+
+    /*
+     * Initialize dateRangeSlider
+     */
     $('#date-range-picker').dateRangeSlider({
         arrows: false,
         defaultValues: {
