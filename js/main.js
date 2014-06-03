@@ -1,4 +1,5 @@
 var hash = require('./hash');
+var sidebar = require('./sidebar');
 
 var currentPlan,
     planOutline,
@@ -51,12 +52,10 @@ var urbanreviewer = {
     },
 
     loadPlanInformation: function (data) {
-        $('#right-pane *').remove();
 
         var template = JST['handlebars_templates/plan.hbs'];
         templateContent = template(data);
-        $('#right-pane').append(templateContent);
-        $('#right-pane').show();
+        sidebar.open('#right-pane', templateContent);
 
         // If we don't have borough, get it first
         if (data.borough) {
@@ -85,7 +84,7 @@ var urbanreviewer = {
         });
 
         $('#right-pane .panel-toggle').click(function () {
-            $('#right-pane').trigger('hide').hide();
+            sidebar.close('#right-pane');
         });
     }
 };
@@ -159,7 +158,7 @@ $(document).ready(function () {
         map.addLayer(layer, false);
     });
 
-    $('#right-pane').on('hide', function () {
+    $('#right-pane').on('close', function () {
         currentPlan = null;
         window.location.hash = hash.formatHash(map, currentPlan);
         urbanreviewer.clearPlanOutline(map);

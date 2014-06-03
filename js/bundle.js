@@ -49,8 +49,9 @@ module.exports = {
 
 };
 
-},{"querystring":5}],2:[function(require,module,exports){
+},{"querystring":6}],2:[function(require,module,exports){
 var hash = require('./hash');
+var sidebar = require('./sidebar');
 
 var currentPlan,
     planOutline,
@@ -103,12 +104,10 @@ var urbanreviewer = {
     },
 
     loadPlanInformation: function (data) {
-        $('#right-pane *').remove();
 
         var template = JST['handlebars_templates/plan.hbs'];
         templateContent = template(data);
-        $('#right-pane').append(templateContent);
-        $('#right-pane').show();
+        sidebar.open('#right-pane', templateContent);
 
         // If we don't have borough, get it first
         if (data.borough) {
@@ -137,7 +136,7 @@ var urbanreviewer = {
         });
 
         $('#right-pane .panel-toggle').click(function () {
-            $('#right-pane').trigger('hide').hide();
+            sidebar.close('#right-pane');
         });
     }
 };
@@ -211,7 +210,7 @@ $(document).ready(function () {
         map.addLayer(layer, false);
     });
 
-    $('#right-pane').on('hide', function () {
+    $('#right-pane').on('close', function () {
         currentPlan = null;
         window.location.hash = hash.formatHash(map, currentPlan);
         urbanreviewer.clearPlanOutline(map);
@@ -257,7 +256,26 @@ $(document).ready(function () {
 
 });
 
-},{"./hash":1}],3:[function(require,module,exports){
+},{"./hash":1,"./sidebar":3}],3:[function(require,module,exports){
+module.exports = {
+
+    open: function (selector, content) {
+        $(selector + ' *').remove();
+        $(selector)
+            .append(content)
+            .show();
+    },
+
+    close: function (selector) {
+        $(selector)
+            .trigger('close')
+            .hide();
+
+    }
+
+};
+
+},{}],4:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -343,7 +361,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -430,10 +448,10 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":3,"./encode":4}]},{},[2])
+},{"./decode":4,"./encode":5}]},{},[2])
