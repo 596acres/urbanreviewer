@@ -1,7 +1,51 @@
 module.exports = {
 
-    init: function (selector) {
-        // TODO
+    init: function (id) {
+        var map = L.map(id, {
+            maxZoom: 18,
+            minZoom: 10,
+            zoomControl: false
+        });
+
+        L.control.zoom({ position: 'bottomleft' }).addTo(map);
+
+        L.tileLayer('http://{s}.tiles.mapbox.com/v3/{mapId}/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
+            mapId: 'urbanreviewer.idebc7lb',
+            maxZoom: 18
+        }).addTo(map);
+
+        cartodb.createLayer(map, {
+            cartodb_logo: false,
+            user_name: 'urbanreviewer',
+            type: 'cartodb',
+            sublayers: [{
+                cartocss: '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }',
+                interactivity: 'block, lot, plan_name, borough',
+                sql: 'SELECT l.*, p.name AS plan_name, p.borough AS borough FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id'
+            }]
+        })
+        .addTo(map)
+        .done(function (layer) {
+            lotsLayer = layer.getSubLayer(0);
+            lotsLayer.setInteraction(true);
+            layer.on('featureClick', function (e, latlng, pos, data, sublayerIndex) {
+                map.fire('planlotclick', data);
+            });
+
+            // Update mouse cursor when over a feature
+            layer.on('featureOver', function () {
+                $('#' + map._container.id).css('cursor', 'pointer');
+            });
+            layer.on('featureOut', function () {
+                var grabStyle = 'cursor: grab; cursor: -moz-grab; cursor: -webkit-grab;';
+                $('#' + map._container.id).attr('style',  grabStyle);
+            });
+
+            map.addLayer(layer, false);
+        });
+
+        return map;
     },
 
     setActiveArea: function (map, options) {
