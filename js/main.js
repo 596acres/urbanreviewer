@@ -1,9 +1,12 @@
 var hash = require('./hash');
+var plansmap = require('./plansmap');
 var sidebar = require('./sidebar');
 
 var currentPlan,
     planOutline,
-    lotsLayer;
+    lotsLayer,
+    defaultZoom = 12,
+    defaultCenter = [40.739974, -73.946228];
 
 var urbanreviewer = {
     sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
@@ -92,26 +95,30 @@ var urbanreviewer = {
 $(document).ready(function () {
 
     var parsedHash = hash.parseHash(window.location.hash),
-        zoom = parsedHash.zoom || 12,
-        center = parsedHash.center || [40.739974, -73.946228];
+        zoom = parsedHash.zoom || defaultZoom,
+        center = parsedHash.center || defaultCenter;
     currentPlan = parsedHash.plan;
 
     var map = L.map('map', {
         maxZoom: 18,
         minZoom: 10,
         zoomControl: false
-    })
-    .setActiveArea({
-        position: 'absolute',
-        top: '0',
-        left: '0',
-        right: '50%',
-        height: '100%'
-    })
-    .setView(center, zoom)
-    .on('moveend', function () {
-        window.location.hash = hash.formatHash(map, currentPlan);
     });
+
+    if (currentPlan) {
+        // If there's a plan selected already, set the active area so we can
+        // zoom to it appropriately
+        plansmap.setActiveArea(map, { area: 'left' });
+    }
+    else {
+        plansmap.setActiveArea(map, { area: 'full' });
+    }
+
+    map
+        .setView(center, zoom)
+        .on('moveend', function () {
+            window.location.hash = hash.formatHash(map, currentPlan);
+        });
 
     if (currentPlan) {
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
@@ -161,10 +168,12 @@ $(document).ready(function () {
 
     $('#right-pane').on('open', function () {
         $('#date-range-picker-container').hide();
+        plansmap.setActiveArea(map, { area: 'left' });
     });
 
     $('#right-pane').on('close', function () {
         $('#date-range-picker-container').show();
+        plansmap.setActiveArea(map, { area: 'full' });
 
         currentPlan = null;
         window.location.hash = hash.formatHash(map, currentPlan);

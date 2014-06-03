@@ -49,13 +49,16 @@ module.exports = {
 
 };
 
-},{"querystring":6}],2:[function(require,module,exports){
+},{"querystring":7}],2:[function(require,module,exports){
 var hash = require('./hash');
+var plansmap = require('./plansmap');
 var sidebar = require('./sidebar');
 
 var currentPlan,
     planOutline,
-    lotsLayer;
+    lotsLayer,
+    defaultZoom = 12,
+    defaultCenter = [40.739974, -73.946228];
 
 var urbanreviewer = {
     sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
@@ -144,26 +147,30 @@ var urbanreviewer = {
 $(document).ready(function () {
 
     var parsedHash = hash.parseHash(window.location.hash),
-        zoom = parsedHash.zoom || 12,
-        center = parsedHash.center || [40.739974, -73.946228];
+        zoom = parsedHash.zoom || defaultZoom,
+        center = parsedHash.center || defaultCenter;
     currentPlan = parsedHash.plan;
 
     var map = L.map('map', {
         maxZoom: 18,
         minZoom: 10,
         zoomControl: false
-    })
-    .setActiveArea({
-        position: 'absolute',
-        top: '0',
-        left: '0',
-        right: '50%',
-        height: '100%'
-    })
-    .setView(center, zoom)
-    .on('moveend', function () {
-        window.location.hash = hash.formatHash(map, currentPlan);
     });
+
+    if (currentPlan) {
+        // If there's a plan selected already, set the active area so we can
+        // zoom to it appropriately
+        plansmap.setActiveArea(map, { area: 'left' });
+    }
+    else {
+        plansmap.setActiveArea(map, { area: 'full' });
+    }
+
+    map
+        .setView(center, zoom)
+        .on('moveend', function () {
+            window.location.hash = hash.formatHash(map, currentPlan);
+        });
 
     if (currentPlan) {
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
@@ -213,10 +220,12 @@ $(document).ready(function () {
 
     $('#right-pane').on('open', function () {
         $('#date-range-picker-container').hide();
+        plansmap.setActiveArea(map, { area: 'left' });
     });
 
     $('#right-pane').on('close', function () {
         $('#date-range-picker-container').show();
+        plansmap.setActiveArea(map, { area: 'full' });
 
         currentPlan = null;
         window.location.hash = hash.formatHash(map, currentPlan);
@@ -263,7 +272,42 @@ $(document).ready(function () {
 
 });
 
-},{"./hash":1,"./sidebar":3}],3:[function(require,module,exports){
+},{"./hash":1,"./plansmap":3,"./sidebar":4}],3:[function(require,module,exports){
+module.exports = {
+
+    init: function (selector) {
+        // TODO
+    },
+
+    setActiveArea: function (map, options) {
+        options = options || {};
+        var activeAreaOptions;
+
+        if (options.area === 'left') {
+            activeAreaOptions = {
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '50%',
+                height: '100%'
+            };
+        }
+        else if (options.area === undefined || options.area === 'full') {
+            activeAreaOptions = {
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '0',
+                height: '100%'
+            };
+        }
+
+        map.setActiveArea(activeAreaOptions);
+    }
+
+};
+
+},{}],4:[function(require,module,exports){
 module.exports = {
 
     open: function (selector, content) {
@@ -282,7 +326,7 @@ module.exports = {
 
 };
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -368,7 +412,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -455,10 +499,10 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":4,"./encode":5}]},{},[2])
+},{"./decode":5,"./encode":6}]},{},[2])
