@@ -19,7 +19,8 @@ var urbanreviewer = {
         }
     },
 
-    addPlanOutline: function (map, planName) {
+    addPlanOutline: function (map, planName, options) {
+        options = options || {};
         if (planOutline) {
             planOutline.clearLayers();
         }
@@ -40,9 +41,12 @@ var urbanreviewer = {
                   "WHERE p.name = '" + planName + "'";
         $.get(urbanreviewer.sql_api_base + "?q=" + sql + '&format=GeoJSON', function (data) {
             planOutline.addData(data);
-            map.fitBounds(planOutline.getBounds(), {
-                padding: [25, 25]            
-            });
+            
+            if (options.zoomToPlan === true) {
+                map.fitBounds(planOutline.getBounds(), {
+                    padding: [25, 25]            
+                });
+            }
         });
     },
 
@@ -96,18 +100,17 @@ $(document).ready(function () {
     var map = L.map('map', {
         maxZoom: 18,
         zoomControl: false
-    }).setView(center, zoom);
-
-    map.on('moveend', function () {
-        window.location.hash = hash.formatHash(map, currentPlan);
-    });
-
-    map.setActiveArea({
+    })
+    .setActiveArea({
         position: 'absolute',
         top: '0',
         left: '0',
         right: '50%',
         height: '100%'
+    })
+    .setView(center, zoom)
+    .on('moveend', function () {
+        window.location.hash = hash.formatHash(map, currentPlan);
     });
 
     if (currentPlan) {
@@ -141,7 +144,7 @@ $(document).ready(function () {
             currentPlan = data.plan_name;
             window.location.hash = hash.formatHash(map, currentPlan);
             urbanreviewer.loadPlanInformation(data);
-            urbanreviewer.addPlanOutline(map, currentPlan);
+            urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
         });
 
         // Update mouse cursor when over a feature
