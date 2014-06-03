@@ -1,0 +1,13 @@
+{
+  "name": "leaflet",
+  "_cacheHeaders": {
+    "ETag": "\"98de243b26ae893d28e4bddd444317b3\"",
+    "Last-Modified": "Fri, 17 Jan 2014 12:50:21 GMT",
+    "Content-Length": "102306",
+    "Content-Type": "application/zip"
+  },
+  "_release": "e-tag:98de243b2",
+  "_source": "http://leaflet-cdn.s3.amazonaws.com/build/leaflet-0.7.2.zip",
+  "_target": "*",
+  "_originalSource": "http://leaflet-cdn.s3.amazonaws.com/build/leaflet-0.7.2.zip"
+}

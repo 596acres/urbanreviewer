@@ -1,0 +1,19 @@
+{
+  "name": "leaflet-active-area",
+  "dependencies": {
+    "leaflet-dist": "http://leaflet-cdn.s3.amazonaws.com/build/leaflet-0.7.2.zip",
+    "sinon": "~1.9.0",
+    "expect": "~0.3.1"
+  },
+  "homepage": "https://github.com/Mappy/Leaflet-active-area",
+  "_release": "fbad1b6c6f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "fbad1b6c6fde394817da50192e9ea0fcebecfa43"
+  },
+  "_source": "https://github.com/Mappy/Leaflet-active-area.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/Mappy/Leaflet-active-area.git",
+  "_direct": true
+}

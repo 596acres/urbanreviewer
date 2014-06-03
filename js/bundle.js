@@ -92,6 +92,9 @@ var urbanreviewer = {
                   "WHERE p.name = '" + planName + "'";
         $.get(urbanreviewer.sql_api_base + "?q=" + sql + '&format=GeoJSON', function (data) {
             planOutline.addData(data);
+            map.fitBounds(planOutline.getBounds(), {
+                padding: [25, 25]            
+            });
         });
     },
 
@@ -149,6 +152,14 @@ $(document).ready(function () {
 
     map.on('moveend', function () {
         window.location.hash = hash.formatHash(map, currentPlan);
+    });
+
+    map.setActiveArea({
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        right: '50%',
+        height: '100%'
     });
 
     if (currentPlan) {
