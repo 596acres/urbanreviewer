@@ -183,7 +183,7 @@ $(document).ready(function () {
         user_name: 'urbanreviewer',
         type: 'cartodb',
         sublayers: [{
-            cartocss: '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #FFF; line-width: 1; line-opacity: 1; }',
+            cartocss: '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }',
             interactivity: 'block, lot, plan_name, borough',
             sql: 'SELECT l.*, p.name AS plan_name, p.borough AS borough FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id'
         }]
