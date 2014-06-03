@@ -218,10 +218,11 @@ $(document).ready(function () {
     });
 
     $(window).on('popstate', function (e) {
-        var parsedHash = hash.parseHash(window.location.hash);
+        var parsedHash = hash.parseHash(window.location.hash),
+            previousPlan = currentPlan;
         map.setView(parsedHash.center, parsedHash.zoom);
         currentPlan = parsedHash.plan;
-        if (currentPlan) {
+        if (currentPlan && currentPlan !== previousPlan) {
             urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
             urbanreviewer.addPlanOutline(map, currentPlan);
         }
