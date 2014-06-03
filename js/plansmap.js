@@ -33,13 +33,17 @@ module.exports = {
                 map.fire('planlotclick', data);
             });
 
-            // Update mouse cursor when over a feature
-            layer.on('featureOver', function () {
+            layer.on('featureOver', function (e, latlng, pos, data) {
+                // Update mouse cursor when over a feature
                 $('#' + map._container.id).css('cursor', 'pointer');
+                data.latlng = latlng;
+                map.fire('planlotover', data);
             });
-            layer.on('featureOut', function () {
+            layer.on('featureOut', function (e, latlng, pos, data) {
+                // Reset mouse cursor when no longer over a feature
                 var grabStyle = 'cursor: grab; cursor: -moz-grab; cursor: -webkit-grab;';
                 $('#' + map._container.id).attr('style',  grabStyle);
+                map.fire('planlotout', data);
             });
 
             map.addLayer(layer, false);

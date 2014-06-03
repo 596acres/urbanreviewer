@@ -3,6 +3,7 @@ var plansmap = require('./plansmap');
 var sidebar = require('./sidebar');
 
 var currentPlan,
+    currentLot = {},
     planOutline,
     lotsLayer,
     defaultZoom = 12,
@@ -124,12 +125,29 @@ $(document).ready(function () {
         urbanreviewer.addPlanOutline(map, currentPlan);
     }
 
-    map.on('planlotclick', function (data) {
-        currentPlan = data.plan_name;
-        window.location.hash = hash.formatHash(map, currentPlan);
-        urbanreviewer.loadPlanInformation(data);
-        urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
-    });
+    map
+        .on('planlotclick', function (data) {
+            currentPlan = data.plan_name;
+            window.location.hash = hash.formatHash(map, currentPlan);
+            urbanreviewer.loadPlanInformation(data);
+            urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
+        })
+        .on('planlotover', function (data) {
+            if (currentPlan) {
+                if (data.block !== currentLot.block || data.lot !== currentLot.lot) {
+                    currentLot = {
+                        block: data.block,
+                        lot: data.lot
+                    };
+                    map.openPopup('block: ' + data.block + ', lot: ' + data.lot,
+                                  data.latlng);
+                }
+            }
+        })
+        .on('planlotout', function (data) {
+            currentLot = {};
+            map.closePopup();  
+        });
 
 
     /*

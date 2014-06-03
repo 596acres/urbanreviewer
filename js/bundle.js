@@ -55,6 +55,7 @@ var plansmap = require('./plansmap');
 var sidebar = require('./sidebar');
 
 var currentPlan,
+    currentLot = {},
     planOutline,
     lotsLayer,
     defaultZoom = 12,
@@ -176,12 +177,29 @@ $(document).ready(function () {
         urbanreviewer.addPlanOutline(map, currentPlan);
     }
 
-    map.on('planlotclick', function (data) {
-        currentPlan = data.plan_name;
-        window.location.hash = hash.formatHash(map, currentPlan);
-        urbanreviewer.loadPlanInformation(data);
-        urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
-    });
+    map
+        .on('planlotclick', function (data) {
+            currentPlan = data.plan_name;
+            window.location.hash = hash.formatHash(map, currentPlan);
+            urbanreviewer.loadPlanInformation(data);
+            urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
+        })
+        .on('planlotover', function (data) {
+            if (currentPlan) {
+                if (data.block !== currentLot.block || data.lot !== currentLot.lot) {
+                    currentLot = {
+                        block: data.block,
+                        lot: data.lot
+                    };
+                    map.openPopup('block: ' + data.block + ', lot: ' + data.lot,
+                                  data.latlng);
+                }
+            }
+        })
+        .on('planlotout', function (data) {
+            currentLot = {};
+            map.closePopup();  
+        });
 
 
     /*
@@ -285,13 +303,17 @@ module.exports = {
                 map.fire('planlotclick', data);
             });
 
-            // Update mouse cursor when over a feature
-            layer.on('featureOver', function () {
+            layer.on('featureOver', function (e, latlng, pos, data) {
+                // Update mouse cursor when over a feature
                 $('#' + map._container.id).css('cursor', 'pointer');
+                data.latlng = latlng;
+                map.fire('planlotover', data);
             });
-            layer.on('featureOut', function () {
+            layer.on('featureOut', function (e, latlng, pos, data) {
+                // Reset mouse cursor when no longer over a feature
                 var grabStyle = 'cursor: grab; cursor: -moz-grab; cursor: -webkit-grab;';
                 $('#' + map._container.id).attr('style',  grabStyle);
+                map.fire('planlotout', data);
             });
 
             map.addLayer(layer, false);
