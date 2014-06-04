@@ -69,6 +69,32 @@ a:visited {
   line-height: 48px;
   width: 100%;
 }
+#search-container .twitter-typeahead {
+  background: white;
+  font-size: 20px;
+  line-height: 22px;
+  text-transform: none;
+}
+#search-container .twitter-typeahead .tt-cursor {
+  background: gray;
+}
+#search-container .twitter-typeahead .tt-dropdown-menu {
+  background: white;
+  width: 100%;
+}
+#search-container .twitter-typeahead .tt-hint {
+  border: 0;
+  color: gray;
+  font-size: 30px;
+  line-height: 48px;
+}
+#search-container .twitter-typeahead .tt-suggestion {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#search-container .twitter-typeahead .tt-suggestion p {
+  margin: 0;
+}
 #nav {
   font-size: 20px;
   font-weight: normal;

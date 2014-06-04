@@ -1,10 +1,49 @@
 var geocode = require('./geocode.js');
+require('typeahead.js');
 
+
+var plansBloodhound = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    limit: 10,
+    prefetch: {
+        url: 'http://urbanreviewer.cartodb.com/api/v2/sql?q=SELECT name, borough FROM plans',
+        filter: function (results) {
+            return $.map(results.rows, function (row) {
+                return {
+                    name: row.name,
+                    borough: row.borough
+                }
+            });
+        }
+    }
+});
+
+plansBloodhound.initialize();
+ 
 function init(selector) {
     $(selector).on('keyup', function (e) {
         if (e.keyCode === 13) {
             search(selector, $(selector).val());
         }
+    });
+
+    $(selector).typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+    },
+    {
+        name: 'plans',
+        displayKey: 'name',
+        source: plansBloodhound.ttAdapter()
+    });
+
+    $(selector).on('typeahead:selected', function (e, suggestion) {
+        $(selector).trigger('planfound', suggestion.name);
+    });
+    $(selector).on('typeahead:autocompleted', function (e, suggestion) {
+        $(selector).trigger('planfound', suggestion.name);
     });
 }
 

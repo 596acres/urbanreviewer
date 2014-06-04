@@ -9,7 +9,8 @@
     "grunt-browserify": "^2.1.0",
     "grunt-contrib-less": "~0.9.0",
     "grunt-contrib-watch": "~0.5.3",
-    "querystring": "^0.2.0"
+    "querystring": "^0.2.0",
+    "typeahead.js": "^0.10.2"
   },
   "devDependencies": {
     "grunt-contrib-cssmin": "~0.7.0",

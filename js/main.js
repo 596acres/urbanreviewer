@@ -15,6 +15,13 @@ var currentPage,
 var urbanreviewer = {
     sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
 
+    selectPlan: function (name, map) {
+        currentPlan = name;
+        window.location.hash = hash.formatHash(map, currentPlan);
+        urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
+        urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
+    },
+
     addPlanContent: function ($location, borough, planName) {
         $.get('plans/' + borough + '/' + planName, function (content) {
             $location.append(content);
@@ -134,10 +141,7 @@ $(document).ready(function () {
 
     map
         .on('planlotclick', function (data) {
-            currentPlan = data.plan_name;
-            window.location.hash = hash.formatHash(map, currentPlan);
-            urbanreviewer.loadPlanInformation(data);
-            urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
+            urbanreviewer.selectPlan(data.plan_name, map);
         })
         .on('planlotover', function (data) {
             if (currentPlan && data.plan_name === currentPlan) {
@@ -216,6 +220,9 @@ $(document).ready(function () {
             smallIcon: true                        
         }).addTo(map);
         map.setView(results.latlng, 16);
+    });
+    $('#search').on('planfound', function (e, name) {
+        urbanreviewer.selectPlan(name, map);
     });
 
 
