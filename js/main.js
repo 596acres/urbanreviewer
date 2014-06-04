@@ -224,14 +224,10 @@ $(document).ready(function () {
         }
     })
     .bind('valuesChanged', function (e, data) {
-        var start = data.values.min.getFullYear(), 
-            end = data.values.max.getFullYear();
-        var sql = "SELECT l.*, p.name AS plan_name, p.borough AS borough " +
-            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
-            "WHERE p.adopted >= '" + start + "-01-01' " +
-                "AND p.adopted <= '" + end + "-01-01'";
-        // TODO make it possible to set this through plansmap!!
-        lotsLayer.setSQL(sql);
+        plansmap.filterLotsLayer({
+            start: data.values.min.getFullYear(), 
+            end: data.values.max.getFullYear()
+        });
     });
 
 });

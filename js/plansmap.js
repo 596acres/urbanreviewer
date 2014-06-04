@@ -1,3 +1,5 @@
+var lotsLayer;
+
 module.exports = {
 
     init: function (id) {
@@ -76,6 +78,22 @@ module.exports = {
         }
 
         map.setActiveArea(activeAreaOptions);
+    },
+
+    filterLotsLayer: function (filters) {
+        var sql = "SELECT l.*, p.name AS plan_name, p.borough AS borough " +
+            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
+            "WHERE ",
+            whereConditions = [];
+        
+        if (filters.start) {
+            whereConditions.push("p.adopted >= '" + filters.start + "-01-01'");
+        }
+        if (filters.end) {
+            whereConditions.push("p.adopted <= '" + filters.end + "-01-01'");
+        }
+        sql += whereConditions.join(' AND ');
+        lotsLayer.setSQL(sql);
     }
 
 };
