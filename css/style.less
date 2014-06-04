@@ -41,12 +41,14 @@ p {
 }
 
 a { 
-    color: #00a; 
+    color: #000; 
+    text-decoration: none;
+
     &:hover {
         color: #000; 
     }
     &:visited {
-        color: #a0a; 
+        color: #000; 
     }
 }
 
@@ -66,7 +68,7 @@ a {
     float: left;
     margin-left: 25px;
     opacity: 0.75;
-    width: 50%;
+    width: 30%;
 
     #search {
         border: none;
@@ -74,6 +76,24 @@ a {
         line-height: 48px;
         width: 100%;
     }
+}
+
+#nav {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 45px;
+    text-transform: capitalize;
+
+    ul {
+        list-style: none;
+    }
+
+    li { 
+        float: left;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
 }
 
 #date-range-picker-label {

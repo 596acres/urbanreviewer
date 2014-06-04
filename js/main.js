@@ -3,7 +3,8 @@ var plansmap = require('./plansmap');
 var search = require('./search');
 var sidebar = require('./sidebar');
 
-var currentPlan,
+var currentPage,
+    currentPlan,
     currentLot = {},
     planOutline,
     lotsLayer,
@@ -88,9 +89,11 @@ var urbanreviewer = {
             $('#lots-content').append(content);
             $('.lot-count').text(data.rows.length);
         });
+    },
 
-        $('#right-pane .panel-toggle').click(function () {
-            sidebar.close('#right-pane');
+    loadPage: function (url) {
+        $.get(url, function (content) {
+            sidebar.open('#right-pane', content);
         });
     }
 };
@@ -103,11 +106,12 @@ $(document).ready(function () {
     var parsedHash = hash.parseHash(window.location.hash),
         zoom = parsedHash.zoom || defaultZoom,
         center = parsedHash.center || defaultCenter;
+    currentPage = parsedHash.page;
     currentPlan = parsedHash.plan;
 
     map = plansmap.init('map');
 
-    if (currentPlan) {
+    if (currentPage || currentPlan) {
         // If there's a plan selected already, set the active area so we can
         // zoom to it appropriately
         plansmap.setActiveArea(map, { area: 'left' });
@@ -119,7 +123,7 @@ $(document).ready(function () {
     map
         .setView(center, zoom)
         .on('moveend', function () {
-            window.location.hash = hash.formatHash(map, currentPlan);
+            window.location.hash = hash.formatHash(map, currentPlan, currentPage);
         });
 
     if (currentPlan) {
@@ -172,18 +176,30 @@ $(document).ready(function () {
         urbanreviewer.clearPlanOutline(map);
     });
 
+    $('.sidebar-link').click(function (e) {
+        currentPage = $(this).attr('href');
+        window.location.hash = hash.formatHash(map, null, currentPage);
+        urbanreviewer.loadPage(currentPage);
+        return false;
+    });
+
 
     /*
      * Listen for popstate
      */
     $(window).on('popstate', function (e) {
         var parsedHash = hash.parseHash(window.location.hash),
-            previousPlan = currentPlan;
+            previousPlan = currentPlan,
+            previousPage = currentPage;
         map.setView(parsedHash.center, parsedHash.zoom);
+        currentPage = parsedHash.page;
         currentPlan = parsedHash.plan;
         if (currentPlan && currentPlan !== previousPlan) {
             urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
             urbanreviewer.addPlanOutline(map, currentPlan);
+        }
+        if (currentPage && currentPage !== previousPage) {
+            urbanreviewer.loadPage(currentPage);
         }
     });
 
@@ -229,5 +245,9 @@ $(document).ready(function () {
             end: data.values.max.getFullYear()
         });
     });
+
+    if (currentPage) {
+        urbanreviewer.loadPage(currentPage);
+    }
 
 });
