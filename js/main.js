@@ -1,5 +1,6 @@
 var hash = require('./hash');
 var plansmap = require('./plansmap');
+var search = require('./search');
 var sidebar = require('./sidebar');
 
 var currentPlan,
@@ -7,7 +8,8 @@ var currentPlan,
     planOutline,
     lotsLayer,
     defaultZoom = 12,
-    defaultCenter = [40.739974, -73.946228];
+    defaultCenter = [40.739974, -73.946228],
+    userMarker;
 
 var urbanreviewer = {
     sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
@@ -121,6 +123,7 @@ $(document).ready(function () {
         });
 
     if (currentPlan) {
+        $('#search-container').hide();
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
         urbanreviewer.addPlanOutline(map, currentPlan);
     }
@@ -155,11 +158,13 @@ $(document).ready(function () {
      */
     $('#right-pane').on('open', function () {
         $('#date-range-picker-container').hide();
+        $('#search-container').hide();
         plansmap.setActiveArea(map, { area: 'left' });
     });
 
     $('#right-pane').on('close', function () {
         $('#date-range-picker-container').show();
+        $('#search-container').show();
         plansmap.setActiveArea(map, { area: 'full' });
 
         currentPlan = null;
@@ -180,6 +185,21 @@ $(document).ready(function () {
             urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
             urbanreviewer.addPlanOutline(map, currentPlan);
         }
+    });
+
+
+    /*
+     * Initialize search
+     */
+    search.init('#search');
+    $('#search').on('resultfound', function (e, results) {
+        if (userMarker) {
+            map.removeLayer(userMarker);
+        }
+        userMarker = L.userMarker(results.latlng, {
+            smallIcon: true                        
+        }).addTo(map);
+        map.setView(results.latlng, 16);
     });
 
 
@@ -210,6 +230,7 @@ $(document).ready(function () {
             "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
             "WHERE p.adopted >= '" + start + "-01-01' " +
                 "AND p.adopted <= '" + end + "-01-01'";
+        // TODO make it possible to set this through plansmap!!
         lotsLayer.setSQL(sql);
     });
 

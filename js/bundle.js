@@ -1,4 +1,63 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var geocoder = new google.maps.Geocoder();
+
+function to_google_bounds(bounds) {
+    // bounds: left, bottom, right, top
+    return new google.maps.LatLngBounds(
+        new google.maps.LatLng(bounds[1], bounds[0]),
+        new google.maps.LatLng(bounds[3], bounds[2])
+    );
+}
+
+function get_component(result, desired_type) {
+    var matches = $.grep(result.address_components, function (component, i) {
+        return ($.inArray(desired_type, component.types) >= 0);
+    });
+    if (matches.length >= 0 && matches[0] !== null) {
+        return matches[0].short_name;
+    }
+    return null;
+}
+
+function get_street(result) {
+    var street_number = get_component(result, 'street_number');
+    var route = get_component(result, 'route');
+    if (street_number === null || route === null) {
+        return null;
+    }
+    return street_number + ' ' + route;
+}
+
+function get_longitude(result) {
+    return result.geometry.location.lng();
+}
+
+function get_latitude(result) {
+    return result.geometry.location.lat();
+}
+
+module.exports = {
+
+    geocode: function (address, bounds, state, f) {
+        geocoder.geocode({
+            'address': address,
+            'bounds': to_google_bounds(bounds)
+        }, function (results, status) {
+            for (var i = 0; i < results.length; i++) {
+                var result_state = get_component(results[i], 'administrative_area_level_1');
+                if (result_state === state) {
+                    results[i].latlng = [get_latitude(results[i]),
+                                         get_longitude(results[i])];
+                    return f(results[i], status);
+                }
+            }
+            return f(null, status);
+        });
+    }
+
+};
+
+},{}],2:[function(require,module,exports){
 var querystring = require('querystring');
 
 module.exports = {
@@ -49,9 +108,10 @@ module.exports = {
 
 };
 
-},{"querystring":7}],2:[function(require,module,exports){
+},{"querystring":9}],3:[function(require,module,exports){
 var hash = require('./hash');
 var plansmap = require('./plansmap');
+var search = require('./search');
 var sidebar = require('./sidebar');
 
 var currentPlan,
@@ -59,7 +119,8 @@ var currentPlan,
     planOutline,
     lotsLayer,
     defaultZoom = 12,
-    defaultCenter = [40.739974, -73.946228];
+    defaultCenter = [40.739974, -73.946228],
+    userMarker;
 
 var urbanreviewer = {
     sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
@@ -173,6 +234,7 @@ $(document).ready(function () {
         });
 
     if (currentPlan) {
+        $('#search-container').hide();
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
         urbanreviewer.addPlanOutline(map, currentPlan);
     }
@@ -207,11 +269,13 @@ $(document).ready(function () {
      */
     $('#right-pane').on('open', function () {
         $('#date-range-picker-container').hide();
+        $('#search-container').hide();
         plansmap.setActiveArea(map, { area: 'left' });
     });
 
     $('#right-pane').on('close', function () {
         $('#date-range-picker-container').show();
+        $('#search-container').show();
         plansmap.setActiveArea(map, { area: 'full' });
 
         currentPlan = null;
@@ -232,6 +296,21 @@ $(document).ready(function () {
             urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
             urbanreviewer.addPlanOutline(map, currentPlan);
         }
+    });
+
+
+    /*
+     * Initialize search
+     */
+    search.init('#search');
+    $('#search').on('resultfound', function (e, results) {
+        if (userMarker) {
+            map.removeLayer(userMarker);
+        }
+        userMarker = L.userMarker(results.latlng, {
+            smallIcon: true                        
+        }).addTo(map);
+        map.setView(results.latlng, 16);
     });
 
 
@@ -262,12 +341,13 @@ $(document).ready(function () {
             "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
             "WHERE p.adopted >= '" + start + "-01-01' " +
                 "AND p.adopted <= '" + end + "-01-01'";
+        // TODO make it possible to set this through plansmap!!
         lotsLayer.setSQL(sql);
     });
 
 });
 
-},{"./hash":1,"./plansmap":3,"./sidebar":4}],3:[function(require,module,exports){
+},{"./hash":2,"./plansmap":4,"./search":5,"./sidebar":6}],4:[function(require,module,exports){
 module.exports = {
 
     init: function (id) {
@@ -350,7 +430,33 @@ module.exports = {
 
 };
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
+var geocode = require('./geocode.js');
+
+function init(selector) {
+    $(selector).on('keyup', function (e) {
+        if (e.keyCode === 13) {
+            search(selector, $(selector).val());
+        }
+    });
+}
+
+function search(selector, q) {
+    geocode.geocode(q, [-74.402161, 40.475158, -73.642731, 40.984045], 'NY',
+        function (results, status) {
+            if (status === 'OK') {
+                $(selector).trigger('resultfound', results);
+            }
+        }
+    );
+}
+
+module.exports = {
+    init: init,
+    search: search
+};
+
+},{"./geocode.js":1}],6:[function(require,module,exports){
 module.exports = {
 
     open: function (selector, content) {
@@ -369,7 +475,7 @@ module.exports = {
 
 };
 
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -455,7 +561,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -542,10 +648,10 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":5,"./encode":6}]},{},[2])
+},{"./decode":7,"./encode":8}]},{},[3])

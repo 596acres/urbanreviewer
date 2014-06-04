@@ -6,16 +6,19 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
         <link rel="stylesheet" href="bower_components/jqrangeslider/css/classic.css">
+        <link rel="stylesheet" href="bower_components/leaflet-usermarker/src/leaflet.usermarker.css">
         <link rel="stylesheet" href="css/style.min.css">
 
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
         <script src="bower_components/cartodb.js/dist/cartodb.noleaflet.js"></script>
         <script src="bower_components/leaflet-active-area/src/L.activearea.js"></script>
+        <script src="bower_components/leaflet-usermarker/src/leaflet.usermarker.js"></script>
         <script src="bower_components/handlebars/handlebars.runtime.min.js"></script>
 
         <script src="bower_components/jqrangeslider/jQRangeSliderMouseTouch.js"></script>
@@ -36,6 +39,9 @@
             <div>Urban<br />Reviewer</div>
         </header>
         <div id="map"></div>
+        <div id="search-container">
+            <input id="search" type="search" placeholder="Search by plan or address" />
+        </div>
         <div id="active-area"></div>
         <div id="right-pane"></div>
         <div id="date-range-picker-container">
