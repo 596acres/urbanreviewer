@@ -434,25 +434,16 @@ module.exports = {
 
     setActiveArea: function (map, options) {
         options = options || {};
-        var activeAreaOptions;
+        var activeAreaOptions = {
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            right: '0',
+            height: '100%'
+        }
 
         if (options.area === 'left') {
-            activeAreaOptions = {
-                position: 'absolute',
-                top: '0',
-                left: '0',
-                right: '50%',
-                height: '100%'
-            };
-        }
-        else if (options.area === undefined || options.area === 'full') {
-            activeAreaOptions = {
-                position: 'absolute',
-                top: '0',
-                left: '0',
-                right: '0',
-                height: '100%'
-            };
+            activeAreaOptions.right = '50%';
         }
 
         map.setActiveArea(activeAreaOptions);
