@@ -102,6 +102,12 @@ module.exports = {
             whereConditions.push("p.expires <= '" + new Date().toISOString() + "'");
         }
 
+        if (filters.lastUpdated) {
+            var year = parseInt(filters.lastUpdated);
+            whereConditions.push("p.updated >= '" + year + "-01-01'");
+            whereConditions.push("p.updated < '" + (year + 1) + "-01-01'");
+        }
+
         if (whereConditions.length > 0) {
             sql += ' WHERE ' + whereConditions.join(' AND ');
         }

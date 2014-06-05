@@ -28,6 +28,14 @@ module.exports = {
                 plansmap.filterLotsLayer({ expired: $(this).is(':checked') }, true);
             });
         }
+
+        if (options.lastUpdated) {
+            $(options.lastUpdated).change(function () {
+                plansmap.filterLotsLayer({
+                    lastUpdated: $(this).find(':selected').val()
+                }, true);
+            });
+        }
     }
 
 };

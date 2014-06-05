@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 var filters = require('./filters');
 var hash = require('./hash');
 var plansmap = require('./plansmap');
@@ -273,11 +275,14 @@ $(document).ready(function () {
         }
         else {
             var template = JST['handlebars_templates/filters.hbs'];
-            sidebar.open('#right-pane', template({}), 'narrow');
+            sidebar.open('#right-pane', template({
+                years: _.range(1952, 2014)
+            }), 'narrow');
             filters.init({
                 active: '#plan-status-active',
                 dateRange: '#date-range-picker',
                 expired: '#plan-status-expired',
+                lastUpdated: '#last-updated',
                 mayors: '#mayors'
             });
         }

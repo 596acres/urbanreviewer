@@ -26,8 +26,10 @@
     </section>
     <section>
         <h3>last updated year</h3>
-        <select>
-            <option>Test</option>
+        <select id="last-updated">
+            {{#each years}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
         </select>
     </section>
 </section>

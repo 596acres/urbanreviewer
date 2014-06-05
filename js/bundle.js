@@ -29,6 +29,14 @@ module.exports = {
                 plansmap.filterLotsLayer({ expired: $(this).is(':checked') }, true);
             });
         }
+
+        if (options.lastUpdated) {
+            $(options.lastUpdated).change(function () {
+                plansmap.filterLotsLayer({
+                    lastUpdated: $(this).find(':selected').val()
+                }, true);
+            });
+        }
     }
 
 };
@@ -149,6 +157,8 @@ module.exports = {
 };
 
 },{"querystring":10}],4:[function(require,module,exports){
+var _ = require('underscore');
+
 var filters = require('./filters');
 var hash = require('./hash');
 var plansmap = require('./plansmap');
@@ -424,11 +434,14 @@ $(document).ready(function () {
         }
         else {
             var template = JST['handlebars_templates/filters.hbs'];
-            sidebar.open('#right-pane', template({}), 'narrow');
+            sidebar.open('#right-pane', template({
+                years: _.range(1952, 2014)
+            }), 'narrow');
             filters.init({
                 active: '#plan-status-active',
                 dateRange: '#date-range-picker',
                 expired: '#plan-status-expired',
+                lastUpdated: '#last-updated',
                 mayors: '#mayors'
             });
         }
@@ -437,7 +450,7 @@ $(document).ready(function () {
 
 });
 
-},{"./filters":1,"./hash":3,"./plansmap":5,"./search":6,"./sidebar":7}],5:[function(require,module,exports){
+},{"./filters":1,"./hash":3,"./plansmap":5,"./search":6,"./sidebar":7,"underscore":12}],5:[function(require,module,exports){
 var _ = require('underscore');
 
 var lotsLayer,
@@ -540,6 +553,12 @@ module.exports = {
 
         if (filters.expired) {
             whereConditions.push("p.expires <= '" + new Date().toISOString() + "'");
+        }
+
+        if (filters.lastUpdated) {
+            var year = parseInt(filters.lastUpdated);
+            whereConditions.push("p.updated >= '" + year + "-01-01'");
+            whereConditions.push("p.updated < '" + (year + 1) + "-01-01'");
         }
 
         if (whereConditions.length > 0) {
