@@ -288,11 +288,15 @@ $(document).ready(function () {
         }
         else if (size === 'narrow') {
             plansmap.setActiveArea(map, { area: 'most' });
+            $('#date-range-picker-container').addClass('narrow-sidebar');
+            $('#date-range-picker').dateRangeSlider('resize');
         }
     });
 
     $('#right-pane').on('close', function () {
         $('#date-range-picker-container').show();
+        $('#date-range-picker-container').removeClass('narrow-sidebar');
+        $('#date-range-picker').dateRangeSlider('resize');
         $('#search-container').show();
         plansmap.setActiveArea(map, { area: 'full' });
 

@@ -121,6 +121,9 @@ a:visited {
   right: 10%;
   position: absolute;
 }
+#date-range-picker-container.narrow-sidebar {
+  right: 35%;
+}
 #date-range-picker-label {
   font-size: 16px;
   font-weight: bold;
