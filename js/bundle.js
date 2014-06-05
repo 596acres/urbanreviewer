@@ -237,7 +237,7 @@ $(document).ready(function () {
     if (currentPage || currentPlan) {
         // If there's a plan selected already, set the active area so we can
         // zoom to it appropriately
-        plansmap.setActiveArea(map, { area: 'left' });
+        plansmap.setActiveArea(map, { area: 'half' });
     }
     else {
         plansmap.setActiveArea(map, { area: 'full' });
@@ -283,7 +283,7 @@ $(document).ready(function () {
     $('#right-pane').on('open', function () {
         $('#date-range-picker-container').hide();
         $('#search-container').hide();
-        plansmap.setActiveArea(map, { area: 'left' });
+        plansmap.setActiveArea(map, { area: 'half' });
     });
 
     $('#right-pane').on('close', function () {
@@ -442,7 +442,7 @@ module.exports = {
             height: '100%'
         }
 
-        if (options.area === 'left') {
+        if (options.area === 'half') {
             activeAreaOptions.right = '50%';
         }
 
