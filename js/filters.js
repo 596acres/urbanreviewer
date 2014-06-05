@@ -6,6 +6,7 @@ module.exports = {
         if (options.mayors && options.dateRange) {
             $(options.mayors).change(function () {
                 var mayor = $(this).find(':selected');
+                // Date range slider takes care of filtering here
                 $(options.dateRange).dateRangeSlider(
                     'values',
                     new Date(parseInt(mayor.data('start')), 0, 1),
