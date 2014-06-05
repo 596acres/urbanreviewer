@@ -164,10 +164,15 @@ $(document).ready(function () {
     /*
      * Initialize sidebar
      */
-    $('#right-pane').on('open', function () {
-        $('#date-range-picker-container').hide();
-        $('#search-container').hide();
-        plansmap.setActiveArea(map, { area: 'half' });
+    $('#right-pane').on('open', function (e, size) {
+        if (size === 'wide') {
+            $('#date-range-picker-container').hide();
+            $('#search-container').hide();
+            plansmap.setActiveArea(map, { area: 'half' });
+        }
+        else if (size === 'narrow') {
+            plansmap.setActiveArea(map, { area: 'most' });
+        }
     });
 
     $('#right-pane').on('close', function () {
@@ -256,5 +261,16 @@ $(document).ready(function () {
     if (currentPage) {
         urbanreviewer.loadPage(currentPage);
     }
+
+    $('#map-filters-toggle').click(function () {
+        if (sidebar.isOpen('#right-pane')) {
+            sidebar.close('#right-pane');
+        }
+        else {
+            var template = JST['handlebars_templates/filters.hbs'];
+            sidebar.open('#right-pane', template({}), 'narrow');
+        }
+        return false;
+    });
 
 });

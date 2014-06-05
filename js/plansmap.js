@@ -68,6 +68,10 @@ module.exports = {
             activeAreaOptions.right = '50%';
         }
 
+        if (options.area === 'most') {
+            activeAreaOptions.right = '25%';
+        }
+
         map.setActiveArea(activeAreaOptions);
     },
 

@@ -1,5 +1,14 @@
 this["JST"] = this["JST"] || {};
 
+this["JST"]["handlebars_templates/filters.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<section id=\"filters\">\n    <h2>filters</h2>\n    <section>\n        <h3>plan status</h3>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-active\" />\n            <label for=\"plan-status-active\">active</label>\n        </div>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-expired\" />\n            <label for=\"plan-status-expired\">expired</label>\n        </div>\n    </section>\n    <section>\n        <h3>NYC mayors</h3>\n        <select>\n            <option>Test</option>\n        </select>\n    </section>\n    <section>\n        <h3>last updated year</h3>\n        <select>\n            <option>Test</option>\n        </select>\n    </section>\n</section>\n\n<section id=\"highlights\">\n    <h2>highlight lots</h2>\n    <section>\n        <h3>disposition</h3>\n        <div>\n            <input type=\"checkbox\" id=\"lot-disposition-open-space\" />\n            <label for=\"lot-disposition-open-space\">open space</label>\n        </div>\n        <div>\n            <input type=\"checkbox\" id=\"lot-disposition-residential\" />\n            <label for=\"lot-disposition-residential\">residential</label>\n        </div>\n        <div>\n            <input type=\"checkbox\" id=\"lot-disposition-commercial\" />\n            <label for=\"lot-disposition-commercial\">commercial</label>\n        </div>\n    </section>\n</section>\n";
+  });
+
 this["JST"]["handlebars_templates/lots.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
