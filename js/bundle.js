@@ -8,12 +8,14 @@ module.exports = {
 
         if (options.mayors && options.dateRange) {
             $(options.mayors).change(function () {
-                var mayor = $(this).find(':selected');
+                var mayor = $(this).find(':selected'),
+                    start = parseInt(mayor.data('start')),
+                    end = parseInt(mayor.data('end'));
                 // Date range slider takes care of filtering here
                 $(options.dateRange).dateRangeSlider(
                     'values',
-                    new Date(parseInt(mayor.data('start')), 0, 1),
-                    new Date(parseInt(mayor.data('end')), 0, 1)
+                    new Date(start, 0, 1),
+                    new Date(end, 0, 1)
                 );
             });
         }
