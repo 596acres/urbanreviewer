@@ -357,11 +357,11 @@ $(document).ready(function () {
     $('#date-range-picker').dateRangeSlider({
         arrows: false,
         defaultValues: {
-            min: new Date(1940, 0, 1),
+            min: new Date(1952, 0, 1),
             max: new Date(2014, 0, 1)
         },
         bounds: {
-            min: new Date(1940, 0, 1),
+            min: new Date(1952, 0, 1),
             max: new Date(2014, 0, 1)
         },
         formatter: function (value) {
