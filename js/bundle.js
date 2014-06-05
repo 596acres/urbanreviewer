@@ -1,4 +1,24 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+module.exports = {
+
+    init: function (options) {
+        options = options || {};
+
+        if (options.mayors && options.dateRange) {
+            $(options.mayors).change(function () {
+                var mayor = $(this).find(':selected');
+                $(options.dateRange).dateRangeSlider(
+                    'values',
+                    new Date(parseInt(mayor.data('start')), 0, 1),
+                    new Date(parseInt(mayor.data('end')), 0, 1)
+                );
+            });
+        }
+    }
+
+};
+
+},{}],2:[function(require,module,exports){
 var geocoder = new google.maps.Geocoder();
 
 function to_google_bounds(bounds) {
@@ -57,7 +77,7 @@ module.exports = {
 
 };
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 var querystring = require('querystring');
 
 module.exports = {
@@ -113,7 +133,8 @@ module.exports = {
 
 };
 
-},{"querystring":9}],3:[function(require,module,exports){
+},{"querystring":10}],4:[function(require,module,exports){
+var filters = require('./filters');
 var hash = require('./hash');
 var plansmap = require('./plansmap');
 var search = require('./search');
@@ -389,13 +410,17 @@ $(document).ready(function () {
         else {
             var template = JST['handlebars_templates/filters.hbs'];
             sidebar.open('#right-pane', template({}), 'narrow');
+            filters.init({
+                dateRange: '#date-range-picker',
+                mayors: '#mayors'
+            });
         }
         return false;
     });
 
 });
 
-},{"./hash":2,"./plansmap":4,"./search":5,"./sidebar":6}],4:[function(require,module,exports){
+},{"./filters":1,"./hash":3,"./plansmap":5,"./search":6,"./sidebar":7}],5:[function(require,module,exports){
 var lotsLayer;
 
 module.exports = {
@@ -491,7 +516,7 @@ module.exports = {
 
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 var geocode = require('./geocode.js');
 require('typeahead.js');
 
@@ -557,7 +582,7 @@ module.exports = {
     search: search
 };
 
-},{"./geocode.js":1,"typeahead.js":10}],6:[function(require,module,exports){
+},{"./geocode.js":2,"typeahead.js":11}],7:[function(require,module,exports){
 var _ = require('underscore');
 
 var sizes = ['narrow', 'wide'],
@@ -595,7 +620,7 @@ module.exports = {
     close: close
 };
 
-},{"underscore":11}],7:[function(require,module,exports){
+},{"underscore":12}],8:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -681,7 +706,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -768,13 +793,13 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":7,"./encode":8}],10:[function(require,module,exports){
+},{"./decode":8,"./encode":9}],11:[function(require,module,exports){
 /*!
  * typeahead.js 0.10.2
  * https://github.com/twitter/typeahead.js
@@ -2491,7 +2516,7 @@ exports.encode = exports.stringify = require('./encode');
         };
     })();
 })(window.jQuery);
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -3836,4 +3861,4 @@ exports.encode = exports.stringify = require('./encode');
   }
 }).call(this);
 
-},{}]},{},[3])
+},{}]},{},[4])

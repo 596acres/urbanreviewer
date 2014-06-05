@@ -1,3 +1,4 @@
+var filters = require('./filters');
 var hash = require('./hash');
 var plansmap = require('./plansmap');
 var search = require('./search');
@@ -273,6 +274,10 @@ $(document).ready(function () {
         else {
             var template = JST['handlebars_templates/filters.hbs'];
             sidebar.open('#right-pane', template({}), 'narrow');
+            filters.init({
+                dateRange: '#date-range-picker',
+                mayors: '#mayors'
+            });
         }
         return false;
     });
