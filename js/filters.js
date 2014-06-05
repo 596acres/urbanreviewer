@@ -1,3 +1,5 @@
+var plansmap = require('./plansmap');
+
 module.exports = {
 
     init: function (options) {
@@ -12,6 +14,18 @@ module.exports = {
                     new Date(parseInt(mayor.data('start')), 0, 1),
                     new Date(parseInt(mayor.data('end')), 0, 1)
                 );
+            });
+        }
+
+        if (options.active) {
+            $(options.active).change(function () {
+                plansmap.filterLotsLayer({ active: $(this).is(':checked') }, true);
+            });
+        }
+
+        if (options.expired) {
+            $(options.expired).change(function () {
+                plansmap.filterLotsLayer({ expired: $(this).is(':checked') }, true);
             });
         }
     }

@@ -275,7 +275,9 @@ $(document).ready(function () {
             var template = JST['handlebars_templates/filters.hbs'];
             sidebar.open('#right-pane', template({}), 'narrow');
             filters.init({
+                active: '#plan-status-active',
                 dateRange: '#date-range-picker',
+                expired: '#plan-status-expired',
                 mayors: '#mayors'
             });
         }

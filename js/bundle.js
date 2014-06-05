@@ -1,4 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var plansmap = require('./plansmap');
+
 module.exports = {
 
     init: function (options) {
@@ -15,11 +17,23 @@ module.exports = {
                 );
             });
         }
+
+        if (options.active) {
+            $(options.active).change(function () {
+                plansmap.filterLotsLayer({ active: $(this).is(':checked') }, true);
+            });
+        }
+
+        if (options.expired) {
+            $(options.expired).change(function () {
+                plansmap.filterLotsLayer({ expired: $(this).is(':checked') }, true);
+            });
+        }
     }
 
 };
 
-},{}],2:[function(require,module,exports){
+},{"./plansmap":5}],2:[function(require,module,exports){
 var geocoder = new google.maps.Geocoder();
 
 function to_google_bounds(bounds) {
@@ -412,7 +426,9 @@ $(document).ready(function () {
             var template = JST['handlebars_templates/filters.hbs'];
             sidebar.open('#right-pane', template({}), 'narrow');
             filters.init({
+                active: '#plan-status-active',
                 dateRange: '#date-range-picker',
+                expired: '#plan-status-expired',
                 mayors: '#mayors'
             });
         }
@@ -422,7 +438,10 @@ $(document).ready(function () {
 });
 
 },{"./filters":1,"./hash":3,"./plansmap":5,"./search":6,"./sidebar":7}],5:[function(require,module,exports){
-var lotsLayer;
+var _ = require('underscore');
+
+var lotsLayer,
+    lastFilters = {};
 
 module.exports = {
 
@@ -499,25 +518,40 @@ module.exports = {
         map.setActiveArea(activeAreaOptions);
     },
 
-    filterLotsLayer: function (filters) {
+    filterLotsLayer: function (filters, extendLastFilters) {
         var sql = "SELECT l.*, p.name AS plan_name, p.borough AS borough " +
-            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
-            "WHERE ",
+            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id ",
             whereConditions = [];
-        
+
+        if (extendLastFilters === undefined || extendLastFilters === true) {
+            filters = _.extend(lastFilters, filters);
+        }
+
         if (filters.start) {
             whereConditions.push("p.adopted >= '" + filters.start + "-01-01'");
         }
         if (filters.end) {
             whereConditions.push("p.adopted <= '" + filters.end + "-01-01'");
         }
-        sql += whereConditions.join(' AND ');
+
+        if (filters.active) {
+            whereConditions.push("p.expires > '" + new Date().toISOString() + "'");
+        }
+
+        if (filters.expired) {
+            whereConditions.push("p.expires <= '" + new Date().toISOString() + "'");
+        }
+
+        if (whereConditions.length > 0) {
+            sql += ' WHERE ' + whereConditions.join(' AND ');
+        }
         lotsLayer.setSQL(sql);
+        lastFilters = filters;
     }
 
 };
 
-},{}],6:[function(require,module,exports){
+},{"underscore":12}],6:[function(require,module,exports){
 var geocode = require('./geocode.js');
 require('typeahead.js');
 

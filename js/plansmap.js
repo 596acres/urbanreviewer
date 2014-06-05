@@ -1,4 +1,7 @@
-var lotsLayer;
+var _ = require('underscore');
+
+var lotsLayer,
+    lastFilters = {};
 
 module.exports = {
 
@@ -75,20 +78,35 @@ module.exports = {
         map.setActiveArea(activeAreaOptions);
     },
 
-    filterLotsLayer: function (filters) {
+    filterLotsLayer: function (filters, extendLastFilters) {
         var sql = "SELECT l.*, p.name AS plan_name, p.borough AS borough " +
-            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
-            "WHERE ",
+            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id ",
             whereConditions = [];
-        
+
+        if (extendLastFilters === undefined || extendLastFilters === true) {
+            filters = _.extend(lastFilters, filters);
+        }
+
         if (filters.start) {
             whereConditions.push("p.adopted >= '" + filters.start + "-01-01'");
         }
         if (filters.end) {
             whereConditions.push("p.adopted <= '" + filters.end + "-01-01'");
         }
-        sql += whereConditions.join(' AND ');
+
+        if (filters.active) {
+            whereConditions.push("p.expires > '" + new Date().toISOString() + "'");
+        }
+
+        if (filters.expired) {
+            whereConditions.push("p.expires <= '" + new Date().toISOString() + "'");
+        }
+
+        if (whereConditions.length > 0) {
+            sql += ' WHERE ' + whereConditions.join(' AND ');
+        }
         lotsLayer.setSQL(sql);
+        lastFilters = filters;
     }
 
 };
