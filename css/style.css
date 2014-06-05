@@ -224,3 +224,9 @@ a:visited {
   font-size: 24px;
   font-weight: bold;
 }
+#right-pane #filters {
+  margin-top: 45px;
+}
+#right-pane #highlights {
+  margin-top: 45px;
+}
