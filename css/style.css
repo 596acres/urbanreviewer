@@ -50,6 +50,9 @@ a:hover {
 a:visited {
   color: #000;
 }
+img {
+  max-width: 100%;
+}
 ul {
   padding-left: 30px;
 }

@@ -18,6 +18,8 @@ Every property in the city has a specific number assigned to it - a borough, blo
 In addition, where we could, we also captured what form that renewal was meant to take. 
 
 One of the reasons we are excited to be making the plans accessible is that they include places that were cleared with the intention of creating open public spaces. In our work through [596 Acres](http://596acres.org/), we have already found two and helped neighbors transform them into something better: 
+
+![Keap Fourth Community Garden](img/keap_fourth.jpg)
  
 - The Keap Fourth Community Garden in South Williamsburg was a vacant lot two years ago that we noticed was part of an Urban Renewal Plan and designated to be Open Space. The 596 Acres team put signs on it and helped folks get together and they got no resistance from the relevant agencies. It has been transferred to Parks and there was a formal ribbon cutting on June 4, 2014, more than 20 years after the lot was planned as Open Space.
 
