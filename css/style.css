@@ -41,6 +41,7 @@ p {
 }
 a {
   color: #000;
+  font-weight: bold;
   text-decoration: none;
 }
 a:hover {
@@ -48,6 +49,9 @@ a:hover {
 }
 a:visited {
   color: #000;
+}
+ul {
+  padding-left: 30px;
 }
 /* Map */
 #map {
