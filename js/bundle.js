@@ -331,6 +331,7 @@ $(document).ready(function () {
     $('#right-pane').on('open', function (e, size) {
         if (size === 'wide') {
             $('#date-range-picker-container').hide();
+            $('#map-filters-toggle').hide();
             $('#search-container').hide();
             plansmap.setActiveArea(map, { area: 'half' });
         }
@@ -345,6 +346,7 @@ $(document).ready(function () {
         $('#date-range-picker-container').show();
         $('#date-range-picker-container').removeClass('narrow-sidebar');
         $('#date-range-picker').dateRangeSlider('resize');
+        $('#map-filters-toggle').show();
         $('#search-container').show();
         plansmap.setActiveArea(map, { area: 'full' });
 
