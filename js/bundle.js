@@ -158,7 +158,7 @@ module.exports = {
 
 };
 
-},{"querystring":10}],4:[function(require,module,exports){
+},{"querystring":11}],4:[function(require,module,exports){
 var _ = require('underscore');
 
 var filters = require('./filters');
@@ -484,8 +484,9 @@ $(document).ready(function () {
 
 });
 
-},{"./filters":1,"./hash":3,"./plansmap":5,"./search":6,"./sidebar":7,"underscore":12}],5:[function(require,module,exports){
+},{"./filters":1,"./hash":3,"./plansmap":5,"./search":6,"./sidebar":7,"underscore":13}],5:[function(require,module,exports){
 var _ = require('underscore');
+var singleminded = require('./singleminded');
 
 var map,
     lotsLayer,
@@ -495,6 +496,8 @@ var map,
 function unHighlightLot() {
     map.closePopup();
     highlightedLotLayer.clearLayers();           
+    singleminded.forget('highlightLot_centroid');
+    singleminded.forget('highlightLot_geometry');
 }
 
 module.exports = {
@@ -644,26 +647,30 @@ module.exports = {
         sql += ' WHERE ' + whereConditions.join(' AND ');
 
         // Get centroid
-        $.get(url + sql + '&format=GeoJSON', function (data) {
-            var coords = data.features[0].geometry.coordinates,
-                latlng = [coords[1], coords[0]];
-            map.openPopup('block: ' + options.block + ', lot: ' + options.lot, latlng);
-        });
+        singleminded.remember('highlightLot_centroid', 
+            $.get(url + sql + '&format=GeoJSON', function (data) {
+                var coords = data.features[0].geometry.coordinates,
+                    latlng = [coords[1], coords[0]];
+                map.openPopup('block: ' + options.block + ', lot: ' + options.lot, latlng);
+            })
+        );
 
         // Get geometry
         var geometrySql = 'SELECT l.the_geom AS the_geom ' +
                 'FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id ';
         geometrySql += ' WHERE ' + whereConditions.join(' AND ');
-        $.get(url + geometrySql + '&format=GeoJSON', function (data) {
-            highlightedLotLayer.addData(data);           
-        });
+        singleminded.remember('highlightLot_geometry', 
+            $.get(url + geometrySql + '&format=GeoJSON', function (data) {
+                highlightedLotLayer.addData(data);           
+            })
+        );
     },
 
     unHighlightLot: unHighlightLot
 
 };
 
-},{"underscore":12}],6:[function(require,module,exports){
+},{"./singleminded":8,"underscore":13}],6:[function(require,module,exports){
 var geocode = require('./geocode.js');
 require('typeahead.js');
 
@@ -729,7 +736,7 @@ module.exports = {
     search: search
 };
 
-},{"./geocode.js":2,"typeahead.js":11}],7:[function(require,module,exports){
+},{"./geocode.js":2,"typeahead.js":12}],7:[function(require,module,exports){
 var _ = require('underscore');
 
 var sizes = ['narrow', 'wide'],
@@ -767,7 +774,40 @@ module.exports = {
     close: close
 };
 
-},{"underscore":12}],8:[function(require,module,exports){
+},{"underscore":13}],8:[function(require,module,exports){
+//
+// A simple AJAX request queue of length 1.
+//
+
+var thoughts = {};
+
+function forget(name) {
+    var request = thoughts[name];
+
+    // If request exists and does not have a DONE state, abort it
+    if (request && request.readyState != 4) {
+        request.abort();
+    }
+
+    thoughts[name] = null;
+}
+
+function remember(name, jqxhr) {
+    forget(name);
+
+    jqxhr.done(function() {
+        // Don't bother remembering requests we've finished
+        forget(name);
+    });
+    thoughts[name] = jqxhr;
+}
+
+module.exports = {
+    forget: forget,
+    remember: remember
+};
+
+},{}],9:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -853,7 +893,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -940,13 +980,13 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":8,"./encode":9}],11:[function(require,module,exports){
+},{"./decode":9,"./encode":10}],12:[function(require,module,exports){
 /*!
  * typeahead.js 0.10.2
  * https://github.com/twitter/typeahead.js
@@ -2663,7 +2703,7 @@ exports.encode = exports.stringify = require('./encode');
         };
     })();
 })(window.jQuery);
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

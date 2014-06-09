@@ -43,7 +43,8 @@ module.exports = function(grunt) {
                     "js/main.js",
                     "js/plansmap.js",
                     "js/search.js",
-                    "js/sidebar.js"
+                    "js/sidebar.js",
+                    "js/singleminded.js"
                 ],
                 tasks: ["browserify"]
             },

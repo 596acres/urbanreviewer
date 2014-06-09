@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var singleminded = require('./singleminded');
 
 var map,
     lotsLayer,
@@ -8,6 +9,8 @@ var map,
 function unHighlightLot() {
     map.closePopup();
     highlightedLotLayer.clearLayers();           
+    singleminded.forget('highlightLot_centroid');
+    singleminded.forget('highlightLot_geometry');
 }
 
 module.exports = {
@@ -157,19 +160,23 @@ module.exports = {
         sql += ' WHERE ' + whereConditions.join(' AND ');
 
         // Get centroid
-        $.get(url + sql + '&format=GeoJSON', function (data) {
-            var coords = data.features[0].geometry.coordinates,
-                latlng = [coords[1], coords[0]];
-            map.openPopup('block: ' + options.block + ', lot: ' + options.lot, latlng);
-        });
+        singleminded.remember('highlightLot_centroid', 
+            $.get(url + sql + '&format=GeoJSON', function (data) {
+                var coords = data.features[0].geometry.coordinates,
+                    latlng = [coords[1], coords[0]];
+                map.openPopup('block: ' + options.block + ', lot: ' + options.lot, latlng);
+            })
+        );
 
         // Get geometry
         var geometrySql = 'SELECT l.the_geom AS the_geom ' +
                 'FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id ';
         geometrySql += ' WHERE ' + whereConditions.join(' AND ');
-        $.get(url + geometrySql + '&format=GeoJSON', function (data) {
-            highlightedLotLayer.addData(data);           
-        });
+        singleminded.remember('highlightLot_geometry', 
+            $.get(url + geometrySql + '&format=GeoJSON', function (data) {
+                highlightedLotLayer.addData(data);           
+            })
+        );
     },
 
     unHighlightLot: unHighlightLot
