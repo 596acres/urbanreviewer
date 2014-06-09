@@ -285,12 +285,15 @@ function openFilters() {
 
 function openPlanList() {
     var template = JST['handlebars_templates/plan_list.hbs'];
-    $.getJSON('http://urbanreviewer.cartodb.com/api/v2/sql?q=SELECT name, borough FROM plans', function (results) {
+    $.getJSON('http://urbanreviewer.cartodb.com/api/v2/sql?q=SELECT name, borough FROM plans ORDER BY name', function (results) {
         sidebar.open('#right-pane', template({
             plans: results.rows
         }), 'narrow');
         $('#plan-list-filters-link').click(function () {
             openFilters();
+        });
+        $('.plan').click(function () {
+            urbanreviewer.selectPlan($(this).data('name'), map);
         });
     });
 }

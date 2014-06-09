@@ -208,9 +208,10 @@ ul {
 #right-pane h2 {
   text-transform: uppercase;
 }
-#right-pane section {
+#right-pane > section {
   border-top: 2px solid black;
   padding-top: 5px;
+  margin-bottom: 50px;
 }
 #right-pane .borough {
   font-size: 18px;
@@ -252,6 +253,10 @@ ul {
   border-bottom: 1px solid gray;
   padding-bottom: 5px;
   padding-top: 5px;
+}
+#right-pane #plans .plan:hover {
+  background-color: #ccc;
+  cursor: pointer;
 }
 #right-pane #plans .plan-name {
   font-weight: bold;

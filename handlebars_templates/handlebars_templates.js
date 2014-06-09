@@ -80,7 +80,9 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n            <li class=\"plan\">\n                <div class=\"plan-name\">"
+  buffer += "\n            <li class=\"plan\" data-name=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n                <div class=\"plan-name\">"
     + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</div>\n                <div class=\"plan-borough\">"
     + escapeExpression(((stack1 = (depth0 && depth0.borough)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))

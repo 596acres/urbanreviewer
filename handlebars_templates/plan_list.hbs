@@ -3,7 +3,7 @@
     <h2>Plans</h2>
     <ul class="plan-list">
         {{#each plans}}
-            <li class="plan">
+            <li class="plan" data-name="{{this.name}}">
                 <div class="plan-name">{{this.name}}</div>
                 <div class="plan-borough">{{this.borough}}, NY</div>
             </li>
