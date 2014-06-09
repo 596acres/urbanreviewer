@@ -26,7 +26,7 @@ var urbanreviewer = {
     },
 
     addPlanContent: function ($location, borough, planName) {
-        $.get('plans/' + borough + '/' + planName, function (content) {
+        $.get('plans/' + borough + '/' + planName.replace('/', '-'), function (content) {
             $location.append(content);
         });
     },
