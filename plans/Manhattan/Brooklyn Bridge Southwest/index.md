@@ -1,7 +1,6 @@
 ---
 layout: plan
-title:  "test"
-date:   2014-05-20 15:00:00
+title:  "Brooklyn Bridge Southwest"
 permalink: index.html
 ---
 
