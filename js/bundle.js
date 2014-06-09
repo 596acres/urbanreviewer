@@ -269,6 +269,20 @@ var urbanreviewer = {
     }
 };
 
+function openFilters() {
+    var template = JST['handlebars_templates/filters.hbs'];
+    sidebar.open('#right-pane', template({
+        years: _.range(1952, 2014)
+    }), 'narrow');
+    filters.init({
+        active: '#plan-status-active',
+        dateRange: '#date-range-picker',
+        expired: '#plan-status-expired',
+        lastUpdated: '#last-updated',
+        mayors: '#mayors'
+    });
+}
+
 $(document).ready(function () {
 
     /*
@@ -437,17 +451,7 @@ $(document).ready(function () {
             sidebar.close('#right-pane');
         }
         else {
-            var template = JST['handlebars_templates/filters.hbs'];
-            sidebar.open('#right-pane', template({
-                years: _.range(1952, 2014)
-            }), 'narrow');
-            filters.init({
-                active: '#plan-status-active',
-                dateRange: '#date-range-picker',
-                expired: '#plan-status-expired',
-                lastUpdated: '#last-updated',
-                mayors: '#mayors'
-            });
+            openFilters();
         }
         return false;
     });
