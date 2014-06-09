@@ -71,3 +71,26 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     + "</div>\n<div><span class=\"lot-count\"></span> lots</div>\n<div id=\"plan-details\"></div>\n<section id=\"lots\">\n    <h2>lots</h2>\n    <div id=\"lots-content\"></div>\n</section>\n";
   return buffer;
   });
+
+this["JST"]["handlebars_templates/plan_list.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n            <li class=\"plan\">\n                <div class=\"plan-name\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n                <div class=\"plan-borough\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.borough)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ", NY</div>\n            </li>\n        ";
+  return buffer;
+  }
+
+  buffer += "<a href=\"#\" id=\"plan-list-filters-link\">Filters</a>\n<section id=\"plans\">\n    <h2>Plans</h2>\n    <ul class=\"plan-list\">\n        ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.plans), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n    </ul>\n</section>\n";
+  return buffer;
+  });

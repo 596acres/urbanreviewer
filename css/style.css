@@ -237,3 +237,23 @@ ul {
 #right-pane #highlights {
   margin-top: 45px;
 }
+#right-pane #plan-list-filters-link {
+  background: black;
+  color: white;
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+#right-pane #plans .plan-list {
+  list-style: none;
+  padding: 0;
+}
+#right-pane #plans .plan {
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+#right-pane #plans .plan-name {
+  font-weight: bold;
+  text-transform: uppercase;
+}

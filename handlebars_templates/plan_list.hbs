@@ -1,0 +1,12 @@
+<a href="#" id="plan-list-filters-link">Filters</a>
+<section id="plans">
+    <h2>Plans</h2>
+    <ul class="plan-list">
+        {{#each plans}}
+            <li class="plan">
+                <div class="plan-name">{{this.name}}</div>
+                <div class="plan-borough">{{this.borough}}, NY</div>
+            </li>
+        {{/each}}
+    </ul>
+</section>

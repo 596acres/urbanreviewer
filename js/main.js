@@ -122,6 +122,18 @@ function openFilters() {
     });
 }
 
+function openPlanList() {
+    var template = JST['handlebars_templates/plan_list.hbs'];
+    $.getJSON('http://urbanreviewer.cartodb.com/api/v2/sql?q=SELECT name, borough FROM plans', function (results) {
+        sidebar.open('#right-pane', template({
+            plans: results.rows
+        }), 'narrow');
+        $('#plan-list-filters-link').click(function () {
+            openFilters();
+        });
+    });
+}
+
 $(document).ready(function () {
 
     /*
@@ -290,7 +302,7 @@ $(document).ready(function () {
             sidebar.close('#right-pane');
         }
         else {
-            openFilters();
+            openPlanList();
         }
         return false;
     });
