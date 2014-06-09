@@ -1,4 +1,5 @@
 name: Prototype
 markdown: redcarpet
 include: [plans]
+exclude: ['Gruntfile.js', 'Guardfile', 'bower.json', 'data']
 relative_permalinks: true
