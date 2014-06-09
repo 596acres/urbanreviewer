@@ -225,8 +225,12 @@ ul {
   padding: 0;
 }
 #right-pane #lots-content .lot {
+  cursor: pointer;
   margin-bottom: 15px;
   margin-top: 15px;
+}
+#right-pane #lots-content .lot:hover {
+  background-color: #ccc;
 }
 #right-pane #lots-content .lot h3 {
   font-size: 24px;
