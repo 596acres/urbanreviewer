@@ -1,12 +1,19 @@
 var _ = require('underscore');
 
-var lotsLayer,
+var map,
+    lotsLayer,
+    highlightedLotLayer,
     lastFilters = {};
+
+function unHighlightLot() {
+    map.closePopup();
+    highlightedLotLayer.clearLayers();           
+}
 
 module.exports = {
 
     init: function (id) {
-        var map = L.map(id, {
+        map = L.map(id, {
             maxZoom: 18,
             minZoom: 10,
             zoomControl: false
@@ -53,6 +60,16 @@ module.exports = {
 
             map.addLayer(layer, false);
         });
+
+        highlightedLotLayer = L.geoJson(null, {
+            style: function (feature) {
+                return {
+                    color: '#F0F564',
+                    fillOpacity: 1,
+                    weight: 1
+                };
+            }
+        }).addTo(map);
 
         return map;
     },
@@ -115,6 +132,46 @@ module.exports = {
         }
         lotsLayer.setSQL(sql);
         lastFilters = filters;
-    }
+    },
+
+    highlightLot: function (options) {
+        unHighlightLot();
+
+        var url = 'http://urbanreviewer.cartodb.com/api/v2/sql?q=',
+            sql = 'SELECT ST_Centroid(l.the_geom) AS the_geom ' +
+                'FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id ';
+            whereConditions = [],
+            options = options || {};
+        if (options.block) {
+            whereConditions.push('l.block = ' + options.block);
+        }
+        if (options.borough) {
+            whereConditions.push("p.borough = '" + options.borough + "'");
+        }
+        if (options.lot) {
+            whereConditions.push('l.lot = ' + options.lot);
+        }
+        if (options.plan_name) {
+            whereConditions.push("p.name = '" + options.plan_name + "'");
+        }
+        sql += ' WHERE ' + whereConditions.join(' AND ');
+
+        // Get centroid
+        $.get(url + sql + '&format=GeoJSON', function (data) {
+            var coords = data.features[0].geometry.coordinates,
+                latlng = [coords[1], coords[0]];
+            map.openPopup('block: ' + options.block + ', lot: ' + options.lot, latlng);
+        });
+
+        // Get geometry
+        var geometrySql = 'SELECT l.the_geom AS the_geom ' +
+                'FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id ';
+        geometrySql += ' WHERE ' + whereConditions.join(' AND ');
+        $.get(url + geometrySql + '&format=GeoJSON', function (data) {
+            highlightedLotLayer.addData(data);           
+        });
+    },
+
+    unHighlightLot: unHighlightLot
 
 };

@@ -98,6 +98,14 @@ var urbanreviewer = {
             var content = lots_template(data);
             $('#lots-content').append(content);
             $('.lot-count').text(data.rows.length);
+            $('.lot').on({
+                mouseover: function () {
+                    plansmap.highlightLot($(this).data());
+                },
+                mouseout: function () {
+                    plansmap.unHighlightLot();
+                }
+            });
         });
     },
 
@@ -182,14 +190,17 @@ $(document).ready(function () {
                         block: data.block,
                         lot: data.lot
                     };
-                    map.openPopup('block: ' + data.block + ', lot: ' + data.lot,
-                                  data.latlng);
+                    plansmap.highlightLot({
+                        plan_name: currentPlan,
+                        block: data.block,
+                        lot: data.lot
+                    });
                 }
             }
         })
         .on('planlotout', function (data) {
             currentLot = {};
-            map.closePopup();  
+            plansmap.unHighlightLot();
         });
 
 
