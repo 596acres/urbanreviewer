@@ -25,3 +25,6 @@ plan_geojsons: geojson plan_table
 	python create_plan_geojsons.py --plans plans.csv --lots lots.geojson --dst geojson/us/ny/nyc
 	python create_borough_geojsons.py --plans plans.csv --lots lots.geojson --dst geojson/us/ny/nyc
 	cp lots.geojson geojson/us/ny/nyc/nyc.geojson
+
+create_plan_pages: plan_table
+	python create_plan_pages.py --dst ../plans --plans plans.csv
