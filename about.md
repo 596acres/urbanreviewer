@@ -35,7 +35,7 @@ One of the reasons we are excited to be making the plans accessible is that they
 
 - The Edgemere Urban Renewal Plan (Queens) contains dozens of lots planned as Open Space. Last year, we put signs on the set of the lots that was designated as the Edgemere Urban Renewal Park in the plans. Today, neighbors who saw these signs are running the [Edgemere Farm](http://596acres.org/en/lot/4158370033/).
 
-The Urban Reviewer map also lets users search for specific lots that were designated for “open space,” “residential” or “commercial” uses. Only some plans were this detailed, so not every lot has a specific designation. Some plans listed every possible use - “housing, commercial, open space  as a disposition for the particular lots in the area planned; where this was the case, our tool doesn’t show them as having a specific disposition and they won’t show up in the highlighted lot view.  
+The Urban Reviewer map also lets users search for specific lots that were designated for “open space,” “residential” or “commercial” uses. Only some plans were this detailed, so not every lot has a specific designation. Some plans grouped numerous potential uses such as "housing, commercial, open space" as a disposition for a lot. Where this was the case, our tool doesn’t show a specific disposition for the lot, and the lot won’t show up in the highlighted lot view.  
 
 ## Our Team
 
