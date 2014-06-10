@@ -15,15 +15,21 @@ The plans were written with a great city in mind. Huge swaths were designated fo
 ![Slum Clearance Housing Proposal](img/slum_clearance.jpg)
 *Image manipulated by Andrew Tucker.*
 
-These plans have existed in paper form in HPD's offices, but have been inaccessible to the public until now. Our request for access to the agency records was granted in 2012 and we opted for the right to inspect these records instead of having the agency make copies for us at 25 cents per page. We had a team of trained volunteer records inspectors who examined each plan and listed all the lots that were included in it, including the dispositions that were promised where those were available. Volunteers spent over 100 hours inspecting the records. A few plans were completely missing from the stacks that HPD was able to provide us with; our research team looked for them in community archives and on the internet.
+## Methodology
+
+These plans have existed in paper form in HPD's offices, but have been inaccessible to the public until now. Our request for access to the agency records was granted in 2012 and we opted for the right to inspect these records instead of having the agency make copies for us at 25 cents per page. Our team of trained volunteer records inspectors examined each plan and listed all the lots that were included in it, including the dispositions that were promised where those were available. These volunteers spent over 100 hours inspecting the records. A few plans were completely missing from the stacks that HPD provided, so our research team looked for them in community archives and on the internet.
 
 ![Stack of plan records](img/paper.jpg)
 
 *Photo by Paula Z. Segal.*
 
-Every property in the city has a specific number assigned to it - a borough, block and lot number (BBL). The list of BBLs created using the above process was mappable only where these numbers did not change since the plan was adopted. Many plans or other developments changed these numbers, for example, when a number of small lots were merged to become a larger lot. In order to map those places, we used the City's [Library of Tax Maps](http://gis.nyc.gov/taxmap/library.htm) to find maps of the blocks in question and determine which lots they had become. Where we were unable to find a lot in the Library of Tax Maps, we consulted the most recently-published compendia of urban renewal maps - an [atlas from 1984](http://www.worldcat.org/title/atlas-of-urban-renewal-project-areas-in-the-city-of-new-york/oclc/10819767&referer=brief_results) and a [progress report from 1968](http://www.worldcat.org/title/community-development-program-progress-report/oclc/10551321&referer=brief_results). By looking at the outlines of the impacted areas in those books we were able to identify which modern lots were actually the ones impacted by the plans. This process let us captures every lot that was designated for "renewal."
+Every property in the city has a specific number assigned to it - a borough, block and lot number (BBL). The BBLs created using the above process were mappable (using [MapPLUTO](http://www.nyc.gov/html/dcp/html/bytes/dwn_pluto_mappluto.shtml#mappluto)) only where they did not change since the plan was adopted. Many plans or other developments changed these numbers, for example, when a number of small lots were merged to become a larger lot.
 
-In addition, where we could, we also captured what form that renewal was meant to take. 
+In order to map those places where the BBL changed, we used the City's [Library of Tax Maps](http://gis.nyc.gov/taxmap/library.htm) to find historic maps of the blocks in question and determine which lots they had become. Where we were unable to find a lot in the Library of Tax Maps, we consulted the most recently-published compendia of urban renewal maps - an [atlas from 1984](http://www.worldcat.org/title/atlas-of-urban-renewal-project-areas-in-the-city-of-new-york/oclc/10819767&referer=brief_results) and a [progress report from 1968](http://www.worldcat.org/title/community-development-program-progress-report/oclc/10551321&referer=brief_results). By looking at the outlines of the impacted areas in those books we were able to identify which modern lots were actually the ones impacted by the plans. This process let us capture every lot that was designated for "renewal."
+
+Where we could, we also captured what form that renewal was meant to take in the form of "dispositions." Our map lets you search for lots that were designated for “open space,” “residential” or “commercial” uses. Only some plans were this detailed, so not every lot has a specific designation. For example, some plans grouped numerous potential uses such as "housing, commercial, open space" as a disposition for a lot. Where this was the case, our tool doesn't show a specific disposition for the lot, and the lot won't show up in the highlighted lot view.
+
+## Outcomes
 
 One of the reasons we are excited to be making the plans accessible is that they include places that were cleared with the intention of creating open public spaces. In our work through [596 Acres](http://596acres.org/), we have already found two and helped neighbors transform them into something better: 
 
@@ -34,8 +40,6 @@ One of the reasons we are excited to be making the plans accessible is that they
 - The Keap Fourth Community Garden in South Williamsburg was a vacant lot two years ago that we noticed was part of an Urban Renewal Plan and designated to be Open Space. The 596 Acres team put signs on it and helped folks get together and they got no resistance from the relevant agencies. It has been transferred to Parks and there was a formal ribbon cutting on June 4, 2014, more than 20 years after the lot was planned as Open Space.
 
 - The Edgemere Urban Renewal Plan (Queens) contains dozens of lots planned as Open Space. Last year, we put signs on the set of the lots that was designated as the Edgemere Urban Renewal Park in the plans. Today, neighbors who saw these signs are running the [Edgemere Farm](http://596acres.org/en/lot/4158370033/).
-
-The Urban Reviewer map also lets users search for specific lots that were designated for “open space,” “residential” or “commercial” uses. Only some plans were this detailed, so not every lot has a specific designation. Some plans grouped numerous potential uses such as "housing, commercial, open space" as a disposition for a lot. Where this was the case, our tool doesn’t show a specific disposition for the lot, and the lot won’t show up in the highlighted lot view.  
 
 ## Our Team
 
