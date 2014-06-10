@@ -1,3 +1,17 @@
+csvs:
+	# Take latest borough Excel files, turn each into its own, cleaned CSV with
+	# a BBL column
+	mkdir -p csv
+	in2csv excel/Bronx.xlsx | csvcut -c 1-12 | python add_bbls.py > csv/Bronx.csv
+	in2csv excel/Brooklyn.xlsx | csvcut -c 1-12 | python add_bbls.py > csv/Brooklyn.csv
+	in2csv excel/Manhattan.xlsx | csvcut -c 1-12 | python add_bbls.py > csv/Manhattan.csv
+	in2csv excel/Queens.xlsx | csvcut -c 1-12 | python add_bbls.py > csv/Queens.csv
+	in2csv "excel/Staten Island.xlsx" | csvcut -c 1-12 | python add_bbls.py > "csv/Staten Island.csv"
+
+#shps: csvs
+	#mkdir -p shp
+	# TODO Join borough CSVs with ogr and latest MapPLUTO file
+
 merge:
 	rm -f shp/merge.*
 	ogr2ogr -update -append shp/merge.shp "shp/Prototype_Bronx.shp" -nln merge -lco ENCODING=UTF-8
@@ -14,7 +28,8 @@ geojson: simplify
 	ogr2ogr -f "GeoJSON" -sql "SELECT Block AS block, Lot AS lot, \"Prototyp_3\" AS plan_name FROM simplified" lots.geojson shp/simplified.shp
 
 plan_table:
-	csvcut -c "Borough,Name of Plan,Date Adopted,Status,Expiration,Last Updated" 20140601.csv | uniq > plans.csv
+	# TODO Take borough CSVs, concatenate into one big CSV
+	csvcut -c "Borough,Name of Plan,Date Adopted,Status,Expiration,Last Updated" 20140610.csv | uniq > plans.csv
 
 add_to_cartodb: geojson plan_table
 	python add_to_cartodb.py --plans plans.csv --lots lots.geojson
