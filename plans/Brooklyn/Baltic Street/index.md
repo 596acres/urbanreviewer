@@ -1,5 +1,8 @@
 ---
 layout: plan
-title: "Baltic Street"
+title: Baltic Street
 permalink: index.html
+published: true
 ---
+
+Hi!
