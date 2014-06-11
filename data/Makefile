@@ -1,6 +1,11 @@
 pluto_dir = ${PLUTO_DIR}
 sqlite_db = working.db
 
+select_boroughs = CAST(b.BBL as text) AS BBL, b.Borough AS borough, b.Block AS block, b.Lot AS lot, b.'Name of Plan' AS plan_name
+
+join_dispositions = LEFT OUTER JOIN 'Lot dispositions' l ON l.'Raw disposition' = b.Disposition
+select_dispositions = l.'Filterable disposition' AS disp_filt, l.'Edited disposition' AS disp_edit
+
 csvs:
 	# Take latest borough Excel files, turn each into its own, cleaned CSV with
 	# a BBL column
@@ -22,25 +27,28 @@ load_pluto:
 shps:
 	mkdir -p shp
 
+	-sqlite3 $(sqlite_db) "DROP TABLE 'Lot dispositions'"
+	-csvsql --db sqlite:///$(sqlite_db) --insert "Lot dispositions.csv"
+
 	-sqlite3 $(sqlite_db) 'DROP TABLE Bronx'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Bronx.csv
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM BXMapPLUTO p INNER JOIN Bronx b on b.BBL=p.BBL" shp/Bronx.shp $(sqlite_db)
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions) FROM BXMapPLUTO p INNER JOIN Bronx b ON b.BBL=p.BBL $(join_dispositions)" shp/Bronx.shp $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Brooklyn'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Brooklyn.csv
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM BKMapPLUTO p INNER JOIN Brooklyn b on b.BBL=p.BBL" shp/Brooklyn.shp $(sqlite_db)
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions) FROM BKMapPLUTO p INNER JOIN Brooklyn b ON b.BBL=p.BBL $(join_dispositions)" shp/Brooklyn.shp $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Manhattan'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Manhattan.csv
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM MNMapPLUTO p INNER JOIN Manhattan b on b.BBL=p.BBL" shp/Manhattan.shp $(sqlite_db)
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions) FROM MNMapPLUTO p INNER JOIN Manhattan b ON b.BBL=p.BBL $(join_dispositions)" shp/Manhattan.shp $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Queens'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Queens.csv
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM QNMapPLUTO p INNER JOIN Queens b on b.BBL=p.BBL" shp/Queens.shp $(sqlite_db)
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions) FROM QNMapPLUTO p INNER JOIN Queens b ON b.BBL=p.BBL $(join_dispositions)" shp/Queens.shp $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) "DROP TABLE 'Staten Island'"
 	-csvsql --db sqlite:///$(sqlite_db) --insert "csv/Staten Island.csv"
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM SIMapPLUTO p INNER JOIN 'Staten Island' b on b.BBL=p.BBL" "shp/Staten Island.shp" $(sqlite_db)
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions) FROM SIMapPLUTO p INNER JOIN 'Staten Island' b ON b.BBL=p.BBL $(join_dispositions)" "shp/Staten Island.shp" $(sqlite_db)
 
 merge:
 	rm -f shp/merge.*
@@ -55,7 +63,7 @@ simplify: merge
 
 geojson: simplify
 	rm -f lots.geojson
-	ogr2ogr -f "GeoJSON" -sql "SELECT Block AS block, Lot AS lot, \"Name of Pl\" AS plan_name, Dispositio AS disposition FROM simplified" lots.geojson shp/simplified.shp
+	ogr2ogr -f "GeoJSON" -sql "SELECT block, lot, plan_name, disp_filt AS disposition_filterable, disp_edit AS disposition_display FROM simplified" lots.geojson shp/simplified.shp
 
 plan_table:
 	# TODO Take borough CSVs, concatenate into one big CSV
