@@ -116,6 +116,11 @@ def insert_lots(cursor, filename, plans):
         except Exception:
             return 'NULL'
 
+    def get_in_596(in_596):
+        if in_596 == 1:
+            return 'true'
+        return 'false'
+
     for lot in lots:
         properties = lot['properties']
         try:
@@ -134,12 +139,13 @@ def insert_lots(cursor, filename, plans):
             get_plan_id(properties['plan_name']),
             get_disposition(properties['disposition_filterable']),
             get_disposition(properties['disposition_display']),
+            get_in_596(properties['in_596']),
         )))
 
     sql = 'INSERT INTO %s (%s) VALUES %s' % (
         LOTS_TABLE,
         ','.join(('the_geom', 'block', 'lot', 'plan_id',
-                  'disposition_filterable', 'disposition_display',)),
+                  'disposition_filterable', 'disposition_display', 'in_596',)),
         ','.join(values),
     )
     try:
