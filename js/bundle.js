@@ -43,7 +43,7 @@ module.exports = {
 
 };
 
-},{"./plansmap":5}],2:[function(require,module,exports){
+},{"./plansmap":6}],2:[function(require,module,exports){
 var geocoder = new google.maps.Geocoder();
 
 function to_google_bounds(bounds) {
@@ -158,11 +158,32 @@ module.exports = {
 
 };
 
-},{"querystring":11}],4:[function(require,module,exports){
+},{"querystring":12}],4:[function(require,module,exports){
+var plansmap = require('./plansmap');
+var _ = require('underscore');
+
+module.exports = {
+
+    init: function (options) {
+        options = options || {};
+    
+        if (options.dispositions) {
+            $(options.dispositions + ' :input').change(function () {
+                plansmap.highlightLots({
+                    dispositions: _.map($(options.dispositions + ' :input:checked'), function (e) { return $(e).data('disposition'); })
+                });
+            });
+        }
+    }
+
+};
+
+},{"./plansmap":6,"underscore":14}],5:[function(require,module,exports){
 var _ = require('underscore');
 
 var filters = require('./filters');
 var hash = require('./hash');
+var highlights = require('./highlights');
 var plansmap = require('./plansmap');
 var search = require('./search');
 var sidebar = require('./sidebar');
@@ -278,9 +299,34 @@ var urbanreviewer = {
     }
 };
 
+function getDispositions() {
+    var dispositions = [
+        'open space',
+        'recreational',
+        'community facility',
+        'residential',
+        'commercial',
+        'industrial',
+        'institutional',
+        'public',
+        'semi-public',
+        'utility',
+        'easement',
+        'street',
+        'illegible'
+    ];
+    return _.map(dispositions, function (disposition) {
+        return {
+            id: disposition.replace(' ', '-'),
+            label: disposition
+        };
+    });
+}
+
 function openFilters() {
     var template = JST['handlebars_templates/filters.hbs'];
     sidebar.open('#right-pane', template({
+        dispositions: getDispositions(),
         years: _.range(1952, 2014)
     }), 'narrow');
     filters.init({
@@ -289,6 +335,10 @@ function openFilters() {
         expired: '#plan-status-expired',
         lastUpdated: '#last-updated',
         mayors: '#mayors'
+    });
+
+    highlights.init({
+        dispositions: '#dispositions'
     });
 }
 
@@ -485,7 +535,7 @@ $(document).ready(function () {
 
 });
 
-},{"./filters":1,"./hash":3,"./plansmap":5,"./search":6,"./sidebar":7,"underscore":13}],5:[function(require,module,exports){
+},{"./filters":1,"./hash":3,"./highlights":4,"./plansmap":6,"./search":7,"./sidebar":8,"underscore":14}],6:[function(require,module,exports){
 var _ = require('underscore');
 var singleminded = require('./singleminded');
 
@@ -493,6 +543,8 @@ var map,
     lotsLayer,
     highlightedLotLayer,
     lastFilters = {};
+
+var defaultCartoCSS = '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }';
 
 function unHighlightLot() {
     map.closePopup();
@@ -523,7 +575,7 @@ module.exports = {
             user_name: 'urbanreviewer',
             type: 'cartodb',
             sublayers: [{
-                cartocss: '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }',
+                cartocss: defaultCartoCSS,
                 interactivity: 'block, lot, plan_name, borough',
                 sql: 'SELECT l.*, p.name AS plan_name, p.borough AS borough FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id'
             }]
@@ -667,11 +719,25 @@ module.exports = {
         );
     },
 
-    unHighlightLot: unHighlightLot
+    unHighlightLot: unHighlightLot,
+
+    highlightLots: function (options) {
+        options = options || {};
+
+        var cartocss = defaultCartoCSS;
+
+        if (options.dispositions) {
+            conditions = _.map(options.dispositions, function (disposition) {
+                return '#lots[disposition_filterable="' + disposition + '"]';
+            });
+            cartocss += conditions.join(',') + '{ polygon-fill: #FF0000; }';
+        }
+        lotsLayer.setCartoCSS(cartocss);
+    }
 
 };
 
-},{"./singleminded":8,"underscore":13}],6:[function(require,module,exports){
+},{"./singleminded":9,"underscore":14}],7:[function(require,module,exports){
 var geocode = require('./geocode.js');
 require('typeahead.js');
 
@@ -737,7 +803,7 @@ module.exports = {
     search: search
 };
 
-},{"./geocode.js":2,"typeahead.js":12}],7:[function(require,module,exports){
+},{"./geocode.js":2,"typeahead.js":13}],8:[function(require,module,exports){
 var _ = require('underscore');
 
 var sizes = ['narrow', 'wide'],
@@ -775,7 +841,7 @@ module.exports = {
     close: close
 };
 
-},{"underscore":13}],8:[function(require,module,exports){
+},{"underscore":14}],9:[function(require,module,exports){
 //
 // A simple AJAX request queue of length 1.
 //
@@ -808,7 +874,7 @@ module.exports = {
     remember: remember
 };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -894,7 +960,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -981,13 +1047,13 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":9,"./encode":10}],12:[function(require,module,exports){
+},{"./decode":10,"./encode":11}],13:[function(require,module,exports){
 /*!
  * typeahead.js 0.10.2
  * https://github.com/twitter/typeahead.js
@@ -2704,7 +2770,7 @@ exports.encode = exports.stringify = require('./encode');
         };
     })();
 })(window.jQuery);
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -4049,4 +4115,4 @@ exports.encode = exports.stringify = require('./encode');
   }
 }).call(this);
 
-},{}]},{},[4])
+},{}]},{},[5])

@@ -6,6 +6,8 @@ var map,
     highlightedLotLayer,
     lastFilters = {};
 
+var defaultCartoCSS = '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }';
+
 function unHighlightLot() {
     map.closePopup();
     highlightedLotLayer.clearLayers();           
@@ -35,7 +37,7 @@ module.exports = {
             user_name: 'urbanreviewer',
             type: 'cartodb',
             sublayers: [{
-                cartocss: '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }',
+                cartocss: defaultCartoCSS,
                 interactivity: 'block, lot, plan_name, borough',
                 sql: 'SELECT l.*, p.name AS plan_name, p.borough AS borough FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id'
             }]
@@ -179,6 +181,20 @@ module.exports = {
         );
     },
 
-    unHighlightLot: unHighlightLot
+    unHighlightLot: unHighlightLot,
+
+    highlightLots: function (options) {
+        options = options || {};
+
+        var cartocss = defaultCartoCSS;
+
+        if (options.dispositions) {
+            conditions = _.map(options.dispositions, function (disposition) {
+                return '#lots[disposition_filterable="' + disposition + '"]';
+            });
+            cartocss += conditions.join(',') + '{ polygon-fill: #FF0000; }';
+        }
+        lotsLayer.setCartoCSS(cartocss);
+    }
 
 };

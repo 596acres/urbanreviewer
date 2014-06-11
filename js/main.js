@@ -2,6 +2,7 @@ var _ = require('underscore');
 
 var filters = require('./filters');
 var hash = require('./hash');
+var highlights = require('./highlights');
 var plansmap = require('./plansmap');
 var search = require('./search');
 var sidebar = require('./sidebar');
@@ -117,9 +118,34 @@ var urbanreviewer = {
     }
 };
 
+function getDispositions() {
+    var dispositions = [
+        'open space',
+        'recreational',
+        'community facility',
+        'residential',
+        'commercial',
+        'industrial',
+        'institutional',
+        'public',
+        'semi-public',
+        'utility',
+        'easement',
+        'street',
+        'illegible'
+    ];
+    return _.map(dispositions, function (disposition) {
+        return {
+            id: disposition.replace(' ', '-'),
+            label: disposition
+        };
+    });
+}
+
 function openFilters() {
     var template = JST['handlebars_templates/filters.hbs'];
     sidebar.open('#right-pane', template({
+        dispositions: getDispositions(),
         years: _.range(1952, 2014)
     }), 'narrow');
     filters.init({
@@ -128,6 +154,10 @@ function openFilters() {
         expired: '#plan-status-expired',
         lastUpdated: '#last-updated',
         mayors: '#mayors'
+    });
+
+    highlights.init({
+        dispositions: '#dispositions'
     });
 }
 
