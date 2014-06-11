@@ -166,7 +166,7 @@ module.exports = {
 
     init: function (options) {
         options = options || {};
-    
+
         if (options.dispositions) {
             $(options.dispositions + ' :input').change(function () {
                 plansmap.highlightLots({
@@ -174,6 +174,15 @@ module.exports = {
                 });
             });
         }
+
+        if (options.public_vacant) {
+            $(options.public_vacant).change(function () {
+                plansmap.highlightLots({
+                    public_vacant: $(this).is(':checked')
+                });
+            });
+        }
+
     }
 
 };
@@ -339,7 +348,8 @@ function openFilters() {
     });
 
     highlights.init({
-        dispositions: '#dispositions'
+        dispositions: '#dispositions',
+        public_vacant: '#public-vacant'
     });
 }
 
@@ -732,6 +742,14 @@ module.exports = {
                 return '#lots[disposition_filterable="' + disposition + '"]';
             });
             cartocss += conditions.join(',') + '{ polygon-fill: #FF0000; ' +
+                '[zoom <= 12] { line-width: 5; line-color: #FF0000; }' +
+                '[zoom <= 14] { line-width: 3; line-color: #FF0000; }' +
+            '}';
+        }
+
+        if (options.public_vacant && options.public_vacant === true) {
+            cartocss += '#lots[in_596=true] {' +
+                'polygon-fill: #FF0000;' +
                 '[zoom <= 12] { line-width: 5; line-color: #FF0000; }' +
                 '[zoom <= 14] { line-width: 3; line-color: #FF0000; }' +
             '}';

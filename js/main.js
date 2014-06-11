@@ -158,7 +158,8 @@ function openFilters() {
     });
 
     highlights.init({
-        dispositions: '#dispositions'
+        dispositions: '#dispositions',
+        public_vacant: '#public-vacant'
     });
 }
 

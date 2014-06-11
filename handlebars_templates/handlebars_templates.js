@@ -45,7 +45,7 @@ function program3(depth0,data) {
   buffer += "\n        </select>\n    </section>\n</section>\n\n<section id=\"highlights\">\n    <h2>highlight lots</h2>\n    <section id=\"dispositions\">\n        <h3>disposition</h3>\n        ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.dispositions), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </section>\n</section>\n";
+  buffer += "\n    </section>\n    <section>\n        <h3>public vacant lots</h3>\n        <div>\n            <input type=\"checkbox\" id=\"public-vacant\" />\n            <label for=\"public-vacant\">public vacant</label>\n        </div>\n    </section>\n</section>\n";
   return buffer;
   });
 

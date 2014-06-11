@@ -5,7 +5,7 @@ module.exports = {
 
     init: function (options) {
         options = options || {};
-    
+
         if (options.dispositions) {
             $(options.dispositions + ' :input').change(function () {
                 plansmap.highlightLots({
@@ -13,6 +13,15 @@ module.exports = {
                 });
             });
         }
+
+        if (options.public_vacant) {
+            $(options.public_vacant).change(function () {
+                plansmap.highlightLots({
+                    public_vacant: $(this).is(':checked')
+                });
+            });
+        }
+
     }
 
 };

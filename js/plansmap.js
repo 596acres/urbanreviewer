@@ -198,6 +198,14 @@ module.exports = {
             '}';
         }
 
+        if (options.public_vacant && options.public_vacant === true) {
+            cartocss += '#lots[in_596=true] {' +
+                'polygon-fill: #FF0000;' +
+                '[zoom <= 12] { line-width: 5; line-color: #FF0000; }' +
+                '[zoom <= 14] { line-width: 3; line-color: #FF0000; }' +
+            '}';
+        }
+
         lotsLayer.setCartoCSS(cartocss);
     }
 
