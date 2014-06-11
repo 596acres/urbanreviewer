@@ -3,6 +3,9 @@
         <li class="lot" data-borough="{{borough}}" data-block="{{block}}" data-lot="{{lot}}">
             <h3>{{borough}} block {{block}}, lot {{lot}}</h3>
             <div>Planned disposition: {{disposition}}</div>
+            {{#if in_596}}
+            <div><a href="http://596acres.org/lot/{{bbl}}" target="_blank">View on 596 Acres</a></div>
+            {{/if}}
         </li>
     {{/each}}
 </ul>

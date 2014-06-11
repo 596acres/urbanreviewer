@@ -90,8 +90,9 @@ var urbanreviewer = {
         }
 
         var sql = 
-            "SELECT p.borough AS borough, l.block AS block, l.lot AS lot, " +
-                "l.disposition_display AS disposition " +
+            "SELECT p.borough AS borough, l.bbl AS bbl, l.block AS block, " +
+                "l.lot AS lot, l.disposition_display AS disposition, " +
+                "l.in_596 as in_596 " +
             "FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id " +
             "WHERE p.name='" + data.plan_name + "' " +
             "ORDER BY l.block, l.lot";
