@@ -726,7 +726,7 @@ module.exports = {
 
         var cartocss = defaultCartoCSS;
 
-        if (options.dispositions) {
+        if (options.dispositions && options.dispositions.length > 0) {
             conditions = _.map(options.dispositions, function (disposition) {
                 return '#lots[disposition_filterable="' + disposition + '"]';
             });
