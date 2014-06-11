@@ -2,6 +2,12 @@ import csv
 import sys
 
 
+def csvvalue(v):
+    if ',' in v:
+        return '"%s"' % v
+    return v
+
+
 def add_bbls(fp):
     """
     Add BBLs (Borough, Block, and Lot numbers) to a csv of lots with the
@@ -12,7 +18,7 @@ def add_bbls(fp):
     for row in reader:
         try:
             bbl = '%d%05d%04d' % tuple(int(row[c]) for c in ('Borough', 'Block', 'Lot'))
-            print ','.join([bbl,] + [row[f] for f in reader.fieldnames])
+            print ','.join([bbl,] + [csvvalue(row[f]) for f in reader.fieldnames])
         except Exception:
             continue
 
