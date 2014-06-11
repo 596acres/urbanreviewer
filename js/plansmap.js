@@ -192,8 +192,12 @@ module.exports = {
             conditions = _.map(options.dispositions, function (disposition) {
                 return '#lots[disposition_filterable="' + disposition + '"]';
             });
-            cartocss += conditions.join(',') + '{ polygon-fill: #FF0000; }';
+            cartocss += conditions.join(',') + '{ polygon-fill: #FF0000; ' +
+                '[zoom <= 12] { line-width: 5; line-color: #FF0000; }' +
+                '[zoom <= 14] { line-width: 3; line-color: #FF0000; }' +
+            '}';
         }
+
         lotsLayer.setCartoCSS(cartocss);
     }
 
