@@ -556,6 +556,9 @@ var map,
     lastFilters = {};
 
 var defaultCartoCSS = '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }';
+var highlightedCartoCSS = 'polygon-fill: #FF0000;' +
+    '[zoom <= 12] { line-width: 5; line-color: #FF0000; }' +
+    '[zoom <= 14] { line-width: 3; line-color: #FF0000; }';
 
 function unHighlightLot() {
     map.closePopup();
@@ -741,18 +744,11 @@ module.exports = {
             conditions = _.map(options.dispositions, function (disposition) {
                 return '#lots[disposition_filterable="' + disposition + '"]';
             });
-            cartocss += conditions.join(',') + '{ polygon-fill: #FF0000; ' +
-                '[zoom <= 12] { line-width: 5; line-color: #FF0000; }' +
-                '[zoom <= 14] { line-width: 3; line-color: #FF0000; }' +
-            '}';
+            cartocss += conditions.join(',') + '{' + highlightedCartoCSS + '}';
         }
 
         if (options.public_vacant && options.public_vacant === true) {
-            cartocss += '#lots[in_596=true] {' +
-                'polygon-fill: #FF0000;' +
-                '[zoom <= 12] { line-width: 5; line-color: #FF0000; }' +
-                '[zoom <= 14] { line-width: 3; line-color: #FF0000; }' +
-            '}';
+            cartocss += '#lots[in_596=true] {' + highlightedCartoCSS + '}';
         }
 
         lotsLayer.setCartoCSS(cartocss);
