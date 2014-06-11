@@ -103,6 +103,12 @@ def insert_lots(cursor, filename, plans):
     lots = geojson.load(open(filename, 'r'))['features']
     values = []
 
+    def get_bbl(bbl):
+        try:
+            return "\'%s\'" % bbl
+        except Exception:
+            return 'NULL'
+
     def get_disposition(disposition):
         try:
             # Escape quotes
@@ -134,6 +140,7 @@ def insert_lots(cursor, filename, plans):
 
         values.append('(%s)' % ','.join((
             "'SRID=4326;%s'" % wkt.dumps(lot['geometry']),
+            get_bbl(properties['BBL']),
             block,
             lot_number,
             get_plan_id(properties['plan_name']),
@@ -144,7 +151,7 @@ def insert_lots(cursor, filename, plans):
 
     sql = 'INSERT INTO %s (%s) VALUES %s' % (
         LOTS_TABLE,
-        ','.join(('the_geom', 'block', 'lot', 'plan_id',
+        ','.join(('the_geom', 'BBL', 'block', 'lot', 'plan_id',
                   'disposition_filterable', 'disposition_display', 'in_596',)),
         ','.join(values),
     )

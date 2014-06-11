@@ -70,7 +70,7 @@ simplify: merge
 
 geojson: simplify
 	rm -f lots.geojson
-	ogr2ogr -f "GeoJSON" -sql "SELECT block, lot, plan_name, disp_filt AS disposition_filterable, disp_edit AS disposition_display, in_596 FROM simplified" lots.geojson shp/simplified.shp
+	ogr2ogr -f "GeoJSON" -sql "SELECT BBL, block, lot, plan_name, disp_filt AS disposition_filterable, disp_edit AS disposition_display, in_596 FROM simplified" lots.geojson shp/simplified.shp
 
 plan_table:
 	# TODO Take borough CSVs, concatenate into one big CSV
