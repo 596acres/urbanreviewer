@@ -22,18 +22,23 @@ load_pluto:
 shps:
 	mkdir -p shp
 
+	-sqlite3 $(sqlite_db) 'DROP TABLE Bronx'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Bronx.csv
 	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM BXMapPLUTO p INNER JOIN Bronx b on b.BBL=p.BBL" shp/Bronx.shp $(sqlite_db)
 
+	-sqlite3 $(sqlite_db) 'DROP TABLE Brooklyn'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Brooklyn.csv
 	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM BKMapPLUTO p INNER JOIN Brooklyn b on b.BBL=p.BBL" shp/Brooklyn.shp $(sqlite_db)
 
+	-sqlite3 $(sqlite_db) 'DROP TABLE Manhattan'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Manhattan.csv
 	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM MNMapPLUTO p INNER JOIN Manhattan b on b.BBL=p.BBL" shp/Manhattan.shp $(sqlite_db)
 
+	-sqlite3 $(sqlite_db) 'DROP TABLE Queens'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Queens.csv
 	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM QNMapPLUTO p INNER JOIN Queens b on b.BBL=p.BBL" shp/Queens.shp $(sqlite_db)
 
+	-sqlite3 $(sqlite_db) "DROP TABLE 'Staten Island'"
 	-csvsql --db sqlite:///$(sqlite_db) --insert "csv/Staten Island.csv"
 	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM SIMapPLUTO p INNER JOIN 'Staten Island' b on b.BBL=p.BBL" "shp/Staten Island.shp" $(sqlite_db)
 
