@@ -102,11 +102,20 @@ def insert_lots(cursor, filename, plans):
     """Insert lots into CartoDB."""
     lots = geojson.load(open(filename, 'r'))['features']
     values = []
+
+    def get_disposition(disposition):
+        try:
+            # Escape quotes
+            return "\'%s\'" % disposition.replace("'", "''")
+        except AttributeError:
+            return 'NULL'
+
     def get_plan_id(name):
         try:
             return '%d' % plans[name]
         except Exception:
             return 'NULL'
+
     for lot in lots:
         properties = lot['properties']
         try:
@@ -123,11 +132,14 @@ def insert_lots(cursor, filename, plans):
             block,
             lot_number,
             get_plan_id(properties['plan_name']),
+            get_disposition(properties['disposition_filterable']),
+            get_disposition(properties['disposition_display']),
         )))
 
     sql = 'INSERT INTO %s (%s) VALUES %s' % (
         LOTS_TABLE,
-        ','.join(('the_geom', 'block', 'lot', 'plan_id',)),
+        ','.join(('the_geom', 'block', 'lot', 'plan_id',
+                  'disposition_filterable', 'disposition_display',)),
         ','.join(values),
     )
     try:
