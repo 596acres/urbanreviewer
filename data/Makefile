@@ -1,3 +1,6 @@
+pluto_dir = ${PLUTO_DIR}
+sqlite_db = working.db
+
 csvs:
 	# Take latest borough Excel files, turn each into its own, cleaned CSV with
 	# a BBL column
@@ -8,24 +11,46 @@ csvs:
 	in2csv excel/Queens.xlsx | csvcut -c 1-12 | python add_bbls.py > csv/Queens.csv
 	in2csv "excel/Staten Island.xlsx" | csvcut -c 1-12 | python add_bbls.py > "csv/Staten Island.csv"
 
-#shps: csvs
-	#mkdir -p shp
-	# TODO Join borough CSVs with ogr and latest MapPLUTO file
+load_pluto:
+	rm -f $(sqlite_db)
+	ogr2ogr -progress -f "SQLite" $(sqlite_db) $(pluto_dir)Bronx/BXMapPLUTO.shp
+	ogr2ogr -progress -f "SQLite" -update $(sqlite_db) $(pluto_dir)Brooklyn/BKMapPLUTO.shp
+	ogr2ogr -progress -f "SQLite" -update $(sqlite_db) $(pluto_dir)Manhattan/MNMapPLUTO.shp
+	ogr2ogr -progress -f "SQLite" -update $(sqlite_db) $(pluto_dir)Queens/QNMapPLUTO.shp
+	ogr2ogr -progress -f "SQLite" -update $(sqlite_db) "$(pluto_dir)Staten_Island/SIMapPLUTO.shp"
+
+shps:
+	mkdir -p shp
+
+	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Bronx.csv
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM BXMapPLUTO p INNER JOIN Bronx b on b.BBL=p.BBL" shp/Bronx.shp $(sqlite_db)
+
+	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Brooklyn.csv
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM BKMapPLUTO p INNER JOIN Brooklyn b on b.BBL=p.BBL" shp/Brooklyn.shp $(sqlite_db)
+
+	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Manhattan.csv
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM MNMapPLUTO p INNER JOIN Manhattan b on b.BBL=p.BBL" shp/Manhattan.shp $(sqlite_db)
+
+	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Queens.csv
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM QNMapPLUTO p INNER JOIN Queens b on b.BBL=p.BBL" shp/Queens.shp $(sqlite_db)
+
+	-csvsql --db sqlite:///$(sqlite_db) --insert "csv/Staten Island.csv"
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, b.* FROM SIMapPLUTO p INNER JOIN 'Staten Island' b on b.BBL=p.BBL" "shp/Staten Island.shp" $(sqlite_db)
 
 merge:
 	rm -f shp/merge.*
-	ogr2ogr -update -append shp/merge.shp "shp/Prototype_Bronx.shp" -nln merge -lco ENCODING=UTF-8
-	ogr2ogr -update -append shp/merge.shp "shp/Prototype_Brooklyn.shp" -nln merge
-	ogr2ogr -update -append shp/merge.shp "shp/Prototype_Manhattan.shp" -nln merge
-	ogr2ogr -update -append shp/merge.shp "shp/Prototype_Queens.shp" -nln merge
-	ogr2ogr -update -append shp/merge.shp "shp/Prototype_Staten_Island.shp" -nln merge
+	ogr2ogr -update -append shp/merge.shp "shp/Bronx.shp" -nln merge -lco ENCODING=UTF-8
+	ogr2ogr -update -append shp/merge.shp "shp/Brooklyn.shp" -nln merge
+	ogr2ogr -update -append shp/merge.shp "shp/Manhattan.shp" -nln merge
+	ogr2ogr -update -append shp/merge.shp "shp/Queens.shp" -nln merge
+	ogr2ogr -update -append shp/merge.shp "shp/Staten Island.shp" -nln merge
 
 simplify: merge
 	ogr2ogr -simplify 0.2 -t_srs EPSG:4326 -overwrite shp/simplified.shp shp/merge.shp -lco ENCODING=UTF-8
 
 geojson: simplify
 	rm -f lots.geojson
-	ogr2ogr -f "GeoJSON" -sql "SELECT Block AS block, Lot AS lot, \"Prototyp_3\" AS plan_name FROM simplified" lots.geojson shp/simplified.shp
+	ogr2ogr -f "GeoJSON" -sql "SELECT Block AS block, Lot AS lot, \"Name of Pl\" AS plan_name FROM simplified" lots.geojson shp/simplified.shp
 
 plan_table:
 	# TODO Take borough CSVs, concatenate into one big CSV
