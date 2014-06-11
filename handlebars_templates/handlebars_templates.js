@@ -81,17 +81,33 @@ function program1(depth0,data) {
   if (helper = helpers.lot) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.lot); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</h3>\n            <div>Planned disposition: ";
-  if (helper = helpers.disposition) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.disposition); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n            ";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.in_596), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+    + "</h3>\n            <div>Planned disposition: \n                ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.disposition), {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n            </div>\n            ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.in_596), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n        </li>\n    ";
   return buffer;
   }
 function program2(depth0,data) {
+  
+  var buffer = "", stack1, helper;
+  buffer += "\n                ";
+  if (helper = helpers.disposition) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.disposition); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\n                ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  
+  return "\n                unknown\n                ";
+  }
+
+function program6(depth0,data) {
   
   var buffer = "", stack1, helper;
   buffer += "\n            <div><a href=\"http://596acres.org/lot/";
