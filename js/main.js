@@ -25,6 +25,7 @@ var urbanreviewer = {
             map: map, 
             planName: currentPlan
         });
+        unloadFilters();
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
         urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
     },
