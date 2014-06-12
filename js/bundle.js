@@ -1,16 +1,52 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var plansmap = require('./plansmap');
 
+var eventEmitter = $({});
+var state = {};
+
+function updateState(changes) {
+    _.each(changes, function (value, key) {
+        if (!value) {
+            delete state[key];
+        }
+        else {
+            state[key] = value;
+        }
+    });   
+    eventEmitter.trigger('change', state);
+}
+
 module.exports = {
 
-    init: function (options) {
+    init: function (options, overrideState) {
         options = options || {};
+        state = overrideState || {};
+
+        if (options.dateRange) {
+            $(options.dateRange).bind('valuesChanged', function (e, data) {
+                updateState({
+                    start: data.values.min.getFullYear(), 
+                    end: data.values.max.getFullYear()
+                });
+            });
+            if (state.start) {
+                $(options.dateRange).dateRangeSlider('min', 
+                    new Date(state.start, 0, 1)
+                );
+            }
+            if (state.end) {
+                $(options.dateRange).dateRangeSlider('max',
+                    new Date(state.end, 0, 1)
+                );
+            }
+        }
 
         if (options.mayors && options.dateRange) {
             $(options.mayors).change(function () {
                 var mayor = $(this).find(':selected'),
                     start = parseInt(mayor.data('start')),
                     end = parseInt(mayor.data('end'));
+                updateState({ mayor: mayor.val(), start: start, end: end });
                 // Date range slider takes care of filtering here
                 $(options.dateRange).dateRangeSlider(
                     'values',
@@ -18,27 +54,50 @@ module.exports = {
                     new Date(end, 0, 1)
                 );
             });
+
+            if (state.mayor) {
+                $(options.mayors).val(state.mayor).trigger('change');
+            }
         }
 
         if (options.active) {
-            $(options.active).change(function () {
-                plansmap.filterLotsLayer({ active: $(this).is(':checked') }, true);
-            });
+            $(options.active)
+                .change(function () {
+                    var checked = $(this).is(':checked');
+                    updateState({ active: checked });
+                    plansmap.filterLotsLayer({ active: checked }, true);
+                })
+                .prop('checked', state.active)
+                .trigger('change');
         }
 
         if (options.expired) {
-            $(options.expired).change(function () {
-                plansmap.filterLotsLayer({ expired: $(this).is(':checked') }, true);
-            });
+            $(options.expired)
+                .change(function () {
+                    var checked = $(this).is(':checked');
+                    updateState({ expired: checked });
+                    plansmap.filterLotsLayer({ expired: checked }, true);
+                })
+                .prop('checked', state.expired)
+                .trigger('change');
         }
 
         if (options.lastUpdated) {
-            $(options.lastUpdated).change(function () {
-                plansmap.filterLotsLayer({
-                    lastUpdated: $(this).find(':selected').val()
-                }, true);
-            });
+            $(options.lastUpdated)
+                .change(function () {
+                    var lastUpdated = $(this).find(':selected').val();
+                    updateState({ lastUpdated: lastUpdated });
+                    plansmap.filterLotsLayer({ lastUpdated: lastUpdated }, true);
+                })
+                .val(state.lastUpdated)
+                .trigger('change');
         }
+
+        return eventEmitter;
+    },
+
+    getState: function () {
+        return state;
     }
 
 };
@@ -103,6 +162,7 @@ module.exports = {
 };
 
 },{}],3:[function(require,module,exports){
+var jsurl = require('jsurl');
 var querystring = require('querystring');
 
 module.exports = {
@@ -130,14 +190,15 @@ module.exports = {
 
         args.page = hash.page;
         args.plan = hash.plan;
+        args.filters = jsurl.parse(hash.filters);
 
         return args;
     },
 
-    formatHash: function(map, planName, page) {
+    formatHash: function(options) {
         // Format hash for the map. Based on OSM's formatHash.
-        var center = map.getCenter(),
-            zoom = map.getZoom();
+        var center = options.map.getCenter(),
+            zoom = options.map.getZoom();
         center = center.wrap();
 
         var precision = 4,
@@ -145,12 +206,16 @@ module.exports = {
                 '/' + center.lat.toFixed(precision) +
                 '/' + center.lng.toFixed(precision);
 
-        if (planName) {
-            hash += '&plan=' + planName;
+        if (options.planName) {
+            hash += '&plan=' + options.planName;
         }
 
-        if (page) {
-            hash += '&page=' + page;
+        if (options.page) {
+            hash += '&page=' + options.page;
+        }
+
+        if (options.filters && _.size(options.filters) > 0) {
+            hash += '&filters=' + jsurl.stringify(options.filters);
         }
 
         return hash;
@@ -158,7 +223,7 @@ module.exports = {
 
 };
 
-},{"querystring":12}],4:[function(require,module,exports){
+},{"jsurl":13,"querystring":12}],4:[function(require,module,exports){
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 
@@ -187,7 +252,7 @@ module.exports = {
 
 };
 
-},{"./plansmap":6,"underscore":14}],5:[function(require,module,exports){
+},{"./plansmap":6,"underscore":16}],5:[function(require,module,exports){
 var _ = require('underscore');
 
 var filters = require('./filters');
@@ -211,7 +276,10 @@ var urbanreviewer = {
 
     selectPlan: function (name, map) {
         currentPlan = name;
-        window.location.hash = hash.formatHash(map, currentPlan);
+        window.location.hash = hash.formatHash({
+            map: map, 
+            planName: currentPlan
+        });
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
         urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
     },
@@ -334,18 +402,31 @@ function getDispositions() {
 }
 
 function openFilters() {
+    sidebar.open('#right-pane', $('#filters-container').show(), 'narrow');
+}
+
+function loadFilters() {
     var template = JST['handlebars_templates/filters.hbs'];
-    sidebar.open('#right-pane', template({
+    $('body').append($(template({
         dispositions: getDispositions(),
         years: _.range(1952, 2014)
-    }), 'narrow');
-    filters.init({
-        active: '#plan-status-active',
-        dateRange: '#date-range-picker',
-        expired: '#plan-status-expired',
-        lastUpdated: '#last-updated',
-        mayors: '#mayors'
-    });
+    })).hide());;
+
+    filters
+        .init({
+            active: '#plan-status-active',
+            dateRange: '#date-range-picker',
+            expired: '#plan-status-expired',
+            lastUpdated: '#last-updated',
+            mayors: '#mayors'
+        }, hash.parseHash(window.location.hash).filters)
+        .on('change', function (e, filters) {
+            window.location.hash = hash.formatHash({
+                map: map,
+                planName: currentPlan,
+                filters: filters
+            });
+        });
 
     highlights.init({
         dispositions: '#dispositions',
@@ -361,6 +442,7 @@ function openPlanList() {
         }), 'narrow');
         $('#plan-list-filters-link').click(function () {
             openFilters();
+            return false;
         });
         $('.plan').click(function () {
             urbanreviewer.selectPlan($(this).data('name'), map);
@@ -379,7 +461,10 @@ $(document).ready(function () {
     currentPage = parsedHash.page;
     currentPlan = parsedHash.plan;
 
-    map = plansmap.init('map');
+    map = plansmap.init('map', function () {
+        // Don't load filters until we have a lots layer to filter on
+        loadFilters();
+    });
 
     if (currentPage || currentPlan) {
         // If there's a plan selected already, set the active area so we can
@@ -393,7 +478,12 @@ $(document).ready(function () {
     map
         .setView(center, zoom)
         .on('moveend', function () {
-            window.location.hash = hash.formatHash(map, currentPlan, currentPage);
+            window.location.hash = hash.formatHash({
+                map: map,
+                planName: currentPlan,
+                page: currentPage,
+                filters: filters.getState()
+            });
         });
 
     if (currentPlan) {
@@ -453,13 +543,21 @@ $(document).ready(function () {
         plansmap.setActiveArea(map, { area: 'full' });
 
         currentPlan = null;
-        window.location.hash = hash.formatHash(map, currentPlan);
+        window.location.hash = hash.formatHash({
+            map: map, 
+            planName: currentPlan,
+            filters: filters.getState()
+        });
         urbanreviewer.clearPlanOutline(map);
     });
 
     $('.sidebar-link').click(function (e) {
         currentPage = $(this).attr('href');
-        window.location.hash = hash.formatHash(map, null, currentPage);
+        window.location.hash = hash.formatHash({
+            map: map, 
+            page: currentPage,
+            filters: filters.getState()
+        });
         urbanreviewer.loadPage(currentPage);
         return false;
     });
@@ -505,6 +603,8 @@ $(document).ready(function () {
 
     /*
      * Initialize dateRangeSlider
+     *
+     * TODO consider moving to filters
      */
     $('#date-range-picker').dateRangeSlider({
         arrows: false,
@@ -536,6 +636,10 @@ $(document).ready(function () {
 
     $('#map-filters-toggle').click(function () {
         if (sidebar.isOpen('#right-pane')) {
+            // Stash filters container if it's out
+            if ($('#filters-container:visible').length > 0) {
+                $('#filters-container').hide().appendTo('body');
+            }
             sidebar.close('#right-pane');
         }
         else {
@@ -543,10 +647,9 @@ $(document).ready(function () {
         }
         return false;
     });
-
 });
 
-},{"./filters":1,"./hash":3,"./highlights":4,"./plansmap":6,"./search":7,"./sidebar":8,"underscore":14}],6:[function(require,module,exports){
+},{"./filters":1,"./hash":3,"./highlights":4,"./plansmap":6,"./search":7,"./sidebar":8,"underscore":16}],6:[function(require,module,exports){
 var _ = require('underscore');
 var singleminded = require('./singleminded');
 
@@ -569,7 +672,7 @@ function unHighlightLot() {
 
 module.exports = {
 
-    init: function (id) {
+    init: function (id, onLotsLayerReady) {
         map = L.map(id, {
             maxZoom: 18,
             minZoom: 10,
@@ -616,6 +719,7 @@ module.exports = {
             });
 
             map.addLayer(layer, false);
+            onLotsLayerReady();
         });
 
         highlightedLotLayer = L.geoJson(null, {
@@ -756,7 +860,7 @@ module.exports = {
 
 };
 
-},{"./singleminded":9,"underscore":14}],7:[function(require,module,exports){
+},{"./singleminded":9,"underscore":16}],7:[function(require,module,exports){
 var geocode = require('./geocode.js');
 require('typeahead.js');
 
@@ -822,7 +926,7 @@ module.exports = {
     search: search
 };
 
-},{"./geocode.js":2,"typeahead.js":13}],8:[function(require,module,exports){
+},{"./geocode.js":2,"typeahead.js":15}],8:[function(require,module,exports){
 var _ = require('underscore');
 
 var sizes = ['narrow', 'wide'],
@@ -860,7 +964,7 @@ module.exports = {
     close: close
 };
 
-},{"underscore":14}],9:[function(require,module,exports){
+},{"underscore":16}],9:[function(require,module,exports){
 //
 // A simple AJAX request queue of length 1.
 //
@@ -1073,6 +1177,154 @@ exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
 },{"./decode":10,"./encode":11}],13:[function(require,module,exports){
+module.exports = require('./lib/jsurl')
+},{"./lib/jsurl":14}],14:[function(require,module,exports){
+/**
+ * Copyright (c) 2011 Bruno Jouhier <bruno.jouhier@sage.com>
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ */
+(function(exports) {
+	"use strict";
+	exports.stringify = function stringify(v) {
+		function encode(s) {
+			return !/[^\w-.]/.test(s) ? s : s.replace(/[^\w-.]/g, function(ch) {
+				if (ch === '$') return '!';
+				ch = ch.charCodeAt(0);
+				// thanks to Douglas Crockford for the negative slice trick
+				return ch < 0x100 ? '*' + ('00' + ch.toString(16)).slice(-2) : '**' + ('0000' + ch.toString(16)).slice(-4);
+			})
+		}
+
+		switch (typeof v) {
+		case 'number':
+		case 'boolean':
+			return '~' + v;
+		case 'string':
+			return "~'" + encode(v);
+		case 'object':
+			if (!v) return '~null';
+			if (Array.isArray(v)) {
+				return '~(' + (v.map(function(elt) {
+					return stringify(elt) || '~null';
+				}).join('') || '~') + ')';
+			} else {
+				return '~(' + Object.keys(v).map(function(key) {
+					var val = stringify(v[key]);
+					// skip undefined and functions
+					return val && (encode(key) + val);
+				}).filter(function(str) {
+					return str;
+				}).join('~') + ')';
+			}
+		default:
+			// function, undefined
+			return;
+		}
+	}
+
+	var reserved = {
+		true: true,
+		false: false,
+		null: null
+	};
+
+	exports.parse = function(s) {
+		if (!s) return s;
+		var i = 0,
+			len = s.length;
+
+		function eat(expected) {
+			if (s[i] !== expected) throw new Error("bad JSURL syntax: expected " + expected + ", got " + (s && s[i]));
+			i++;
+		}
+
+		function decode() {
+			var beg = i,
+				ch, r = "";
+			while (i < len && (ch = s[i]) !== '~' && ch !== ')') {
+				switch (ch) {
+				case '*':
+					if (beg < i) r += s.substring(beg, i);
+					if (s[i + 1] === '*') r += String.fromCharCode(parseInt(s.substring(i + 2, i + 6), 16)), beg = (i += 6);
+					else r += String.fromCharCode(parseInt(s.substring(i + 1, i + 3), 16)), beg = (i += 3);
+					break;
+				case '!':
+					if (beg < i) r += s.substring(beg, i);
+					r += '$', beg = ++i;
+					break;
+				default:
+					i++;
+				}
+			}
+			return r + s.substring(beg, i);
+		}
+
+		return (function parseOne() {
+			var result, ch, beg;
+			eat('~');
+			switch (ch = s[i]) {
+			case '(':
+				i++;
+				if (s[i] === '~') {
+					result = [];
+					if (s[i + 1] === ')') i++;
+					else {
+						do {
+							result.push(parseOne());
+						} while (s[i] === '~');
+					}
+				} else {
+					result = {};
+					if (s[i] !== ')') {
+						do {
+							var key = decode();
+							result[key] = parseOne();
+						} while (s[i] === '~' && ++i);
+					}
+				}
+				eat(')');
+				break;
+			case "'":
+				i++;
+				result = decode();
+				break;
+			default:
+				beg = i++;
+				while (i < len && /[^)~]/.test(s[i]))
+				i++;
+				var sub = s.substring(beg, i);
+				if (/[\d\-]/.test(ch)) {
+					result = parseFloat(sub);
+				} else {
+					result = reserved[sub];
+					if (typeof result === "undefined") throw new Error("bad value keyword: " + sub);
+				}
+			}
+			return result;
+		})();
+	}
+})(typeof exports !== 'undefined' ? exports : (window.JSURL = window.JSURL || {}));
+},{}],15:[function(require,module,exports){
 /*!
  * typeahead.js 0.10.2
  * https://github.com/twitter/typeahead.js
@@ -2789,7 +3041,7 @@ exports.encode = exports.stringify = require('./encode');
         };
     })();
 })(window.jQuery);
-},{}],14:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

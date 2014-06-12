@@ -20,7 +20,7 @@ function unHighlightLot() {
 
 module.exports = {
 
-    init: function (id) {
+    init: function (id, onLotsLayerReady) {
         map = L.map(id, {
             maxZoom: 18,
             minZoom: 10,
@@ -67,6 +67,7 @@ module.exports = {
             });
 
             map.addLayer(layer, false);
+            onLotsLayerReady();
         });
 
         highlightedLotLayer = L.geoJson(null, {

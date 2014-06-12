@@ -1,3 +1,4 @@
+var jsurl = require('jsurl');
 var querystring = require('querystring');
 
 module.exports = {
@@ -25,14 +26,15 @@ module.exports = {
 
         args.page = hash.page;
         args.plan = hash.plan;
+        args.filters = jsurl.parse(hash.filters);
 
         return args;
     },
 
-    formatHash: function(map, planName, page) {
+    formatHash: function(options) {
         // Format hash for the map. Based on OSM's formatHash.
-        var center = map.getCenter(),
-            zoom = map.getZoom();
+        var center = options.map.getCenter(),
+            zoom = options.map.getZoom();
         center = center.wrap();
 
         var precision = 4,
@@ -40,12 +42,16 @@ module.exports = {
                 '/' + center.lat.toFixed(precision) +
                 '/' + center.lng.toFixed(precision);
 
-        if (planName) {
-            hash += '&plan=' + planName;
+        if (options.planName) {
+            hash += '&plan=' + options.planName;
         }
 
-        if (page) {
-            hash += '&page=' + page;
+        if (options.page) {
+            hash += '&page=' + options.page;
+        }
+
+        if (options.filters && _.size(options.filters) > 0) {
+            hash += '&filters=' + jsurl.stringify(options.filters);
         }
 
         return hash;

@@ -208,7 +208,8 @@ ul {
 #right-pane h2 {
   text-transform: uppercase;
 }
-#right-pane > section {
+#right-pane > section,
+#right-pane #filters-container > section {
   border-top: 2px solid black;
   padding-top: 5px;
   margin-bottom: 50px;

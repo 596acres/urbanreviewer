@@ -21,7 +21,10 @@ var urbanreviewer = {
 
     selectPlan: function (name, map) {
         currentPlan = name;
-        window.location.hash = hash.formatHash(map, currentPlan);
+        window.location.hash = hash.formatHash({
+            map: map, 
+            planName: currentPlan
+        });
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
         urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
     },
@@ -144,18 +147,31 @@ function getDispositions() {
 }
 
 function openFilters() {
+    sidebar.open('#right-pane', $('#filters-container').show(), 'narrow');
+}
+
+function loadFilters() {
     var template = JST['handlebars_templates/filters.hbs'];
-    sidebar.open('#right-pane', template({
+    $('body').append($(template({
         dispositions: getDispositions(),
         years: _.range(1952, 2014)
-    }), 'narrow');
-    filters.init({
-        active: '#plan-status-active',
-        dateRange: '#date-range-picker',
-        expired: '#plan-status-expired',
-        lastUpdated: '#last-updated',
-        mayors: '#mayors'
-    });
+    })).hide());;
+
+    filters
+        .init({
+            active: '#plan-status-active',
+            dateRange: '#date-range-picker',
+            expired: '#plan-status-expired',
+            lastUpdated: '#last-updated',
+            mayors: '#mayors'
+        }, hash.parseHash(window.location.hash).filters)
+        .on('change', function (e, filters) {
+            window.location.hash = hash.formatHash({
+                map: map,
+                planName: currentPlan,
+                filters: filters
+            });
+        });
 
     highlights.init({
         dispositions: '#dispositions',
@@ -171,6 +187,7 @@ function openPlanList() {
         }), 'narrow');
         $('#plan-list-filters-link').click(function () {
             openFilters();
+            return false;
         });
         $('.plan').click(function () {
             urbanreviewer.selectPlan($(this).data('name'), map);
@@ -189,7 +206,10 @@ $(document).ready(function () {
     currentPage = parsedHash.page;
     currentPlan = parsedHash.plan;
 
-    map = plansmap.init('map');
+    map = plansmap.init('map', function () {
+        // Don't load filters until we have a lots layer to filter on
+        loadFilters();
+    });
 
     if (currentPage || currentPlan) {
         // If there's a plan selected already, set the active area so we can
@@ -203,7 +223,12 @@ $(document).ready(function () {
     map
         .setView(center, zoom)
         .on('moveend', function () {
-            window.location.hash = hash.formatHash(map, currentPlan, currentPage);
+            window.location.hash = hash.formatHash({
+                map: map,
+                planName: currentPlan,
+                page: currentPage,
+                filters: filters.getState()
+            });
         });
 
     if (currentPlan) {
@@ -263,13 +288,21 @@ $(document).ready(function () {
         plansmap.setActiveArea(map, { area: 'full' });
 
         currentPlan = null;
-        window.location.hash = hash.formatHash(map, currentPlan);
+        window.location.hash = hash.formatHash({
+            map: map, 
+            planName: currentPlan,
+            filters: filters.getState()
+        });
         urbanreviewer.clearPlanOutline(map);
     });
 
     $('.sidebar-link').click(function (e) {
         currentPage = $(this).attr('href');
-        window.location.hash = hash.formatHash(map, null, currentPage);
+        window.location.hash = hash.formatHash({
+            map: map, 
+            page: currentPage,
+            filters: filters.getState()
+        });
         urbanreviewer.loadPage(currentPage);
         return false;
     });
@@ -315,6 +348,8 @@ $(document).ready(function () {
 
     /*
      * Initialize dateRangeSlider
+     *
+     * TODO consider moving to filters
      */
     $('#date-range-picker').dateRangeSlider({
         arrows: false,
@@ -346,6 +381,10 @@ $(document).ready(function () {
 
     $('#map-filters-toggle').click(function () {
         if (sidebar.isOpen('#right-pane')) {
+            // Stash filters container if it's out
+            if ($('#filters-container:visible').length > 0) {
+                $('#filters-container').hide().appendTo('body');
+            }
             sidebar.close('#right-pane');
         }
         else {
@@ -353,5 +392,4 @@ $(document).ready(function () {
         }
         return false;
     });
-
 });
