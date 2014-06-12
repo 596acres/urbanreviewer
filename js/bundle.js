@@ -405,6 +405,12 @@ function openFilters() {
     sidebar.open('#right-pane', $('#filters-container').show(), 'narrow');
 }
 
+function unloadFilters() {
+    if ($('#filters-container:visible').length > 0) {
+        $('#filters-container').hide().appendTo('body');
+    }
+}
+
 function loadFilters() {
     var template = JST['handlebars_templates/filters.hbs'];
     $('body').append($(template({
@@ -637,9 +643,7 @@ $(document).ready(function () {
     $('#map-filters-toggle').click(function () {
         if (sidebar.isOpen('#right-pane')) {
             // Stash filters container if it's out
-            if ($('#filters-container:visible').length > 0) {
-                $('#filters-container').hide().appendTo('body');
-            }
+            unloadFilters();
             sidebar.close('#right-pane');
         }
         else {
