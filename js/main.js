@@ -163,7 +163,7 @@ function loadFilters() {
     $('body').append($(template({
         dispositions: getDispositions(),
         years: _.range(1952, 2014)
-    })).hide());;
+    })).hide());
 
     filters
         .init({
