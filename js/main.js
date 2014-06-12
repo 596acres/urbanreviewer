@@ -117,6 +117,7 @@ var urbanreviewer = {
     },
 
     loadPage: function (url) {
+        unloadFilters();
         $.get(url, function (content) {
             sidebar.open('#right-pane', content);
         });
