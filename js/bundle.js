@@ -539,13 +539,13 @@ $(document).ready(function () {
     if (currentPage || currentPlan) {
         // If there's a plan selected already, set the active area so we can
         // zoom to it appropriately
-        plansmap.setActiveArea(map, { area: 'half' });
+        plansmap.setActiveArea({ area: 'half' });
     }
     else if (currentSidebar) {
-        plansmap.setActiveArea(map, { area: 'most' });
+        plansmap.setActiveArea({ area: 'most' });
     }
     else {
-        plansmap.setActiveArea(map, { area: 'full' });
+        plansmap.setActiveArea({ area: 'full' });
     }
 
     map
@@ -585,10 +585,10 @@ $(document).ready(function () {
             $('#date-range-picker-container').hide();
             $('#map-filters-toggle').hide();
             $('#search-container').hide();
-            plansmap.setActiveArea(map, { area: 'half' });
+            plansmap.setActiveArea({ area: 'half' });
         }
         else if (size === 'narrow') {
-            plansmap.setActiveArea(map, { area: 'most' });
+            plansmap.setActiveArea({ area: 'most' });
             $('#date-range-picker-container').addClass('narrow-sidebar');
             $('#date-range-picker').dateRangeSlider('resize');
         }
@@ -600,7 +600,7 @@ $(document).ready(function () {
         $('#date-range-picker').dateRangeSlider('resize');
         $('#map-filters-toggle').show();
         $('#search-container').show();
-        plansmap.setActiveArea(map, { area: 'full' });
+        plansmap.setActiveArea({ area: 'full' });
 
         currentPlan = null;
         setTitle(null);
@@ -778,7 +778,7 @@ module.exports = {
         return map;
     },
 
-    setActiveArea: function (map, options) {
+    setActiveArea: function (options) {
         options = options || {};
         var activeAreaOptions = {
             position: 'absolute',

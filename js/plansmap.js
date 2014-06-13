@@ -87,7 +87,7 @@ module.exports = {
         return map;
     },
 
-    setActiveArea: function (map, options) {
+    setActiveArea: function (options) {
         options = options || {};
         var activeAreaOptions = {
             position: 'absolute',
