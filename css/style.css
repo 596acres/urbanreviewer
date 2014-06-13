@@ -231,7 +231,16 @@ ul {
   text-transform: none;
 }
 #right-pane .plan-header .panel-toggle {
+  border: none;
+  cursor: pointer;
   float: left;
+  font-size: 90px;
+  line-height: 50px;
+  margin-left: -15px;
+  margin-top: 15px;
+}
+#right-pane .plan-header .panel-toggle:hover {
+  background-color: white;
 }
 #right-pane .plan-header-content {
   float: left;
