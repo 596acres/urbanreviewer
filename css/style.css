@@ -221,6 +221,28 @@ ul {
   margin-bottom: 25px;
   margin-top: 25px;
 }
+#right-pane .plan-header {
+  font-size: 16px;
+  margin-top: -10px;
+  position: relative;
+}
+#right-pane .plan-header h1 {
+  padding-bottom: 5px;
+  text-transform: none;
+}
+#right-pane .plan-header .panel-toggle {
+  float: left;
+}
+#right-pane .plan-header-content {
+  float: left;
+  margin-left: 15px;
+}
+#right-pane .plan-header-content-item label {
+  display: block;
+}
+#right-pane .plan-header-content-item .value {
+  font-weight: normal;
+}
 #right-pane #lots-content ul {
   list-style: none;
   padding: 0;

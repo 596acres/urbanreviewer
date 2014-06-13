@@ -1,3 +1,4 @@
+var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
 var plansmap = require('./plansmap');
 var sidebar = require('./sidebar');
@@ -8,11 +9,11 @@ function addPlanContent($location, borough, planName) {
     });
 }
 
-function loadBorough(planName, success) {
+function loadDetails(planName, success) {
     var sql = "SELECT * FROM plans WHERE name = '" + planName + "'";
     cartodbapi.getJSON(sql, function (results) {
-        options = results.rows[0];
-        success(options.borough);
+        row = results.rows[0];
+        success(row);
     });
 }
 
@@ -40,28 +41,35 @@ function loadLots($target, planName) {
     });
 }
 
+function cleanData(row) {
+    cleaned = _.extend({}, row);
+    if (row.adopted) {
+        // We want the year exactly as it appears in CartoDB, not modified for 
+        // timezone
+        cleaned.adopted = row.adopted.slice(0, row.adopted.indexOf('-'));
+    }
+    return cleaned;
+}
+
 module.exports = {
 
     load: function ($target, options) {
-        // Load basic template for the plan
-        var template = JST['handlebars_templates/plan.hbs'];
-        templateContent = template(options);
-        sidebar.open('#' + $target.attr('id'), templateContent);
 
-        // Load details for the plan
-        var $details = $target.find('#plan-details');
-        if (options.borough) {
-            addPlanContent($details, options.borough, options.plan_name);
-        }
-        else {
-            // If we don't have borough, get it first
-            loadBorough(options.plan_name, function (borough) {
-                addPlanContent($details, borough, options.plan_name);
-            });
-        }
+        loadDetails(options.plan_name, function (row) {
+            row = cleanData(row);
 
-        // Load the plan's lots
-        loadLots($('#lots-content'), options.plan_name);
+            // Load basic template for the plan
+            var template = JST['handlebars_templates/plan.hbs'];
+            templateContent = template(row);
+            sidebar.open('#' + $target.attr('id'), templateContent);
+
+            // Load details for the plan
+            var $details = $target.find('#plan-details');
+            addPlanContent($details, row.borough, options.plan_name);
+
+            // Load the plan's lots
+            loadLots($('#lots-content'), options.plan_name);
+        });
     }
 
 };

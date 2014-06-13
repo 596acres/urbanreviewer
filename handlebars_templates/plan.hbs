@@ -1,11 +1,18 @@
-<button class="panel-toggle">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-</button>
-<h1>{{plan_name}}</h1>
-<div class="borough">{{borough}}</div>
-<div><span class="lot-count"></span> lots</div>
+<header class="plan-header">
+    <button class="panel-toggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <div class="plan-header-content">
+        <h1>{{name}}</h1>
+        <div class="plan-header-content-item adopted">
+            <label>adopted</label>
+            <span class="value">{{adopted}}</span>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</header>
 <div id="plan-details"></div>
 <section id="lots">
     <h2>lots</h2>
