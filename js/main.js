@@ -280,9 +280,9 @@ $(document).ready(function () {
      */
     var parsedHash = hash.parseHash(window.location.hash),
         zoom = parsedHash.zoom || defaultZoom,
-        center = parsedHash.center || defaultCenter,
-        currentPage = parsedHash.page,
-        currentPlan = parsedHash.plan;
+        center = parsedHash.center || defaultCenter;
+    currentPage = parsedHash.page;
+    currentPlan = parsedHash.plan;
 
     map = plansmap.init('map', function () {
         // Don't load filters until we have a lots layer to filter on
