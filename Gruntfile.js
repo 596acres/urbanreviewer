@@ -43,6 +43,7 @@ module.exports = function(grunt) {
                     "js/hash.js",
                     "js/highlights.js",
                     "js/main.js",
+                    "js/plans.js",
                     "js/plansmap.js",
                     "js/search.js",
                     "js/sidebar.js",

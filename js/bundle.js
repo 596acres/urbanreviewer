@@ -146,7 +146,7 @@ module.exports = {
 
 };
 
-},{"./plansmap":7}],3:[function(require,module,exports){
+},{"./plansmap":8}],3:[function(require,module,exports){
 var geocoder = new google.maps.Geocoder();
 
 function to_google_bounds(bounds) {
@@ -272,7 +272,7 @@ module.exports = {
 
 };
 
-},{"jsurl":14,"querystring":13}],5:[function(require,module,exports){
+},{"jsurl":15,"querystring":14}],5:[function(require,module,exports){
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 
@@ -325,13 +325,14 @@ module.exports = {
 
 };
 
-},{"./plansmap":7,"underscore":17}],6:[function(require,module,exports){
+},{"./plansmap":8,"underscore":18}],6:[function(require,module,exports){
 var _ = require('underscore');
 
 var cartodbapi = require('./cartodbapi');
 var filters = require('./filters');
 var hash = require('./hash');
 var highlights = require('./highlights');
+var plans = require('./plans');
 var plansmap = require('./plansmap');
 var search = require('./search');
 var sidebar = require('./sidebar');
@@ -354,14 +355,8 @@ var urbanreviewer = {
         currentSidebar = null;
         pushState(name);
         unloadFilters();
-        urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
+        plans.load($('#right-pane'), { plan_name: currentPlan });
         plansmap.addPlanOutline(currentPlan, { zoomToPlan: true });
-    },
-
-    addPlanContent: function ($location, borough, planName) {
-        $.get('plans/' + borough + '/' + planName.replace('/', '-'), function (content) {
-            $location.append(content);
-        });
     },
 
     loadSidebar: function (name, addHistory) {
@@ -388,48 +383,6 @@ var urbanreviewer = {
         unloadFilters();
         sidebar.close('#right-pane');
         setTitle(null);
-    },
-
-    loadPlanInformation: function (data) {
-        var template = JST['handlebars_templates/plan.hbs'];
-        templateContent = template(data);
-        sidebar.open('#right-pane', templateContent);
-
-        // If we don't have borough, get it first
-        if (data.borough) {
-            urbanreviewer.addPlanContent($('#right-pane #plan-details'),
-                                         data.borough, data.plan_name);
-        }
-        else {
-            var sql = "SELECT * FROM plans WHERE name = '" + data.plan_name + "'";
-            cartodbapi.getJSON(sql, function (results) {
-                data = results.rows[0];
-                urbanreviewer.addPlanContent($('#right-pane #plan-details'),
-                                             data.borough, data.name);
-            });
-        }
-
-        var sql = 
-            "SELECT p.borough AS borough, l.bbl AS bbl, l.block AS block, " +
-                "l.lot AS lot, l.disposition_display AS disposition, " +
-                "l.in_596 as in_596 " +
-            "FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id " +
-            "WHERE p.name='" + data.plan_name + "' " +
-            "ORDER BY l.block, l.lot";
-        cartodbapi.getJSON(sql, function (data) {
-            var lots_template = JST['handlebars_templates/lots.hbs'];
-            var content = lots_template(data);
-            $('#lots-content').append(content);
-            $('.lot-count').text(data.rows.length);
-            $('.lot').on({
-                mouseover: function () {
-                    plansmap.highlightLot($(this).data());
-                },
-                mouseout: function () {
-                    plansmap.unHighlightLot();
-                }
-            });
-        });
     },
 
     loadPage: function (url) {
@@ -644,7 +597,7 @@ $(document).ready(function () {
         $('#search-container').hide();
         unloadFilters();
         setTitle(currentPlan);
-        urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
+        plans.load($('#right-pane'), { plan_name: currentPlan });
         plansmap.addPlanOutline(currentPlan);
     }
 
@@ -666,7 +619,7 @@ $(document).ready(function () {
         currentPage = parsedHash.page;
         currentPlan = parsedHash.plan;
         if (currentPlan && currentPlan !== previousPlan) {
-            urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
+            plans.load($('#right-pane'), { plan_name: currentPlan });
             plansmap.addPlanOutline(currentPlan);
         }
         if (currentPage && currentPage !== previousPage) {
@@ -709,7 +662,76 @@ $(document).ready(function () {
     });
 });
 
-},{"./cartodbapi":1,"./filters":2,"./hash":4,"./highlights":5,"./plansmap":7,"./search":8,"./sidebar":9,"underscore":17}],7:[function(require,module,exports){
+},{"./cartodbapi":1,"./filters":2,"./hash":4,"./highlights":5,"./plans":7,"./plansmap":8,"./search":9,"./sidebar":10,"underscore":18}],7:[function(require,module,exports){
+var cartodbapi = require('./cartodbapi');
+var plansmap = require('./plansmap');
+var sidebar = require('./sidebar');
+
+function addPlanContent($location, borough, planName) {
+    $.get('plans/' + borough + '/' + planName.replace('/', '-'), function (content) {
+        $location.append(content);
+    });
+}
+
+function loadBorough(planName, success) {
+    var sql = "SELECT * FROM plans WHERE name = '" + planName + "'";
+    cartodbapi.getJSON(sql, function (results) {
+        options = results.rows[0];
+        success(options.borough);
+    });
+}
+
+function loadLots($target, planName) {
+    var sql = 
+        "SELECT p.borough AS borough, l.bbl AS bbl, l.block AS block, " +
+            "l.lot AS lot, l.disposition_display AS disposition, " +
+            "l.in_596 as in_596 " +
+        "FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id " +
+        "WHERE p.name='" + planName + "' " +
+        "ORDER BY l.block, l.lot";
+    cartodbapi.getJSON(sql, function (data) {
+        var lots_template = JST['handlebars_templates/lots.hbs'];
+        var content = lots_template(data);
+        $target.append(content);
+        $('.lot-count').text(data.rows.length);
+        $('.lot').on({
+            mouseover: function () {
+                plansmap.highlightLot($(this).data());
+            },
+            mouseout: function () {
+                plansmap.unHighlightLot();
+            }
+        });
+    });
+}
+
+module.exports = {
+
+    load: function ($target, options) {
+        // Load basic template for the plan
+        var template = JST['handlebars_templates/plan.hbs'];
+        templateContent = template(options);
+        sidebar.open('#' + $target.attr('id'), templateContent);
+
+        // Load details for the plan
+        var $details = $target.find('#plan-details');
+        if (options.borough) {
+            addPlanContent($details, options.borough, options.plan_name);
+        }
+        else {
+            // If we don't have borough, get it first
+            loadBorough(options.plan_name, function (borough) {
+                addPlanContent($details, borough, options.plan_name);
+            });
+        }
+
+        // Load the plan's lots
+        loadLots($('#lots-content'), options.plan_name);
+    }
+
+};
+
+},{"./cartodbapi":1,"./plansmap":8,"./sidebar":10}],8:[function(require,module,exports){
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
 var singleminded = require('./singleminded');
@@ -970,7 +992,7 @@ module.exports = {
 
 };
 
-},{"./cartodbapi":1,"./singleminded":10,"underscore":17}],8:[function(require,module,exports){
+},{"./cartodbapi":1,"./singleminded":11,"underscore":18}],9:[function(require,module,exports){
 var cartodbapi = require('./cartodbapi');
 var geocode = require('./geocode.js');
 require('typeahead.js');
@@ -1037,7 +1059,7 @@ module.exports = {
     search: search
 };
 
-},{"./cartodbapi":1,"./geocode.js":3,"typeahead.js":16}],9:[function(require,module,exports){
+},{"./cartodbapi":1,"./geocode.js":3,"typeahead.js":17}],10:[function(require,module,exports){
 var _ = require('underscore');
 
 var sizes = ['narrow', 'wide'],
@@ -1075,7 +1097,7 @@ module.exports = {
     close: close
 };
 
-},{"underscore":17}],10:[function(require,module,exports){
+},{"underscore":18}],11:[function(require,module,exports){
 //
 // A simple AJAX request queue of length 1.
 //
@@ -1108,7 +1130,7 @@ module.exports = {
     remember: remember
 };
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1194,7 +1216,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1281,15 +1303,15 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":11,"./encode":12}],14:[function(require,module,exports){
+},{"./decode":12,"./encode":13}],15:[function(require,module,exports){
 module.exports = require('./lib/jsurl')
-},{"./lib/jsurl":15}],15:[function(require,module,exports){
+},{"./lib/jsurl":16}],16:[function(require,module,exports){
 /**
  * Copyright (c) 2011 Bruno Jouhier <bruno.jouhier@sage.com>
  *
@@ -1435,7 +1457,7 @@ module.exports = require('./lib/jsurl')
 		})();
 	}
 })(typeof exports !== 'undefined' ? exports : (window.JSURL = window.JSURL || {}));
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /*!
  * typeahead.js 0.10.2
  * https://github.com/twitter/typeahead.js
@@ -3152,7 +3174,7 @@ module.exports = require('./lib/jsurl')
         };
     })();
 })(window.jQuery);
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

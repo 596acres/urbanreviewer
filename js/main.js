@@ -4,6 +4,7 @@ var cartodbapi = require('./cartodbapi');
 var filters = require('./filters');
 var hash = require('./hash');
 var highlights = require('./highlights');
+var plans = require('./plans');
 var plansmap = require('./plansmap');
 var search = require('./search');
 var sidebar = require('./sidebar');
@@ -26,14 +27,8 @@ var urbanreviewer = {
         currentSidebar = null;
         pushState(name);
         unloadFilters();
-        urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
+        plans.load($('#right-pane'), { plan_name: currentPlan });
         plansmap.addPlanOutline(currentPlan, { zoomToPlan: true });
-    },
-
-    addPlanContent: function ($location, borough, planName) {
-        $.get('plans/' + borough + '/' + planName.replace('/', '-'), function (content) {
-            $location.append(content);
-        });
     },
 
     loadSidebar: function (name, addHistory) {
@@ -60,48 +55,6 @@ var urbanreviewer = {
         unloadFilters();
         sidebar.close('#right-pane');
         setTitle(null);
-    },
-
-    loadPlanInformation: function (data) {
-        var template = JST['handlebars_templates/plan.hbs'];
-        templateContent = template(data);
-        sidebar.open('#right-pane', templateContent);
-
-        // If we don't have borough, get it first
-        if (data.borough) {
-            urbanreviewer.addPlanContent($('#right-pane #plan-details'),
-                                         data.borough, data.plan_name);
-        }
-        else {
-            var sql = "SELECT * FROM plans WHERE name = '" + data.plan_name + "'";
-            cartodbapi.getJSON(sql, function (results) {
-                data = results.rows[0];
-                urbanreviewer.addPlanContent($('#right-pane #plan-details'),
-                                             data.borough, data.name);
-            });
-        }
-
-        var sql = 
-            "SELECT p.borough AS borough, l.bbl AS bbl, l.block AS block, " +
-                "l.lot AS lot, l.disposition_display AS disposition, " +
-                "l.in_596 as in_596 " +
-            "FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id " +
-            "WHERE p.name='" + data.plan_name + "' " +
-            "ORDER BY l.block, l.lot";
-        cartodbapi.getJSON(sql, function (data) {
-            var lots_template = JST['handlebars_templates/lots.hbs'];
-            var content = lots_template(data);
-            $('#lots-content').append(content);
-            $('.lot-count').text(data.rows.length);
-            $('.lot').on({
-                mouseover: function () {
-                    plansmap.highlightLot($(this).data());
-                },
-                mouseout: function () {
-                    plansmap.unHighlightLot();
-                }
-            });
-        });
     },
 
     loadPage: function (url) {
@@ -316,7 +269,7 @@ $(document).ready(function () {
         $('#search-container').hide();
         unloadFilters();
         setTitle(currentPlan);
-        urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
+        plans.load($('#right-pane'), { plan_name: currentPlan });
         plansmap.addPlanOutline(currentPlan);
     }
 
@@ -338,7 +291,7 @@ $(document).ready(function () {
         currentPage = parsedHash.page;
         currentPlan = parsedHash.plan;
         if (currentPlan && currentPlan !== previousPlan) {
-            urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
+            plans.load($('#right-pane'), { plan_name: currentPlan });
             plansmap.addPlanOutline(currentPlan);
         }
         if (currentPage && currentPage !== previousPage) {
