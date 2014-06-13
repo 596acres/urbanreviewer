@@ -1,3 +1,4 @@
+var cartodbapi = require('./cartodbapi');
 var geocode = require('./geocode.js');
 require('typeahead.js');
 
@@ -8,7 +9,7 @@ var plansBloodhound = new Bloodhound({
     limit: 10,
     prefetch: {
         // TODO this doesn't respect current filters
-        url: 'http://urbanreviewer.cartodb.com/api/v2/sql?q=SELECT name, borough FROM plans',
+        url: cartodbapi.getSqlUrl('SELECT name, borough FROM plans'),
         filter: function (results) {
             return $.map(results.rows, function (row) {
                 return {

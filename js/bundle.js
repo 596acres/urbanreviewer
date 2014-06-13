@@ -1,13 +1,19 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql';
+var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql/';
+
+function getSqlUrl(sql) {
+    return sqlApiBase + '?q=' + sql;
+}
 
 module.exports = {
 
     sqlApiBase: sqlApiBase,
 
     getGeoJSON: function (sql, success) {
-        return $.get(sqlApiBase + "?q=" + sql + '&format=GeoJSON', success);
-    }
+        return $.get(getSqlUrl(sql) + '&format=GeoJSON', success);
+    },
+
+    getSqlUrl: getSqlUrl
 
 };
 
@@ -963,6 +969,7 @@ module.exports = {
 };
 
 },{"./cartodbapi":1,"./singleminded":10,"underscore":17}],8:[function(require,module,exports){
+var cartodbapi = require('./cartodbapi');
 var geocode = require('./geocode.js');
 require('typeahead.js');
 
@@ -973,7 +980,7 @@ var plansBloodhound = new Bloodhound({
     limit: 10,
     prefetch: {
         // TODO this doesn't respect current filters
-        url: 'http://urbanreviewer.cartodb.com/api/v2/sql?q=SELECT name, borough FROM plans',
+        url: cartodbapi.getSqlUrl('SELECT name, borough FROM plans'),
         filter: function (results) {
             return $.map(results.rows, function (row) {
                 return {
@@ -1028,7 +1035,7 @@ module.exports = {
     search: search
 };
 
-},{"./geocode.js":3,"typeahead.js":16}],9:[function(require,module,exports){
+},{"./cartodbapi":1,"./geocode.js":3,"typeahead.js":16}],9:[function(require,module,exports){
 var _ = require('underscore');
 
 var sizes = ['narrow', 'wide'],
