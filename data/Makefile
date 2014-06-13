@@ -37,6 +37,7 @@ load_lots: csvs
 	-sqlite3 $(sqlite_db) 'DROP TABLE Bronx'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Bronx.csv
 	python add_dispositions.py --borough Bronx --db $(sqlite_db)
+	python fix_duplicate_dispositions.py --borough Bronx --db $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Brooklyn'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Brooklyn.csv
@@ -68,7 +69,7 @@ shps: load_lots load_596
 
 	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM SIMapPLUTO p INNER JOIN 'Staten Island' b ON b.BBL=p.BBL $(join_596)" "shp/Staten Island.shp" $(sqlite_db)
 
-merge:
+merge: shps
 	rm -f shp/merge.*
 	ogr2ogr -update -append shp/merge.shp "shp/Bronx.shp" -nln merge -lco ENCODING=UTF-8
 	ogr2ogr -update -append shp/merge.shp "shp/Brooklyn.shp" -nln merge
