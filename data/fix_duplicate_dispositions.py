@@ -18,7 +18,7 @@ fields = (
     'Name of Plan',
     'Date Adopted',
     'Status',
-    'Date Expired',
+    'Expiration',
     'Last Updated',
     'Disposition',
     'Source',
