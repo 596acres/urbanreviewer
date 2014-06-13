@@ -1,5 +1,6 @@
 var _ = require('underscore');
 
+var cartodbapi = require('./cartodbapi');
 var filters = require('./filters');
 var hash = require('./hash');
 var highlights = require('./highlights');
@@ -17,9 +18,6 @@ var currentPage,
 // Map defaults
 var defaultZoom = 12,
     defaultCenter = [40.739974, -73.946228];
-
-// Constants
-var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql';
 
 var urbanreviewer = {
 
@@ -76,7 +74,7 @@ var urbanreviewer = {
         }
         else {
             var sql = "SELECT * FROM plans WHERE name = '" + data.plan_name + "'";
-            $.get(sqlApiBase + '?q=' + sql, function (results) {
+            cartodbapi.getJSON(sql, function (results) {
                 data = results.rows[0];
                 urbanreviewer.addPlanContent($('#right-pane #plan-details'),
                                              data.borough, data.name);
@@ -90,7 +88,7 @@ var urbanreviewer = {
             "FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id " +
             "WHERE p.name='" + data.plan_name + "' " +
             "ORDER BY l.block, l.lot";
-        $.get(sqlApiBase + "?q=" + sql, function (data) {
+        cartodbapi.getJSON(sql, function (data) {
             var lots_template = JST['handlebars_templates/lots.hbs'];
             var content = lots_template(data);
             $('#lots-content').append(content);
@@ -200,7 +198,7 @@ function loadFilters(alreadyOpen) {
 
 function openPlanList() {
     var template = JST['handlebars_templates/plan_list.hbs'];
-    $.getJSON('http://urbanreviewer.cartodb.com/api/v2/sql?q=SELECT name, borough FROM plans ORDER BY name', function (results) {
+    cartodbapi.getJSON('SELECT name, borough FROM plans ORDER BY name', function (results) {
         sidebar.open('#right-pane', template({
             plans: results.rows
         }), 'narrow');

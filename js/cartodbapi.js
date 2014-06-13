@@ -12,6 +12,10 @@ module.exports = {
         return $.get(getSqlUrl(sql) + '&format=GeoJSON', success);
     },
 
+    getJSON: function (sql, success) {
+        return $.get(getSqlUrl(sql), success);
+    },
+
     getSqlUrl: getSqlUrl
 
 };
