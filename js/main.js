@@ -443,37 +443,6 @@ $(document).ready(function () {
         urbanreviewer.selectPlan(name, map);
     });
 
-
-    /*
-     * Initialize dateRangeSlider
-     *
-     * TODO consider moving to filters
-     */
-    $('#date-range-picker')
-        .dateRangeSlider({
-            arrows: false,
-            defaultValues: {
-                min: new Date(1952, 0, 1),
-                max: new Date(2014, 0, 1)
-            },
-            bounds: {
-                min: new Date(1952, 0, 1),
-                max: new Date(2014, 0, 1)
-            },
-            formatter: function (value) {
-                return value.getFullYear();
-            },
-            step: {
-                years: 1
-            }
-        })
-        .bind('valuesChanged', function (e, data) {
-            plansmap.filterLotsLayer({
-                start: data.values.min.getFullYear(), 
-                end: data.values.max.getFullYear()
-            });
-        });
-
     if (currentPage) {
         urbanreviewer.loadPage(currentPage);
     }

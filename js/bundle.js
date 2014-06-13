@@ -23,22 +23,38 @@ module.exports = {
         state = overrideState || {};
 
         if (options.dateRange) {
-            $(options.dateRange).bind('valuesChanged', function (e, data) {
-                updateState({
-                    start: data.values.min.getFullYear(), 
-                    end: data.values.max.getFullYear()
-                });
-            });
+            var min = new Date(1952, 0, 1),
+                max = new Date(2014, 0, 1),
+                defaultMin = min,
+                defaultMax = max;
             if (state.start) {
-                $(options.dateRange).dateRangeSlider('min', 
-                    new Date(state.start, 0, 1)
-                );
+                defaultMin = new Date(state.start, 0, 1);
             }
             if (state.end) {
-                $(options.dateRange).dateRangeSlider('max',
-                    new Date(state.end, 0, 1)
-                );
+                defaultMax = new Date(state.end, 0, 1);
             }
+            $('#date-range-picker')
+                .dateRangeSlider({
+                    arrows: false,
+                    defaultValues: {
+                        min: defaultMin,
+                        max: defaultMax
+                    },
+                    bounds: {
+                        min: min,
+                        max: max
+                    },
+                    formatter: function (value) {
+                        return value.getFullYear();
+                    },
+                    step: { years: 1 }
+                })
+                .bind('valuesChanged', function (e, data) {
+                    var start = data.values.min.getFullYear(),
+                        end = data.values.max.getFullYear();
+                    plansmap.filterLotsLayer({ start: start, end: end });
+                    updateState({ start: start, end: end });
+                });
         }
 
         if (options.mayors && options.dateRange) {
@@ -702,37 +718,6 @@ $(document).ready(function () {
     $('#search').on('planfound', function (e, name) {
         urbanreviewer.selectPlan(name, map);
     });
-
-
-    /*
-     * Initialize dateRangeSlider
-     *
-     * TODO consider moving to filters
-     */
-    $('#date-range-picker')
-        .dateRangeSlider({
-            arrows: false,
-            defaultValues: {
-                min: new Date(1952, 0, 1),
-                max: new Date(2014, 0, 1)
-            },
-            bounds: {
-                min: new Date(1952, 0, 1),
-                max: new Date(2014, 0, 1)
-            },
-            formatter: function (value) {
-                return value.getFullYear();
-            },
-            step: {
-                years: 1
-            }
-        })
-        .bind('valuesChanged', function (e, data) {
-            plansmap.filterLotsLayer({
-                start: data.values.min.getFullYear(), 
-                end: data.values.max.getFullYear()
-            });
-        });
 
     if (currentPage) {
         urbanreviewer.loadPage(currentPage);
