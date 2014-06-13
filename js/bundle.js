@@ -667,6 +667,10 @@ $(document).ready(function () {
         urbanreviewer.loadSidebar(parsedHash.sidebar);
     }
 
+    if (currentPage) {
+        urbanreviewer.loadPage(currentPage);
+    }
+
 
     /*
      * Listen for popstate
@@ -718,10 +722,6 @@ $(document).ready(function () {
     $('#search').on('planfound', function (e, name) {
         urbanreviewer.selectPlan(name, map);
     });
-
-    if (currentPage) {
-        urbanreviewer.loadPage(currentPage);
-    }
 
     $('#map-filters-toggle').click(function () {
         if (sidebar.isOpen('#right-pane')) {
