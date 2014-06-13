@@ -276,10 +276,10 @@ var currentPage,
     lotsLayer,
     defaultZoom = 12,
     defaultCenter = [40.739974, -73.946228],
-    userMarker;
+    userMarker,
+    sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql';
 
 var urbanreviewer = {
-    sql_api_base: 'http://urbanreviewer.cartodb.com/api/v2/sql',
 
     selectPlan: function (name, map) {
         currentPlan = name;
@@ -322,7 +322,7 @@ var urbanreviewer = {
         var sql = "SELECT ST_Buffer(ST_ConvexHull(ST_Union(l.the_geom)), 0.0001) AS the_geom " + 
                   "FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id " +
                   "WHERE p.name = '" + planName + "'";
-        $.get(urbanreviewer.sql_api_base + "?q=" + sql + '&format=GeoJSON', function (data) {
+        $.get(sqlApiBase + "?q=" + sql + '&format=GeoJSON', function (data) {
             planOutline.addData(data);
             
             if (options.zoomToPlan === true) {
@@ -371,7 +371,7 @@ var urbanreviewer = {
         }
         else {
             var sql = "SELECT * FROM plans WHERE name = '" + data.plan_name + "'";
-            $.get(urbanreviewer.sql_api_base + '?q=' + sql, function (results) {
+            $.get(sqlApiBase + '?q=' + sql, function (results) {
                 data = results.rows[0];
                 urbanreviewer.addPlanContent($('#right-pane #plan-details'),
                                              data.borough, data.name);
@@ -385,7 +385,7 @@ var urbanreviewer = {
             "FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id " +
             "WHERE p.name='" + data.plan_name + "' " +
             "ORDER BY l.block, l.lot";
-        $.get(urbanreviewer.sql_api_base + "?q=" + sql, function (data) {
+        $.get(sqlApiBase + "?q=" + sql, function (data) {
             var lots_template = JST['handlebars_templates/lots.hbs'];
             var content = lots_template(data);
             $('#lots-content').append(content);
