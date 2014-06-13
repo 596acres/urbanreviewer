@@ -1029,7 +1029,7 @@ module.exports = {
             outline = planOutlines[label] = L.geoJson(null, {
                 style: function (feature) {
                     return {
-                        color: '#f00',
+                        color: '#000',
                         dashArray: '10 10 1 10',
                         fill: false,
                         stroke: true
