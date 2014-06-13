@@ -266,9 +266,10 @@ ul {
 }
 #right-pane .plan-header-content-item .value {
   font-weight: normal;
+  text-transform: none;
 }
 #right-pane .plan-content {
-  margin-top: 100px;
+  margin-top: 150px;
 }
 #right-pane .plan-content > section {
   border-top: 2px solid black;
