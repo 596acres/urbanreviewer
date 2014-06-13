@@ -69,7 +69,14 @@ function program1(depth0,data) {
   if (helper = helpers.lot) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.lot); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "\">\n            <h3>";
+    + "\">\n            <div class=\"lot-external-links\">\n                ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.in_596), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n                <a title=\"View on OASIS\" href=\"http://www.oasisnyc.net/map.aspx?etabs=1&zoomto=lot:";
+  if (helper = helpers.bbl) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.bbl); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\" target=\"_blank\"><img width=\"22\" height=\"22\" src=\"img/oasis.ico\" /></a>\n            </div>\n            <h3>";
   if (helper = helpers.borough) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.borough); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
@@ -82,15 +89,23 @@ function program1(depth0,data) {
   else { helper = (depth0 && depth0.lot); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + "</h3>\n            <div>Planned use: \n                ";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.disposition), {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data});
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.disposition), {hash:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n            </div>\n            ";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.in_596), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n        </li>\n    ";
+  buffer += "\n            </div>\n        </li>\n    ";
   return buffer;
   }
 function program2(depth0,data) {
+  
+  var buffer = "", stack1, helper;
+  buffer += "\n                <a href=\"http://596acres.org/lot/";
+  if (helper = helpers.bbl) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.bbl); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\" target=\"_blank\" title=\"View on 596 Acres\"><img width=\"22\" height=\"22\" src=\"img/596acres.ico\" /></a>\n                ";
+  return buffer;
+  }
+
+function program4(depth0,data) {
   
   var buffer = "", stack1, helper;
   buffer += "\n                ";
@@ -101,21 +116,10 @@ function program2(depth0,data) {
   return buffer;
   }
 
-function program4(depth0,data) {
+function program6(depth0,data) {
   
   
   return "\n                unknown\n                ";
-  }
-
-function program6(depth0,data) {
-  
-  var buffer = "", stack1, helper;
-  buffer += "\n            <div><a href=\"http://596acres.org/lot/";
-  if (helper = helpers.bbl) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.bbl); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\" target=\"_blank\">View on 596 Acres</a></div>\n            ";
-  return buffer;
   }
 
   buffer += "<ul>\n    ";

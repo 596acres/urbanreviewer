@@ -1,6 +1,12 @@
 <ul>
     {{#each rows}}
         <li class="lot" data-borough="{{borough}}" data-block="{{block}}" data-lot="{{lot}}">
+            <div class="lot-external-links">
+                {{#if in_596}}
+                <a href="http://596acres.org/lot/{{bbl}}" target="_blank" title="View on 596 Acres"><img width="22" height="22" src="img/596acres.ico" /></a>
+                {{/if}}
+                <a title="View on OASIS" href="http://www.oasisnyc.net/map.aspx?etabs=1&zoomto=lot:{{bbl}}" target="_blank"><img width="22" height="22" src="img/oasis.ico" /></a>
+            </div>
             <h3>{{borough}} block {{block}}, lot {{lot}}</h3>
             <div>Planned use: 
                 {{#if disposition}}
@@ -9,9 +15,6 @@
                 unknown
                 {{/if}}
             </div>
-            {{#if in_596}}
-            <div><a href="http://596acres.org/lot/{{bbl}}" target="_blank">View on 596 Acres</a></div>
-            {{/if}}
         </li>
     {{/each}}
 </ul>

@@ -306,6 +306,9 @@ ul {
 #right-pane #lots-content .lot:hover {
   background-color: #FFFFCC;
 }
+#right-pane #lots-content .lot-external-links {
+  float: right;
+}
 #right-pane #lots-content .lot h3 {
   font-size: 24px;
   font-weight: bold;
