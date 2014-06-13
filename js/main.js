@@ -23,7 +23,7 @@ var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql';
 
 var urbanreviewer = {
 
-    selectPlan: function (name, map) {
+    selectPlan: function (name) {
         currentPlan = name;
         currentSidebar = null;
         pushState(name);
@@ -209,7 +209,7 @@ function openPlanList() {
             return false;
         });
         $('.plan').click(function () {
-            urbanreviewer.selectPlan($(this).data('name'), map);
+            urbanreviewer.selectPlan($(this).data('name'));
         });
     });
 }
@@ -249,7 +249,7 @@ $(document).ready(function () {
             pushState();
         })
         .on('planlotclick', function (data) {
-            urbanreviewer.selectPlan(data.plan_name, map);
+            urbanreviewer.selectPlan(data.plan_name);
         })
         .on('planlotover', function (data) {
             if (currentPlan && data.plan_name === currentPlan) {
@@ -369,7 +369,7 @@ $(document).ready(function () {
         plansmap.addUserMarker(latlng);
     });
     $('#search').on('planfound', function (e, name) {
-        urbanreviewer.selectPlan(name, map);
+        urbanreviewer.selectPlan(name);
     });
 
     $('#map-filters-toggle').click(function () {
