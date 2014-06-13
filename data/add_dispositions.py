@@ -16,13 +16,13 @@ def add_dispositions(borough, db):
     # Add disposition columns to borough table
     try:
         c.execute(("ALTER TABLE '%s' ADD COLUMN 'filterable_disposition' "
-                   "'VARCHAR(300)'") % borough)
+                   "VARCHAR(300)") % borough)
     except sqlite3.OperationalError:
         print 'filterable_disposition already exists. Moving on.'
 
     try:
         c.execute(("ALTER TABLE '%s' ADD COLUMN 'edited_disposition' "
-                   "'VARCHAR(700)'") % borough)
+                   "VARCHAR(700)") % borough)
     except sqlite3.OperationalError:
         print 'edited_disposition already exists. Moving on.'
 
