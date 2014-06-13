@@ -567,18 +567,6 @@ $(document).ready(function () {
             pushState();
         });
 
-    if (currentPlan) {
-        $('#search-container').hide();
-        unloadFilters();
-        setTitle(currentPlan);
-        urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
-        urbanreviewer.addPlanOutline(map, currentPlan);
-    }
-
-    if (parsedHash.sidebar) {
-        urbanreviewer.loadSidebar(parsedHash.sidebar);
-    }
-
     map
         .on('planlotclick', function (data) {
             urbanreviewer.selectPlan(data.plan_name, map);
@@ -608,6 +596,7 @@ $(document).ready(function () {
      * Initialize sidebar
      */
     $('#right-pane').on('open', function (e, size) {
+        console.log('open');
         if (size === 'wide') {
             $('#date-range-picker-container').hide();
             $('#map-filters-toggle').hide();
@@ -641,6 +630,23 @@ $(document).ready(function () {
         urbanreviewer.loadPage(currentPage);
         return false;
     });
+
+
+    /*
+     * If a plan or sidebar was in the url, open it.
+     */
+    if (currentPlan) {
+        // TODO hide / shrink the date range slider
+        $('#search-container').hide();
+        unloadFilters();
+        setTitle(currentPlan);
+        urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
+        urbanreviewer.addPlanOutline(map, currentPlan);
+    }
+
+    if (parsedHash.sidebar) {
+        urbanreviewer.loadSidebar(parsedHash.sidebar);
+    }
 
 
     /*
