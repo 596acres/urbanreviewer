@@ -22,8 +22,6 @@ fields = (
     'Last Updated',
     'Disposition',
     'Source',
-    'Justification for Inclusion',
-    'Second Evaluation Needed',
     'filterable_disposition',
     'edited_disposition'
 )
