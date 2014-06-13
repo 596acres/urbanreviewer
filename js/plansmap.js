@@ -4,7 +4,11 @@ var singleminded = require('./singleminded');
 var map,
     lotsLayer,
     highlightedLotLayer,
-    lastFilters = {};
+    lastFilters = {},
+    planOutline,
+    userMarker;
+
+var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql';
 
 var defaultCartoCSS = '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }';
 var highlightedCartoCSS = 'polygon-fill: #FF0000;' +
@@ -204,6 +208,53 @@ module.exports = {
         }
 
         lotsLayer.setCartoCSS(cartocss);
+    },
+
+    clearPlanOutline: function () {
+        if (planOutline) {
+            planOutline.clearLayers();
+        }
+    },
+
+    addPlanOutline: function (planName, options) {
+        options = options || {};
+        if (planOutline) {
+            planOutline.clearLayers();
+        }
+        else {
+            planOutline = L.geoJson(null, {
+                style: function (feature) {
+                    return {
+                        color: '#f00',
+                        dashArray: '10 10 1 10',
+                        fill: false,
+                        stroke: true
+                    };
+                }
+            }).addTo(map);
+        }
+        var sql = "SELECT ST_Buffer(ST_ConvexHull(ST_Union(l.the_geom)), 0.0001) AS the_geom " + 
+                  "FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id " +
+                  "WHERE p.name = '" + planName + "'";
+        $.get(sqlApiBase + "?q=" + sql + '&format=GeoJSON', function (data) {
+            planOutline.addData(data);
+            
+            if (options.zoomToPlan === true) {
+                map.fitBounds(planOutline.getBounds(), {
+                    padding: [25, 25]            
+                });
+            }
+        });
+    },
+
+    addUserMarker: function (latlng) {
+        if (userMarker) {
+            map.removeLayer(userMarker);
+        }
+        userMarker = L.userMarker(results.latlng, {
+            smallIcon: true                        
+        }).addTo(map);
+        map.setView(results.latlng, 16);
     }
 
 };

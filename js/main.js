@@ -14,11 +14,6 @@ var currentPage,
     currentLot = {},
     currentTitle;
 
-// Map state
-var planOutline,
-    lotsLayer,
-    userMarker;
-
 // Map defaults
 var defaultZoom = 12,
     defaultCenter = [40.739974, -73.946228];
@@ -34,49 +29,12 @@ var urbanreviewer = {
         pushState(name);
         unloadFilters();
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
-        urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
+        plansmap.addPlanOutline(currentPlan, { zoomToPlan: true });
     },
 
     addPlanContent: function ($location, borough, planName) {
         $.get('plans/' + borough + '/' + planName.replace('/', '-'), function (content) {
             $location.append(content);
-        });
-    },
-
-    clearPlanOutline: function (map) {
-        if (planOutline) {
-            planOutline.clearLayers();
-        }
-    },
-
-    addPlanOutline: function (map, planName, options) {
-        options = options || {};
-        if (planOutline) {
-            planOutline.clearLayers();
-        }
-        else {
-            planOutline = L.geoJson(null, {
-                style: function (feature) {
-                    return {
-                        color: '#f00',
-                        dashArray: '10 10 1 10',
-                        fill: false,
-                        stroke: true
-                    };
-                }
-            }).addTo(map);
-        }
-        var sql = "SELECT ST_Buffer(ST_ConvexHull(ST_Union(l.the_geom)), 0.0001) AS the_geom " + 
-                  "FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id " +
-                  "WHERE p.name = '" + planName + "'";
-        $.get(sqlApiBase + "?q=" + sql + '&format=GeoJSON', function (data) {
-            planOutline.addData(data);
-            
-            if (options.zoomToPlan === true) {
-                map.fitBounds(planOutline.getBounds(), {
-                    padding: [25, 25]            
-                });
-            }
         });
     },
 
@@ -342,7 +300,7 @@ $(document).ready(function () {
         currentPlan = null;
         setTitle(null);
         pushState();
-        urbanreviewer.clearPlanOutline(map);
+        plansmap.clearPlanOutline();
     });
 
     $('.sidebar-link').click(function (e) {
@@ -361,7 +319,7 @@ $(document).ready(function () {
         unloadFilters();
         setTitle(currentPlan);
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
-        urbanreviewer.addPlanOutline(map, currentPlan);
+        plansmap.addPlanOutline(currentPlan);
     }
 
     if (currentPage) {
@@ -383,7 +341,7 @@ $(document).ready(function () {
         currentPlan = parsedHash.plan;
         if (currentPlan && currentPlan !== previousPlan) {
             urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
-            urbanreviewer.addPlanOutline(map, currentPlan);
+            plansmap.addPlanOutline(currentPlan);
         }
         if (currentPage && currentPage !== previousPage) {
             urbanreviewer.loadPage(currentPage);
@@ -408,13 +366,7 @@ $(document).ready(function () {
      */
     search.init('#search');
     $('#search').on('resultfound', function (e, results) {
-        if (userMarker) {
-            map.removeLayer(userMarker);
-        }
-        userMarker = L.userMarker(results.latlng, {
-            smallIcon: true                        
-        }).addTo(map);
-        map.setView(results.latlng, 16);
+        plansmap.addUserMarker(latlng);
     });
     $('#search').on('planfound', function (e, name) {
         urbanreviewer.selectPlan(name, map);
