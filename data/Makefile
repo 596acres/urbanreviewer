@@ -52,6 +52,7 @@ load_lots: csvs
 	-sqlite3 $(sqlite_db) 'DROP TABLE Queens'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Queens.csv
 	python add_dispositions.py --borough Queens --db $(sqlite_db)
+	python fix_duplicate_dispositions.py --borough Queens --db $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) "DROP TABLE 'Staten Island'"
 	-csvsql --db sqlite:///$(sqlite_db) --insert "csv/Staten Island.csv"
