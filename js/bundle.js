@@ -274,6 +274,30 @@ module.exports = {
             });
         }
 
+    },
+
+    getDispositions: function() {
+        var dispositions = [
+            'open space',
+            'recreational',
+            'community facility',
+            'residential',
+            'commercial',
+            'industrial',
+            'institutional',
+            'public',
+            'semi-public',
+            'utility',
+            'easement',
+            'street',
+            'illegible'
+        ];
+        return _.map(dispositions, function (disposition) {
+            return {
+                id: disposition.replace(' ', '-'),
+                label: disposition
+            };
+        });
     }
 
 };
@@ -476,30 +500,6 @@ function pushState(title) {
     history.pushState(state, null, url);
 }
 
-function getDispositions() {
-    var dispositions = [
-        'open space',
-        'recreational',
-        'community facility',
-        'residential',
-        'commercial',
-        'industrial',
-        'institutional',
-        'public',
-        'semi-public',
-        'utility',
-        'easement',
-        'street',
-        'illegible'
-    ];
-    return _.map(dispositions, function (disposition) {
-        return {
-            id: disposition.replace(' ', '-'),
-            label: disposition
-        };
-    });
-}
-
 function openFilters() {
     sidebar.open('#right-pane', $('#filters-container').show(), 'narrow');
 }
@@ -514,7 +514,7 @@ function loadFilters(alreadyOpen) {
     var template = JST['handlebars_templates/filters.hbs'],
         $target = $('body'),
         $content = $(template({
-            dispositions: getDispositions(),
+            dispositions: highlights.getDispositions(),
             years: _.range(filters.minYear, filters.maxYear)
         }));
 

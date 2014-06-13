@@ -22,6 +22,30 @@ module.exports = {
             });
         }
 
+    },
+
+    getDispositions: function() {
+        var dispositions = [
+            'open space',
+            'recreational',
+            'community facility',
+            'residential',
+            'commercial',
+            'industrial',
+            'institutional',
+            'public',
+            'semi-public',
+            'utility',
+            'easement',
+            'street',
+            'illegible'
+        ];
+        return _.map(dispositions, function (disposition) {
+            return {
+                id: disposition.replace(' ', '-'),
+                label: disposition
+            };
+        });
     }
 
 };
