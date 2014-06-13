@@ -184,6 +184,11 @@ ul {
 .panel-toggle:hover .icon-bar {
   background: white;
 }
+.main-section {
+  border-top: 2px solid black;
+  padding-top: 5px;
+  margin-bottom: 50px;
+}
 #right-pane {
   background: white;
   display: none;
@@ -221,9 +226,17 @@ ul {
   margin-bottom: 25px;
   margin-top: 25px;
 }
+#right-pane .plan {
+  margin-left: -15px;
+  margin-right: -15px;
+}
 #right-pane .plan-header {
+  border-bottom: 1px solid #444;
   font-size: 16px;
+  margin-left: -15px;
+  margin-bottom: 30px;
   margin-top: -10px;
+  padding-bottom: 5px;
   position: relative;
 }
 #right-pane .plan-header h1 {
@@ -236,8 +249,7 @@ ul {
   float: left;
   font-size: 90px;
   line-height: 50px;
-  margin-left: -15px;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 #right-pane .plan-header .panel-toggle:hover {
   background-color: white;
@@ -252,17 +264,36 @@ ul {
 #right-pane .plan-header-content-item .value {
   font-weight: normal;
 }
+#right-pane .plan > section {
+  border-top: 2px solid black;
+  padding-top: 5px;
+  margin-bottom: 50px;
+  border-top: 0;
+  margin-top: 15px;
+}
+#right-pane .plan h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 25px;
+  text-transform: capitalize;
+}
+#right-pane #lots-content {
+  border-top: 3px solid #444;
+}
 #right-pane #lots-content ul {
   list-style: none;
   padding: 0;
 }
 #right-pane #lots-content .lot {
+  border-bottom: 1px solid #444;
   cursor: pointer;
-  margin-bottom: 15px;
-  margin-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 #right-pane #lots-content .lot:hover {
-  background-color: #ccc;
+  background-color: #FFFFCC;
 }
 #right-pane #lots-content .lot h3 {
   font-size: 24px;

@@ -81,7 +81,7 @@ function program1(depth0,data) {
   if (helper = helpers.lot) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.lot); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</h3>\n            <div>Planned disposition: \n                ";
+    + "</h3>\n            <div>Planned use: \n                ";
   stack1 = helpers['if'].call(depth0, (depth0 && depth0.disposition), {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n            </div>\n            ";
@@ -131,15 +131,15 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<header class=\"plan-header\">\n    <button class=\"panel-toggle\">\n        &times;\n    </button>\n    <div class=\"plan-header-content\">\n        <h1>";
+  buffer += "<div class=\"plan\">\n    <header class=\"plan-header\">\n        <button class=\"panel-toggle\">\n            &times;\n        </button>\n        <div class=\"plan-header-content\">\n            <h1>";
   if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</h1>\n        <div class=\"plan-header-content-item adopted\">\n            <label>adopted</label>\n            <span class=\"value\">";
+    + "</h1>\n            <div class=\"plan-header-content-item adopted\">\n                <label>adopted</label>\n                <span class=\"value\">";
   if (helper = helpers.adopted) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.adopted); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</span>\n        </div>\n    </div>\n    <div style=\"clear: both;\"></div>\n</header>\n<div id=\"plan-details\"></div>\n<section id=\"lots\">\n    <h2>lots</h2>\n    <div id=\"lots-content\"></div>\n</section>\n";
+    + "</span>\n            </div>\n        </div>\n        <div style=\"clear: both;\"></div>\n    </header>\n    <section id=\"plan-about\">\n        <h2>About the plan</h2>\n        <p style=\"margin-left: 15px;\">(Coming soon.)</p>\n        <div id=\"plan-details\"></div>\n    </section>\n    <section id=\"lots\">\n        <h2>lots</h2>\n        <div id=\"lots-content\"></div>\n    </section>\n</div>\n";
   return buffer;
   });
 
