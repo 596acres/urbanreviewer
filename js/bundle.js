@@ -542,12 +542,15 @@ $(document).ready(function () {
                         block: data.block,
                         lot: data.lot
                     });
+
+                    plans.highlightLot(data.block, data.lot);
                 }
             }
         })
         .on('planlotout', function (data) {
             currentLot = {};
             plansmap.unHighlightLot();
+            plans.unhighlightLot();
         });
 
 
@@ -668,6 +671,8 @@ var cartodbapi = require('./cartodbapi');
 var plansmap = require('./plansmap');
 var sidebar = require('./sidebar');
 
+var scrollToHeight;
+
 function addPlanContent($location, borough, planName) {
     $.get('plans/' + borough + '/' + planName.replace('/', '-'), function (content) {
         $location.append(content);
@@ -728,10 +733,13 @@ function cleanData(row) {
     return cleaned;
 }
 
+function unhighlightLot() {
+    $('.lot').removeClass('highlighted');
+}
+
 module.exports = {
 
     load: function ($target, options) {
-
         loadDetails(options.plan_name, function (row) {
             row = cleanData(row);
 
@@ -747,7 +755,24 @@ module.exports = {
             // Load the plan's lots
             loadLots($('#lots-content'), options.plan_name);
         });
-    }
+
+        scrollToHeight = $('#right-pane').height() / 2;
+    },
+
+    highlightLot: function (block, lot) {
+        unhighlightLot();
+
+        var $lot = $('.lot[data-block=' + block +'][data-lot=' + lot + ']');
+        $lot.addClass('highlighted');
+        $('#right-pane').scrollTo($lot, 100, {
+            axis: 'y',
+            margin: true,
+            offset: -scrollToHeight,
+            queue: false
+        });
+    },
+
+    unhighlightLot: unhighlightLot
 
 };
 
@@ -921,15 +946,6 @@ module.exports = {
             whereConditions.push("p.name = '" + options.plan_name + "'");
         }
         sql += ' WHERE ' + whereConditions.join(' AND ');
-
-        // Get centroid
-        singleminded.remember('highlightLot_centroid', 
-            $.get(url + sql + '&format=GeoJSON', function (data) {
-                var coords = data.features[0].geometry.coordinates,
-                    latlng = [coords[1], coords[0]];
-                map.openPopup('block: ' + options.block + ', lot: ' + options.lot, latlng);
-            })
-        );
 
         // Get geometry
         var geometrySql = 'SELECT l.the_geom AS the_geom ' +

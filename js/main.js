@@ -214,12 +214,15 @@ $(document).ready(function () {
                         block: data.block,
                         lot: data.lot
                     });
+
+                    plans.highlightLot(data.block, data.lot);
                 }
             }
         })
         .on('planlotout', function (data) {
             currentLot = {};
             plansmap.unHighlightLot();
+            plans.unhighlightLot();
         });
 
 

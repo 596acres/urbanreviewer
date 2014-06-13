@@ -168,15 +168,6 @@ module.exports = {
         }
         sql += ' WHERE ' + whereConditions.join(' AND ');
 
-        // Get centroid
-        singleminded.remember('highlightLot_centroid', 
-            $.get(url + sql + '&format=GeoJSON', function (data) {
-                var coords = data.features[0].geometry.coordinates,
-                    latlng = [coords[1], coords[0]];
-                map.openPopup('block: ' + options.block + ', lot: ' + options.lot, latlng);
-            })
-        );
-
         // Get geometry
         var geometrySql = 'SELECT l.the_geom AS the_geom ' +
                 'FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id ';

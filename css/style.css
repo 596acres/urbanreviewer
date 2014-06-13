@@ -316,6 +316,7 @@ ul {
   padding-top: 15px;
   padding-bottom: 15px;
 }
+#right-pane #lots-content .lot.highlighted,
 #right-pane #lots-content .lot:hover {
   background-color: #FFFFCC;
 }
