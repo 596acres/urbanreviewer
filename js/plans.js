@@ -80,6 +80,10 @@ module.exports = {
             templateContent = template(row);
             sidebar.open('#' + $target.attr('id'), templateContent);
 
+            // Measure available width and set the header's width to it
+            var headerWidth = $target.innerWidth() - $('.panel-toggle').outerWidth();
+            $('.plan-header-content').width(headerWidth);
+
             // Load details for the plan
             var $details = $target.find('#plan-details');
             addPlanContent($details, row.borough, options.plan_name);
