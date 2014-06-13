@@ -282,11 +282,24 @@ ul {
   border-top: 0;
   margin-top: 15px;
 }
+#right-pane .plan-content > section > * {
+  margin-left: 25px;
+}
 #right-pane .plan h2 {
   font-size: 20px;
   margin-bottom: 10px;
   margin-left: 25px;
   text-transform: capitalize;
+}
+#right-pane .plan-share-story {
+  background-color: #444;
+  color: white;
+  display: inline-block;
+  font-size: 24px;
+  padding: 10px;
+}
+#right-pane .plan-share-story:hover {
+  color: #FFFFCC;
 }
 #right-pane #lots-content {
   border-top: 3px solid #444;
