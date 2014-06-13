@@ -4,6 +4,9 @@ var plansmap = require('./plansmap');
 var eventEmitter = $({});
 var state = {};
 
+var minYear = 1952,
+    maxYear = 2014;
+
 function updateState(changes) {
     _.each(changes, function (value, key) {
         if (!value) {
@@ -17,14 +20,16 @@ function updateState(changes) {
 }
 
 module.exports = {
+    minYear: minYear,
+    maxYear: maxYear,
 
     init: function (options, overrideState) {
         options = options || {};
         state = overrideState || {};
 
         if (options.dateRange) {
-            var min = new Date(1952, 0, 1),
-                max = new Date(2014, 0, 1),
+            var min = new Date(minYear, 0, 1),
+                max = new Date(maxYear, 0, 1),
                 defaultMin = min,
                 defaultMax = max;
             if (state.start) {
@@ -510,7 +515,7 @@ function loadFilters(alreadyOpen) {
         $target = $('body'),
         $content = $(template({
             dispositions: getDispositions(),
-            years: _.range(1952, 2014)
+            years: _.range(filters.minYear, filters.maxYear)
         }));
 
     if (alreadyOpen) {

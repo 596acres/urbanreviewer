@@ -234,7 +234,7 @@ function loadFilters(alreadyOpen) {
         $target = $('body'),
         $content = $(template({
             dispositions: getDispositions(),
-            years: _.range(1952, 2014)
+            years: _.range(filters.minYear, filters.maxYear)
         }));
 
     if (alreadyOpen) {
