@@ -231,13 +231,16 @@ ul {
   margin-right: -15px;
 }
 #right-pane .plan-header {
+  background: white;
   border-bottom: 1px solid #444;
   font-size: 16px;
   margin-left: -15px;
   margin-bottom: 30px;
-  margin-top: -10px;
   padding-bottom: 5px;
-  position: relative;
+  padding-top: 10px;
+  position: fixed;
+  left: 49%;
+  top: 0;
 }
 #right-pane .plan-header h1 {
   padding-bottom: 5px;
@@ -249,7 +252,7 @@ ul {
   float: left;
   font-size: 90px;
   line-height: 50px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 #right-pane .plan-header .panel-toggle:hover {
   background-color: white;
@@ -264,7 +267,10 @@ ul {
 #right-pane .plan-header-content-item .value {
   font-weight: normal;
 }
-#right-pane .plan > section {
+#right-pane .plan-content {
+  margin-top: 100px;
+}
+#right-pane .plan-content > section {
   border-top: 2px solid black;
   padding-top: 5px;
   margin-bottom: 50px;

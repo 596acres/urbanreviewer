@@ -139,7 +139,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (helper = helpers.adopted) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.adopted); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</span>\n            </div>\n        </div>\n        <div style=\"clear: both;\"></div>\n    </header>\n    <section id=\"plan-about\">\n        <h2>About the plan</h2>\n        <p style=\"margin-left: 15px;\">(Coming soon.)</p>\n        <div id=\"plan-details\"></div>\n    </section>\n    <section id=\"lots\">\n        <h2>lots</h2>\n        <div id=\"lots-content\"></div>\n    </section>\n</div>\n";
+    + "</span>\n            </div>\n        </div>\n        <div style=\"clear: both;\"></div>\n    </header>\n    <div class=\"plan-content\">\n        <section id=\"plan-about\">\n            <h2>About the plan</h2>\n            <p style=\"margin-left: 15px;\">(Coming soon.)</p>\n            <div id=\"plan-details\"></div>\n        </section>\n        <section id=\"lots\">\n            <h2>lots</h2>\n            <div id=\"lots-content\"></div>\n        </section>\n    </div>\n</div>\n";
   return buffer;
   });
 
