@@ -28,7 +28,11 @@ var urbanreviewer = {
         pushState(name);
         unloadFilters();
         plans.load($('#right-pane'), { plan_name: currentPlan });
-        plansmap.addPlanOutline(currentPlan, { zoomToPlan: true });
+        plansmap.clearPlanOutline({ label: 'hover' });
+        plansmap.addPlanOutline(currentPlan, { 
+            label: 'select',
+            zoomToPlan: true
+        });
     },
 
     loadSidebar: function (name, addHistory) {
@@ -218,11 +222,17 @@ $(document).ready(function () {
                     plans.highlightLot(data.block, data.lot);
                 }
             }
+            else {
+                plansmap.addPlanOutline(data.plan_name, { label: 'hover' });
+            }
         })
         .on('planlotout', function (data) {
             currentLot = {};
-            plansmap.unHighlightLot();
-            plans.unhighlightLot();
+            if (currentPlan) {
+                plansmap.unHighlightLot();
+                plans.unhighlightLot();
+            }
+            plansmap.clearPlanOutline({ label: 'hover' });
         });
 
 
@@ -254,7 +264,7 @@ $(document).ready(function () {
         currentPlan = null;
         setTitle(null);
         pushState();
-        plansmap.clearPlanOutline();
+        plansmap.clearPlanOutline({ label: 'select' });
     });
 
     $('.sidebar-link').click(function (e) {
@@ -273,7 +283,7 @@ $(document).ready(function () {
         unloadFilters();
         setTitle(currentPlan);
         plans.load($('#right-pane'), { plan_name: currentPlan });
-        plansmap.addPlanOutline(currentPlan);
+        plansmap.addPlanOutline(currentPlan, { label: 'select' });
     }
 
     if (currentPage) {
@@ -295,7 +305,7 @@ $(document).ready(function () {
         currentPlan = parsedHash.plan;
         if (currentPlan && currentPlan !== previousPlan) {
             plans.load($('#right-pane'), { plan_name: currentPlan });
-            plansmap.addPlanOutline(currentPlan);
+            plansmap.addPlanOutline(currentPlan, { label: 'select' });
         }
         if (currentPage && currentPage !== previousPage) {
             urbanreviewer.loadPage(currentPage);

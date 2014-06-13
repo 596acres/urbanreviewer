@@ -356,7 +356,11 @@ var urbanreviewer = {
         pushState(name);
         unloadFilters();
         plans.load($('#right-pane'), { plan_name: currentPlan });
-        plansmap.addPlanOutline(currentPlan, { zoomToPlan: true });
+        plansmap.clearPlanOutline({ label: 'hover' });
+        plansmap.addPlanOutline(currentPlan, { 
+            label: 'select',
+            zoomToPlan: true
+        });
     },
 
     loadSidebar: function (name, addHistory) {
@@ -546,11 +550,17 @@ $(document).ready(function () {
                     plans.highlightLot(data.block, data.lot);
                 }
             }
+            else {
+                plansmap.addPlanOutline(data.plan_name, { label: 'hover' });
+            }
         })
         .on('planlotout', function (data) {
             currentLot = {};
-            plansmap.unHighlightLot();
-            plans.unhighlightLot();
+            if (currentPlan) {
+                plansmap.unHighlightLot();
+                plans.unhighlightLot();
+            }
+            plansmap.clearPlanOutline({ label: 'hover' });
         });
 
 
@@ -582,7 +592,7 @@ $(document).ready(function () {
         currentPlan = null;
         setTitle(null);
         pushState();
-        plansmap.clearPlanOutline();
+        plansmap.clearPlanOutline({ label: 'select' });
     });
 
     $('.sidebar-link').click(function (e) {
@@ -601,7 +611,7 @@ $(document).ready(function () {
         unloadFilters();
         setTitle(currentPlan);
         plans.load($('#right-pane'), { plan_name: currentPlan });
-        plansmap.addPlanOutline(currentPlan);
+        plansmap.addPlanOutline(currentPlan, { label: 'select' });
     }
 
     if (currentPage) {
@@ -623,7 +633,7 @@ $(document).ready(function () {
         currentPlan = parsedHash.plan;
         if (currentPlan && currentPlan !== previousPlan) {
             plans.load($('#right-pane'), { plan_name: currentPlan });
-            plansmap.addPlanOutline(currentPlan);
+            plansmap.addPlanOutline(currentPlan, { label: 'select' });
         }
         if (currentPage && currentPage !== previousPage) {
             urbanreviewer.loadPage(currentPage);
@@ -789,7 +799,8 @@ var map,
     lotsLayer,
     highlightedLotLayer,
     lastFilters = {},
-    planOutline,
+    planOutlines = {},
+    planOutlinesNames = {},
     userMarker;
 
 var defaultCartoCSS = '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }';
@@ -983,19 +994,30 @@ module.exports = {
         lotsLayer.setCartoCSS(cartocss);
     },
 
-    clearPlanOutline: function () {
-        if (planOutline) {
-            planOutline.clearLayers();
+    clearPlanOutline: function (options) {
+        options = options || {};
+        var label = options.label;
+        if (planOutlines[label]) {
+            planOutlines[label].clearLayers();
         }
+        planOutlinesNames[label] = null;
     },
 
     addPlanOutline: function (planName, options) {
         options = options || {};
-        if (planOutline) {
-            planOutline.clearLayers();
+        var label = options.label,
+            outline = planOutlines[label];
+
+        // Jump out if no label to use or the plan is already outlined
+        if (!label || planOutlinesNames[label] === planName) {
+            return;
+        }
+
+        if (outline) {
+            outline.clearLayers();
         }
         else {
-            planOutline = L.geoJson(null, {
+            outline = planOutlines[label] = L.geoJson(null, {
                 style: function (feature) {
                     return {
                         color: '#f00',
@@ -1006,14 +1028,16 @@ module.exports = {
                 }
             }).addTo(map);
         }
+
+        planOutlinesNames[label] = planName;
         var sql = "SELECT ST_Buffer(ST_ConvexHull(ST_Union(l.the_geom)), 0.0001) AS the_geom " + 
                   "FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id " +
                   "WHERE p.name = '" + planName + "'";
         cartodbapi.getGeoJSON(sql, function (data) {
-            planOutline.addData(data);
+            outline.addData(data);
             
             if (options.zoomToPlan === true) {
-                map.fitBounds(planOutline.getBounds(), {
+                map.fitBounds(outline.getBounds(), {
                     padding: [25, 25]            
                 });
             }
