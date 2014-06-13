@@ -223,7 +223,10 @@ $(document).ready(function () {
                 }
             }
             else {
-                plansmap.addPlanOutline(data.plan_name, { label: 'hover' });
+                plansmap.addPlanOutline(data.plan_name, {
+                    label: 'hover',
+                    popup: true
+                });
             }
         })
         .on('planlotout', function (data) {

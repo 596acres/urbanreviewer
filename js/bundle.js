@@ -551,7 +551,10 @@ $(document).ready(function () {
                 }
             }
             else {
-                plansmap.addPlanOutline(data.plan_name, { label: 'hover' });
+                plansmap.addPlanOutline(data.plan_name, {
+                    label: 'hover',
+                    popup: true
+                });
             }
         })
         .on('planlotout', function (data) {
@@ -801,6 +804,7 @@ var map,
     lastFilters = {},
     planOutlines = {},
     planOutlinesNames = {},
+    planOutlinesPopups = {},
     userMarker;
 
 var defaultCartoCSS = '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }';
@@ -813,6 +817,18 @@ function unHighlightLot() {
     highlightedLotLayer.clearLayers();           
     singleminded.forget('highlightLot_centroid');
     singleminded.forget('highlightLot_geometry');
+}
+
+function clearPlanOutline(options) {
+    options = options || {};
+    var label = options.label;
+    if (planOutlines[label]) {
+        planOutlines[label].clearLayers();
+    }
+    if (planOutlinesPopups[label]) {
+        map.closePopup(planOutlinesPopups[label]);
+    }
+    planOutlinesNames[label] = null;
 }
 
 module.exports = {
@@ -994,14 +1010,7 @@ module.exports = {
         lotsLayer.setCartoCSS(cartocss);
     },
 
-    clearPlanOutline: function (options) {
-        options = options || {};
-        var label = options.label;
-        if (planOutlines[label]) {
-            planOutlines[label].clearLayers();
-        }
-        planOutlinesNames[label] = null;
-    },
+    clearPlanOutline: clearPlanOutline,
 
     addPlanOutline: function (planName, options) {
         options = options || {};
@@ -1014,7 +1023,7 @@ module.exports = {
         }
 
         if (outline) {
-            outline.clearLayers();
+            clearPlanOutline({ label: label });
         }
         else {
             outline = planOutlines[label] = L.geoJson(null, {
@@ -1040,6 +1049,13 @@ module.exports = {
                 map.fitBounds(outline.getBounds(), {
                     padding: [25, 25]            
                 });
+            }
+
+            if (options.popup) {
+                planOutlinesPopups[label] = L.popup()
+                    .setLatLng(outline.getBounds().getCenter())
+                    .setContent(planName)
+                    .openOn(map);
             }
         });
     },
