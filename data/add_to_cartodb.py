@@ -46,7 +46,8 @@ def format_plan_date(year):
 
 def insert_plans(cursor, filename):
     """Insert plans into CartoDB."""
-    table_headers = ('borough', 'name', 'adopted', 'expires', 'updated',)
+    table_headers = ('borough', 'name', 'adopted', 'expires', 'updated',
+                     'status',)
     values = []
 
     boroughs = {
@@ -68,6 +69,7 @@ def insert_plans(cursor, filename):
             format_plan_date(row['Date Adopted']),
             format_plan_date(row['Expiration']),
             format_plan_date(row['Last Updated']),
+            "'%s'" % row['Status'].lower(),
         )))
 
     sql = 'INSERT INTO %s (%s) VALUES %s' % (
