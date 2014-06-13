@@ -3,8 +3,7 @@ sqlite_db = working.db
 
 select_boroughs = CAST(b.BBL as text) AS BBL, b.Borough AS borough, b.Block AS block, b.Lot AS lot, b.'Name of Plan' AS plan_name
 
-join_dispositions = LEFT OUTER JOIN 'Lot dispositions' l ON l.'Raw disposition' = b.Disposition
-select_dispositions = l.'Filterable disposition' AS disp_filt, l.'Edited disposition' AS disp_edit
+select_dispositions = b.filterable_disposition AS disp_filt, b.edited_disposition AS disp_edit
 
 join_596 = LEFT OUTER JOIN '596_lots' fns ON fns.bbl= b.BBL
 select_596 = (fns.bbl IS NOT NULL) AS in_596
@@ -31,31 +30,42 @@ load_596:
 	-sqlite3 $(sqlite_db) "DROP TABLE '596_lots'"
 	-csvsql --db sqlite:///$(sqlite_db) --insert "596_lots.csv"
 
-shps: load_596
-	mkdir -p shp
-
+load_lots: csvs
 	-sqlite3 $(sqlite_db) "DROP TABLE 'Lot dispositions'"
 	-csvsql --db sqlite:///$(sqlite_db) --insert "Lot dispositions.csv"
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Bronx'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Bronx.csv
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM BXMapPLUTO p INNER JOIN Bronx b ON b.BBL=p.BBL $(join_dispositions) $(join_596)" shp/Bronx.shp $(sqlite_db)
+	python add_dispositions.py --borough Bronx --db $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Brooklyn'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Brooklyn.csv
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM BKMapPLUTO p INNER JOIN Brooklyn b ON b.BBL=p.BBL $(join_dispositions) $(join_596)" shp/Brooklyn.shp $(sqlite_db)
+	python add_dispositions.py --borough Brooklyn --db $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Manhattan'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Manhattan.csv
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM MNMapPLUTO p INNER JOIN Manhattan b ON b.BBL=p.BBL $(join_dispositions) $(join_596)" shp/Manhattan.shp $(sqlite_db)
+	python add_dispositions.py --borough Manhattan --db $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Queens'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Queens.csv
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM QNMapPLUTO p INNER JOIN Queens b ON b.BBL=p.BBL $(join_dispositions) $(join_596)" shp/Queens.shp $(sqlite_db)
+	python add_dispositions.py --borough Queens --db $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) "DROP TABLE 'Staten Island'"
 	-csvsql --db sqlite:///$(sqlite_db) --insert "csv/Staten Island.csv"
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM SIMapPLUTO p INNER JOIN 'Staten Island' b ON b.BBL=p.BBL $(join_dispositions) $(join_596)" "shp/Staten Island.shp" $(sqlite_db)
+	python add_dispositions.py --borough "Staten Island" --db $(sqlite_db)
+
+shps: load_lots load_596
+	mkdir -p shp
+
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM BXMapPLUTO p INNER JOIN Bronx b ON b.BBL=p.BBL $(join_596)" shp/Bronx.shp $(sqlite_db)
+
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM BKMapPLUTO p INNER JOIN Brooklyn b ON b.BBL=p.BBL $(join_596)" shp/Brooklyn.shp $(sqlite_db)
+
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM MNMapPLUTO p INNER JOIN Manhattan b ON b.BBL=p.BBL $(join_596)" shp/Manhattan.shp $(sqlite_db)
+
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM QNMapPLUTO p INNER JOIN Queens b ON b.BBL=p.BBL $(join_596)" shp/Queens.shp $(sqlite_db)
+
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM SIMapPLUTO p INNER JOIN 'Staten Island' b ON b.BBL=p.BBL $(join_596)" "shp/Staten Island.shp" $(sqlite_db)
 
 merge:
 	rm -f shp/merge.*
