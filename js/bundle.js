@@ -439,7 +439,7 @@ function pushState(title) {
     }
 
     var url = hash.formatHash({
-        filters: filters,
+        filters: filters.getState(),
         map: map,
         page: currentPage,
         planName: currentPlan,
