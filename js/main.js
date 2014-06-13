@@ -222,12 +222,22 @@ function unloadFilters() {
     }
 }
 
-function loadFilters() {
-    var template = JST['handlebars_templates/filters.hbs'];
-    $('body').append($(template({
-        dispositions: getDispositions(),
-        years: _.range(1952, 2014)
-    })).hide());
+function loadFilters(alreadyOpen) {
+    var template = JST['handlebars_templates/filters.hbs'],
+        $target = $('body'),
+        $content = $(template({
+            dispositions: getDispositions(),
+            years: _.range(1952, 2014)
+        }));
+
+    if (alreadyOpen) {
+        $target = $('#right-pane');
+    }
+    else {
+        $content.hide();
+    }
+
+    $target.append($content);
 
     filters
         .init({
@@ -276,7 +286,7 @@ $(document).ready(function () {
 
     map = plansmap.init('map', function () {
         // Don't load filters until we have a lots layer to filter on
-        loadFilters();
+        loadFilters(parsedHash.sidebar === 'filters');
     });
 
     if (currentPage || currentPlan) {
