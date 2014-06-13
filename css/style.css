@@ -282,7 +282,7 @@ ul {
   border-top: 0;
   margin-top: 15px;
 }
-#right-pane .plan-content > section > * {
+#right-pane .plan-content > section#plan-about > * {
   margin-left: 25px;
 }
 #right-pane .plan h2 {
