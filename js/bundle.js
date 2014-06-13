@@ -191,6 +191,7 @@ module.exports = {
         args.page = hash.page;
         args.plan = hash.plan;
         args.filters = jsurl.parse(hash.filters);
+        args.sidebar = hash.sidebar;
 
         return args;
     },
@@ -216,6 +217,10 @@ module.exports = {
 
         if (options.filters && _.size(options.filters) > 0) {
             hash += '&filters=' + jsurl.stringify(options.filters);
+        }
+
+        if (options.sidebar) {
+            hash += '&sidebar=' + options.sidebar;
         }
 
         return hash;
@@ -264,7 +269,9 @@ var sidebar = require('./sidebar');
 
 var currentPage,
     currentPlan,
+    currentSidebar,
     currentLot = {},
+    currentTitle,
     planOutline,
     lotsLayer,
     defaultZoom = 12,
@@ -276,10 +283,8 @@ var urbanreviewer = {
 
     selectPlan: function (name, map) {
         currentPlan = name;
-        window.location.hash = hash.formatHash({
-            map: map, 
-            planName: currentPlan
-        });
+        currentSidebar = null;
+        pushState(name);
         unloadFilters();
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
         urbanreviewer.addPlanOutline(map, currentPlan, { zoomToPlan: true });
@@ -328,8 +333,33 @@ var urbanreviewer = {
         });
     },
 
-    loadPlanInformation: function (data) {
+    loadSidebar: function (name, addHistory) {
+        if (currentSidebar === name) { return; }
+        currentSidebar = name;
+        if (name === 'filters') {
+            openFilters();
+        }
+        else {
+            unloadFilters();
+            if (name === 'plans') {
+                openPlanList();
+            }
+        }
+        if (addHistory) {
+            var title = name[0].toUpperCase() + name.slice(1);
+            pushState(title);
+        }
+    },
 
+    unloadSidebar: function () {
+        currentSidebar = null;
+        // Stash filters container if it's out
+        unloadFilters();
+        sidebar.close('#right-pane');
+        setTitle(null);
+    },
+
+    loadPlanInformation: function (data) {
         var template = JST['handlebars_templates/plan.hbs'];
         templateContent = template(data);
         sidebar.open('#right-pane', templateContent);
@@ -378,6 +408,45 @@ var urbanreviewer = {
         });
     }
 };
+
+function setTitle(title) {
+    if (title === undefined) {
+        displayTitle = currentTitle;
+    }
+    else {
+        var displayTitle = 'Urban Reviewer';
+        if (title) {
+            displayTitle = title + ' | ' + displayTitle;
+        }
+        currentTitle = displayTitle;
+    }
+    $('title').html(displayTitle);
+}
+
+function pushState(title) {
+    setTitle(title);
+    var state = {
+        title: title
+    };
+    if (currentSidebar) {
+        state.sidebar = currentSidebar;
+    }
+    if (currentPlan) {
+        state.plan = currentPlan;
+    }
+    if (currentPage) {
+        state.page = currentPage;
+    }
+
+    var url = hash.formatHash({
+        filters: filters,
+        map: map,
+        page: currentPage,
+        planName: currentPlan,
+        sidebar: currentSidebar
+    });
+    history.pushState(state, null, url);
+}
 
 function getDispositions() {
     var dispositions = [
@@ -429,11 +498,7 @@ function loadFilters() {
             mayors: '#mayors'
         }, hash.parseHash(window.location.hash).filters)
         .on('change', function (e, filters) {
-            window.location.hash = hash.formatHash({
-                map: map,
-                planName: currentPlan,
-                filters: filters
-            });
+            pushState('Filters');
         });
 
     highlights.init({
@@ -449,7 +514,7 @@ function openPlanList() {
             plans: results.rows
         }), 'narrow');
         $('#plan-list-filters-link').click(function () {
-            openFilters();
+            urbanreviewer.loadSidebar('filters', true);
             return false;
         });
         $('.plan').click(function () {
@@ -465,9 +530,9 @@ $(document).ready(function () {
      */
     var parsedHash = hash.parseHash(window.location.hash),
         zoom = parsedHash.zoom || defaultZoom,
-        center = parsedHash.center || defaultCenter;
-    currentPage = parsedHash.page;
-    currentPlan = parsedHash.plan;
+        center = parsedHash.center || defaultCenter,
+        currentPage = parsedHash.page,
+        currentPlan = parsedHash.plan;
 
     map = plansmap.init('map', function () {
         // Don't load filters until we have a lots layer to filter on
@@ -479,6 +544,9 @@ $(document).ready(function () {
         // zoom to it appropriately
         plansmap.setActiveArea(map, { area: 'half' });
     }
+    else if (currentSidebar) {
+        plansmap.setActiveArea(map, { area: 'most' });
+    }
     else {
         plansmap.setActiveArea(map, { area: 'full' });
     }
@@ -486,18 +554,19 @@ $(document).ready(function () {
     map
         .setView(center, zoom)
         .on('moveend', function () {
-            window.location.hash = hash.formatHash({
-                map: map,
-                planName: currentPlan,
-                page: currentPage,
-                filters: filters.getState()
-            });
+            pushState();
         });
 
     if (currentPlan) {
         $('#search-container').hide();
+        unloadFilters();
+        setTitle(currentPlan);
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
         urbanreviewer.addPlanOutline(map, currentPlan);
+    }
+
+    if (parsedHash.sidebar) {
+        urbanreviewer.loadSidebar(parsedHash.sidebar);
     }
 
     map
@@ -551,21 +620,14 @@ $(document).ready(function () {
         plansmap.setActiveArea(map, { area: 'full' });
 
         currentPlan = null;
-        window.location.hash = hash.formatHash({
-            map: map, 
-            planName: currentPlan,
-            filters: filters.getState()
-        });
+        setTitle(null);
+        pushState();
         urbanreviewer.clearPlanOutline(map);
     });
 
     $('.sidebar-link').click(function (e) {
         currentPage = $(this).attr('href');
-        window.location.hash = hash.formatHash({
-            map: map, 
-            page: currentPage,
-            filters: filters.getState()
-        });
+        pushState();
         urbanreviewer.loadPage(currentPage);
         return false;
     });
@@ -577,7 +639,9 @@ $(document).ready(function () {
     $(window).on('popstate', function (e) {
         var parsedHash = hash.parseHash(window.location.hash),
             previousPlan = currentPlan,
-            previousPage = currentPage;
+            previousPage = currentPage,
+            sidebar = parsedHash.sidebar,
+            state = e.originalEvent.state;
         map.setView(parsedHash.center, parsedHash.zoom);
         currentPage = parsedHash.page;
         currentPlan = parsedHash.plan;
@@ -588,6 +652,18 @@ $(document).ready(function () {
         if (currentPage && currentPage !== previousPage) {
             urbanreviewer.loadPage(currentPage);
         }
+        if (sidebar) {
+            urbanreviewer.loadSidebar(sidebar, false);
+        }
+        else if (state === null) {
+            urbanreviewer.unloadSidebar();
+        }
+
+        var title = null;
+        if (state) {
+            title = state.title;
+        }
+        setTitle(title);
     });
 
 
@@ -644,12 +720,10 @@ $(document).ready(function () {
 
     $('#map-filters-toggle').click(function () {
         if (sidebar.isOpen('#right-pane')) {
-            // Stash filters container if it's out
-            unloadFilters();
-            sidebar.close('#right-pane');
+            urbanreviewer.unloadSidebar();
         }
         else {
-            openPlanList();
+            urbanreviewer.loadSidebar('plans', true);
         }
         return false;
     });
