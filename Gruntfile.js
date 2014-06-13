@@ -37,6 +37,7 @@ module.exports = function(grunt) {
         watch: {
             browserify: {
                 files: [
+                    "js/cartodbapi.js",
                     "js/filters.js",
                     "js/geocode.js",
                     "js/hash.js",

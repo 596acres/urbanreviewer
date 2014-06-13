@@ -1,4 +1,17 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql';
+
+module.exports = {
+
+    sqlApiBase: sqlApiBase,
+
+    getGeoJSON: function (sql, success) {
+        return $.get(sqlApiBase + "?q=" + sql + '&format=GeoJSON', success);
+    }
+
+};
+
+},{}],2:[function(require,module,exports){
 var plansmap = require('./plansmap');
 
 var eventEmitter = $({});
@@ -123,7 +136,7 @@ module.exports = {
 
 };
 
-},{"./plansmap":6}],2:[function(require,module,exports){
+},{"./plansmap":7}],3:[function(require,module,exports){
 var geocoder = new google.maps.Geocoder();
 
 function to_google_bounds(bounds) {
@@ -182,7 +195,7 @@ module.exports = {
 
 };
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var jsurl = require('jsurl');
 var querystring = require('querystring');
 
@@ -249,7 +262,7 @@ module.exports = {
 
 };
 
-},{"jsurl":13,"querystring":12}],4:[function(require,module,exports){
+},{"jsurl":14,"querystring":13}],5:[function(require,module,exports){
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 
@@ -302,7 +315,7 @@ module.exports = {
 
 };
 
-},{"./plansmap":6,"underscore":16}],5:[function(require,module,exports){
+},{"./plansmap":7,"underscore":17}],6:[function(require,module,exports){
 var _ = require('underscore');
 
 var filters = require('./filters');
@@ -688,8 +701,9 @@ $(document).ready(function () {
     });
 });
 
-},{"./filters":1,"./hash":3,"./highlights":4,"./plansmap":6,"./search":7,"./sidebar":8,"underscore":16}],6:[function(require,module,exports){
+},{"./filters":2,"./hash":4,"./highlights":5,"./plansmap":7,"./search":8,"./sidebar":9,"underscore":17}],7:[function(require,module,exports){
 var _ = require('underscore');
+var cartodbapi = require('./cartodbapi');
 var singleminded = require('./singleminded');
 
 var map,
@@ -698,8 +712,6 @@ var map,
     lastFilters = {},
     planOutline,
     userMarker;
-
-var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql';
 
 var defaultCartoCSS = '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }';
 var highlightedCartoCSS = 'polygon-fill: #FF0000;' +
@@ -927,7 +939,7 @@ module.exports = {
         var sql = "SELECT ST_Buffer(ST_ConvexHull(ST_Union(l.the_geom)), 0.0001) AS the_geom " + 
                   "FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id " +
                   "WHERE p.name = '" + planName + "'";
-        $.get(sqlApiBase + "?q=" + sql + '&format=GeoJSON', function (data) {
+        cartodbapi.getGeoJSON(sql, function (data) {
             planOutline.addData(data);
             
             if (options.zoomToPlan === true) {
@@ -950,7 +962,7 @@ module.exports = {
 
 };
 
-},{"./singleminded":9,"underscore":16}],7:[function(require,module,exports){
+},{"./cartodbapi":1,"./singleminded":10,"underscore":17}],8:[function(require,module,exports){
 var geocode = require('./geocode.js');
 require('typeahead.js');
 
@@ -1016,7 +1028,7 @@ module.exports = {
     search: search
 };
 
-},{"./geocode.js":2,"typeahead.js":15}],8:[function(require,module,exports){
+},{"./geocode.js":3,"typeahead.js":16}],9:[function(require,module,exports){
 var _ = require('underscore');
 
 var sizes = ['narrow', 'wide'],
@@ -1054,7 +1066,7 @@ module.exports = {
     close: close
 };
 
-},{"underscore":16}],9:[function(require,module,exports){
+},{"underscore":17}],10:[function(require,module,exports){
 //
 // A simple AJAX request queue of length 1.
 //
@@ -1087,7 +1099,7 @@ module.exports = {
     remember: remember
 };
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1173,7 +1185,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1260,15 +1272,15 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":10,"./encode":11}],13:[function(require,module,exports){
+},{"./decode":11,"./encode":12}],14:[function(require,module,exports){
 module.exports = require('./lib/jsurl')
-},{"./lib/jsurl":14}],14:[function(require,module,exports){
+},{"./lib/jsurl":15}],15:[function(require,module,exports){
 /**
  * Copyright (c) 2011 Bruno Jouhier <bruno.jouhier@sage.com>
  *
@@ -1414,7 +1426,7 @@ module.exports = require('./lib/jsurl')
 		})();
 	}
 })(typeof exports !== 'undefined' ? exports : (window.JSURL = window.JSURL || {}));
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 /*!
  * typeahead.js 0.10.2
  * https://github.com/twitter/typeahead.js
@@ -3131,7 +3143,7 @@ module.exports = require('./lib/jsurl')
         };
     })();
 })(window.jQuery);
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -4476,4 +4488,4 @@ module.exports = require('./lib/jsurl')
   }
 }).call(this);
 
-},{}]},{},[5])
+},{}]},{},[6])

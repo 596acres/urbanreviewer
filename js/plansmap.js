@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var cartodbapi = require('./cartodbapi');
 var singleminded = require('./singleminded');
 
 var map,
@@ -7,8 +8,6 @@ var map,
     lastFilters = {},
     planOutline,
     userMarker;
-
-var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql';
 
 var defaultCartoCSS = '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }';
 var highlightedCartoCSS = 'polygon-fill: #FF0000;' +
@@ -236,7 +235,7 @@ module.exports = {
         var sql = "SELECT ST_Buffer(ST_ConvexHull(ST_Union(l.the_geom)), 0.0001) AS the_geom " + 
                   "FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id " +
                   "WHERE p.name = '" + planName + "'";
-        $.get(sqlApiBase + "?q=" + sql + '&format=GeoJSON', function (data) {
+        cartodbapi.getGeoJSON(sql, function (data) {
             planOutline.addData(data);
             
             if (options.zoomToPlan === true) {
