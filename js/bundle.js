@@ -361,6 +361,7 @@ var urbanreviewer = {
             label: 'select',
             zoomToPlan: true
         });
+        plansmap.highlightLotsInPlan(currentPlan);
     },
 
     loadSidebar: function (name, addHistory) {
@@ -596,6 +597,7 @@ $(document).ready(function () {
         setTitle(null);
         pushState();
         plansmap.clearPlanOutline({ label: 'select' });
+        plansmap.unhighlightLotsInPlan();
     });
 
     $('.sidebar-link').click(function (e) {
@@ -800,6 +802,7 @@ var singleminded = require('./singleminded');
 
 var map,
     lotsLayer,
+    highlightCartoCSS,
     highlightedLotLayer,
     lastFilters = {},
     planOutlines = {},
@@ -808,15 +811,24 @@ var map,
     userMarker;
 
 var defaultCartoCSS = '#lots{ polygon-fill: #FFFFFF; polygon-opacity: 0.7; line-color: #000; line-width: 0.25; line-opacity: 0.75; }';
-var highlightedCartoCSS = 'polygon-fill: #FF0000;' +
+var highlightedLotCartoCSS = 'polygon-fill: #FF0000;' +
     '[zoom <= 12] { line-width: 5; line-color: #FF0000; }' +
     '[zoom <= 14] { line-width: 3; line-color: #FF0000; }';
+var highlightedPlanCartoCSS = 'polygon-fill: #FFFFCC;';
 
 function unHighlightLot() {
     map.closePopup();
     highlightedLotLayer.clearLayers();           
     singleminded.forget('highlightLot_centroid');
     singleminded.forget('highlightLot_geometry');
+}
+
+function unhighlightLotsInPlan() {
+    var cartocss = defaultCartoCSS;
+    if (highlightCartoCSS) {
+       cartocss += highlightCartoCSS;
+    }
+    lotsLayer.setCartoCSS(cartocss);
 }
 
 function clearPlanOutline(options) {
@@ -993,24 +1005,42 @@ module.exports = {
 
     highlightLots: function (options) {
         options = options || {};
-
-        var cartocss = defaultCartoCSS;
+        highlightCartoCSS = '';
 
         if (options.dispositions && options.dispositions.length > 0) {
             conditions = _.map(options.dispositions, function (disposition) {
                 return '#lots[disposition_filterable="' + disposition + '"]';
             });
-            cartocss += conditions.join(',') + '{' + highlightedCartoCSS + '}';
+            highlightCartoCSS += conditions.join(',') + '{' + highlightedLotCartoCSS + '}';
         }
 
         if (options.public_vacant && options.public_vacant === true) {
-            cartocss += '#lots[in_596=true] {' + highlightedCartoCSS + '}';
+            highlightCartoCSS += '#lots[in_596=true] {' + highlightedLotCartoCSS + '}';
         }
 
-        lotsLayer.setCartoCSS(cartocss);
+        lotsLayer.setCartoCSS(defaultCartoCSS + highlightCartoCSS);
     },
 
     clearPlanOutline: clearPlanOutline,
+
+    unhighlightLotsInPlan: unhighlightLotsInPlan,
+
+    highlightLotsInPlan: function (planName) {
+        unhighlightLotsInPlan;
+        var cartocss = '';
+
+        if (planName) {
+            cartocss += '#lots[plan_name="' + planName + '"]{' +
+                highlightedPlanCartoCSS +
+            '}';
+        }
+
+        cartocss = defaultCartoCSS + cartocss;
+        if (highlightCartoCSS) {
+           cartocss += highlightCartoCSS;
+        }
+        lotsLayer.setCartoCSS(cartocss);
+    },
 
     addPlanOutline: function (planName, options) {
         options = options || {};

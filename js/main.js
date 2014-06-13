@@ -33,6 +33,7 @@ var urbanreviewer = {
             label: 'select',
             zoomToPlan: true
         });
+        plansmap.highlightLotsInPlan(currentPlan);
     },
 
     loadSidebar: function (name, addHistory) {
@@ -268,6 +269,7 @@ $(document).ready(function () {
         setTitle(null);
         pushState();
         plansmap.clearPlanOutline({ label: 'select' });
+        plansmap.unhighlightLotsInPlan();
     });
 
     $('.sidebar-link').click(function (e) {
