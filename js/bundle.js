@@ -513,6 +513,9 @@ $(document).ready(function () {
         // Don't load filters until we have a lots layer to filter on
         loadFilters();
         urbanreviewer.loadSidebar(parsedHash.sidebar);
+        if (currentPlan) {
+            plansmap.highlightLotsInPlan(currentPlan);
+        }
     });
 
     if (currentPage || currentPlan) {
