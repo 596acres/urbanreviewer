@@ -7,17 +7,24 @@ var plansmap = require('./plansmap');
 var search = require('./search');
 var sidebar = require('./sidebar');
 
+// State
 var currentPage,
     currentPlan,
     currentSidebar,
     currentLot = {},
-    currentTitle,
-    planOutline,
+    currentTitle;
+
+// Map state
+var planOutline,
     lotsLayer,
-    defaultZoom = 12,
-    defaultCenter = [40.739974, -73.946228],
-    userMarker,
-    sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql';
+    userMarker;
+
+// Map defaults
+var defaultZoom = 12,
+    defaultCenter = [40.739974, -73.946228];
+
+// Constants
+var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql';
 
 var urbanreviewer = {
 
