@@ -57,6 +57,7 @@ load_lots: csvs
 	-sqlite3 $(sqlite_db) "DROP TABLE 'Staten Island'"
 	-csvsql --db sqlite:///$(sqlite_db) --insert "csv/Staten Island.csv"
 	python add_dispositions.py --borough "Staten Island" --db $(sqlite_db)
+	python fix_duplicate_dispositions.py --borough "Staten Island" --db $(sqlite_db)
 
 shps: load_lots load_596
 	mkdir -p shp
