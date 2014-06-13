@@ -1052,7 +1052,7 @@ module.exports = {
             }
 
             if (options.popup) {
-                planOutlinesPopups[label] = L.popup()
+                planOutlinesPopups[label] = L.popup({ closeButton: false })
                     .setLatLng(outline.getBounds().getCenter())
                     .setContent(planName)
                     .openOn(map);

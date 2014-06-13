@@ -357,3 +357,19 @@ ul {
   font-weight: bold;
   text-transform: uppercase;
 }
+/*
+ * Leaflet
+ */
+.leaflet-popup-content-wrapper {
+  background: #4e4e4e;
+  border-radius: 0;
+  box-shadow: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.leaflet-popup-tip {
+  background: #4e4e4e;
+  box-shadow: none;
+}
