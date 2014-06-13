@@ -574,7 +574,8 @@ $(document).ready(function () {
 
     map = plansmap.init('map', function () {
         // Don't load filters until we have a lots layer to filter on
-        loadFilters(parsedHash.sidebar === 'filters');
+        loadFilters();
+        urbanreviewer.loadSidebar(parsedHash.sidebar);
     });
 
     if (currentPage || currentPlan) {
@@ -666,10 +667,6 @@ $(document).ready(function () {
         setTitle(currentPlan);
         urbanreviewer.loadPlanInformation({ plan_name: currentPlan });
         urbanreviewer.addPlanOutline(map, currentPlan);
-    }
-
-    if (parsedHash.sidebar) {
-        urbanreviewer.loadSidebar(parsedHash.sidebar);
     }
 
     if (currentPage) {
