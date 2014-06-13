@@ -565,9 +565,7 @@ $(document).ready(function () {
         .setView(center, zoom)
         .on('moveend', function () {
             pushState();
-        });
-
-    map
+        })
         .on('planlotclick', function (data) {
             urbanreviewer.selectPlan(data.plan_name, map);
         })
@@ -596,7 +594,6 @@ $(document).ready(function () {
      * Initialize sidebar
      */
     $('#right-pane').on('open', function (e, size) {
-        console.log('open');
         if (size === 'wide') {
             $('#date-range-picker-container').hide();
             $('#map-filters-toggle').hide();
@@ -636,7 +633,6 @@ $(document).ready(function () {
      * If a plan or sidebar was in the url, open it.
      */
     if (currentPlan) {
-        // TODO hide / shrink the date range slider
         $('#search-container').hide();
         unloadFilters();
         setTitle(currentPlan);

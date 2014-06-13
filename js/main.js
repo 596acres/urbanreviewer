@@ -305,7 +305,7 @@ $(document).ready(function () {
         .setView(center, zoom)
         .on('moveend', function () {
             pushState();
-        });
+        })
         .on('planlotclick', function (data) {
             urbanreviewer.selectPlan(data.plan_name, map);
         })
