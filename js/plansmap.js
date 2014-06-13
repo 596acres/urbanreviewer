@@ -100,9 +100,9 @@ module.exports = {
         highlightedLotLayer = L.geoJson(null, {
             style: function (feature) {
                 return {
-                    color: '#F0F564',
-                    fillOpacity: 1,
-                    weight: 1
+                    color: '#4E4E4E',
+                    fill: false,
+                    weight: 3
                 };
             }
         }).addTo(map);
