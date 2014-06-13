@@ -713,6 +713,18 @@ function cleanData(row) {
         // timezone
         cleaned.adopted = row.adopted.slice(0, row.adopted.indexOf('-'));
     }
+
+    if (row.status) {
+        if (row.status === 'active') {
+            cleaned.status = 'active';
+        }
+        else if (row.status === 'expired') {
+            cleaned.status = 'expired';
+        }
+        else {
+            cleaned.status = 'unknown';
+        }
+    }
     return cleaned;
 }
 

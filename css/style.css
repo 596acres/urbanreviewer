@@ -261,6 +261,10 @@ ul {
   float: left;
   margin-left: 15px;
 }
+#right-pane .plan-header-content-item {
+  float: left;
+  margin-right: 25px;
+}
 #right-pane .plan-header-content-item label {
   display: block;
 }
