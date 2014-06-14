@@ -262,6 +262,10 @@ $(document).ready(function () {
             pushState();
         })
         .on('planlotclick', function (data) {
+            // Don't load the plan again
+            if (currentPlan && data.plan_name === currentPlan) {
+                return;
+            }
             urbanreviewer.selectPlan(data.plan_name);
         })
         .on('planlotover', function (data) {
