@@ -1,5 +1,7 @@
 var cartodbapi = require('./cartodbapi');
-var geocode = require('./geocode.js');
+var filters = require('./filters');
+var geocode = require('./geocode');
+var plansfilters = require('./plansfilters');
 require('typeahead.js');
 
 
@@ -7,9 +9,20 @@ var plansBloodhound = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     limit: 10,
-    prefetch: {
-        // TODO this doesn't respect current filters
-        url: cartodbapi.getSqlUrl('SELECT name, borough FROM plans'),
+    remote: {
+        url: cartodbapi.getSqlUrl('SELECT name FROM plans'),
+        replace: function (url, query) {
+            var whereClause = plansfilters.getWhereClause(filters.getState(), true);
+                whereQuery = " p.name ILIKE '%" + query + "%'";
+            if (whereClause) {
+                whereClause += ' AND ' + whereQuery;
+            }
+            else {
+                whereClause = 'WHERE ' + whereQuery;
+            }
+            sql = 'SELECT p.name FROM plans p ' + whereClause + ' ORDER BY p.name';
+            return cartodbapi.getSqlUrl(sql);
+        },
         filter: function (results) {
             return $.map(results.rows, function (row) {
                 return {
