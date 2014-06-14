@@ -27,6 +27,7 @@ var urbanreviewer = {
         currentSidebar = null;
         pushState(name);
         unloadFilters();
+        unloadPlanList();
         plans.load($('#right-pane'), { plan_name: currentPlan });
         plansmap.clearPlanOutline({ label: 'hover' });
         plansmap.addPlanOutline(currentPlan, { 
@@ -40,6 +41,7 @@ var urbanreviewer = {
         if (currentSidebar === name) { return; }
         currentSidebar = name;
         if (name === 'filters') {
+            unloadPlanList();
             openFilters();
         }
         else {
@@ -58,12 +60,14 @@ var urbanreviewer = {
         currentSidebar = null;
         // Stash filters container if it's out
         unloadFilters();
+        unloadPlanList();
         sidebar.close('#right-pane');
         setTitle(null);
     },
 
     loadPage: function (url) {
         unloadFilters();
+        unloadPlanList();
         $.get(url, function (content) {
             sidebar.open('#right-pane', content);
         });
@@ -162,12 +166,22 @@ function loadFilters(alreadyOpen) {
     });
 }
 
-function openPlanList() {
-    var template = JST['handlebars_templates/plan_list.hbs'];
-    cartodbapi.getJSON('SELECT name, borough FROM plans ORDER BY name', function (results) {
-        sidebar.open('#right-pane', template({
-            plans: results.rows
-        }), 'narrow');
+function loadPlanList(alreadyOpen) {
+    var template = JST['handlebars_templates/plan_list.hbs'],
+        $target = $('body');
+
+    if (alreadyOpen) {
+        $target = $('#right-pane');
+    }
+
+    var sql = 'SELECT name, borough FROM plans ORDER BY name';
+    cartodbapi.getJSON(sql, function (results) {
+        var $content = $(template({ plans: results.rows }));
+        if (!alreadyOpen) {
+            $content.hide();
+        }
+        $target.append($content);
+
         $('#plan-list-filters-link').click(function () {
             urbanreviewer.loadSidebar('filters', true);
             return false;
@@ -176,6 +190,17 @@ function openPlanList() {
             urbanreviewer.selectPlan($(this).data('name'));
         });
     });
+}
+
+function openPlanList() {
+    // TODO update plan list on open
+    sidebar.open('#right-pane', $('#plan-list-container').show(), 'narrow');
+}
+
+function unloadPlanList() {
+    if ($('#plan-list-container:visible').length > 0) {
+        $('#plan-list-container').hide().appendTo('body');
+    }
 }
 
 $(document).ready(function () {
@@ -189,6 +214,7 @@ $(document).ready(function () {
     currentPage = parsedHash.page;
     currentPlan = parsedHash.plan;
 
+    loadPlanList();
     map = plansmap.init('map', function () {
         // Don't load filters until we have a lots layer to filter on
         loadFilters();
@@ -297,6 +323,7 @@ $(document).ready(function () {
     if (currentPlan) {
         $('#search-container').hide();
         unloadFilters();
+        unloadPlanList();
         setTitle(currentPlan);
         plans.load($('#right-pane'), { plan_name: currentPlan });
         plansmap.addPlanOutline(currentPlan, { label: 'select' });
