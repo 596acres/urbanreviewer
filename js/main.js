@@ -375,8 +375,8 @@ $(document).ready(function () {
      * Initialize search
      */
     search.init('#search');
-    $('#search').on('resultfound', function (e, results) {
-        plansmap.addUserMarker(latlng);
+    $('#search').on('resultfound', function (e, result) {
+        plansmap.addUserMarker(result.latlng);
     });
     $('#search').on('planfound', function (e, name) {
         urbanreviewer.selectPlan(name);

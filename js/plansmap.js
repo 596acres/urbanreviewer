@@ -310,10 +310,10 @@ module.exports = {
         if (userMarker) {
             map.removeLayer(userMarker);
         }
-        userMarker = L.userMarker(results.latlng, {
+        userMarker = L.userMarker(latlng, {
             smallIcon: true                        
         }).addTo(map);
-        map.setView(results.latlng, 16);
+        map.setView(latlng, 16);
     }
 
 };
