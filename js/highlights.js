@@ -5,6 +5,9 @@ var eventEmitter = $({}),
     selectedDispositions = [],
     publicVacant = false;
 
+var $dispositions,
+    $publicVacant;
+
 function highlightLots() {
     plansmap.highlightLots({
         dispositions: selectedDispositions,
@@ -29,7 +32,7 @@ module.exports = {
         options = options || {};
 
         if (options.dispositions) {
-            var $dispositions = $(options.dispositions + ' :input');
+            $dispositions = $(options.dispositions + ' :input');
             $dispositions.change(function () {
                 selectedDispositions = _.map($dispositions.filter(':checked'), function (e) { return $(e).data('disposition'); });
                 highlightLots();
@@ -46,7 +49,7 @@ module.exports = {
         }
 
         if (options.public_vacant) {
-            var $publicVacant = $(options.public_vacant);
+            $publicVacant = $(options.public_vacant);
             $publicVacant.change(function () {
                 publicVacant = $(this).is(':checked');
                 highlightLots();
@@ -118,6 +121,19 @@ module.exports = {
             disposition.id = disposition.label.replace(' ', '-');
             return disposition;
         });
+    },
+
+    resetState: function () {
+        if ($dispositions) {
+            $dispositions
+                .prop('checked', false)
+                .trigger('change');
+        }
+        if ($publicVacant) {
+            $publicVacant
+                .prop('checked', false)
+                .trigger('change');
+        }
     },
 
     getState: getState

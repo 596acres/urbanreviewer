@@ -27,6 +27,7 @@ function resetView() {
     currentSidebar = null;
     urbanreviewer.unloadSidebar();
     filters.resetState();
+    highlights.resetState();
     map.setView(defaultCenter, defaultZoom);
     pushState(null);
 }
