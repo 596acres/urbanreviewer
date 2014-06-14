@@ -56,6 +56,17 @@ img {
 ul {
   padding-left: 30px;
 }
+#tagline {
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  left: 15px;
+  text-align: left;
+  text-transform: uppercase;
+  top: 150px;
+  width: 150px;
+  z-index: 2000;
+}
 /* Map */
 #map {
   width: 100%;
@@ -106,10 +117,10 @@ ul {
   font-size: 16px;
   font-weight: bold;
   letter-spacing: .5px;
-  line-height: 45px;
+  line-height: 35px;
   position: absolute;
   left: 15px;
-  top: 150px;
+  top: 225px;
   text-align: left;
   text-transform: uppercase;
   z-index: 2000;
@@ -117,10 +128,6 @@ ul {
 #nav ul {
   list-style: none;
   padding: 0;
-}
-#nav li {
-  margin-left: 5px;
-  margin-right: 5px;
 }
 #map-filters-toggle {
   position: absolute;
