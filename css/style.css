@@ -209,24 +209,24 @@ select {
   width: 100%;
 }
 #date-range-picker .ui-rangeSlider-bar {
-  background: black;
+  background: #4e4e4e;
   height: 5px;
   margin-top: 8px;
 }
 #date-range-picker .ui-rangeSlider-handle {
-  background: black;
-  border: 3px solid white;
+  background: #4e4e4e;
+  border: 3px solid #ffff4d;
   border-radius: 20px;
   height: 20px;
   width: 20px;
 }
 #date-range-picker .ui-rangeSlider-innerBar {
-  background: gray;
+  background: #cecece;
   height: 5px;
   margin-top: 8px;
 }
 #date-range-picker .ui-rangeSlider-label {
-  background: black;
+  background: #4e4e4e;
   background-image: none;
   bottom: 25px;
   color: white;

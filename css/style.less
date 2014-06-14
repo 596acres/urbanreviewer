@@ -5,6 +5,7 @@
 @interface-z-index: 2000;
 
 @input-dropdown-color: @gray;
+@date-range-background-color: @gray;
 
 
 /* Global Reset */
@@ -259,27 +260,27 @@ select {
 #date-range-picker {
 
     .ui-rangeSlider-bar {
-        background: black;
+        background: @date-range-background-color;
         height: 5px;
         margin-top: 8px;
     }
 
     .ui-rangeSlider-handle {
-        background: black;
-        border: 3px solid white;
+        background: @date-range-background-color;
+        border: 3px solid darken(@highlight-color, 25%);
         border-radius: 20px;
         height: 20px;
         width: 20px;
     }
 
     .ui-rangeSlider-innerBar {
-        background: gray;
+        background: lighten(@date-range-background-color, 50%);
         height: 5px;
         margin-top: 8px;
     }
 
     .ui-rangeSlider-label {
-        background: black;
+        background: @date-range-background-color;
         background-image: none;
         bottom: 25px;
         color: white;
