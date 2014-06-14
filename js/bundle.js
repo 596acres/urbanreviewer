@@ -1000,11 +1000,11 @@ module.exports = {
         }
 
         if (filters.active) {
-            whereConditions.push("p.expires > '" + new Date().toISOString() + "'");
+            whereConditions.push("status ILIKE '%active%'");
         }
 
         if (filters.expired) {
-            whereConditions.push("p.expires <= '" + new Date().toISOString() + "'");
+            whereConditions.push("status ILIKE '%expired%'");
         }
 
         if (filters.lastUpdatedMin) {
