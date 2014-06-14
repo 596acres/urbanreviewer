@@ -1115,7 +1115,11 @@ module.exports = {
             }
 
             if (options.popup) {
-                planOutlinesPopups[label] = L.popup({ closeButton: false })
+                var popupOptions = {
+                    autoPan: false,
+                    closeButton: false
+                };
+                planOutlinesPopups[label] = L.popup(popupOptions)
                     .setLatLng(outline.getBounds().getCenter())
                     .setContent(planName)
                     .openOn(map);
