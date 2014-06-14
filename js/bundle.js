@@ -973,6 +973,7 @@ function unhighlightLot() {
 module.exports = {
 
     load: function ($target, options) {
+        sidebar.open('#' + $target.attr('id'));
         loadDetails(options.plan_name, function (row) {
             row = cleanData(row);
 
