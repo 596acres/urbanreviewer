@@ -341,6 +341,12 @@ ul {
   margin-bottom: 15px;
   padding: 10px;
 }
+#right-pane #plan-list-container h2 {
+  color: #aaa;
+  font-size: 22px;
+  text-align: center;
+  text-transform: none;
+}
 #right-pane #plans .plan-list {
   list-style: none;
   padding: 0;
