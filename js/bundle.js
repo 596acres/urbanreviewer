@@ -69,6 +69,12 @@ function updateState(changes) {
         if (!value) {
             delete state[key];
         }
+        else if (key === 'end' && value === maxYear) {
+            delete state[key];
+        }
+        else if (key === 'start' && value === minYear) {
+            delete state[key];
+        }
         else {
             state[key] = value;
         }
