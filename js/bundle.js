@@ -320,8 +320,7 @@ module.exports = {
             'semi-public',
             'utility',
             'easement',
-            'street',
-            'illegible'
+            'street'
         ];
         return _.map(dispositions, function (disposition) {
             return {
