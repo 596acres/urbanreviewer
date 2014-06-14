@@ -360,24 +360,58 @@ module.exports = {
 
     getDispositions: function() {
         var dispositions = [
-            'open space',
-            'recreational',
-            'community facility',
-            'residential',
-            'commercial',
-            'industrial',
-            'institutional',
-            'public',
-            'semi-public',
-            'utility',
-            'easement',
-            'street'
+            {
+                label: 'open space',
+                helpText: 'Open space'
+            },
+            {
+                label: 'recreational',
+                helpText: 'Recreational'
+            },
+            {
+                label: 'community facility',
+                helpText: 'Community facility'
+            },
+            {
+                label: 'residential',
+                helpText: 'Residential'
+            },
+            {
+                label: 'commercial',
+                helpText: 'Commercial'
+            },
+            {
+                label: 'industrial',
+                helpText: 'Industrial'
+            },
+            {
+                label: 'institutional',
+                helpText: 'Institutional'
+            },
+            {
+                label: 'public',
+                helpText: 'Public'
+            },
+            {
+                label: 'semi-public',
+                helpText: 'Semi-public'
+            },
+            {
+                label: 'utility',
+                helpText: 'Utility'
+            },
+            {
+                label: 'easement',
+                helpText: 'Easement'
+            },
+            {
+                label: 'street',
+                helpText: 'Street'
+            }
         ];
         return _.map(dispositions, function (disposition) {
-            return {
-                id: disposition.replace(' ', '-'),
-                label: disposition
-            };
+            disposition.id = disposition.label.replace(' ', '-');
+            return disposition;
         });
     }
 

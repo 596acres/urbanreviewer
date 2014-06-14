@@ -24,7 +24,11 @@ function program1(depth0,data) {
   if (helper = helpers.label) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.label); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</label>\n                <span class=\"help-button\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"Highlight plans that have this disposition\">?</span>\n            </div>\n            ";
+    + "</label>\n                <span class=\"help-button\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"";
+  if (helper = helpers.helpText) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.helpText); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\">?</span>\n            </div>\n            ";
   return buffer;
   }
 
