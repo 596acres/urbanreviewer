@@ -4,6 +4,7 @@ var cartodbapi = require('./cartodbapi');
 var filters = require('./filters');
 var hash = require('./hash');
 var highlights = require('./highlights');
+var planlist = require('./planlist');
 var plans = require('./plans');
 var plansmap = require('./plansmap');
 var search = require('./search');
@@ -28,6 +29,15 @@ function resetView() {
     filters.resetState();
     map.setView(defaultCenter, defaultZoom);
     pushState(null);
+}
+
+function addPlansToPlanList(filters) {
+    planlist.addToPage(filters, $('#plan-list-partial-container'), function ($ele) {
+        $ele.find('.plan')
+            .click(function () {
+                urbanreviewer.selectPlan($(this).data('name'));
+            })
+    });
 }
 
 var urbanreviewer = {
@@ -163,6 +173,7 @@ function loadFilters(alreadyOpen) {
             mayors: '#mayors'
         }, hash.parseHash(window.location.hash).filters)
         .on('change', function (e, filters) {
+            addPlansToPlanList(filters);
             pushState('Filters');
         });
 
@@ -184,44 +195,27 @@ function loadPlanList(alreadyOpen) {
         $target = $('#right-pane');
     }
 
-    var sql = 'SELECT name, borough, extract(YEAR FROM adopted) as adopted ' + 
-        'FROM plans ORDER BY name';
-    cartodbapi.getJSON(sql, function (results) {
-        var $content = $(template({
-            plans: results.rows,
-            decades: [
-                [1950, 1959],
-                [1960, 1969],
-                [1970, 1979],
-                [1980, 1989],
-                [1990, 1999],
-                [2000, 2009],
-                [2010, 2019]
-            ]
-        }));
-        if (!alreadyOpen) {
-            $content.hide();
-        }
-        $target.append($content);
+    var $content = $(template({
+        decades: [
+            [1950, 1959],
+            [1960, 1969],
+            [1970, 1979],
+            [1980, 1989],
+            [1990, 1999],
+            [2000, 2009],
+            [2010, 2019]
+        ]
+    }));
+    if (!alreadyOpen) {
+        $content.hide();
+    }
+    $target.append($content);
 
-        $('#plan-list-filters-link').click(function () {
-            urbanreviewer.loadSidebar('filters', true);
-            return false;
-        });
-        $('.plan')
-            .click(function () {
-                urbanreviewer.selectPlan($(this).data('name'));
-            })
-            .mouseenter(function() {
-                plansmap.addPlanOutline($(this).data('name'), {
-                    label: 'hover',
-                    popup: true
-                });
-            })
-            .mouseleave(function() {
-                plansmap.clearPlanOutline({ label: 'hover' });
-            });
+    $('#plan-list-filters-link').click(function () {
+        urbanreviewer.loadSidebar('filters', true);
+        return false;
     });
+    addPlansToPlanList(filters.getState());
 }
 
 function openPlanList() {

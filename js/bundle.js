@@ -2,7 +2,7 @@
 var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql/';
 
 function getSqlUrl(sql) {
-    return sqlApiBase + '?q=' + sql;
+    return sqlApiBase + '?q=' + encodeURIComponent(sql);
 }
 
 module.exports = {
@@ -197,7 +197,7 @@ module.exports = {
 
 };
 
-},{"./plansmap":8}],3:[function(require,module,exports){
+},{"./plansmap":10}],3:[function(require,module,exports){
 var geocoder = new google.maps.Geocoder();
 
 function to_google_bounds(bounds) {
@@ -323,7 +323,7 @@ module.exports = {
 
 };
 
-},{"jsurl":15,"querystring":14}],5:[function(require,module,exports){
+},{"jsurl":17,"querystring":16}],5:[function(require,module,exports){
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 
@@ -417,13 +417,14 @@ module.exports = {
 
 };
 
-},{"./plansmap":8,"underscore":18}],6:[function(require,module,exports){
+},{"./plansmap":10,"underscore":20}],6:[function(require,module,exports){
 var _ = require('underscore');
 
 var cartodbapi = require('./cartodbapi');
 var filters = require('./filters');
 var hash = require('./hash');
 var highlights = require('./highlights');
+var planlist = require('./planlist');
 var plans = require('./plans');
 var plansmap = require('./plansmap');
 var search = require('./search');
@@ -448,6 +449,15 @@ function resetView() {
     filters.resetState();
     map.setView(defaultCenter, defaultZoom);
     pushState(null);
+}
+
+function addPlansToPlanList(filters) {
+    planlist.addToPage(filters, $('#plan-list-partial-container'), function ($ele) {
+        $ele.find('.plan')
+            .click(function () {
+                urbanreviewer.selectPlan($(this).data('name'));
+            })
+    });
 }
 
 var urbanreviewer = {
@@ -583,6 +593,7 @@ function loadFilters(alreadyOpen) {
             mayors: '#mayors'
         }, hash.parseHash(window.location.hash).filters)
         .on('change', function (e, filters) {
+            addPlansToPlanList(filters);
             pushState('Filters');
         });
 
@@ -604,44 +615,27 @@ function loadPlanList(alreadyOpen) {
         $target = $('#right-pane');
     }
 
-    var sql = 'SELECT name, borough, extract(YEAR FROM adopted) as adopted ' + 
-        'FROM plans ORDER BY name';
-    cartodbapi.getJSON(sql, function (results) {
-        var $content = $(template({
-            plans: results.rows,
-            decades: [
-                [1950, 1959],
-                [1960, 1969],
-                [1970, 1979],
-                [1980, 1989],
-                [1990, 1999],
-                [2000, 2009],
-                [2010, 2019]
-            ]
-        }));
-        if (!alreadyOpen) {
-            $content.hide();
-        }
-        $target.append($content);
+    var $content = $(template({
+        decades: [
+            [1950, 1959],
+            [1960, 1969],
+            [1970, 1979],
+            [1980, 1989],
+            [1990, 1999],
+            [2000, 2009],
+            [2010, 2019]
+        ]
+    }));
+    if (!alreadyOpen) {
+        $content.hide();
+    }
+    $target.append($content);
 
-        $('#plan-list-filters-link').click(function () {
-            urbanreviewer.loadSidebar('filters', true);
-            return false;
-        });
-        $('.plan')
-            .click(function () {
-                urbanreviewer.selectPlan($(this).data('name'));
-            })
-            .mouseenter(function() {
-                plansmap.addPlanOutline($(this).data('name'), {
-                    label: 'hover',
-                    popup: true
-                });
-            })
-            .mouseleave(function() {
-                plansmap.clearPlanOutline({ label: 'hover' });
-            });
+    $('#plan-list-filters-link').click(function () {
+        urbanreviewer.loadSidebar('filters', true);
+        return false;
     });
+    addPlansToPlanList(filters.getState());
 }
 
 function openPlanList() {
@@ -852,7 +846,45 @@ $(document).ready(function () {
     });
 });
 
-},{"./cartodbapi":1,"./filters":2,"./hash":4,"./highlights":5,"./plans":7,"./plansmap":8,"./search":9,"./sidebar":10,"underscore":18}],7:[function(require,module,exports){
+},{"./cartodbapi":1,"./filters":2,"./hash":4,"./highlights":5,"./planlist":7,"./plans":8,"./plansmap":10,"./search":11,"./sidebar":12,"underscore":20}],7:[function(require,module,exports){
+var cartodbapi = require('./cartodbapi');
+var plansfilters = require('./plansfilters');
+var plansmap = require('./plansmap');
+
+function addToPage(filters, $target, callback) {
+    var template = JST['handlebars_templates/plan_list_partial.hbs'];
+    load(filters, false, function (plans) {
+        $target.empty();
+        $target.append($(template({ plans: plans })));
+        callback($target);
+        $('.plan')
+            .mouseenter(function() {
+                plansmap.addPlanOutline($(this).data('name'), {
+                    label: 'hover',
+                    popup: true
+                });
+            })
+            .mouseleave(function() {
+                plansmap.clearPlanOutline({ label: 'hover' });
+            });
+    });
+}
+
+function load(filters, extend, callback) {
+    var whereClause = plansfilters.getWhereClause(filters, extend),
+        sql = 'SELECT p.name, extract(YEAR FROM p.adopted) as adopted ' + 
+            'FROM plans p ' + whereClause + ' ORDER BY p.name';
+    cartodbapi.getJSON(sql, function (results) {
+        callback(results.rows);
+    });
+}
+
+module.exports = {
+    addToPage: addToPage,
+    load: load
+};
+
+},{"./cartodbapi":1,"./plansfilters":9,"./plansmap":10}],8:[function(require,module,exports){
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
 var plansmap = require('./plansmap');
@@ -968,16 +1000,68 @@ module.exports = {
 
 };
 
-},{"./cartodbapi":1,"./plansmap":8,"./sidebar":10,"underscore":18}],8:[function(require,module,exports){
+},{"./cartodbapi":1,"./plansmap":10,"./sidebar":12,"underscore":20}],9:[function(require,module,exports){
+var _ = require('underscore');
+
+var lastFilters = {};
+
+function getWhereClause(filters, extendLastFilters) {
+    var whereConditions = [];
+
+    if (extendLastFilters === undefined || extendLastFilters === true) {
+        filters = _.extend(lastFilters, filters);
+    }
+
+    if (filters.start) {
+        whereConditions.push("p.adopted >= '" + filters.start + "-01-01'");
+    }
+    if (filters.end) {
+        whereConditions.push("p.adopted <= '" + filters.end + "-01-01'");
+    }
+
+    if (filters.active) {
+        whereConditions.push("status ILIKE '%active%'");
+    }
+
+    if (filters.expired) {
+        whereConditions.push("status ILIKE '%expired%'");
+    }
+
+    if (filters.lastUpdatedMin) {
+        var year = parseInt(filters.lastUpdatedMin);
+        if (year) {
+            whereConditions.push("p.updated >= '" + year + "-01-01'");
+        }
+    }
+
+    if (filters.lastUpdatedMax) {
+        var year = parseInt(filters.lastUpdatedMax);
+        if (year) {
+            whereConditions.push("p.updated < '" + (year + 1) + "-01-01'");
+        }
+    }
+
+    lastFilters = filters;
+    if (whereConditions.length > 0) {
+        return 'WHERE ' + whereConditions.join(' AND ');
+    }
+    return '';
+}
+
+module.exports = {
+    getWhereClause: getWhereClause
+};
+
+},{"underscore":20}],10:[function(require,module,exports){
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
+var plansfilters = require('./plansfilters');
 var singleminded = require('./singleminded');
 
 var map,
     lotsLayer,
     highlightCartoCSS,
     highlightedLotLayer,
-    lastFilters = {},
     planOutlines = {},
     planOutlinesNames = {},
     planOutlinesPopups = {},
@@ -1104,47 +1188,9 @@ module.exports = {
 
     filterLotsLayer: function (filters, extendLastFilters) {
         var sql = "SELECT l.*, p.name AS plan_name, p.borough AS borough " +
-            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id ",
-            whereConditions = [];
-
-        if (extendLastFilters === undefined || extendLastFilters === true) {
-            filters = _.extend(lastFilters, filters);
-        }
-
-        if (filters.start) {
-            whereConditions.push("p.adopted >= '" + filters.start + "-01-01'");
-        }
-        if (filters.end) {
-            whereConditions.push("p.adopted <= '" + filters.end + "-01-01'");
-        }
-
-        if (filters.active) {
-            whereConditions.push("status ILIKE '%active%'");
-        }
-
-        if (filters.expired) {
-            whereConditions.push("status ILIKE '%expired%'");
-        }
-
-        if (filters.lastUpdatedMin) {
-            var year = parseInt(filters.lastUpdatedMin);
-            if (year) {
-                whereConditions.push("p.updated >= '" + year + "-01-01'");
-            }
-        }
-
-        if (filters.lastUpdatedMax) {
-            var year = parseInt(filters.lastUpdatedMax);
-            if (year) {
-                whereConditions.push("p.updated < '" + (year + 1) + "-01-01'");
-            }
-        }
-
-        if (whereConditions.length > 0) {
-            sql += ' WHERE ' + whereConditions.join(' AND ');
-        }
+            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
+            plansfilters.getWhereClause(filters, extendLastFilters);
         lotsLayer.setSQL(sql);
-        lastFilters = filters;
     },
 
     highlightLot: function (options) {
@@ -1289,7 +1335,7 @@ module.exports = {
 
 };
 
-},{"./cartodbapi":1,"./singleminded":11,"underscore":18}],9:[function(require,module,exports){
+},{"./cartodbapi":1,"./plansfilters":9,"./singleminded":13,"underscore":20}],11:[function(require,module,exports){
 var cartodbapi = require('./cartodbapi');
 var geocode = require('./geocode.js');
 require('typeahead.js');
@@ -1356,7 +1402,7 @@ module.exports = {
     search: search
 };
 
-},{"./cartodbapi":1,"./geocode.js":3,"typeahead.js":17}],10:[function(require,module,exports){
+},{"./cartodbapi":1,"./geocode.js":3,"typeahead.js":19}],12:[function(require,module,exports){
 var _ = require('underscore');
 
 var sizes = ['narrow', 'wide'],
@@ -1394,7 +1440,7 @@ module.exports = {
     close: close
 };
 
-},{"underscore":18}],11:[function(require,module,exports){
+},{"underscore":20}],13:[function(require,module,exports){
 //
 // A simple AJAX request queue of length 1.
 //
@@ -1427,7 +1473,7 @@ module.exports = {
     remember: remember
 };
 
-},{}],12:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1513,7 +1559,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],13:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1600,15 +1646,15 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],14:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":12,"./encode":13}],15:[function(require,module,exports){
+},{"./decode":14,"./encode":15}],17:[function(require,module,exports){
 module.exports = require('./lib/jsurl')
-},{"./lib/jsurl":16}],16:[function(require,module,exports){
+},{"./lib/jsurl":18}],18:[function(require,module,exports){
 /**
  * Copyright (c) 2011 Bruno Jouhier <bruno.jouhier@sage.com>
  *
@@ -1754,7 +1800,7 @@ module.exports = require('./lib/jsurl')
 		})();
 	}
 })(typeof exports !== 'undefined' ? exports : (window.JSURL = window.JSURL || {}));
-},{}],17:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 /*!
  * typeahead.js 0.10.2
  * https://github.com/twitter/typeahead.js
@@ -3471,7 +3517,7 @@ module.exports = require('./lib/jsurl')
         };
     })();
 })(window.jQuery);
-},{}],18:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors

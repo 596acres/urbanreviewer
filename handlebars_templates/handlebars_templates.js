@@ -180,31 +180,40 @@ function program1(depth0,data) {
   return buffer;
   }
 
-function program3(depth0,data) {
-  
-  var buffer = "", stack1, helper;
-  buffer += "\n                <li class=\"plan\" data-name=\"";
-  if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\">\n                    <div class=\"plan-adopted\">";
-  if (helper = helpers.adopted) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.adopted); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n                    <div class=\"plan-name\">";
-  if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</div>\n                    <div style=\"clear: both;\"></div>\n                </li>\n            ";
-  return buffer;
-  }
-
   buffer += "<div id=\"plan-list-container\">\n    <h2>Plans</h2>\n    <a href=\"#\" id=\"plan-list-filters-link\" class=\"nav-button\">Filters</a>\n    <section class=\"filter-section\">\n        <h3 class=\"filter-section-header\">plan status</h3>\n        <div class=\"input-group\">\n            <input type=\"checkbox\" id=\"plan-status-active\" />\n            <label class=\"checkbox-label\" for=\"plan-status-active\">active</label>\n            <span class=\"help-button\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"Show only plans that have not expired\">?</span>\n        </div>\n        <div class=\"input-group\">\n            <input type=\"checkbox\" id=\"plan-status-expired\" />\n            <label class=\"checkbox-label\" for=\"plan-status-expired\">expired</label>\n            <span class=\"help-button\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"Show only plans that have expired\">?</span>\n        </div>\n    </section>\n    <section class=\"filter-section\">\n        <h3 class=\"filter-section-header\">last updated year</h3>\n        <div>\n            <select id=\"last-updated\">\n                <option value=\"\">any year</option>\n                ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.decades), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n            </select>\n            <span class=\"help-button\" data-toggle=\"tooltip\"\n                data-placement=\"left\" title=\"Show only plans that were updated in the given decade\">?</span>\n        </div>\n    </section>\n    <section id=\"plans\">\n        <div class=\"plan-list-header\">\n            <div class=\"plan-list-header-adopted\">adopted</div>\n            <div class=\"plan-list-header-name\">plan</div>\n            <div style=\"clear: both;\"></div>\n        </div>\n        <ul class=\"plan-list\">\n            ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.plans), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  buffer += "\n            </select>\n            <span class=\"help-button\" data-toggle=\"tooltip\"\n                data-placement=\"left\" title=\"Show only plans that were updated in the given decade\">?</span>\n        </div>\n    </section>\n    <section id=\"plans\">\n        <div class=\"plan-list-header\">\n            <div class=\"plan-list-header-adopted\">adopted</div>\n            <div class=\"plan-list-header-name\">plan</div>\n            <div style=\"clear: both;\"></div>\n        </div>\n        <div id=\"plan-list-partial-container\"></div>\n    </section>\n</div>\n";
+  return buffer;
+  });
+
+this["JST"]["handlebars_templates/plan_list_partial.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, helper;
+  buffer += "\n        <li class=\"plan\" data-name=\"";
+  if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\">\n            <div class=\"plan-adopted\">";
+  if (helper = helpers.adopted) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.adopted); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n            <div class=\"plan-name\">";
+  if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n            <div style=\"clear: both;\"></div>\n        </li>\n    ";
+  return buffer;
+  }
+
+  buffer += "<ul class=\"plan-list\">\n    ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.plans), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n        </ul>\n    </section>\n</div>\n";
+  buffer += "\n</ul>\n";
   return buffer;
   });

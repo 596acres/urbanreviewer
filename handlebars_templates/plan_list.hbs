@@ -35,14 +35,6 @@
             <div class="plan-list-header-name">plan</div>
             <div style="clear: both;"></div>
         </div>
-        <ul class="plan-list">
-            {{#each plans}}
-                <li class="plan" data-name="{{name}}">
-                    <div class="plan-adopted">{{adopted}}</div>
-                    <div class="plan-name">{{name}}</div>
-                    <div style="clear: both;"></div>
-                </li>
-            {{/each}}
-        </ul>
+        <div id="plan-list-partial-container"></div>
     </section>
 </div>

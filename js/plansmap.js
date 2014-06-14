@@ -1,12 +1,12 @@
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
+var plansfilters = require('./plansfilters');
 var singleminded = require('./singleminded');
 
 var map,
     lotsLayer,
     highlightCartoCSS,
     highlightedLotLayer,
-    lastFilters = {},
     planOutlines = {},
     planOutlinesNames = {},
     planOutlinesPopups = {},
@@ -133,47 +133,9 @@ module.exports = {
 
     filterLotsLayer: function (filters, extendLastFilters) {
         var sql = "SELECT l.*, p.name AS plan_name, p.borough AS borough " +
-            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id ",
-            whereConditions = [];
-
-        if (extendLastFilters === undefined || extendLastFilters === true) {
-            filters = _.extend(lastFilters, filters);
-        }
-
-        if (filters.start) {
-            whereConditions.push("p.adopted >= '" + filters.start + "-01-01'");
-        }
-        if (filters.end) {
-            whereConditions.push("p.adopted <= '" + filters.end + "-01-01'");
-        }
-
-        if (filters.active) {
-            whereConditions.push("status ILIKE '%active%'");
-        }
-
-        if (filters.expired) {
-            whereConditions.push("status ILIKE '%expired%'");
-        }
-
-        if (filters.lastUpdatedMin) {
-            var year = parseInt(filters.lastUpdatedMin);
-            if (year) {
-                whereConditions.push("p.updated >= '" + year + "-01-01'");
-            }
-        }
-
-        if (filters.lastUpdatedMax) {
-            var year = parseInt(filters.lastUpdatedMax);
-            if (year) {
-                whereConditions.push("p.updated < '" + (year + 1) + "-01-01'");
-            }
-        }
-
-        if (whereConditions.length > 0) {
-            sql += ' WHERE ' + whereConditions.join(' AND ');
-        }
+            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
+            plansfilters.getWhereClause(filters, extendLastFilters);
         lotsLayer.setSQL(sql);
-        lastFilters = filters;
     },
 
     highlightLot: function (options) {
