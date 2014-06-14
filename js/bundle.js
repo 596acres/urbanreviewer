@@ -749,7 +749,8 @@ function addPlanContent($location, borough, planName) {
 }
 
 function loadDetails(planName, success) {
-    var sql = "SELECT * FROM plans WHERE name = '" + planName + "'";
+    var sql = "SELECT *, EXTRACT(YEAR FROM updated) AS last_updated " +
+       "FROM plans WHERE name = '" + planName + "'";
     cartodbapi.getJSON(sql, function (results) {
         row = results.rows[0];
         success(row);
