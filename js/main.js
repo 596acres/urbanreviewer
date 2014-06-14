@@ -415,6 +415,7 @@ $(document).ready(function () {
         else {
             urbanreviewer.loadSidebar('plans', true);
         }
+        $('#right-pane').scrollTop(0);
         e.preventDefault();
         return false;
     });
