@@ -219,7 +219,6 @@ function loadPlanList(alreadyOpen) {
 }
 
 function openPlanList() {
-    // TODO update plan list on open
     sidebar.open('#right-pane', $('#plan-list-container').show(), 'narrow');
 }
 
