@@ -584,6 +584,10 @@ select {
   float: right;
   margin-top: -25px;
 }
+#right-pane #plan-list-container,
+#right-pane #filters-container {
+  margin-bottom: 50px;
+}
 #right-pane #plan-list-container h2,
 #right-pane #filters-container h2 {
   color: #aaa;
