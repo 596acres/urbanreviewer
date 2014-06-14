@@ -18,6 +18,7 @@
     "jqrangeslider": "~5.7.0",
     "leaflet-active-area": "https://github.com/Mappy/Leaflet-active-area.git",
     "leaflet-usermarker": "https://github.com/heyman/leaflet-usermarker.git",
-    "jquery.scrollTo": "~1.4.12"
+    "jquery.scrollTo": "~1.4.12",
+    "bootstrap": "~3.1.1"
   }
 }

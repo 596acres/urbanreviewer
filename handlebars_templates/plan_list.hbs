@@ -6,10 +6,12 @@
         <div class="input-group">
             <input type="checkbox" id="plan-status-active" />
             <label class="checkbox-label" for="plan-status-active">active</label>
+            <span class="help-button" data-toggle="tooltip" data-placement="left" title="Show only plans that have not expired">?</span>
         </div>
         <div class="input-group">
             <input type="checkbox" id="plan-status-expired" />
             <label class="checkbox-label" for="plan-status-expired">expired</label>
+            <span class="help-button" data-toggle="tooltip" data-placement="left" title="Show only plans that have expired">?</span>
         </div>
     </section>
     <section class="filter-section">
@@ -23,6 +25,8 @@
                 </option>
                 {{/each}}
             </select>
+            <span class="help-button" data-toggle="tooltip"
+                data-placement="left" title="Show only plans that were updated in the given decade">?</span>
         </div>
     </section>
     <section id="plans">

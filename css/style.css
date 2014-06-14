@@ -1,3 +1,101 @@
+.tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  visibility: visible;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.tooltip.in {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.tooltip.top {
+  margin-top: -3px;
+  padding: 5px 0;
+}
+.tooltip.right {
+  margin-left: 3px;
+  padding: 0 5px;
+}
+.tooltip.bottom {
+  margin-top: 3px;
+  padding: 5px 0;
+}
+.tooltip.left {
+  margin-left: -3px;
+  padding: 0 5px;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #555555;
+  border-radius: 4px;
+}
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #555555;
+}
+.tooltip.top-left .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  border-width: 5px 5px 0;
+  border-top-color: #555555;
+}
+.tooltip.top-right .tooltip-arrow {
+  bottom: 0;
+  right: 5px;
+  border-width: 5px 5px 0;
+  border-top-color: #555555;
+}
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #555555;
+}
+.tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #555555;
+}
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #555555;
+}
+.tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #555555;
+}
+.tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #555555;
+}
 /* Global Reset */
 * {
   margin: 0;
@@ -5,7 +103,7 @@
 }
 html,
 body {
-  color: #4e4e4e;
+  color: #555555;
   height: 100%;
   margin: 0;
   overflow: hidden;
@@ -41,7 +139,7 @@ p {
   margin: 1em 0;
 }
 a {
-  color: #4e4e4e;
+  color: #555555;
   font-weight: bold;
   text-decoration: none;
 }
@@ -61,7 +159,7 @@ ul {
  * Forms
  */
 select {
-  background-color: #4e4e4e;
+  background-color: #555555;
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -71,6 +169,19 @@ select {
 .input-group {
   margin-bottom: 10px;
   margin-top: 10px;
+}
+.help-button {
+  cursor: pointer;
+  display: inline-block;
+  background-color: #ffffcc;
+  border-radius: 20px;
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+  height: 20px;
+  margin-top: -2px;
+  text-align: center;
+  width: 20px;
 }
 .checkbox-label {
   font-size: 14px;
@@ -209,24 +320,24 @@ select {
   width: 100%;
 }
 #date-range-picker .ui-rangeSlider-bar {
-  background: #4e4e4e;
+  background: #555555;
   height: 5px;
   margin-top: 8px;
 }
 #date-range-picker .ui-rangeSlider-handle {
-  background: #4e4e4e;
+  background: #555555;
   border: 3px solid #ffff4d;
   border-radius: 20px;
   height: 20px;
   width: 20px;
 }
 #date-range-picker .ui-rangeSlider-innerBar {
-  background: #cecece;
+  background: #d5d5d5;
   height: 5px;
   margin-top: 8px;
 }
 #date-range-picker .ui-rangeSlider-label {
-  background: #4e4e4e;
+  background: #555555;
   background-image: none;
   bottom: 25px;
   color: white;
@@ -256,7 +367,7 @@ select {
   padding-right: 15px;
 }
 .filter-section-header {
-  border-bottom: 3px solid #4e4e4e;
+  border-bottom: 3px solid #555555;
   font-weight: bold;
   letter-spacing: 2px;
   margin-bottom: 5px;
@@ -264,7 +375,7 @@ select {
   text-transform: uppercase;
 }
 .nav-button {
-  background: #4e4e4e;
+  background: #555555;
   color: white;
   padding: 10px;
 }
@@ -317,7 +428,7 @@ select {
 }
 #right-pane {
   background: white;
-  border-left: 1px solid #4e4e4e;
+  border-left: 1px solid #555555;
   display: none;
   height: 100%;
   overflow-y: auto;
@@ -485,7 +596,7 @@ select {
   padding: 0;
 }
 #right-pane #plans .plan-list-header {
-  border-bottom: 3px solid #4e4e4e;
+  border-bottom: 3px solid #555555;
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 2px;
@@ -505,7 +616,7 @@ select {
   text-align: right;
 }
 #right-pane #plans .plan {
-  border-bottom: 1px solid #4e4e4e;
+  border-bottom: 1px solid #555555;
   padding: 15px;
 }
 #right-pane #plans .plan:hover {
@@ -538,4 +649,11 @@ select {
 .leaflet-popup-tip {
   background: #4e4e4e;
   box-shadow: none;
+}
+/*
+ * Bootstrap
+ */
+.tooltip {
+  font-size: 16px;
+  font-weight: bold;
 }

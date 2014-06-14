@@ -538,6 +538,8 @@ function loadFilters(alreadyOpen) {
 
     $target.append($content);
 
+    $('.help-button').tooltip();
+
     filters
         .init({
             active: '#plan-status-active',

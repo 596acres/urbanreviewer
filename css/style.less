@@ -7,6 +7,15 @@
 @input-dropdown-color: @gray;
 @date-range-background-color: @gray;
 
+// Import some Bootstrappiness
+@import "../bower_components/bootstrap/less/mixins.less";
+@import "../bower_components/bootstrap/less/variables.less";
+
+@tooltip-bg: @gray;
+@tooltip-color: white;
+
+@import "../bower_components/bootstrap/less/tooltip.less";
+
 
 /* Global Reset */
 * {
@@ -89,6 +98,22 @@ select {
 .input-group {
     margin-bottom: 10px;
     margin-top: 10px;
+}
+
+@help-button-size: 20px;
+
+.help-button {
+    cursor: pointer;
+    display: inline-block;
+    background-color: @highlight-color;
+    border-radius: @help-button-size;
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+    height: @help-button-size;
+    margin-top: -2px;
+    text-align: center;
+    width: @help-button-size;
 }
 
 .checkbox-label {
@@ -659,4 +684,13 @@ select {
         box-shadow: none;
     }
 
+}
+
+
+/*
+ * Bootstrap
+ */
+.tooltip {
+    font-size: 16px;
+    font-weight: bold;
 }
