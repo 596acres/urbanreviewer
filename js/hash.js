@@ -27,6 +27,7 @@ module.exports = {
         args.page = hash.page;
         args.plan = hash.plan;
         args.filters = jsurl.parse(hash.filters);
+        args.highlights = jsurl.parse(hash.highlights);
         args.sidebar = hash.sidebar;
 
         return args;
@@ -53,6 +54,10 @@ module.exports = {
 
         if (options.filters && _.size(options.filters) > 0) {
             hash += '&filters=' + jsurl.stringify(options.filters);
+        }
+
+        if (options.highlights && _.size(options.highlights) > 0) {
+            hash += '&highlights=' + jsurl.stringify(options.highlights);
         }
 
         if (options.sidebar) {

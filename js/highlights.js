@@ -1,7 +1,8 @@
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 
-var selectedDispositions = [],
+var eventEmitter = $({}),
+    selectedDispositions = [],
     publicVacant = false;
 
 function highlightLots() {
@@ -11,25 +12,55 @@ function highlightLots() {
     });
 }
 
+function getState() {
+    var state = {};
+    if (selectedDispositions && selectedDispositions.length > 0) {
+        state.dispositions = selectedDispositions;
+    }
+    if (publicVacant) {
+        state.public_vacant = publicVacant;
+    }
+    return state;
+}
+
 module.exports = {
 
-    init: function (options) {
+    init: function (options, initialState) {
         options = options || {};
 
         if (options.dispositions) {
-            $(options.dispositions + ' :input').change(function () {
-                selectedDispositions = _.map($(options.dispositions + ' :input:checked'), function (e) { return $(e).data('disposition'); });
+            var $dispositions = $(options.dispositions + ' :input');
+            $dispositions.change(function () {
+                selectedDispositions = _.map($dispositions.filter(':checked'), function (e) { return $(e).data('disposition'); });
                 highlightLots();
+                eventEmitter.trigger('change', getState());
             });
+
+            if (initialState && initialState.dispositions) {
+                _.each(initialState.dispositions, function (disposition) {
+                    $dispositions.filter('[data-disposition="' + disposition + '"]')
+                        .prop('checked', true)
+                        .trigger('change');
+                });
+            }
         }
 
         if (options.public_vacant) {
-            $(options.public_vacant).change(function () {
+            var $publicVacant = $(options.public_vacant);
+            $publicVacant.change(function () {
                 publicVacant = $(this).is(':checked');
                 highlightLots();
+                eventEmitter.trigger('change', getState());
             });
+
+            if (initialState && initialState.public_vacant) {
+                $publicVacant
+                    .prop('checked', initialState.public_vacant)
+                    .trigger('change');
+            }
         }
 
+        return eventEmitter;
     },
 
     getDispositions: function() {
@@ -87,6 +118,8 @@ module.exports = {
             disposition.id = disposition.label.replace(' ', '-');
             return disposition;
         });
-    }
+    },
+
+    getState: getState
 
 };

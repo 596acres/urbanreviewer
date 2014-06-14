@@ -130,6 +130,7 @@ function pushState(title) {
 
     var url = hash.formatHash({
         filters: filters.getState(),
+        highlights: highlights.getState(),
         map: map,
         page: currentPage,
         planName: currentPlan,
@@ -181,10 +182,14 @@ function loadFilters(alreadyOpen) {
         urbanreviewer.loadSidebar('plans', true);
         return false;
     });
-    highlights.init({
-        dispositions: '#dispositions',
-        public_vacant: '#public-vacant'
-    });
+    highlights
+        .init({
+            dispositions: '#dispositions',
+            public_vacant: '#public-vacant'
+        }, hash.parseHash(window.location.hash).highlights)
+        .on('change', function (state) {
+            pushState();
+        });
 }
 
 function loadPlanList(alreadyOpen) {
