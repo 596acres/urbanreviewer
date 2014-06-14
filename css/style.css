@@ -208,6 +208,24 @@ ul {
   padding-top: 5px;
   margin-bottom: 50px;
 }
+.filter-section {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: 15px;
+  padding-bottom: 15px;
+}
+.filter-section > * {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.filter-section-header {
+  border-bottom: 3px solid #4e4e4e;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  padding-bottom: 3px;
+  text-transform: uppercase;
+}
 #right-pane {
   background: white;
   border-left: 1px solid #4e4e4e;

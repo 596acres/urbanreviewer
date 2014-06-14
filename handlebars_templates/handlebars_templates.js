@@ -149,17 +149,17 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n            <option data-min=\""
+  buffer += "\n                <option data-min=\""
     + escapeExpression(((stack1 = (depth0 && depth0[0])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\" data-max=\""
     + escapeExpression(((stack1 = (depth0 && depth0[1])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\" value=\""
     + escapeExpression(((stack1 = (depth0 && depth0[0])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">\n                "
+    + "\">\n                    "
     + escapeExpression(((stack1 = (depth0 && depth0[0])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + " - "
     + escapeExpression(((stack1 = (depth0 && depth0[1])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\n            </option>\n            ";
+    + "\n                </option>\n                ";
   return buffer;
   }
 
@@ -182,10 +182,10 @@ function program3(depth0,data) {
   return buffer;
   }
 
-  buffer += "<div id=\"plan-list-container\">\n    <h2>Plans</h2>\n    <a href=\"#\" id=\"plan-list-filters-link\">Filters</a>\n    <section>\n        <h3>plan status</h3>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-active\" />\n            <label for=\"plan-status-active\">active</label>\n        </div>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-expired\" />\n            <label for=\"plan-status-expired\">expired</label>\n        </div>\n    </section>\n    <section>\n        <h3>last updated year</h3>\n        <select id=\"last-updated\">\n            <option value=\"\">any year</option>\n            ";
+  buffer += "<div id=\"plan-list-container\">\n    <h2>Plans</h2>\n    <a href=\"#\" id=\"plan-list-filters-link\">Filters</a>\n    <section class=\"filter-section\">\n        <h3 class=\"filter-section-header\">plan status</h3>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-active\" />\n            <label for=\"plan-status-active\">active</label>\n        </div>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-expired\" />\n            <label for=\"plan-status-expired\">expired</label>\n        </div>\n    </section>\n    <section class=\"filter-section\">\n        <h3 class=\"filter-section-header\">last updated year</h3>\n        <div>\n            <select id=\"last-updated\">\n                <option value=\"\">any year</option>\n                ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.decades), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n        </select>\n    </section>\n    <section id=\"plans\">\n        <div class=\"plan-list-header\">\n            <div class=\"plan-list-header-adopted\">adopted</div>\n            <div class=\"plan-list-header-name\">plan</div>\n            <div style=\"clear: both;\"></div>\n        </div>\n        <ul class=\"plan-list\">\n            ";
+  buffer += "\n            </select>\n        </div>\n    </section>\n    <section id=\"plans\">\n        <div class=\"plan-list-header\">\n            <div class=\"plan-list-header-adopted\">adopted</div>\n            <div class=\"plan-list-header-name\">plan</div>\n            <div style=\"clear: both;\"></div>\n        </div>\n        <ul class=\"plan-list\">\n            ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.plans), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n        </ul>\n    </section>\n</div>\n";
