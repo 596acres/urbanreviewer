@@ -115,6 +115,15 @@ function program6(depth0,data) {
   return buffer;
   });
 
+this["JST"]["handlebars_templates/page.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div class=\"page\">\n    <header class=\"page-header\">\n        <button class=\"panel-toggle\">\n            &times;\n        </button>\n        <div class=\"page-header-content\"></div>\n    </header>\n    <div id=\"page-content\"></div>\n</div>\n";
+  });
+
 this["JST"]["handlebars_templates/plan.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};

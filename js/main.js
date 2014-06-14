@@ -66,12 +66,15 @@ var urbanreviewer = {
     },
 
     loadPage: function (url) {
+        var template = JST['handlebars_templates/page.hbs'],
+            content = template({});
         unloadFilters();
         unloadPlanList();
-        $.get(url, function (content) {
-            // TODO load page into a template
+        sidebar.open('#right-pane', content);
+        $.get(url, function (pageContent) {
             // TODO add table of contents, scroll handler
-            sidebar.open('#right-pane', content);
+            $('#page-content').append(pageContent);
+            $('#page-content h1').appendTo($('.page-header-content'));
         });
     }
 };
