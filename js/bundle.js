@@ -129,11 +129,16 @@ module.exports = {
         if (options.lastUpdated) {
             $(options.lastUpdated)
                 .change(function () {
-                    var lastUpdated = $(this).find(':selected').val();
-                    updateState({ lastUpdated: lastUpdated });
-                    plansmap.filterLotsLayer({ lastUpdated: lastUpdated }, true);
+                    var selected = $(this).find(':selected'),
+                        min = selected.data('min'),
+                        max = selected.data('max');
+                    updateState({ lastUpdatedMin: min, lastUpdatedMax: max });
+                    plansmap.filterLotsLayer({
+                        lastUpdatedMin: min,
+                        lastUpdatedMax: max 
+                    }, true);
                 })
-                .val(state.lastUpdated)
+                .val(state.lastUpdatedMin)
                 .trigger('change');
         }
 
@@ -459,7 +464,15 @@ function loadFilters(alreadyOpen) {
         $target = $('body'),
         $content = $(template({
             dispositions: highlights.getDispositions(),
-            years: _.range(filters.minYear, filters.maxYear)
+            decades: [
+                [1950, 1959],
+                [1960, 1969],
+                [1970, 1979],
+                [1980, 1989],
+                [1990, 1999],
+                [2000, 2009],
+                [2010, 2019]
+            ]
         }));
 
     if (alreadyOpen) {
@@ -963,10 +976,16 @@ module.exports = {
             whereConditions.push("p.expires <= '" + new Date().toISOString() + "'");
         }
 
-        if (filters.lastUpdated) {
-            var year = parseInt(filters.lastUpdated);
+        if (filters.lastUpdatedMin) {
+            var year = parseInt(filters.lastUpdatedMin);
             if (year) {
                 whereConditions.push("p.updated >= '" + year + "-01-01'");
+            }
+        }
+
+        if (filters.lastUpdatedMax) {
+            var year = parseInt(filters.lastUpdatedMax);
+            if (year) {
                 whereConditions.push("p.updated < '" + (year + 1) + "-01-01'");
             }
         }

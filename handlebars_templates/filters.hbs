@@ -30,8 +30,10 @@
             <h3>last updated year</h3>
             <select id="last-updated">
                 <option value="">any year</option>
-                {{#each years}}
-                <option value="{{this}}">{{this}}</option>
+                {{#each decades}}
+                <option data-min="{{this.[0]}}" data-max="{{this.[1]}}" value="{{this.[0]}}">
+                    {{this.[0]}} - {{this.[1]}}
+                </option>
                 {{/each}}
             </select>
         </section>

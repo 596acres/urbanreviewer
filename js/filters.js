@@ -105,11 +105,16 @@ module.exports = {
         if (options.lastUpdated) {
             $(options.lastUpdated)
                 .change(function () {
-                    var lastUpdated = $(this).find(':selected').val();
-                    updateState({ lastUpdated: lastUpdated });
-                    plansmap.filterLotsLayer({ lastUpdated: lastUpdated }, true);
+                    var selected = $(this).find(':selected'),
+                        min = selected.data('min'),
+                        max = selected.data('max');
+                    updateState({ lastUpdatedMin: min, lastUpdatedMax: max });
+                    plansmap.filterLotsLayer({
+                        lastUpdatedMin: min,
+                        lastUpdatedMax: max 
+                    }, true);
                 })
-                .val(state.lastUpdated)
+                .val(state.lastUpdatedMin)
                 .trigger('change');
         }
 
