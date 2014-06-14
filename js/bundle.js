@@ -409,6 +409,8 @@ var urbanreviewer = {
         unloadFilters();
         unloadPlanList();
         $.get(url, function (content) {
+            // TODO load page into a template
+            // TODO add table of contents, scroll handler
             sidebar.open('#right-pane', content);
         });
     }
