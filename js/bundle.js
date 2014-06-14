@@ -730,7 +730,7 @@ $(document).ready(function () {
         // zoom to it appropriately
         plansmap.setActiveArea({ area: 'half' });
     }
-    else if (currentSidebar) {
+    else if (parsedHash.sidebar) {
         plansmap.setActiveArea({ area: 'most' });
     }
     else {
