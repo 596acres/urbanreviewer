@@ -151,6 +151,10 @@ function loadFilters(alreadyOpen) {
             pushState('Filters');
         });
 
+    $('#filters-plan-list-link').click(function () {
+        urbanreviewer.loadSidebar('plans', true);
+        return false;
+    });
     highlights.init({
         dispositions: '#dispositions',
         public_vacant: '#public-vacant'

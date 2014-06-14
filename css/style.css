@@ -236,6 +236,15 @@ ul {
   padding-bottom: 3px;
   text-transform: uppercase;
 }
+.nav-button {
+  background: #4e4e4e;
+  color: white;
+  padding: 10px;
+}
+.nav-button:visited,
+.nav-button:active {
+  color: white;
+}
 #right-pane {
   background: white;
   border-left: 1px solid #4e4e4e;
@@ -261,8 +270,7 @@ ul {
 #right-pane h2 {
   text-transform: uppercase;
 }
-#right-pane > section,
-#right-pane #filters-container > section {
+#right-pane > section {
   border-top: 2px solid black;
   padding-top: 5px;
   margin-bottom: 50px;
@@ -381,14 +389,22 @@ ul {
 #right-pane #highlights {
   margin-top: 45px;
 }
+#right-pane #highlights-header {
+  color: #aaa;
+  font-size: 22px;
+  text-align: center;
+  text-transform: capitalize;
+}
 #right-pane #plan-list-filters-link {
-  background: black;
-  color: white;
   float: right;
   margin-top: -25px;
-  padding: 10px;
 }
-#right-pane #plan-list-container h2 {
+#right-pane #filters-plan-list-link {
+  float: right;
+  margin-top: -25px;
+}
+#right-pane #plan-list-container h2,
+#right-pane #filters-container h2 {
   color: #aaa;
   font-size: 22px;
   text-align: center;

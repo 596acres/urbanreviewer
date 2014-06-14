@@ -1,8 +1,10 @@
 <div id="filters-container">
-    <section id="filters">
-        <h2>filters</h2>
-        <section>
-            <h3>plans adopted during mayoral administrations</h3>
+    <h2>Filter</h2>
+    <a href="#" id="filters-plan-list-link" class="nav-button">Plans</a>
+
+    <section id="filters" class="filter-section">
+        <h3 class="filter-section-header">plans adopted during mayoral administrations</h3>
+        <div>
             <select id="mayors">
                 <option data-start="1950" data-end="2013" value="">pick one</option>
                 <option data-start="1950" data-end="1953">Vincent R. Impellitteri</option>
@@ -14,13 +16,13 @@
                 <option data-start="1994" data-end="2001">Rudolph W. Giuliani</option>
                 <option data-start="2002" data-end="2013">Michael R. Bloomberg</option>
             </select>
-        </section>
+        </div>
     </section>
 
     <section id="highlights">
-        <h2>highlight lots</h2>
-        <section id="dispositions">
-            <h3>selected planned uses</h3>
+        <h3 id="highlights-header">highlight lots</h3>
+        <section id="dispositions" class="filter-section">
+            <h4 class="filter-section-header">selected planned uses</h4>
             {{#each dispositions}}
             <div>
                 <input type="checkbox" id="{{id}}" data-disposition="{{label}}" />
@@ -28,8 +30,8 @@
             </div>
             {{/each}}
         </section>
-        <section>
-            <h3>public vacant lots</h3>
+        <section class="filter-section">
+            <h4 class="filter-section-header">public vacant lots</h4>
             <div>
                 <input type="checkbox" id="public-vacant" />
                 <label for="public-vacant">publicly owned and vacant today</label>

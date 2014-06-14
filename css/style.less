@@ -286,6 +286,16 @@ ul {
 
 }
 
+.nav-button {
+    background: @font-color;
+    color: white;
+    padding: 10px;
+
+    &:visited, &:active {
+        color: white;
+    }
+}
+
 #right-pane {
     background: white;
     border-left: 1px solid @border-color;
@@ -314,8 +324,7 @@ ul {
         text-transform: uppercase;
     }
 
-    & > section,
-    & #filters-container > section {
+    & > section {
         .main-section();
     }
 
@@ -454,18 +463,28 @@ ul {
 
     #highlights {
         margin-top: 45px;
+
+        &-header {
+            color: #aaa;
+            font-size: 22px;
+            text-align: center;
+            text-transform: capitalize;
+        }
     }
 
 
     #plan-list-filters-link {
-        background: black;
-        color: white;
         float: right;
         margin-top: -25px;
-        padding: 10px;
     }
 
-    #plan-list-container {
+    #filters-plan-list-link {
+        float: right;
+        margin-top: -25px;
+    }
+
+    #plan-list-container,
+    #filters-container {
         h2 {
             color: #aaa;
             font-size: 22px;
