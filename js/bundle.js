@@ -843,10 +843,10 @@ function loadLots($target, planName) {
         $target.append(content);
         $('.lot-count').text(data.rows.length);
         $('.lot').on({
-            mouseover: function () {
+            mouseenter: function () {
                 plansmap.highlightLot($(this).data());
             },
-            mouseout: function () {
+            mouseleave: function () {
                 plansmap.unHighlightLot();
             }
         });
