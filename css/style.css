@@ -129,10 +129,31 @@ ul {
   padding: 0;
 }
 #map-filters-toggle {
+  cursor: pointer;
   position: absolute;
   right: 25px;
   top: 25px;
-  z-index: 5001;
+  width: 40px;
+  z-index: 2000;
+}
+#map-filters-toggle .icon-bar {
+  display: block;
+  height: 5px;
+  background-color: gray;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 100%;
+}
+#map-filters-toggle:hover .icon-bar {
+  background: black;
+}
+#narrow-sidebar-hide-button {
+  display: none;
+  font-size: 50px;
+  position: absolute;
+  right: 28%;
+  top: 15px;
+  z-index: 2000;
 }
 #date-range-picker-container {
   bottom: 10px;
@@ -179,22 +200,8 @@ ul {
   background: none;
   border-radius: 4px;
   box-shadow: none;
-  border: 1px solid black;
+  border: none;
   padding: 5px;
-}
-.panel-toggle .icon-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background-color: gray;
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-.panel-toggle:hover {
-  background: gray;
-}
-.panel-toggle:hover .icon-bar {
-  background: white;
 }
 .main-section {
   border-top: 2px solid black;

@@ -284,11 +284,11 @@ $(document).ready(function () {
     $('#right-pane').on('open', function (e, size) {
         if (size === 'wide') {
             $('#date-range-picker-container').hide();
-            $('#map-filters-toggle').hide();
             $('#search-container').hide();
             plansmap.setActiveArea({ area: 'half' });
         }
         else if (size === 'narrow') {
+            $('#narrow-sidebar-hide-button').show();
             plansmap.setActiveArea({ area: 'most' });
             $('#date-range-picker-container').addClass('narrow-sidebar');
             $('#date-range-picker').dateRangeSlider('resize');
@@ -296,10 +296,10 @@ $(document).ready(function () {
     });
 
     $('#right-pane').on('close', function () {
+        $('#narrow-sidebar-hide-button').hide();
         $('#date-range-picker-container').show();
         $('#date-range-picker-container').removeClass('narrow-sidebar');
         $('#date-range-picker').dateRangeSlider('resize');
-        $('#map-filters-toggle').show();
         $('#search-container').show();
         plansmap.setActiveArea({ area: 'full' });
 
@@ -380,13 +380,14 @@ $(document).ready(function () {
         urbanreviewer.selectPlan(name);
     });
 
-    $('#map-filters-toggle').click(function () {
+    $('.panel-toggle').click(function (e) {
         if (sidebar.isOpen('#right-pane')) {
             urbanreviewer.unloadSidebar();
         }
         else {
             urbanreviewer.loadSidebar('plans', true);
         }
+        e.preventDefault();
         return false;
     });
 });
