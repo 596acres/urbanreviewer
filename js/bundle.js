@@ -549,19 +549,14 @@ var urbanreviewer = {
 
     unloadSidebar: function () {
         currentSidebar = null;
-        // Stash filters container if it's out
-        unloadFilters();
-        unloadPlanList();
-        sidebar.close('#right-pane');
+        sidebar.close();
         setTitle(null);
     },
 
     loadPage: function (url) {
         var template = JST['handlebars_templates/page.hbs'],
             content = template({});
-        unloadFilters();
-        unloadPlanList();
-        sidebar.open('#right-pane', content);
+        sidebar.open(content);
         $.get(url, function (pageContent) {
             // TODO add table of contents, scroll handler
             $('#page-content').append(pageContent);
@@ -611,7 +606,8 @@ function pushState(title) {
 }
 
 function openFilters() {
-    sidebar.open('#right-pane', $('#filters-container').show(), 'narrow');
+    sidebar.open($('#filters-container'), 'narrow');
+    $('#filters-container').show();
 }
 
 function unloadFilters() {
@@ -695,7 +691,8 @@ function loadPlanList(alreadyOpen) {
 }
 
 function openPlanList() {
-    sidebar.open('#right-pane', $('#plan-list-container').show(), 'narrow');
+    sidebar.open($('#plan-list-container'), 'narrow');
+    $('#plan-list-container').show();
 }
 
 function unloadPlanList() {
@@ -714,6 +711,17 @@ $(document).ready(function () {
         center = parsedHash.center || defaultCenter;
     currentPage = parsedHash.page;
     currentPlan = parsedHash.plan;
+
+    sidebar.init($('#right-pane'), {
+        beforeClose: function () {
+            unloadFilters();
+            unloadPlanList();
+        },
+        beforeOpen: function () {
+            unloadFilters();
+            unloadPlanList();
+        }
+    });
 
     loadPlanList();
     map = plansmap.init('map', function () {
@@ -885,7 +893,7 @@ $(document).ready(function () {
     });
 
     $('.panel-toggle').click(function (e) {
-        if (sidebar.isOpen('#right-pane')) {
+        if (sidebar.isOpen()) {
             urbanreviewer.unloadSidebar();
         }
         else {
@@ -1016,14 +1024,14 @@ function unhighlightLot() {
 module.exports = {
 
     load: function ($target, options) {
-        sidebar.open('#' + $target.attr('id'));
+        sidebar.open();
         loadDetails(options.plan_name, function (row) {
             row = cleanData(row);
 
             // Load basic template for the plan
             var template = JST['handlebars_templates/plan.hbs'];
             templateContent = template(row);
-            sidebar.open('#' + $target.attr('id'), templateContent);
+            sidebar.open(templateContent);
 
             // Measure available width and set the header's width to it
             var headerWidth = $target.innerWidth() - $('.panel-toggle').outerWidth();
@@ -1478,33 +1486,48 @@ var _ = require('underscore');
 var sizes = ['narrow', 'wide'],
     defaultSize = 'wide';
 
-function isOpen(selector) {
-    return $(selector).is(':visible');
+var $container,
+    options;
+
+function isOpen() {
+    return $container.is(':visible');
 }
 
-function open(selector, content, size) {
+function open(content, size) {
+    if (options.beforeOpen) {
+        options.beforeOpen();
+    }
     if (!(size && _.contains(sizes, size))) {
         size = defaultSize;
     }
-    $(selector + ' *').remove();
-    $(selector)
+    $container
+        .empty()
         .removeClass(sizes.join(' '))
         .addClass(size)
         .append(content)
         .show()
         .trigger('open', size);
-    $(selector + ' .panel-toggle').click(function () {
-        close(selector);
+    $container.find('.panel-toggle').click(function () {
+        close();
     });
 }
 
-function close(selector) {
-    $(selector)
+function close() {
+    if (options.beforeClose) {
+        options.beforeClose();
+    }
+    $container
         .trigger('close')
         .hide();
 }
 
 module.exports = {
+
+    init: function ($e, overrideOptions) {
+        options = _.extend({}, overrideOptions);
+        $container = $e;
+    },
+
     isOpen: isOpen,
     open: open,
     close: close

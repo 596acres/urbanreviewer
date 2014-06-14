@@ -78,19 +78,14 @@ var urbanreviewer = {
 
     unloadSidebar: function () {
         currentSidebar = null;
-        // Stash filters container if it's out
-        unloadFilters();
-        unloadPlanList();
-        sidebar.close('#right-pane');
+        sidebar.close();
         setTitle(null);
     },
 
     loadPage: function (url) {
         var template = JST['handlebars_templates/page.hbs'],
             content = template({});
-        unloadFilters();
-        unloadPlanList();
-        sidebar.open('#right-pane', content);
+        sidebar.open(content);
         $.get(url, function (pageContent) {
             // TODO add table of contents, scroll handler
             $('#page-content').append(pageContent);
@@ -140,7 +135,8 @@ function pushState(title) {
 }
 
 function openFilters() {
-    sidebar.open('#right-pane', $('#filters-container').show(), 'narrow');
+    sidebar.open($('#filters-container'), 'narrow');
+    $('#filters-container').show();
 }
 
 function unloadFilters() {
@@ -224,7 +220,8 @@ function loadPlanList(alreadyOpen) {
 }
 
 function openPlanList() {
-    sidebar.open('#right-pane', $('#plan-list-container').show(), 'narrow');
+    sidebar.open($('#plan-list-container'), 'narrow');
+    $('#plan-list-container').show();
 }
 
 function unloadPlanList() {
@@ -243,6 +240,17 @@ $(document).ready(function () {
         center = parsedHash.center || defaultCenter;
     currentPage = parsedHash.page;
     currentPlan = parsedHash.plan;
+
+    sidebar.init($('#right-pane'), {
+        beforeClose: function () {
+            unloadFilters();
+            unloadPlanList();
+        },
+        beforeOpen: function () {
+            unloadFilters();
+            unloadPlanList();
+        }
+    });
 
     loadPlanList();
     map = plansmap.init('map', function () {
@@ -414,7 +422,7 @@ $(document).ready(function () {
     });
 
     $('.panel-toggle').click(function (e) {
-        if (sidebar.isOpen('#right-pane')) {
+        if (sidebar.isOpen()) {
             urbanreviewer.unloadSidebar();
         }
         else {

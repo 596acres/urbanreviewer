@@ -73,14 +73,14 @@ function unhighlightLot() {
 module.exports = {
 
     load: function ($target, options) {
-        sidebar.open('#' + $target.attr('id'));
+        sidebar.open();
         loadDetails(options.plan_name, function (row) {
             row = cleanData(row);
 
             // Load basic template for the plan
             var template = JST['handlebars_templates/plan.hbs'];
             templateContent = template(row);
-            sidebar.open('#' + $target.attr('id'), templateContent);
+            sidebar.open(templateContent);
 
             // Measure available width and set the header's width to it
             var headerWidth = $target.innerWidth() - $('.panel-toggle').outerWidth();

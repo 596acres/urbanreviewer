@@ -3,33 +3,48 @@ var _ = require('underscore');
 var sizes = ['narrow', 'wide'],
     defaultSize = 'wide';
 
-function isOpen(selector) {
-    return $(selector).is(':visible');
+var $container,
+    options;
+
+function isOpen() {
+    return $container.is(':visible');
 }
 
-function open(selector, content, size) {
+function open(content, size) {
+    if (options.beforeOpen) {
+        options.beforeOpen();
+    }
     if (!(size && _.contains(sizes, size))) {
         size = defaultSize;
     }
-    $(selector + ' *').remove();
-    $(selector)
+    $container
+        .empty()
         .removeClass(sizes.join(' '))
         .addClass(size)
         .append(content)
         .show()
         .trigger('open', size);
-    $(selector + ' .panel-toggle').click(function () {
-        close(selector);
+    $container.find('.panel-toggle').click(function () {
+        close();
     });
 }
 
-function close(selector) {
-    $(selector)
+function close() {
+    if (options.beforeClose) {
+        options.beforeClose();
+    }
+    $container
         .trigger('close')
         .hide();
 }
 
 module.exports = {
+
+    init: function ($e, overrideOptions) {
+        options = _.extend({}, overrideOptions);
+        $container = $e;
+    },
+
     isOpen: isOpen,
     open: open,
     close: close
