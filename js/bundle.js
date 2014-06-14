@@ -64,21 +64,27 @@ function resetMayors() {
         .trigger('change');
 }
 
-function updateState(changes) {
-    _.each(changes, function (value, key) {
-        if (!value) {
-            delete state[key];
-        }
-        else if (key === 'end' && value === maxYear) {
-            delete state[key];
-        }
-        else if (key === 'start' && value === minYear) {
-            delete state[key];
+/*
+ * Remove useless / default properties from the state.
+ */
+function cleanState(state) {
+    var cleaned = {};
+    _.each(state, function (value, key) {
+        if (!value || 
+            (key === 'end' && value === maxYear) ||
+            (key === 'start' && value === minYear)) {
+            return;
         }
         else {
-            state[key] = value;
+            cleaned[key] = value;
         }
     });   
+    return cleaned;
+}
+
+function updateState(changes) {
+    _.extend(state, changes);
+    state = cleanState(state);
     eventEmitter.trigger('change', state);
 }
 
@@ -177,7 +183,7 @@ module.exports = {
                     var selected = $(this).find(':selected'),
                         min = selected.data('min'),
                         max = selected.data('max');
-                    updateState({ lastUpdatedMin: min, lastUpdatedMax: max });
+                    updateState({ start: min, end: max });
                     plansmap.filterLotsLayer({
                         lastUpdatedMin: min,
                         lastUpdatedMax: max 
@@ -187,6 +193,7 @@ module.exports = {
                 .trigger('change');
         }
 
+        state = cleanState(state);
         return eventEmitter;
     },
 
