@@ -1,7 +1,10 @@
-@border-color: #4E4E4E;
-@font-color: #4E4E4E;
+@gray: #4E4E4E;
+@border-color: @gray;
+@font-color: @gray;
 @highlight-color: #FFFFCC;
 @interface-z-index: 2000;
+
+@input-dropdown-color: @gray;
 
 
 /* Global Reset */
@@ -68,6 +71,14 @@ ul {
     padding-left: 30px;
 }
 
+select {
+    background-color: @input-dropdown-color;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    width: 90%;
+}
 
 #tagline {
     font-size: 16px;

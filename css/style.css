@@ -57,6 +57,14 @@ img {
 ul {
   padding-left: 30px;
 }
+select {
+  background-color: #4e4e4e;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px;
+  width: 90%;
+}
 #tagline {
   font-size: 16px;
   font-weight: bold;
