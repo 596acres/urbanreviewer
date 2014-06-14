@@ -73,7 +73,11 @@ ul {
   height: 100%;
 }
 #logo {
+  cursor: pointer;
   float: left;
+}
+#logo:hover {
+  color: black;
 }
 #search-container {
   float: left;

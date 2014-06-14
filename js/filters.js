@@ -6,6 +6,40 @@ var state = {};
 var minYear = 1952,
     maxYear = 2014;
 
+var $active,
+    $dateRange,
+    $expired,
+    $lastUpdated,
+    $mayors;
+
+function resetActive() {
+    if (!$active) { return; }
+    $active
+        .prop('checked', false)
+        .trigger('change');
+}
+
+function resetExpired() {
+    if (!$expired) { return; }
+    $expired
+        .prop('checked', false)
+        .trigger('change');
+}
+
+function resetLastUpdated() {
+    if (!$lastUpdated) { return; }
+    $lastUpdated
+        .val('')
+        .trigger('change');
+}
+
+function resetMayors() {
+    if (!$mayors) { return; }
+    $mayors
+        .val('')
+        .trigger('change');
+}
+
 function updateState(changes) {
     _.each(changes, function (value, key) {
         if (!value) {
@@ -37,7 +71,8 @@ module.exports = {
             if (state.end) {
                 defaultMax = new Date(state.end, 0, 1);
             }
-            $('#date-range-picker')
+            $dateRange = $(options.dateRange);
+            $dateRange
                 .dateRangeSlider({
                     arrows: false,
                     defaultValues: {
@@ -62,7 +97,8 @@ module.exports = {
         }
 
         if (options.mayors && options.dateRange) {
-            $(options.mayors).change(function () {
+            $mayors = $(options.mayors);
+            $mayors.change(function () {
                 var mayor = $(this).find(':selected'),
                     start = parseInt(mayor.data('start')),
                     end = parseInt(mayor.data('end'));
@@ -76,12 +112,13 @@ module.exports = {
             });
 
             if (state.mayor) {
-                $(options.mayors).val(state.mayor).trigger('change');
+                $mayors.val(state.mayor).trigger('change');
             }
         }
 
         if (options.active) {
-            $(options.active)
+            $active = $(options.active);
+            $active
                 .change(function () {
                     var checked = $(this).is(':checked');
                     updateState({ active: checked });
@@ -92,7 +129,8 @@ module.exports = {
         }
 
         if (options.expired) {
-            $(options.expired)
+            $expired = $(options.expired);
+            $expired
                 .change(function () {
                     var checked = $(this).is(':checked');
                     updateState({ expired: checked });
@@ -103,7 +141,8 @@ module.exports = {
         }
 
         if (options.lastUpdated) {
-            $(options.lastUpdated)
+            $lastUpdated = $(options.lastUpdated)
+            $lastUpdated
                 .change(function () {
                     var selected = $(this).find(':selected'),
                         min = selected.data('min'),
@@ -123,6 +162,13 @@ module.exports = {
 
     getState: function () {
         return state;
+    },
+
+    resetState: function () {
+        resetActive();
+        resetExpired();
+        resetLastUpdated();
+        resetMayors();
     }
 
 };

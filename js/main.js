@@ -20,6 +20,16 @@ var currentPage,
 var defaultZoom = 12,
     defaultCenter = [40.739974, -73.946228];
 
+function resetView() {
+    currentPage = null;
+    currentPlan = null;
+    currentSidebar = null;
+    urbanreviewer.unloadSidebar();
+    filters.resetState();
+    map.setView(defaultCenter, defaultZoom);
+    pushState(null);
+}
+
 var urbanreviewer = {
 
     selectPlan: function (name) {
@@ -397,6 +407,11 @@ $(document).ready(function () {
             urbanreviewer.loadSidebar('plans', true);
         }
         e.preventDefault();
+        return false;
+    });
+
+    $('#logo').click(function () {
+        resetView();
         return false;
     });
 });
