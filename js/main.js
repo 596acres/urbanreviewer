@@ -163,7 +163,8 @@ function loadPlanList(alreadyOpen) {
         $target = $('#right-pane');
     }
 
-    var sql = 'SELECT name, borough FROM plans ORDER BY name';
+    var sql = 'SELECT name, borough, extract(YEAR FROM adopted) as adopted ' + 
+        'FROM plans ORDER BY name';
     cartodbapi.getJSON(sql, function (results) {
         var $content = $(template({
             plans: results.rows,

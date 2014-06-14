@@ -1,3 +1,7 @@
+@border-color: #4E4E4E;
+@highlight-color: #FFFFCC;
+
+
 /* Global Reset */
 * {
     margin: 0;
@@ -228,6 +232,7 @@ ul {
 
 #right-pane {
     background: white;
+    border-left: 1px solid @border-color;
     display: none;
     height: 100%;
     overflow-y: auto;
@@ -350,7 +355,7 @@ ul {
             padding: 10px;
 
             &:hover {
-                color: #FFFFCC;
+                color: @highlight-color;
             }
         }
     }
@@ -373,7 +378,7 @@ ul {
 
             &.highlighted,
             &:hover {
-                background-color: #FFFFCC;
+                background-color: @highlight-color;
             }
 
             &-external-links {
@@ -410,19 +415,48 @@ ul {
             padding: 0;
         }
 
-        .plan {
-            border-bottom: 1px solid gray;
+        .plan-list-header {
+            border-bottom: 3px solid @border-color;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-left: -15px;
+            margin-right: -15px;
+            margin-top: 20px;
             padding-bottom: 5px;
-            padding-top: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            text-transform: uppercase;
+
+            &-name {
+                float: left;
+            }
+
+            &-adopted {
+                float: right;
+                text-align: right;
+            }
+        }
+
+        .plan {
+            border-bottom: 1px solid @border-color;
+            padding: 15px;
 
             &:hover {
-                background-color: #ccc;
+                background-color: @highlight-color;
                 cursor: pointer;
             }
 
             &-name {
+                float: left;
+                font-size: 16px;
                 font-weight: bold;
-                text-transform: uppercase;
+                width: 85%;
+            }
+            &-adopted {
+                float: right;
+                font-size: 12px;
+                width: 15%;
             }
         }
     }

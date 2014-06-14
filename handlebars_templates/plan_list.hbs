@@ -1,5 +1,6 @@
 <div id="plan-list-container">
     <a href="#" id="plan-list-filters-link">Filters</a>
+    <h2>Plans</h2>
     <section>
         <h3>plan status</h3>
         <div>
@@ -23,12 +24,17 @@
         </select>
     </section>
     <section id="plans">
-        <h2>Plans</h2>
+        <div class="plan-list-header">
+            <div class="plan-list-header-adopted">adopted</div>
+            <div class="plan-list-header-name">plan</div>
+            <div style="clear: both;"></div>
+        </div>
         <ul class="plan-list">
             {{#each plans}}
                 <li class="plan" data-name="{{name}}">
+                    <div class="plan-adopted">{{adopted}}</div>
                     <div class="plan-name">{{name}}</div>
-                    <div class="plan-borough">{{borough}}, NY</div>
+                    <div style="clear: both;"></div>
                 </li>
             {{/each}}
         </ul>

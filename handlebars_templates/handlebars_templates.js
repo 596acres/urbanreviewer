@@ -170,22 +170,22 @@ function program3(depth0,data) {
   if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "\">\n                    <div class=\"plan-name\">";
+    + "\">\n                    <div class=\"plan-adopted\">";
+  if (helper = helpers.adopted) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.adopted); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "</div>\n                    <div class=\"plan-name\">";
   if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</div>\n                    <div class=\"plan-borough\">";
-  if (helper = helpers.borough) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.borough); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + ", NY</div>\n                </li>\n            ";
+    + "</div>\n                    <div style=\"clear: both;\"></div>\n                </li>\n            ";
   return buffer;
   }
 
-  buffer += "<div id=\"plan-list-container\">\n    <a href=\"#\" id=\"plan-list-filters-link\">Filters</a>\n    <section>\n        <h3>plan status</h3>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-active\" />\n            <label for=\"plan-status-active\">active</label>\n        </div>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-expired\" />\n            <label for=\"plan-status-expired\">expired</label>\n        </div>\n    </section>\n    <section>\n        <h3>last updated year</h3>\n        <select id=\"last-updated\">\n            <option value=\"\">any year</option>\n            ";
+  buffer += "<div id=\"plan-list-container\">\n    <a href=\"#\" id=\"plan-list-filters-link\">Filters</a>\n    <h2>Plans</h2>\n    <section>\n        <h3>plan status</h3>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-active\" />\n            <label for=\"plan-status-active\">active</label>\n        </div>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-expired\" />\n            <label for=\"plan-status-expired\">expired</label>\n        </div>\n    </section>\n    <section>\n        <h3>last updated year</h3>\n        <select id=\"last-updated\">\n            <option value=\"\">any year</option>\n            ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.decades), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n        </select>\n    </section>\n    <section id=\"plans\">\n        <h2>Plans</h2>\n        <ul class=\"plan-list\">\n            ";
+  buffer += "\n        </select>\n    </section>\n    <section id=\"plans\">\n        <div class=\"plan-list-header\">\n            <div class=\"plan-list-header-adopted\">adopted</div>\n            <div class=\"plan-list-header-name\">plan</div>\n            <div style=\"clear: both;\"></div>\n        </div>\n        <ul class=\"plan-list\">\n            ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.plans), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n        </ul>\n    </section>\n</div>\n";
