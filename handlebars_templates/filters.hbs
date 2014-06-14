@@ -2,17 +2,6 @@
     <section id="filters">
         <h2>filters</h2>
         <section>
-            <h3>plan status</h3>
-            <div>
-                <input type="checkbox" id="plan-status-active" />
-                <label for="plan-status-active">active</label>
-            </div>
-            <div>
-                <input type="checkbox" id="plan-status-expired" />
-                <label for="plan-status-expired">expired</label>
-            </div>
-        </section>
-        <section>
             <h3>plans adopted during mayoral administrations</h3>
             <select id="mayors">
                 <option data-start="1950" data-end="2013" value="">pick one</option>
@@ -24,17 +13,6 @@
                 <option data-start="1990" data-end="1993">David N. Dinkins</option>
                 <option data-start="1994" data-end="2001">Rudolph W. Giuliani</option>
                 <option data-start="2002" data-end="2013">Michael R. Bloomberg</option>
-            </select>
-        </section>
-        <section>
-            <h3>last updated year</h3>
-            <select id="last-updated">
-                <option value="">any year</option>
-                {{#each decades}}
-                <option data-min="{{this.[0]}}" data-max="{{this.[1]}}" value="{{this.[0]}}">
-                    {{this.[0]}} - {{this.[1]}}
-                </option>
-                {{/each}}
             </select>
         </section>
     </section>

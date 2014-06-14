@@ -126,18 +126,7 @@ function unloadFilters() {
 function loadFilters(alreadyOpen) {
     var template = JST['handlebars_templates/filters.hbs'],
         $target = $('body'),
-        $content = $(template({
-            dispositions: highlights.getDispositions(),
-            decades: [
-                [1950, 1959],
-                [1960, 1969],
-                [1970, 1979],
-                [1980, 1989],
-                [1990, 1999],
-                [2000, 2009],
-                [2010, 2019]
-            ]
-        }));
+        $content = $(template({ dispositions: highlights.getDispositions() }));
 
     if (alreadyOpen) {
         $target = $('#right-pane');
@@ -176,7 +165,18 @@ function loadPlanList(alreadyOpen) {
 
     var sql = 'SELECT name, borough FROM plans ORDER BY name';
     cartodbapi.getJSON(sql, function (results) {
-        var $content = $(template({ plans: results.rows }));
+        var $content = $(template({
+            plans: results.rows,
+            decades: [
+                [1950, 1959],
+                [1960, 1969],
+                [1970, 1979],
+                [1980, 1989],
+                [1990, 1999],
+                [2000, 2009],
+                [2010, 2019]
+            ]
+        }));
         if (!alreadyOpen) {
             $content.hide();
         }

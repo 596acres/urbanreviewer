@@ -7,23 +7,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 function program1(depth0,data) {
   
-  var buffer = "", stack1;
-  buffer += "\n                <option data-min=\""
-    + escapeExpression(((stack1 = (depth0 && depth0[0])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" data-max=\""
-    + escapeExpression(((stack1 = (depth0 && depth0[1])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" value=\""
-    + escapeExpression(((stack1 = (depth0 && depth0[0])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">\n                    "
-    + escapeExpression(((stack1 = (depth0 && depth0[0])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + " - "
-    + escapeExpression(((stack1 = (depth0 && depth0[1])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\n                </option>\n                ";
-  return buffer;
-  }
-
-function program3(depth0,data) {
-  
   var buffer = "", stack1, helper;
   buffer += "\n            <div>\n                <input type=\"checkbox\" id=\"";
   if (helper = helpers.id) { stack1 = helper.call(depth0, {hash:{},data:data}); }
@@ -45,11 +28,8 @@ function program3(depth0,data) {
   return buffer;
   }
 
-  buffer += "<div id=\"filters-container\">\n    <section id=\"filters\">\n        <h2>filters</h2>\n        <section>\n            <h3>plan status</h3>\n            <div>\n                <input type=\"checkbox\" id=\"plan-status-active\" />\n                <label for=\"plan-status-active\">active</label>\n            </div>\n            <div>\n                <input type=\"checkbox\" id=\"plan-status-expired\" />\n                <label for=\"plan-status-expired\">expired</label>\n            </div>\n        </section>\n        <section>\n            <h3>plans adopted during mayoral administrations</h3>\n            <select id=\"mayors\">\n                <option data-start=\"1950\" data-end=\"2013\" value=\"\">pick one</option>\n                <option data-start=\"1950\" data-end=\"1953\">Vincent R. Impellitteri</option>\n                <option data-start=\"1954\" data-end=\"1965\">Robert F. Wagner, Jr.</option>\n                <option data-start=\"1966\" data-end=\"1973\">John V. Lindsay</option>\n                <option data-start=\"1974\" data-end=\"1977\">Abraham D. Beame</option>\n                <option data-start=\"1978\" data-end=\"1989\">Edward I. Koch</option>\n                <option data-start=\"1990\" data-end=\"1993\">David N. Dinkins</option>\n                <option data-start=\"1994\" data-end=\"2001\">Rudolph W. Giuliani</option>\n                <option data-start=\"2002\" data-end=\"2013\">Michael R. Bloomberg</option>\n            </select>\n        </section>\n        <section>\n            <h3>last updated year</h3>\n            <select id=\"last-updated\">\n                <option value=\"\">any year</option>\n                ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.decades), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n            </select>\n        </section>\n    </section>\n\n    <section id=\"highlights\">\n        <h2>highlight lots</h2>\n        <section id=\"dispositions\">\n            <h3>selected planned uses</h3>\n            ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.dispositions), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  buffer += "<div id=\"filters-container\">\n    <section id=\"filters\">\n        <h2>filters</h2>\n        <section>\n            <h3>plans adopted during mayoral administrations</h3>\n            <select id=\"mayors\">\n                <option data-start=\"1950\" data-end=\"2013\" value=\"\">pick one</option>\n                <option data-start=\"1950\" data-end=\"1953\">Vincent R. Impellitteri</option>\n                <option data-start=\"1954\" data-end=\"1965\">Robert F. Wagner, Jr.</option>\n                <option data-start=\"1966\" data-end=\"1973\">John V. Lindsay</option>\n                <option data-start=\"1974\" data-end=\"1977\">Abraham D. Beame</option>\n                <option data-start=\"1978\" data-end=\"1989\">Edward I. Koch</option>\n                <option data-start=\"1990\" data-end=\"1993\">David N. Dinkins</option>\n                <option data-start=\"1994\" data-end=\"2001\">Rudolph W. Giuliani</option>\n                <option data-start=\"2002\" data-end=\"2013\">Michael R. Bloomberg</option>\n            </select>\n        </section>\n    </section>\n\n    <section id=\"highlights\">\n        <h2>highlight lots</h2>\n        <section id=\"dispositions\">\n            <h3>selected planned uses</h3>\n            ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.dispositions), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n        </section>\n        <section>\n            <h3>public vacant lots</h3>\n            <div>\n                <input type=\"checkbox\" id=\"public-vacant\" />\n                <label for=\"public-vacant\">publicly owned and vacant today</label>\n            </div>\n        </section>\n    </section>\n</div>\n";
   return buffer;
@@ -168,6 +148,23 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 function program1(depth0,data) {
   
+  var buffer = "", stack1;
+  buffer += "\n            <option data-min=\""
+    + escapeExpression(((stack1 = (depth0 && depth0[0])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" data-max=\""
+    + escapeExpression(((stack1 = (depth0 && depth0[1])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" value=\""
+    + escapeExpression(((stack1 = (depth0 && depth0[0])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n                "
+    + escapeExpression(((stack1 = (depth0 && depth0[0])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + " - "
+    + escapeExpression(((stack1 = (depth0 && depth0[1])),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\n            </option>\n            ";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
   var buffer = "", stack1, helper;
   buffer += "\n                <li class=\"plan\" data-name=\"";
   if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
@@ -185,8 +182,11 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  buffer += "<div id=\"plan-list-container\">\n    <a href=\"#\" id=\"plan-list-filters-link\">Filters</a>\n    <section id=\"plans\">\n        <h2>Plans</h2>\n        <ul class=\"plan-list\">\n            ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.plans), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  buffer += "<div id=\"plan-list-container\">\n    <a href=\"#\" id=\"plan-list-filters-link\">Filters</a>\n    <section>\n        <h3>plan status</h3>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-active\" />\n            <label for=\"plan-status-active\">active</label>\n        </div>\n        <div>\n            <input type=\"checkbox\" id=\"plan-status-expired\" />\n            <label for=\"plan-status-expired\">expired</label>\n        </div>\n    </section>\n    <section>\n        <h3>last updated year</h3>\n        <select id=\"last-updated\">\n            <option value=\"\">any year</option>\n            ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.decades), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n        </select>\n    </section>\n    <section id=\"plans\">\n        <h2>Plans</h2>\n        <ul class=\"plan-list\">\n            ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.plans), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n        </ul>\n    </section>\n</div>\n";
   return buffer;

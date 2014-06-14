@@ -1,5 +1,27 @@
 <div id="plan-list-container">
     <a href="#" id="plan-list-filters-link">Filters</a>
+    <section>
+        <h3>plan status</h3>
+        <div>
+            <input type="checkbox" id="plan-status-active" />
+            <label for="plan-status-active">active</label>
+        </div>
+        <div>
+            <input type="checkbox" id="plan-status-expired" />
+            <label for="plan-status-expired">expired</label>
+        </div>
+    </section>
+    <section>
+        <h3>last updated year</h3>
+        <select id="last-updated">
+            <option value="">any year</option>
+            {{#each decades}}
+            <option data-min="{{this.[0]}}" data-max="{{this.[1]}}" value="{{this.[0]}}">
+                {{this.[0]}} - {{this.[1]}}
+            </option>
+            {{/each}}
+        </select>
+    </section>
     <section id="plans">
         <h2>Plans</h2>
         <ul class="plan-list">
