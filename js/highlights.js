@@ -1,6 +1,16 @@
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 
+var selectedDispositions = [],
+    publicVacant = false;
+
+function highlightLots() {
+    plansmap.highlightLots({
+        dispositions: selectedDispositions,
+        public_vacant: publicVacant
+    });
+}
+
 module.exports = {
 
     init: function (options) {
@@ -8,17 +18,15 @@ module.exports = {
 
         if (options.dispositions) {
             $(options.dispositions + ' :input').change(function () {
-                plansmap.highlightLots({
-                    dispositions: _.map($(options.dispositions + ' :input:checked'), function (e) { return $(e).data('disposition'); })
-                });
+                selectedDispositions = _.map($(options.dispositions + ' :input:checked'), function (e) { return $(e).data('disposition'); });
+                highlightLots();
             });
         }
 
         if (options.public_vacant) {
             $(options.public_vacant).change(function () {
-                plansmap.highlightLots({
-                    public_vacant: $(this).is(':checked')
-                });
+                publicVacant = $(this).is(':checked');
+                highlightLots();
             });
         }
 

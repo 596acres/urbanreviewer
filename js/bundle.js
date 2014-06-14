@@ -276,6 +276,16 @@ module.exports = {
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 
+var selectedDispositions = [],
+    publicVacant = false;
+
+function highlightLots() {
+    plansmap.highlightLots({
+        dispositions: selectedDispositions,
+        public_vacant: publicVacant
+    });
+}
+
 module.exports = {
 
     init: function (options) {
@@ -283,17 +293,15 @@ module.exports = {
 
         if (options.dispositions) {
             $(options.dispositions + ' :input').change(function () {
-                plansmap.highlightLots({
-                    dispositions: _.map($(options.dispositions + ' :input:checked'), function (e) { return $(e).data('disposition'); })
-                });
+                selectedDispositions = _.map($(options.dispositions + ' :input:checked'), function (e) { return $(e).data('disposition'); });
+                highlightLots();
             });
         }
 
         if (options.public_vacant) {
             $(options.public_vacant).change(function () {
-                plansmap.highlightLots({
-                    public_vacant: $(this).is(':checked')
-                });
+                publicVacant = $(this).is(':checked');
+                highlightLots();
             });
         }
 
@@ -1009,16 +1017,20 @@ module.exports = {
     highlightLots: function (options) {
         options = options || {};
         highlightCartoCSS = '';
+        var selector = '#lots';
 
         if (options.dispositions && options.dispositions.length > 0) {
-            conditions = _.map(options.dispositions, function (disposition) {
-                return '#lots[disposition_filterable="' + disposition + '"]';
-            });
-            highlightCartoCSS += conditions.join(',') + '{' + highlightedLotCartoCSS + '}';
+            selector += _.map(options.dispositions, function (disposition) {
+                return '[disposition_filterable=~".*' + disposition + '.*"]';
+            }).join('');
+        }
+        if (options.public_vacant && options.public_vacant === true) {
+            selector += '[in_596=true]';
         }
 
-        if (options.public_vacant && options.public_vacant === true) {
-            highlightCartoCSS += '#lots[in_596=true] {' + highlightedLotCartoCSS + '}';
+        // Only add the highlighted CartoCSS if there are things to highlight
+        if (selector !== '#lots') {
+            highlightCartoCSS = selector + '{' + highlightedLotCartoCSS + '}';
         }
 
         lotsLayer.setCartoCSS(defaultCartoCSS + highlightCartoCSS);

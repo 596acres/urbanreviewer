@@ -208,16 +208,20 @@ module.exports = {
     highlightLots: function (options) {
         options = options || {};
         highlightCartoCSS = '';
+        var selector = '#lots';
 
         if (options.dispositions && options.dispositions.length > 0) {
-            conditions = _.map(options.dispositions, function (disposition) {
-                return '#lots[disposition_filterable="' + disposition + '"]';
-            });
-            highlightCartoCSS += conditions.join(',') + '{' + highlightedLotCartoCSS + '}';
+            selector += _.map(options.dispositions, function (disposition) {
+                return '[disposition_filterable=~".*' + disposition + '.*"]';
+            }).join('');
+        }
+        if (options.public_vacant && options.public_vacant === true) {
+            selector += '[in_596=true]';
         }
 
-        if (options.public_vacant && options.public_vacant === true) {
-            highlightCartoCSS += '#lots[in_596=true] {' + highlightedLotCartoCSS + '}';
+        // Only add the highlighted CartoCSS if there are things to highlight
+        if (selector !== '#lots') {
+            highlightCartoCSS = selector + '{' + highlightedLotCartoCSS + '}';
         }
 
         lotsLayer.setCartoCSS(defaultCartoCSS + highlightCartoCSS);
