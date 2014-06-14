@@ -206,9 +206,19 @@ function loadPlanList(alreadyOpen) {
             urbanreviewer.loadSidebar('filters', true);
             return false;
         });
-        $('.plan').click(function () {
-            urbanreviewer.selectPlan($(this).data('name'));
-        });
+        $('.plan')
+            .click(function () {
+                urbanreviewer.selectPlan($(this).data('name'));
+            })
+            .mouseenter(function() {
+                plansmap.addPlanOutline($(this).data('name'), {
+                    label: 'hover',
+                    popup: true
+                });
+            })
+            .mouseleave(function() {
+                plansmap.clearPlanOutline({ label: 'hover' });
+            });
     });
 }
 
