@@ -510,10 +510,7 @@ var defaultZoom = 12,
     defaultCenter = [40.739974, -73.946228];
 
 function resetView() {
-    currentPage = null;
-    currentPlan = null;
-    currentSidebar = null;
-    urbanreviewer.unloadSidebar();
+    sidebar.close();
     filters.resetState();
     highlights.resetState();
     map.setView(defaultCenter, defaultZoom);
@@ -563,12 +560,6 @@ var urbanreviewer = {
             var title = name[0].toUpperCase() + name.slice(1);
             pushState(title);
         }
-    },
-
-    unloadSidebar: function () {
-        currentSidebar = null;
-        sidebar.close();
-        setTitle(null);
     }
 
 };
@@ -722,6 +713,10 @@ $(document).ready(function () {
 
     sidebar.init($('#right-pane'), {
         beforeClose: function () {
+            currentPage = null;
+            currentPlan = null;
+            currentSidebar = null;
+            setTitle(null);
             unloadFilters();
             unloadPlanList();
         },
@@ -840,6 +835,8 @@ $(document).ready(function () {
 
     $('.sidebar-link').click(function (e) {
         currentPage = $(this).attr('href');
+        currentPlan = null;
+        currentSidebar = null;
         pushState();
         pages.load(currentPage);
         return false;
@@ -886,7 +883,7 @@ $(document).ready(function () {
             urbanreviewer.loadSidebar(sidebar, false);
         }
         else if (state === null) {
-            urbanreviewer.unloadSidebar();
+            sidebar.close();
         }
 
         var title = null;
@@ -908,20 +905,20 @@ $(document).ready(function () {
         urbanreviewer.selectPlan(name);
     });
 
-    $('.panel-toggle').click(function (e) {
-        if (sidebar.isOpen()) {
-            urbanreviewer.unloadSidebar();
-        }
-        else {
-            urbanreviewer.loadSidebar('plans', true);
-        }
+    $('.sidebar-show').click(function (e) {
+        urbanreviewer.loadSidebar('plans', true);
+        pushState();
         $('#right-pane').scrollTop(0);
-        e.preventDefault();
         return false;
     });
 
     $('#logo').click(function () {
         resetView();
+        return false;
+    });
+
+    $('#narrow-sidebar-hide-button').click(function () {
+        sidebar.close();
         return false;
     });
 });

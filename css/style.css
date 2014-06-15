@@ -998,7 +998,12 @@ select {
   padding: 0;
 }
 #map-filters-toggle {
+  background: none;
+  border-radius: 4px;
+  box-shadow: none;
+  border: none;
   cursor: pointer;
+  padding: 5px;
   position: absolute;
   right: 25px;
   top: 25px;
