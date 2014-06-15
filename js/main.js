@@ -4,6 +4,7 @@ var cartodbapi = require('./cartodbapi');
 var filters = require('./filters');
 var hash = require('./hash');
 var highlights = require('./highlights');
+var pages = require('./pages');
 var planlist = require('./planlist');
 var plans = require('./plans');
 var plansmap = require('./plansmap');
@@ -81,18 +82,8 @@ var urbanreviewer = {
         currentSidebar = null;
         sidebar.close();
         setTitle(null);
-    },
-
-    loadPage: function (url) {
-        var template = JST['handlebars_templates/page.hbs'],
-            content = template({});
-        sidebar.open(content);
-        $.get(url, function (pageContent) {
-            // TODO add table of contents, scroll handler
-            $('#page-content').append(pageContent);
-            $('#page-content h1').appendTo($('.page-header-content'));
-        });
     }
+
 };
 
 function setTitle(title) {
@@ -355,7 +346,7 @@ $(document).ready(function () {
     $('.sidebar-link').click(function (e) {
         currentPage = $(this).attr('href');
         pushState();
-        urbanreviewer.loadPage(currentPage);
+        pages.load(currentPage);
         return false;
     });
 
@@ -373,7 +364,7 @@ $(document).ready(function () {
     }
 
     if (currentPage) {
-        urbanreviewer.loadPage(currentPage);
+        load(currentPage);
     }
 
 
@@ -394,7 +385,7 @@ $(document).ready(function () {
             plansmap.addPlanOutline(currentPlan, { label: 'select' });
         }
         if (currentPage && currentPage !== previousPage) {
-            urbanreviewer.loadPage(currentPage);
+            pages.load(currentPage);
         }
         if (sidebar) {
             urbanreviewer.loadSidebar(sidebar, false);

@@ -210,7 +210,7 @@ module.exports = {
 
 };
 
-},{"./plansmap":10}],3:[function(require,module,exports){
+},{"./plansmap":11}],3:[function(require,module,exports){
 var geocoder = new google.maps.Geocoder();
 
 function to_google_bounds(bounds) {
@@ -341,7 +341,7 @@ module.exports = {
 
 };
 
-},{"jsurl":17,"querystring":16}],5:[function(require,module,exports){
+},{"jsurl":18,"querystring":17}],5:[function(require,module,exports){
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 
@@ -484,13 +484,14 @@ module.exports = {
 
 };
 
-},{"./plansmap":10,"underscore":20}],6:[function(require,module,exports){
+},{"./plansmap":11,"underscore":21}],6:[function(require,module,exports){
 var _ = require('underscore');
 
 var cartodbapi = require('./cartodbapi');
 var filters = require('./filters');
 var hash = require('./hash');
 var highlights = require('./highlights');
+var pages = require('./pages');
 var planlist = require('./planlist');
 var plans = require('./plans');
 var plansmap = require('./plansmap');
@@ -568,18 +569,8 @@ var urbanreviewer = {
         currentSidebar = null;
         sidebar.close();
         setTitle(null);
-    },
-
-    loadPage: function (url) {
-        var template = JST['handlebars_templates/page.hbs'],
-            content = template({});
-        sidebar.open(content);
-        $.get(url, function (pageContent) {
-            // TODO add table of contents, scroll handler
-            $('#page-content').append(pageContent);
-            $('#page-content h1').appendTo($('.page-header-content'));
-        });
     }
+
 };
 
 function setTitle(title) {
@@ -842,7 +833,7 @@ $(document).ready(function () {
     $('.sidebar-link').click(function (e) {
         currentPage = $(this).attr('href');
         pushState();
-        urbanreviewer.loadPage(currentPage);
+        pages.load(currentPage);
         return false;
     });
 
@@ -860,7 +851,7 @@ $(document).ready(function () {
     }
 
     if (currentPage) {
-        urbanreviewer.loadPage(currentPage);
+        load(currentPage);
     }
 
 
@@ -881,7 +872,7 @@ $(document).ready(function () {
             plansmap.addPlanOutline(currentPlan, { label: 'select' });
         }
         if (currentPage && currentPage !== previousPage) {
-            urbanreviewer.loadPage(currentPage);
+            pages.load(currentPage);
         }
         if (sidebar) {
             urbanreviewer.loadSidebar(sidebar, false);
@@ -927,7 +918,26 @@ $(document).ready(function () {
     });
 });
 
-},{"./cartodbapi":1,"./filters":2,"./hash":4,"./highlights":5,"./planlist":7,"./plans":8,"./plansmap":10,"./search":11,"./sidebar":12,"underscore":20}],7:[function(require,module,exports){
+},{"./cartodbapi":1,"./filters":2,"./hash":4,"./highlights":5,"./pages":7,"./planlist":8,"./plans":9,"./plansmap":11,"./search":12,"./sidebar":13,"underscore":21}],7:[function(require,module,exports){
+var sidebar = require('./sidebar');
+
+
+module.exports = {
+
+    load: function (url, $target) {
+        var template = JST['handlebars_templates/page.hbs'],
+            content = template({});
+        sidebar.open(content);
+        $.get(url, function (pageContent) {
+            // TODO add table of contents, scroll handler
+            $('#page-content').append(pageContent);
+            $('#page-content h1').appendTo($('.page-header-content'));
+        });
+    }
+
+};
+
+},{"./sidebar":13}],8:[function(require,module,exports){
 var cartodbapi = require('./cartodbapi');
 var plansfilters = require('./plansfilters');
 var plansmap = require('./plansmap');
@@ -965,7 +975,7 @@ module.exports = {
     load: load
 };
 
-},{"./cartodbapi":1,"./plansfilters":9,"./plansmap":10}],8:[function(require,module,exports){
+},{"./cartodbapi":1,"./plansfilters":10,"./plansmap":11}],9:[function(require,module,exports){
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
 var plansmap = require('./plansmap');
@@ -1082,7 +1092,7 @@ module.exports = {
 
 };
 
-},{"./cartodbapi":1,"./plansmap":10,"./sidebar":12,"underscore":20}],9:[function(require,module,exports){
+},{"./cartodbapi":1,"./plansmap":11,"./sidebar":13,"underscore":21}],10:[function(require,module,exports){
 var _ = require('underscore');
 
 var lastFilters = {};
@@ -1134,7 +1144,7 @@ module.exports = {
     getWhereClause: getWhereClause
 };
 
-},{"underscore":20}],10:[function(require,module,exports){
+},{"underscore":21}],11:[function(require,module,exports){
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
 var plansfilters = require('./plansfilters');
@@ -1417,7 +1427,7 @@ module.exports = {
 
 };
 
-},{"./cartodbapi":1,"./plansfilters":9,"./singleminded":13,"underscore":20}],11:[function(require,module,exports){
+},{"./cartodbapi":1,"./plansfilters":10,"./singleminded":14,"underscore":21}],12:[function(require,module,exports){
 var cartodbapi = require('./cartodbapi');
 var filters = require('./filters');
 var geocode = require('./geocode');
@@ -1497,7 +1507,7 @@ module.exports = {
     search: search
 };
 
-},{"./cartodbapi":1,"./filters":2,"./geocode":3,"./plansfilters":9,"typeahead.js":19}],12:[function(require,module,exports){
+},{"./cartodbapi":1,"./filters":2,"./geocode":3,"./plansfilters":10,"typeahead.js":20}],13:[function(require,module,exports){
 var _ = require('underscore');
 
 var sizes = ['narrow', 'wide'],
@@ -1550,7 +1560,7 @@ module.exports = {
     close: close
 };
 
-},{"underscore":20}],13:[function(require,module,exports){
+},{"underscore":21}],14:[function(require,module,exports){
 //
 // A simple AJAX request queue of length 1.
 //
@@ -1583,7 +1593,7 @@ module.exports = {
     remember: remember
 };
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1669,7 +1679,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1756,15 +1766,15 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":14,"./encode":15}],17:[function(require,module,exports){
+},{"./decode":15,"./encode":16}],18:[function(require,module,exports){
 module.exports = require('./lib/jsurl')
-},{"./lib/jsurl":18}],18:[function(require,module,exports){
+},{"./lib/jsurl":19}],19:[function(require,module,exports){
 /**
  * Copyright (c) 2011 Bruno Jouhier <bruno.jouhier@sage.com>
  *
@@ -1910,7 +1920,7 @@ module.exports = require('./lib/jsurl')
 		})();
 	}
 })(typeof exports !== 'undefined' ? exports : (window.JSURL = window.JSURL || {}));
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 /*!
  * typeahead.js 0.10.2
  * https://github.com/twitter/typeahead.js
@@ -3627,7 +3637,7 @@ module.exports = require('./lib/jsurl')
         };
     })();
 })(window.jQuery);
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
