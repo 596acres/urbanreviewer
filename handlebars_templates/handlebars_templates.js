@@ -131,8 +131,35 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["JST"]["handlebars_templates/plan.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, helper;
+  buffer += "\n                    ";
+  if (helper = helpers.last_updated) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.last_updated); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\n                    ";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  
+  return "\n                    &mdash;\n                    ";
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = "", stack1, helper;
+  buffer += "\n                    ";
+  if (helper = helpers.status) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.status); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\n                    ";
+  return buffer;
+  }
 
   buffer += "<div class=\"plan\">\n    <header class=\"plan-header\">\n        <button class=\"panel-toggle\">\n            &times;\n        </button>\n        <div class=\"plan-header-content\">\n            <h1>";
   if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
@@ -142,15 +169,13 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (helper = helpers.adopted) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.adopted); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</span>\n            </div>\n            <div class=\"plan-header-content-item\">\n                <label>last updated</label>\n                <span class=\"value\">";
-  if (helper = helpers.last_updated) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.last_updated); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n            </div>\n            <div class=\"plan-header-content-item\">\n                <label>status</label>\n                <span class=\"value\">";
-  if (helper = helpers.status) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.status); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "</span>\n            </div>\n        </div>\n        <div style=\"clear: both;\"></div>\n    </header>\n    <div class=\"plan-content\">\n        <section id=\"plan-about\">\n            <h2>About the plan</h2>\n            <p>(Coming soon.)</p>\n            <div id=\"plan-details\"></div>\n            <a class=\"plan-share-story\" target=\"_blank\" href=\"mailto:organizers@596acres.org?subject=My Urban Reviewer story on ";
+    + "</span>\n            </div>\n            <div class=\"plan-header-content-item\">\n                <label>last updated</label>\n                <span class=\"value\">\n                    ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.last_updated), {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n                </span>\n            </div>\n            <div class=\"plan-header-content-item\">\n                <label>status</label>\n                <span class=\"value\">\n                    ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.status), {hash:{},inverse:self.program(3, program3, data),fn:self.program(5, program5, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n                </span>\n            </div>\n        </div>\n        <div style=\"clear: both;\"></div>\n    </header>\n    <div class=\"plan-content\">\n        <section id=\"plan-about\">\n            <h2>About the plan</h2>\n            <p>(Coming soon.)</p>\n            <div id=\"plan-details\"></div>\n            <a class=\"plan-share-story\" target=\"_blank\" href=\"mailto:organizers@596acres.org?subject=My Urban Reviewer story on ";
   if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
