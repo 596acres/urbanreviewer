@@ -802,10 +802,16 @@ $(document).ready(function () {
      * Initialize sidebar
      */
     $('#right-pane').on('open', function (e, size) {
-        if (size === 'wide') {
+        if (size === 'wide' || size === 'widest') {
             $('#date-range-picker-container').hide();
             $('#search-container').hide();
-            plansmap.setActiveArea({ area: 'half' });
+
+            if (size === 'wide') {
+                plansmap.setActiveArea({ area: 'half' });
+            }
+            else {
+                plansmap.setActiveArea({ area: 'narrow' });
+            }
         }
         else if (size === 'narrow') {
             $('#narrow-sidebar-hide-button').show();
@@ -851,7 +857,7 @@ $(document).ready(function () {
     }
 
     if (currentPage) {
-        load(currentPage);
+        pages.load(currentPage);
     }
 
 
@@ -927,9 +933,8 @@ module.exports = {
     load: function (url, $target) {
         var template = JST['handlebars_templates/page.hbs'],
             content = template({});
-        sidebar.open(content);
+        sidebar.open(content, 'widest');
         $.get(url, function (pageContent) {
-            // TODO add table of contents, scroll handler
             $('#page-content').append(pageContent);
             $('#page-content h1').appendTo($('.page-header-content'));
         });
@@ -1267,6 +1272,10 @@ module.exports = {
             height: '100%'
         }
 
+        if (options.area === 'narrow') {
+            activeAreaOptions.right = '75%';
+        }
+
         if (options.area === 'half') {
             activeAreaOptions.right = '50%';
         }
@@ -1510,7 +1519,7 @@ module.exports = {
 },{"./cartodbapi":1,"./filters":2,"./geocode":3,"./plansfilters":10,"typeahead.js":20}],13:[function(require,module,exports){
 var _ = require('underscore');
 
-var sizes = ['narrow', 'wide'],
+var sizes = ['narrow', 'wide', 'widest'],
     defaultSize = 'wide';
 
 var $container,

@@ -1,6 +1,6 @@
 var _ = require('underscore');
 
-var sizes = ['narrow', 'wide'],
+var sizes = ['narrow', 'wide', 'widest'],
     defaultSize = 'wide';
 
 var $container,

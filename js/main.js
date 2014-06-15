@@ -315,10 +315,16 @@ $(document).ready(function () {
      * Initialize sidebar
      */
     $('#right-pane').on('open', function (e, size) {
-        if (size === 'wide') {
+        if (size === 'wide' || size === 'widest') {
             $('#date-range-picker-container').hide();
             $('#search-container').hide();
-            plansmap.setActiveArea({ area: 'half' });
+
+            if (size === 'wide') {
+                plansmap.setActiveArea({ area: 'half' });
+            }
+            else {
+                plansmap.setActiveArea({ area: 'narrow' });
+            }
         }
         else if (size === 'narrow') {
             $('#narrow-sidebar-hide-button').show();
@@ -364,7 +370,7 @@ $(document).ready(function () {
     }
 
     if (currentPage) {
-        load(currentPage);
+        pages.load(currentPage);
     }
 
 

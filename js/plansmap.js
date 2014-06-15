@@ -120,6 +120,10 @@ module.exports = {
             height: '100%'
         }
 
+        if (options.area === 'narrow') {
+            activeAreaOptions.right = '75%';
+        }
+
         if (options.area === 'half') {
             activeAreaOptions.right = '50%';
         }

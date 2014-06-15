@@ -423,6 +423,9 @@ select {
   float: left;
   margin-left: 15px;
 }
+.widest .page-header {
+  left: 24%;
+}
 #page-content {
   margin-top: 75px;
 }
@@ -444,6 +447,9 @@ select {
 }
 #right-pane.wide {
   width: 50%;
+}
+#right-pane.widest {
+  width: 75%;
 }
 #right-pane h1 {
   font-size: 40px;
