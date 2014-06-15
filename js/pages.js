@@ -1,5 +1,8 @@
 var sidebar = require('./sidebar');
 
+function makeId(text) {
+    return text.toLowerCase().replace(' ', '-');
+}
 
 module.exports = {
 
@@ -10,6 +13,37 @@ module.exports = {
         $.get(url, function (pageContent) {
             $('#page-content').append(pageContent);
             $('#page-content h1').appendTo($('.page-header-content'));
+
+            var $headings = $('#page-content').find('h2');
+            $headings.each(function () {
+                var text = $(this).html(),
+                    id = makeId(text);
+                $(this).attr('id', id);
+                var $navItem = $('<li></li>')
+                    .append(
+                        $('<a></a>')
+                            .attr('href', '#' + id)
+                            .html(text)
+                    )
+                $('.page-nav ul').append($navItem);
+                var $section = $(this).nextUntil('h2').add($(this));
+                $section.wrapAll('<section class="page-section"></section>');
+            });
+
+
+            $('.page-nav a').click(function () {
+                $('#right-pane').scrollTo($($(this).attr('href')), 300, {
+                    axis: 'y',
+                    margin: true,
+                    offset: -200,
+                    queue: false                    
+                });
+                return false;
+            });
+            $('#right-pane').scrollspy({
+               offset: 100,
+               target: '.page-nav'
+            });
         });
     }
 

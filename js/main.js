@@ -253,8 +253,10 @@ $(document).ready(function () {
             plansmap.highlightLotsInPlan(currentPlan);
         }
     });
-
-    if (currentPage || currentPlan) {
+    if (currentPage) {
+        plansmap.setActiveArea({ area: 'half' });
+    }
+    else if (currentPlan) {
         // If there's a plan selected already, set the active area so we can
         // zoom to it appropriately
         plansmap.setActiveArea({ area: 'half' });

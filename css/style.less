@@ -14,6 +14,8 @@
 @tooltip-bg: @gray;
 @tooltip-color: white;
 
+@import "../bower_components/bootstrap/less/grid.less";
+@import "../bower_components/bootstrap/less/utilities.less";
 @import "../bower_components/bootstrap/less/tooltip.less";
 
 
@@ -361,12 +363,27 @@ select {
 }
 
 .page {
+    font-size: 16px;
     margin-left: -15px;
     margin-right: -15px;
+    padding-bottom: 100px;
+    text-align: justify;
+
+    img {
+        max-width: 100%;
+    }
 
     p, h2 {
         margin-left: 15px;
         margin-right: 15px;
+    }
+
+    h1 {
+        line-height: 70px;
+    }
+
+    h2 {
+        font-size: 20px;
     }
 
     &-header {
@@ -405,14 +422,50 @@ select {
         }
 
     }
+
+    &-section {
+        margin-top: 100px;
+    }
+
+    &-content-container {
+        .make-row(0);
+        margin-top: 75px;
+    }
+
+    &-nav {
+        .make-md-column(3; 0);
+        position: fixed;
+
+        ul {
+            font-size: 18px;
+            list-style: none;
+            margin-top: 50px;
+            padding: 0;
+
+            li {
+                padding-bottom: 5px;
+                padding-top: 5px;
+
+                a {
+                    font-weight: normal;
+                }
+            }
+
+            li.active a {
+                font-weight: bold;
+            }
+        }
+    }
+
+    &-content {
+        .make-md-column(9; 0);
+        .make-md-column-offset(3);
+    }
+
 }
 
 .widest .page-header {
     left: 24%;
-}
-
-#page-content {
-    margin-top: 75px;
 }
 
 #right-pane {
