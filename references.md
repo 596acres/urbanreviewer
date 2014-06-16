@@ -13,8 +13,8 @@ Although we would love to share the actual plans here, we can’t because we cou
 
 Here are two books that we found particularly helpful: 
 
-NYC Department of Housing Preservation and Development. Community Development Progress Report: 1968.  Prepared and edited by Nathan Sobel. New York City, 1968.  
-NYC Department of Housing Preservation and Development.  Atlas of Urban Renewal Project Areas in the City of New York.  Prepared and edited by Nathan Sobel.  New York City, 1984.  
+NYC Department of Housing Preservation and Development. _Community Development Progress Report: 1968._  Prepared and edited by Nathan Sobel. New York City, 1968.  
+NYC Department of Housing Preservation and Development. _Atlas of Urban Renewal Project Areas in the City of New York._  Prepared and edited by Nathan Sobel.  New York City, 1984.  
 
 A full bibliography is available upon request. 
 
