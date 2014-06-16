@@ -125,7 +125,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"page container-fluid\">\n    <header class=\"page-header\">\n        <button class=\"panel-toggle\">\n            &times;\n        </button>\n        <div class=\"page-header-content\"></div>\n    </header>\n    <div class=\"page-content-container row\">\n        <div class=\"page-nav\">\n            <ul class=\"nav\"></ul>\n        </div>\n        <div id=\"page-content\" class=\"page-content\"></div>\n        <div class=\"clearfix\"></div>\n    </div>\n</div>\n";
+  return "<div class=\"page container-fluid\">\n    <div class=\"page-header\">\n        <button class=\"panel-toggle\">\n            &times;\n        </button>\n        <div class=\"page-header-content\"></div>\n    </div>\n    <div class=\"page-content-container row\">\n        <div class=\"page-nav\">\n            <ul class=\"nav\"></ul>\n        </div>\n        <div id=\"page-content\" class=\"page-content\"></div>\n        <div class=\"clearfix\"></div>\n    </div>\n</div>\n";
   });
 
 this["JST"]["handlebars_templates/plan.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

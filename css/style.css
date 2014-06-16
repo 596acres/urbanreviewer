@@ -1320,14 +1320,14 @@ select {
   background: white;
   border-bottom: 1px solid #444;
   font-size: 16px;
-  margin-left: -15px;
   margin-bottom: 30px;
+  margin-left: -15px;
   padding-bottom: 5px;
   padding-top: 10px;
   position: fixed;
-  left: 49%;
   top: 0;
   width: 100%;
+  z-index: 2030;
 }
 .page-header h1 {
   padding-bottom: 5px;
@@ -1402,9 +1402,6 @@ select {
   .page-content {
     margin-left: 25%;
   }
-}
-.widest .page-header {
-  left: 24%;
 }
 #right-pane {
   background: white;

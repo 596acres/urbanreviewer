@@ -3,6 +3,7 @@
 @font-color: @gray;
 @highlight-color: #FFFFCC;
 @interface-z-index: 2000;
+@page-header-index: @interface-z-index + 30;
 
 @label-font-family: "GrotesqueDisplayMT-BoldExt";
 
@@ -408,14 +409,14 @@ select {
         background: white;
         border-bottom: 1px solid #444;
         font-size: 16px;
-        margin-left: -15px;
         margin-bottom: 30px;
+        margin-left: -15px;
         padding-bottom: 5px;
         padding-top: 10px;
         position: fixed;
-        left: 49%; // TODO set dynamically
         top: 0;
         width: 100%;
+        z-index: @page-header-index;
 
         h1 {
             padding-bottom: 5px;
@@ -484,10 +485,6 @@ select {
 
 }
 
-.widest .page-header {
-    left: 24%;
-}
-
 #right-pane {
     background: white;
     border-left: 1px solid @border-color;
@@ -546,7 +543,7 @@ select {
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: @interface-z-index + 30;
+            z-index: @page-header-index;
 
             h1 {
                 padding-bottom: 5px;
