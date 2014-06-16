@@ -20,23 +20,25 @@ HPD provided us with a list of all the plans that ever existed but was not able 
 - Bronx Park South, 3rd revision from 1998 (adopted 1965)  
 
 **Brooklyn**  
+- 49th Street–1st Avenue (adopted approx. 1972) 
+- Bergen Street (adopted approx. 1972)
 - Lindsay Park (adopted in 1962)  
-- Lindsay-Bushwick (adopted approx. 1969)  
-- Bergen Street (adopted approx. 1972)  
-- Wallabout (adopted 1989)  
+- Lindsay–Bushwick (adopted approx. 1969)  
 - North Twin Pines (adopted 1971)  
-- 49th Street-1st Avenue (adopted approx. 1972)  
-- Rutland Road (adopted approx. 1971)  
+- Rutland Road (adopted approx. 1971) 
+- Wallabout (adopted 1989)  
 
 **Manhattan**  
-- Harlem (adopted 1952)  
-- East 3rd Street-Avenue C (adopted approx. 1969)  
-- Hester-Allen Street (adopted approx. 1969)  
-- Seward Park (adopted approx. 1952)(This one really surprises us! It’s a really high profile stalled redevelopment that has gotten some [recent coverage in the New York Times](http://www.nytimes.com/2014/03/23/nyregion/they-kept-a-lower-east-side-lot-vacant-for-decades.html?_r=0).)  
+- Bella Vista (adopted approx. 1973) 
+- Corlears Hook (adopted 1952)
+- East 3rd Street–Avenue C (adopted approx. 1969) 
+- Harlem (adopted 1952)   
+- Hester–Allen Street (adopted approx. 1969)  
+- Morningside–Manhattanville (adopted approx. 1956)
+- Park Row (adopted 1958)
 - Penn Station South (adopted 1955)  
+- Seward Park (adopted approx. 1952) (This one really surprises us! It’s a really high profile stalled redevelopment that has gotten some [recent coverage in the New York Times](http://www.nytimes.com/2014/03/23/nyregion/they-kept-a-lower-east-side-lot-vacant-for-decades.html?_r=0).)  
 - West Park (adopted 1952)  
-- Morningside-Manhattanville (adopted approx. 1956)  
-- Bella Vista (adopted approx. 1973)  
 
 **Queens**  
 - College Point  
