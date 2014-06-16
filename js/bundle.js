@@ -975,7 +975,7 @@ module.exports = {
                 $('#right-pane').scrollTo($($(this).attr('href')), 300, {
                     axis: 'y',
                     margin: true,
-                    offset: -200,
+                    offset: -115,
                     queue: false                    
                 });
                 return false;
