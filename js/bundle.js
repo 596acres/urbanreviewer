@@ -1047,8 +1047,10 @@ function addPlanContent($location, borough, planName) {
                 // If we're not dealing with an external or absolute image path
                 // prepend the plan directory
                 if (src.indexOf('http') !== 0 && src.indexOf('/') !== 0) {
-                    $(this).attr('src', planDirectory + '/' + src);
+                    src = planDirectory + '/' + src;
+                    $(this).attr('src', src);
                 }
+                $(this).wrap('<a class="colorbox" href="' + src + '"></a>');
 
                 // Add indicators under carousel
                 var $indicator = $('<li></li>')
@@ -1060,7 +1062,7 @@ function addPlanContent($location, borough, planName) {
             });
 
         // Finally, add images to carousel
-        var $imgs = $location.find('img')
+        var $imgs = $location.find('.colorbox')
             .appendTo('#image-container .carousel-inner')
             .wrap('<div class="item"></div>');
 
@@ -1069,6 +1071,10 @@ function addPlanContent($location, borough, planName) {
             $('#image-container')
                 .carousel('next')
                 .show();
+            $('#image-container .colorbox').colorbox({
+                maxHeight: '100%',
+                maxWidth: '100%'
+            });
         }
     });
 }

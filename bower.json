@@ -19,6 +19,7 @@
     "leaflet-active-area": "https://github.com/Mappy/Leaflet-active-area.git",
     "leaflet-usermarker": "https://github.com/heyman/leaflet-usermarker.git",
     "jquery.scrollTo": "~1.4.12",
-    "bootstrap": "~3.1.1"
+    "bootstrap": "~3.1.1",
+    "jquery-colorbox": "~1.5.9"
   }
 }
