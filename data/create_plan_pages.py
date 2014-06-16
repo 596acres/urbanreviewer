@@ -2,18 +2,7 @@ import click
 import csv
 import os
 
-from plans_common import get_borough_dir, get_borough_name
-
-
-def get_plan_dir(dst, borough, name):
-    try:
-        plan_dir = os.path.join(dst, borough, name)
-        os.mkdir(plan_dir)
-        return plan_dir
-    except OSError:
-        return plan_dir
-    except AttributeError:
-        return None
+from plans_common import get_borough_dir, get_borough_name, get_plan_dir
 
 
 def index_text(plan_name):

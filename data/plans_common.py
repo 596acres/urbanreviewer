@@ -10,6 +10,21 @@ boroughs = {
 }
 
 
+def get_plan_dir(dst, borough, name, create=True):
+    plan_dir = os.path.join(dst, borough, name)
+    if os.path.exists(plan_dir):
+        return plan_dir
+    if create:
+        try:
+            os.mkdir(plan_dir)
+            return plan_dir
+        except OSError:
+            return plan_dir
+        except AttributeError:
+            return None
+    return None
+
+
 def get_borough_name(key):
     try:
         return boroughs[key]
