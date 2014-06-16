@@ -853,7 +853,7 @@ header {
   text-align: left;
   text-transform: uppercase;
   top: 15px;
-  width: 100%;
+  width: 200px;
   z-index: 2000;
 }
 p {
@@ -938,6 +938,12 @@ select {
   float: left;
   margin-left: 25px;
   opacity: 0.75;
+  position: absolute;
+  left: 200px;
+  top: 25px;
+  text-align: left;
+  width: 150px;
+  z-index: 2000;
 }
 #search-container #search {
   border: 1px solid #aaa;
@@ -1141,6 +1147,7 @@ select {
   position: fixed;
   left: 49%;
   top: 0;
+  width: 100%;
 }
 .page-header h1 {
   padding-bottom: 5px;
@@ -1273,6 +1280,7 @@ select {
   position: fixed;
   left: 49%;
   top: 0;
+  width: 100%;
 }
 #right-pane .plan-header h1 {
   padding-bottom: 5px;
