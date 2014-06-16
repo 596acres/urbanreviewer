@@ -1102,9 +1102,11 @@ select {
 #logo {
   cursor: pointer;
   float: left;
+  width: 100%;
 }
-#logo:hover {
-  color: black;
+#logo img {
+  max-width: 100%;
+  max-height: 100%;
 }
 /* Map */
 #map {
@@ -1665,6 +1667,12 @@ select {
 }
 .carousel-indicators li {
   background-color: #d5d5d5;
+}
+.carousel-inner {
+  height: 100%;
+}
+.carousel-inner .item {
+  height: 100%;
 }
 .tooltip {
   font-size: 16px;
