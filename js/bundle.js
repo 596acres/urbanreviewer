@@ -1067,7 +1067,8 @@ function addPlanContent($location, borough, planName) {
             .wrap('<div class="item"></div>');
 
         // If images exist, show the carousel and get it going
-        if ($('#image-container .item').length > 0) {
+        var $items = $('#image-container .item');
+        if ($items.length > 0) {
             $('#image-container')
                 .carousel('next')
                 .show();
@@ -1075,6 +1076,9 @@ function addPlanContent($location, borough, planName) {
                 maxHeight: '100%',
                 maxWidth: '100%'
             });
+        }
+        if ($items.length === 1) {
+            $('.carousel-control,.carousel-indicators').hide();
         }
     });
 }
