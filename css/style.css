@@ -1555,6 +1555,9 @@ select {
   font-size: 24px;
   font-weight: bold;
 }
+#right-pane #data div {
+  margin-left: 25px;
+}
 #right-pane #filters {
   margin-top: 45px;
 }

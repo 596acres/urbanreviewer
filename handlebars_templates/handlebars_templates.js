@@ -179,7 +179,27 @@ function program5(depth0,data) {
   if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "\">Share your story</a>\n        </section>\n        <section id=\"lots\">\n            <h2>lots</h2>\n            <div id=\"lots-content\"></div>\n        </section>\n    </div>\n</div>\n";
+    + "\">Share your story</a>\n        </section>\n        <section id=\"lots\">\n            <h2>lots</h2>\n            <div id=\"lots-content\"></div>\n        </section>\n        <section id=\"data\">\n            <h2>data</h2>\n            <div>\n                Get map data for \n                <a href=\"https://github.com/596acres/urbanreviewer/tree/gh-pages/data/geojson/us/ny/nyc/nyc.geojson\" target=\"_blank\">NYC</a> / \n                <a href=\"https://github.com/596acres/urbanreviewer/tree/gh-pages/data/geojson/us/ny/nyc/";
+  if (helper = helpers.borough) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.borough); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "/all.geojson\" target=\"_blank\">";
+  if (helper = helpers.borough) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.borough); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "</a> / \n                <a href=\"https://github.com/596acres/urbanreviewer/tree/gh-pages/data/geojson/us/ny/nyc/";
+  if (helper = helpers.borough) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.borough); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "/";
+  if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + ".geojson\" target=\"_blank\">";
+  if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "</a>\n            </div>\n        </section>\n    </div>\n</div>\n";
   return buffer;
   });
 
