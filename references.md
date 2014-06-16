@@ -11,7 +11,14 @@ We made this map by investigating the urban renewal and neighborhood redevelopme
 
 Although we would love to share the actual plans here, we can’t because we could not afford to purchase copies at 25 cents per page from HPD; this is the statutory rate under the [New York State Freedom of Information Law](http://www.dos.ny.gov/coog/foil2.html) (FOIL). FOIL also requires government agencies to make their documents [available for inspection](http://www.urbanreviewer.org/media/596URPFOILletter_take2.pdf); we took advantage of that portion of the law to arrange for a team of dedicated volunteers to visit the HPD Records Access office regularly for about a year to extract the information you see on the NYC Urban Reviewer from the documents. Our volunteers were not allowed to photograph or make copies of the plans. 
 
-There is a bill in the NYC Council called the [OpenFOIL bill](http://legistar.council.nyc.gov/LegislationDetail.aspx?ID=1796964&GUID=125D4F8F-E4DE-47CA-882D-2C607A5EA819&Options=ID%7CText%7C) that would make a big difference in our ability to see and share government documents: it requires city agencies to post all requested documents to a public web portal after even a single request. If this law was in effect today, HPD would be obliged to post all the plans below. As it is, you have to rely on the careful notes taken by [our volunteers](#page=about.html).
+Here are two books that we found particularly helpful: 
+
+NYC Department of Housing Preservation and Development. Community Development Progress Report: 1968.  Prepared and edited by Nathan Sobel. New York City, 1968.  
+NYC Department of Housing Preservation and Development.  Atlas of Urban Renewal Project Areas in the City of New York.  Prepared and edited by Nathan Sobel.  New York City, 1984.  
+
+A full bibliography is available upon request. 
+
+_There is a bill in the NYC Council called the [OpenFOIL bill](http://legistar.council.nyc.gov/LegislationDetail.aspx?ID=1796964&GUID=125D4F8F-E4DE-47CA-882D-2C607A5EA819&Options=ID%7CText%7C) that would make a big difference in our ability to see and share government documents: it requires city agencies to post all requested documents to a public web portal after even a single request. If this law was in effect today, HPD would be obliged to post all the plans below. As it is, you have to rely on the careful notes taken by [our volunteers](#page=about.html)._
 
 ## Missing Plans
 HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD has not yet produced, details are missing about planned uses for the included lots. We are continuing to look for the following plans that were missing from HPD's responses to our numerous requests to date:
