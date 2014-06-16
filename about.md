@@ -43,23 +43,18 @@ One of the reasons we are excited to be making the plans accessible is that they
 
 ## Our Team
 
-Eric Brelsford, [596 Acres](http://596acres.org/)
+**Eric Brelsford**, [596 Acres](http://596acres.org/)
 
-Blair Brewster, [SmartSign](http://www.smartsign.com/)
+**Blair Brewster**, [SmartSign](http://www.smartsign.com/)
 
-Charles Chawalko
-A recent graduate of Parsons, the New School for Design’s new Master’s program in Design and Urban Ecologies, Charles had come on board to perform digital cartography and data corrections in the production and visualization of the map. His interest in the project came from his own thesis work and struggle concerning the potential privatization of his Mitchell-Lama cooperative that was born out of the Brooklyn Bridge Southwest Urban Renewal Plan. It is with hope in unveiling these hidden histories associated with urban renewal plans that we can secure spaces while creating new futures for them.
+**Charles Chawalko** performed digital cartography and data corrections in the production and visualization of the map. His interest in the project came from his own thesis work and struggle concerning the potential privatization of his Mitchell-Lama cooperative that was born out of the Brooklyn Bridge Southwest Urban Renewal Plan. It is with hope in unveiling these hidden histories associated with urban renewal plans that we can secure spaces while creating new futures for them.
 
-Matt Delsesto
-Matt has been working on this data liberation mission since the summer of 2013 when he first encountered the overwhelming stack of urban renewal plans on the 6th floor of Housing Preservation and Development offices.  He became excited when he recognized streets on pieces of paper in the windowless room, and learned that if we think our neighborhoods are missing pieces, it's because they probably are.
+**Matt Delsesto** has been working on this data liberation mission since the summer of 2013 when he first encountered the overwhelming stack of urban renewal plans on the 6th floor of Housing Preservation and Development offices.  He became excited when he recognized streets on pieces of paper in the windowless room, and learned that if we think our neighborhoods are missing pieces, it's because they probably are.
 
-Greg Mihalko, [Partner & Partners](http://partnerandpartners.com/)
-Greg is the designer on the project, working on graphic and interaction design for the website and identity. He’s excited to visualize how the city has been planned, built and shaped into what it is today.
+**Greg Mihalko**, [Partner & Partners](http://partnerandpartners.com/), is the designer on the project, working on graphic and interaction design for the website and identity. He’s excited to visualize how the city has been planned, built and shaped into what it is today.
 
-Zach Mihalko, [Partner & Partners](http://partnerandpartners.com/)
+**Zach Mihalko**, [Partner & Partners](http://partnerandpartners.com/)
 
-Paula Z. Segal, [596 Acres](http://596acres.org/)
-Paula is the founding director of 596 Acres. For many years, she lived in a neighborhood full of holes in North Brooklyn. Now, she’s doing something about it. 
+**Paula Z. Segal**, [596 Acres](http://596acres.org/), is the founding director of 596 Acres. For many years, she lived in a neighborhood full of holes in North Brooklyn. Now, she’s doing something about it. 
 
-Merran Swartwood
-Merran joined the project in November 2013 as a data-gathering robot and became part of the website team, to which she contributed much discussion and some copywriting. She misses the weekly security checks at the Department of Housing Preservation and Development and the monthly pies at 596 Acres.
+**Merran Swartwood** joined the project in November 2013 as a data-gathering robot and became part of the website team, to which she contributed much discussion and some copywriting. She misses the weekly security checks at the Department of Housing Preservation and Development and the monthly pies at 596 Acres.
