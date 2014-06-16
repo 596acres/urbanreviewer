@@ -58,7 +58,7 @@ module.exports = {
 
         L.tileLayer('http://{s}.tiles.mapbox.com/v3/{mapId}/{z}/{x}/{y}.png', {
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
-            mapId: 'urbanreviewer.idebc7lb',
+            mapId: 'ebrelsford.ihbc8hpf',
             maxZoom: 18
         }).addTo(map);
 
