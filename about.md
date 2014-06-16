@@ -58,3 +58,5 @@ One of the reasons we are excited to be making the plans accessible is that they
 **Paula Z. Segal**, [596 Acres](http://596acres.org/), is the founding director of 596 Acres. For many years, she lived in a neighborhood full of holes in North Brooklyn. Now, she’s doing something about it. 
 
 **Merran Swartwood** joined the project in November 2013 as a data-gathering robot and became part of the website team, to which she contributed much discussion and some copywriting. She misses the weekly security checks at the Department of Housing Preservation and Development and the monthly pies at 596 Acres.
+
+& a team of volunteer plan inspectors: Mary Bereschka, Charles Chawalko, Matt DelSesto, Suzan Frazier, Anandi Gandhi, Sophie Maguire, Alexander Roesch, Paula Z. Segal, Zaina Shahnawaz, Merran Swartwood
