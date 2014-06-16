@@ -43,20 +43,24 @@ One of the reasons we are excited to be making the plans accessible is that they
 
 ## Our Team
 
-**Eric Brelsford**, [596 Acres](http://596acres.org/)
+**Eric Brelsford**, [596 Acres](http://596acres.org/).
 
-**Blair Brewster**, [SmartSign](http://www.smartsign.com/)
+**Blair Brewster**, [SmartSign](http://www.smartsign.com/).
 
 **Charles Chawalko** performed digital cartography and data corrections in the production and visualization of the map. His interest in the project came from his own thesis work and struggle concerning the potential privatization of his Mitchell-Lama cooperative that was born out of the Brooklyn Bridge Southwest Urban Renewal Plan. It is with hope in unveiling these hidden histories associated with urban renewal plans that we can secure spaces while creating new futures for them.
 
 **Matt Delsesto** has been working on this data liberation mission since the summer of 2013 when he first encountered the overwhelming stack of urban renewal plans on the 6th floor of Housing Preservation and Development offices.  He became excited when he recognized streets on pieces of paper in the windowless room, and learned that if we think our neighborhoods are missing pieces, it's because they probably are.
 
+**DW Gibson** is the author of _Not Working: People Talk About Losing a Job and Finding Their Way in Today’s Changing Economy_. His work has appeared in such publications as _The New York Times_, _The Washington Post_, _The Daily Beast_, _The Village Voice_, and _The Caravan_. He has been a contributor to NPR’s _All Things Considered_ and is the director of the documentary, _Not Working_. For more information: www.dwgibson.net.
+
+**Mariana Mogilevich** is an urban and architectural historian and native New Yorker. She writes about the design and politics of the built environment in general and on public space and open space in New York in particular, and has taught urban studies and architectural history at Harvard and New York University. 
+
 **Greg Mihalko**, [Partner & Partners](http://partnerandpartners.com/), is the designer on the project, working on graphic and interaction design for the website and identity. He’s excited to visualize how the city has been planned, built and shaped into what it is today.
 
-**Zach Mihalko**, [Partner & Partners](http://partnerandpartners.com/)
+**Zach Mihalko**, [Partner & Partners](http://partnerandpartners.com/).
 
 **Paula Z. Segal**, [596 Acres](http://596acres.org/), is the founding director of 596 Acres. For many years, she lived in a neighborhood full of holes in North Brooklyn. Now, she’s doing something about it. 
 
 **Merran Swartwood** joined the project in November 2013 as a data-gathering robot and became part of the website team, to which she contributed much discussion and some copywriting. She misses the weekly security checks at the Department of Housing Preservation and Development and the monthly pies at 596 Acres.
 
-& a team of volunteer plan inspectors: Mary Bereschka, Charles Chawalko, Matt DelSesto, Suzan Frazier, Anandi Gandhi, Sophie Maguire, Alexander Roesch, Paula Z. Segal, Zaina Shahnawaz, Merran Swartwood
+& a team of **volunteer plan inspectors**: Mary Bereschka, Charles Chawalko, Matt DelSesto, Suzan Frazier, Anandi Gandhi, Sophie Maguire, Alexander Roesch, Paula Z. Segal, Zaina Shahnawaz and Merran Swartwood.
