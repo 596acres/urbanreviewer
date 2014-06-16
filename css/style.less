@@ -4,6 +4,8 @@
 @highlight-color: #FFFFCC;
 @interface-z-index: 2000;
 
+@label-font-family: "GrotesqueDisplayMT-BoldExt";
+
 @input-dropdown-color: @gray;
 @date-range-background-color: @gray;
 
@@ -134,11 +136,10 @@ select {
 
 #tagline {
     font-size: 16px;
-    font-weight: bold;
     position: absolute;
     left: 15px;
     text-align: left;
-    top: 150px;
+    top: 160px;
     width: 150px;
     z-index: @interface-z-index;
 }
@@ -223,13 +224,14 @@ select {
 }
 
 #nav {
+    font-family: @label-font-family;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: .5px;
     line-height: 35px;
     position: absolute;
     left: 15px;
-    top: 225px;
+    top: 245px;
     text-align: left;
     text-transform: uppercase;
     z-index: @interface-z-index;
@@ -449,6 +451,7 @@ select {
 
     &-nav {
         .make-md-column(3; 0);
+        font-family: @label-font-family;
         position: fixed;
 
         ul {
@@ -572,6 +575,8 @@ select {
 
                     label {
                         display: block;
+                        font-family: @label-font-family;
+                        font-weight: normal;
                     }
                     .value {
                         font-weight: normal;

@@ -1,0 +1,28 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 2829696, 2014-06-16T14:43:12-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Grotesque Display MT Bold Extended by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/grotesque-display-mt/grotesque-display-mt-bold-extended-91/
+ * Copyright: Digitized data copyright The Monotype Corporation 1991-1995. All rights reserved. Grotesque® is a trademark of The Monotype Corporation which may be registered in certain jurisdictions.
+ * Licensed pageviews: 250,000
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2829696
+ * 
+ * © 2014 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2b2d80");
+
+  
+@font-face {font-family: 'GrotesqueDisplayMT-BoldExt';src: url('webfonts/2B2D80_0_0.eot');src: url('webfonts/2B2D80_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2B2D80_0_0.woff') format('woff'),url('webfonts/2B2D80_0_0.ttf') format('truetype');}
+ 

@@ -1092,11 +1092,10 @@ select {
  */
 #tagline {
   font-size: 16px;
-  font-weight: bold;
   position: absolute;
   left: 15px;
   text-align: left;
-  top: 150px;
+  top: 160px;
   width: 150px;
   z-index: 2000;
 }
@@ -1166,13 +1165,14 @@ select {
   margin: 0;
 }
 #nav {
+  font-family: "GrotesqueDisplayMT-BoldExt";
   font-size: 16px;
   font-weight: bold;
   letter-spacing: .5px;
   line-height: 35px;
   position: absolute;
   left: 15px;
-  top: 225px;
+  top: 245px;
   text-align: left;
   text-transform: uppercase;
   z-index: 2000;
@@ -1359,6 +1359,7 @@ select {
   min-height: 1px;
   padding-left: 0;
   padding-right: 0;
+  font-family: "GrotesqueDisplayMT-BoldExt";
   position: fixed;
 }
 @media (min-width: 992px) {
@@ -1485,6 +1486,8 @@ select {
 }
 #right-pane .plan-header-content-item label {
   display: block;
+  font-family: "GrotesqueDisplayMT-BoldExt";
+  font-weight: normal;
 }
 #right-pane .plan-header-content-item .value {
   font-weight: normal;
