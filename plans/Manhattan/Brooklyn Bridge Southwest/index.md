@@ -4,3 +4,5 @@ title:  "Brooklyn Bridge Southwest"
 permalink: index.html
 ---
 
+
+Brooklyn Bridge Southwest was adopted in 1964, last revised in 1995, and expired in 2004. The plan calls for low-, moderate-, and middle-income housing with appurtenant recreational, community, commercial, and parking facilities; commercial uses limited to offices, retail, data processing, and business establishments; and institutional uses including college, university, hospital, research, and office facilities. 
