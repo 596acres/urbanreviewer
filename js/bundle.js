@@ -273,6 +273,20 @@ module.exports = {
 var jsurl = require('jsurl');
 var querystring = require('querystring');
 
+function formatPlan(plan) {
+    if (plan) {
+        return plan.replace(/ /g, '+');
+    }
+    return plan;
+}
+
+function parsePlan(plan) {
+    if (plan) {
+        return plan.replace(/\+/g, ' ');
+    }
+    return plan;
+}
+
 module.exports = {
 
     parseHash: function(hash) {
@@ -297,7 +311,7 @@ module.exports = {
         }
 
         args.page = hash.page;
-        args.plan = hash.plan;
+        args.plan = parsePlan(hash.plan);
         args.filters = jsurl.parse(hash.filters);
         args.highlights = jsurl.parse(hash.highlights);
         args.sidebar = hash.sidebar;
@@ -317,7 +331,7 @@ module.exports = {
                 '/' + center.lng.toFixed(precision);
 
         if (options.planName) {
-            hash += '&plan=' + options.planName;
+            hash += '&plan=' + formatPlan(options.planName);
         }
 
         if (options.page) {
