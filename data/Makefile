@@ -89,9 +89,15 @@ geojson: simplify
 	rm -f lots.geojson
 	ogr2ogr -f "GeoJSON" -sql "SELECT BBL, block, lot, plan_name, disp_filt AS disposition_filterable, disp_edit AS disposition_display, in_596 FROM simplified" lots.geojson shp/simplified.shp
 
+merge_csvs: csvs
+	cat csv/Manhattan.csv > merge.csv
+	tail -n +2 csv/Bronx.csv >> merge.csv
+	tail -n +2 csv/Brooklyn.csv >> merge.csv
+	tail -n +2 csv/Queens.csv >> merge.csv
+	tail -n +2 "csv/Staten Island.csv" >> merge.csv
+
 plan_table:
-	# TODO Take borough CSVs, concatenate into one big CSV
-	csvcut -c "Borough,Name of Plan,Date Adopted,Status,Expiration,Last Updated" 20140610.csv | uniq > plans.csv
+	csvcut -c "Borough,Name of Plan,Date Adopted,Status,Expiration,Last Updated" merge.csv | uniq > plans.csv
 
 add_to_cartodb: geojson plan_table
 	python add_to_cartodb.py --plans plans.csv --lots lots.geojson
