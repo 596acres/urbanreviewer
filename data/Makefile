@@ -111,3 +111,7 @@ plan_geojsons: geojson plan_table
 
 create_plan_pages: plan_table
 	python create_plan_pages.py --dst ../plans --plans plans.csv
+
+append_plan_summaries: create_plan_pages
+	# This summaries file is in Google Drive
+	python append_plan_summaries.py --dst ../plans --summaries "Plan summaries.csv"
