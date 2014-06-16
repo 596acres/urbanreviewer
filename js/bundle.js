@@ -981,7 +981,7 @@ module.exports = {
                 return false;
             });
             $('#right-pane').scrollspy({
-               offset: 100,
+               offset: -500,
                target: '.page-nav'
             });
         });
