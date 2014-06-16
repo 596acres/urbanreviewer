@@ -48,28 +48,28 @@ _What is urban renewal and master planning for our neighborhoods?  Who makes com
 
 The following books, articles, photos, and films explore questions related to urban renewal and master planning in New York and other cities.  We found them helpful to understanding the past and future of planning in our city. This is not a definitive guide but a recommended entry point. We’d love to get your feedback on this list and any insights you have from reading, watching and looking. 
 
-MULTIMEDIA
-“Life in the model city: stories of urban renewal in New Haven,”  
+**MULTIMEDIA**
+“[Life in the model city: stories of urban renewal in New Haven](http://www.yale.edu/nhohp/modelcity/index.html),”  
 The New Haven Oral History Project (2004)  
 In a span of 15 years (from 1954 to 1969) more than 25,000 people were relocated from their homes in New Haven, Connecticut as part of the “model cities” program.  This oral history project investigates what it was like to live through such massive changes, from the perspective of people who lived in the city during the time.  
 
-Adam Purple and the Garden of Eden  
+[Adam Purple and the Garden of Eden](http://vimeo.com/29275235)  
 Harvey Wang and Amy Brost (2011)  
 In 1975, on the crime-ridden Lower East Side, Adam Purple started a garden behind his tenement home. By 1986, The Garden of Eden was world famous and had grown to 15,000 square feet. For Adam – a social activist, philosopher, artist, and revolutionary – the Garden was the medium of his political and artistic expression. It was razed by the city in 1986 after a protracted court battle. This film documents the creation of this artwork and its ultimate destruction.
 
-Historical Photos of all NYC buildings from 1939-1941 and 1983-1988  
+[Historical Photos of all NYC buildings from 1939-1941 and 1983-1988](http://www.nyc.gov/html/records/html/photos/photos.shtml)  
 NYC Department of Records  
 This website has photos from both the era before urban renewal projects and after urban renewal:  a useful reference to see the drastic changes to NYC neighborhoods in the second half of the 20th century.   
 
-The Pruitt-Igoe Myth  
+[The Pruitt-Igoe Myth](http://www.pruitt-igoe.com)  
 Documentary directed by Chad Fredericks (2011)  
 It began as a housing marvel. Two decades later, it ended in rubble. But what happened to those caught in between? The Pruitt-Igoe Myth tells the story of the transformation of the American city in the decades after World War II, through the lens of the infamous Pruitt-Igoe housing development and the St. Louis, Missouri residents who called it home.
 
-The World that Moses Built (excerpts of this classic film available online)  
+**The World that Moses Built** ([excerpts of this classic film available online](http://www.youtube.com/watch?v=lUmI6mUzSH8))  
 PBS American Experience Documentary (1989)  
 In the 20th century Robert Moses became known for his large projects such as Triborough Bridge, Jones Beach State Park, Verrazano-Narrows Bridge, West Side Highway or Long Island parkway system.  This epic documentary explores the role of NYC master-planner Robert Moses in shaping New York City, and ultimately urban policy in the United States.  
 
-ARTICLES  
+**ARTICLES**  
 “New Yorkers Without a Voice”  
 Arthur Simon (1966)  
 The pastor of a Lutheran church near the Tompkins Square urban renewal area wrote this article in 1966 to explain the context and impact of the urban renewal planned for the community around his church.  
