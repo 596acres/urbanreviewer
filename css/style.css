@@ -1337,9 +1337,8 @@ select {
   border: none;
   cursor: pointer;
   float: left;
-  font-size: 90px;
+  font-size: 50px;
   line-height: 50px;
-  margin-top: 10px;
 }
 .page-header .panel-toggle:hover {
   background-color: white;
@@ -1467,9 +1466,8 @@ select {
   border: none;
   cursor: pointer;
   float: left;
-  font-size: 90px;
+  font-size: 50px;
   line-height: 50px;
-  margin-top: 10px;
 }
 #right-pane .plan-header .panel-toggle:hover {
   background-color: white;
