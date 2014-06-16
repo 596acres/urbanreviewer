@@ -1,5 +1,5 @@
 ---
 layout: plan
-title: "Bedford Ave-North 3rd Street"
+title: "Columbia Street"
 permalink: index.html
 ---

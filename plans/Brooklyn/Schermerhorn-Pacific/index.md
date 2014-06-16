@@ -1,5 +1,5 @@
 ---
 layout: plan
-title: "Lindsay Bushwick"
+title: "Schermerhorn-Pacific"
 permalink: index.html
 ---
