@@ -6,8 +6,40 @@ var sidebar = require('./sidebar');
 var scrollToHeight;
 
 function addPlanContent($location, borough, planName) {
-    $.get('plans/' + borough + '/' + planName.replace('/', '-'), function (content) {
+    var planDirectory = 'plans/' + borough + '/' + planName.replace('/', '-');
+    $.get(planDirectory, function (content) {
         $location.append(content);
+
+        $location.find('img')
+            .each(function (i) {
+                var src = $(this).attr('src');
+
+                // If we're not dealing with an external or absolute image path
+                // prepend the plan directory
+                if (src.indexOf('http') !== 0 && src.indexOf('/') !== 0) {
+                    $(this).attr('src', planDirectory + '/' + src);
+                }
+
+                // Add indicators under carousel
+                var $indicator = $('<li></li>')
+                    .attr({
+                        'data-target': '#image-container',
+                        'data-slide-to': i
+                    });
+                $('#image-container .carousel-indicators').append($indicator);
+            });
+
+        // Finally, add images to carousel
+        var $imgs = $location.find('img')
+            .appendTo('#image-container .carousel-inner')
+            .wrap('<div class="item"></div>');
+
+        // If images exist, show the carousel and get it going
+        if ($('#image-container .item').length > 0) {
+            $('#image-container')
+                .carousel('next')
+                .show();
+        }
     });
 }
 

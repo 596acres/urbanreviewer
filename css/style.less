@@ -11,9 +11,12 @@
 @import "../bower_components/bootstrap/less/mixins.less";
 @import "../bower_components/bootstrap/less/variables.less";
 
+@carousel-indicator-active-bg: darken(@gray: 25%);
+@carousel-indicator-border-color: @gray;
 @tooltip-bg: @gray;
 @tooltip-color: white;
 
+@import "../bower_components/bootstrap/less/carousel.less";
 @import "../bower_components/bootstrap/less/grid.less";
 @import "../bower_components/bootstrap/less/utilities.less";
 @import "../bower_components/bootstrap/less/tooltip.less";
@@ -590,6 +593,18 @@ select {
                 }
             }
 
+            #image-container {
+                height: 500px;
+
+                img {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-height: 100%;
+                    //width: 400px;
+                }
+            }
+
             margin-top: 150px;
         }
 
@@ -765,6 +780,24 @@ select {
 /*
  * Bootstrap
  */
+
+.carousel-control {
+    &.left,
+    &.right,
+    &:hover {
+        background-image: none;
+        color: black;
+    }
+}
+
+.carousel-indicators {
+    z-index: @interface-z-index + 5;
+
+    li {
+        background-color: lighten(@gray, 50%);
+    }
+}
+
 .tooltip {
     font-size: 16px;
     font-weight: bold;
