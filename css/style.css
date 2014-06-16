@@ -1505,6 +1505,7 @@ select {
 }
 #right-pane .plan-content #image-container {
   height: 500px;
+  margin-bottom: 50px;
 }
 #right-pane .plan-content #image-container img {
   display: block;
