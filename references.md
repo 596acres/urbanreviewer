@@ -17,26 +17,26 @@ There is a bill in the NYC Council called the [OpenFOIL bill](http://legistar.co
 HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD has not yet produced, details are missing about planned uses for the included lots. We are continuing to look for the following plans that were missing from HPD's responses to our numerous requests to date:
 
 **Brooklyn**
-Lindsay Park (adopted in 1962)
-Lindsay-Bushwick (adopted approx. 1969)
-Bergen Street (adopted approx. 1972)
-Wallabout (adopted 1989)
-North Twin Pines (adopted 1971)
-49th Street-1st Avenue (adopted approx. 1972)
-Rutland Road (adopted approx. 1971)
+- Lindsay Park (adopted in 1962)
+- Lindsay-Bushwick (adopted approx. 1969)
+- Bergen Street (adopted approx. 1972)
+- Wallabout (adopted 1989)
+- North Twin Pines (adopted 1971)
+- 49th Street-1st Avenue (adopted approx. 1972)
+- Rutland Road (adopted approx. 1971)
 
 **Manhattan**
-Harlem (adopted 1952)
-East 3rd Street-Avenue C (adopted approx. 1969)
-Hester-Allen Street (adopted approx. 1969)
-Seward Park (adopted approx. 1952)(This one really surprises us! It’s a really high profile stalled redevelopment that has gotten some [recent coverage in the New York Times](http://www.nytimes.com/2014/03/23/nyregion/they-kept-a-lower-east-side-lot-vacant-for-decades.html?_r=0).)
-Penn Station South (adopted 1955)
-West Park (adopted 1952)
-Morningside-Manhattanville (adopted approx. 1956)
-Bella Vista (adopted approx. 1973)
+- Harlem (adopted 1952)
+- East 3rd Street-Avenue C (adopted approx. 1969)
+- Hester-Allen Street (adopted approx. 1969)
+- Seward Park (adopted approx. 1952)(This one really surprises us! It’s a really high profile stalled redevelopment that has gotten some [recent coverage in the New York Times](http://www.nytimes.com/2014/03/23/nyregion/they-kept-a-lower-east-side-lot-vacant-for-decades.html?_r=0).)
+- Penn Station South (adopted 1955)
+- West Park (adopted 1952)
+- Morningside-Manhattanville (adopted approx. 1956)
+- Bella Vista (adopted approx. 1973)
 
 **Queens**
-College Point 
+- College Point 
 
 This list will be updated and detailed planned use information will be added as it becomes available. If you have the most recent revision of any of the plans above and would like to share it, please [contact us](#page=contact.html). 
 
@@ -139,4 +139,4 @@ Samuel Zipp (2010), Manhattan Projects: The Rise and Fall of Urban Renewal in Co
 In this historical account of urban renewal in NYC, Samuel Zipp reveals forgotten stories about the people, politics and history of several iconic urban renewal plans including the United Nations building, Stuyvesant Town, Lincoln Center, and the great swaths of public housing in East Harlem.  The result is a compelling history about who shapes cities, how they shape cities, and how the impacts of past interventions builds the city we know today.   
 
 Alex S. Vitale (2008), City of Disorder: How the Quality of Life Campaign Transformed New York Politics
-Alex Vitale explains the politics of categorizing and labeling groups of people as dirty, dangerous, or disorderly, specifically through his study of the “Quality of Life” campaign of NYC in the 1990s.   
+Alex Vitale explains the politics of categorizing and labeling groups of people as dirty, dangerous, or disorderly, specifically through his study of the “Quality of Life” campaign of NYC in the 1990s.
