@@ -1,5 +1,5 @@
 ---
 layout: plan
-title: "South Bronx NDP"
+title: "Mid-Bronx"
 permalink: index.html
 ---
