@@ -7,7 +7,7 @@ published: true
 # Essays
 
 
-**What Was Is Urban Renewal in New York City?**  
+## What Was Is Urban Renewal in New York City?  
 by Mariana Mogilevich
 
 In our densely packed city, large swaths of vacant land are a glaring oddity. But they exist, empty acres at Broadway Triangle in Brooklyn, the Seward Park Urban Renewal Area (SPURA) in the Lower East Side, and parts of Edgemere and Willets Point in Queens. These are sites that the city acquired and cleared of all buildings in order to redevelop them. Their futures are still up for debate. To understand what happened and what might be possible down the road, we need to understand the history of urban renewal in New York City. Though this process began more than sixty years ago, urban renewal remains a controversial and active force in neighborhood change in New York.
@@ -36,7 +36,7 @@ Federal support for urban renewal ended in 1974, but that was not the end of urb
 
 Some recent and current urban renewal projects, such as those at Willets Point or Atlantic Yards, have raised questions about who benefits from the city’s plans. To make way for the Metrotech office park in Downtown Brooklyn, the city cleared historic rowhouses that may have been stops on the Underground Railroad. And other sites, designated and cleared a long time ago, remain vacant and awaiting redevelopment. The city’s urban renewal plans are not ancient history. The story of urban renewal is still being written, with the fate and future of many sites in the balance.
 
-**Who Makes A Neighborhood?** 
+## Who Makes A Neighborhood? 
 by DW Gibson
 
 The question "Who makes a neighborhood?" provokes very different answers from those who develop land and those who live on that land.
