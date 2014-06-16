@@ -175,7 +175,7 @@ function program5(depth0,data) {
   buffer += "\n                </span>\n            </div>\n            <div class=\"plan-header-content-item\">\n                <label>status</label>\n                <span class=\"value\">\n                    ";
   stack1 = helpers['if'].call(depth0, (depth0 && depth0.status), {hash:{},inverse:self.program(3, program3, data),fn:self.program(5, program5, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n                </span>\n            </div>\n        </div>\n        <div style=\"clear: both;\"></div>\n    </header>\n    <div class=\"plan-content\">\n        <section id=\"plan-about\">\n            <h2>About the plan</h2>\n            <p>(Coming soon.)</p>\n            <div id=\"plan-details\"></div>\n            <a class=\"plan-share-story\" target=\"_blank\" href=\"mailto:organizers@596acres.org?subject=My Urban Reviewer story on ";
+  buffer += "\n                </span>\n            </div>\n        </div>\n        <div style=\"clear: both;\"></div>\n    </header>\n    <div class=\"plan-content\">\n        <section id=\"plan-about\">\n            <h2>About the plan</h2>\n            <div id=\"plan-details\"></div>\n            <a class=\"plan-share-story\" target=\"_blank\" href=\"mailto:organizers@596acres.org?subject=My Urban Reviewer story on ";
   if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
