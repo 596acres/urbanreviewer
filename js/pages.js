@@ -41,7 +41,7 @@ module.exports = {
                 return false;
             });
             $('#right-pane').scrollspy({
-               offset: -500,
+               offset: -700,
                target: '.page-nav'
             });
         });
