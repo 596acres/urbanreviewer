@@ -1065,6 +1065,11 @@ select {
   padding: 5px;
   width: 90%;
 }
+input,
+textarea,
+select {
+  -webkit-appearance: none;
+}
 .input-group {
   margin-bottom: 10px;
   margin-top: 10px;
