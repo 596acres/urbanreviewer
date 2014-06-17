@@ -20,14 +20,15 @@
     </section>
 
     <section id="highlights">
-        <h3 id="highlights-header">highlight lots</h3>
+        <h3 id="highlights-header">highlight lots
+            <span class="help-button" data-toggle="tooltip" data-placement="left" title="Lots that fit ALL the selected criteria will be highlighted.">?</span>
+        </h3>
         <section id="dispositions" class="filter-section">
             <h4 class="filter-section-header">selected planned uses</h4>
             {{#each dispositions}}
             <div class="input-group">
                 <input type="checkbox" id="{{id}}" data-disposition="{{label}}" />
                 <label class="checkbox-label" for="{{id}}">{{label}}</label>
-                <span class="help-button" data-toggle="tooltip" data-placement="left" title="{{helpText}}">?</span>
             </div>
             {{/each}}
         </section>
