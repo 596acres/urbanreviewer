@@ -96,7 +96,7 @@ merge_csvs: csvs
 	tail -n +2 csv/Queens.csv >> merge.csv
 	tail -n +2 "csv/Staten Island.csv" >> merge.csv
 
-plan_table:
+plan_table: merge_csvs
 	csvcut -c "Borough,Name of Plan,Date Adopted,Status,Expiration,Last Updated" merge.csv | uniq > plans.csv
 
 add_to_cartodb: geojson plan_table
