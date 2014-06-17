@@ -55,7 +55,7 @@ _What is urban renewal and master planning for our neighborhoods?  Who makes com
 
 The following books, articles, photos, and films explore questions related to urban renewal and master planning in New York and other cities.  We found them helpful to understanding the past and future of planning in our city. This is not a definitive guide but a recommended entry point. We’d love to get your feedback on this list and any insights you have from reading, watching and looking. 
 
-**MULTIMEDIA**
+**MULTIMEDIA**  
 “[Life in the model city: stories of urban renewal in New Haven](http://www.yale.edu/nhohp/modelcity/index.html),”  
 The New Haven Oral History Project (2004)  
 In a span of 15 years (from 1954 to 1969) more than 25,000 people were relocated from their homes in New Haven, Connecticut as part of the “model cities” program.  This oral history project investigates what it was like to live through such massive changes, from the perspective of people who lived in the city during the time.  
@@ -109,7 +109,7 @@ This article is about a reunion of residents who were displaced by a NYC slum cl
 Jonathan Mahler article in _New York Times_ (2012)  
 Jonathan Mahler explains the development and persistence of large scale master-planned public housing projects in New York, specifically their concentration along the waterfront or at the urban fringe.  In particular, Mahler explores NYC sites such as the Rockaways, Coney Island, and Red Hook. 
 
-**BOOKS**
+**BOOKS**  
 **Tom Angotti (2008), New York For Sale: Community Planning Confronts Global Real Estate**  
 Angotti, both observer of and longtime participant in New York community planning, focuses on the close relationships among community planning, political strategy, and control over land. After describing the political economy of New York City real estate, its close ties to global financial capital, and the roots of community planning in social movements and community organizing, Angotti turns to specific case studies to explain community planning in the context of global real estate.
 
