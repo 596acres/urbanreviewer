@@ -103,10 +103,6 @@ select {
     width: 90%;
 }
 
-input, textarea, select {
-    -webkit-appearance: none;
-}
-
 .input-group {
     margin-bottom: 10px;
     margin-top: 10px;
@@ -178,6 +174,10 @@ input, textarea, select {
     text-align: left;
     width: 150px;
     z-index: @interface-z-index;
+
+    input[type=search] {
+        -webkit-appearance: none;
+    }
 
     #search {
         border: 1px solid #aaa;
