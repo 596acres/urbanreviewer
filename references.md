@@ -18,7 +18,7 @@ NYC Department of Housing Preservation and Development. _Atlas of Urban Renewal 
 
 A full bibliography is available upon request. 
 
-_There is a bill in the NYC Council called the [OpenFOIL bill](http://legistar.council.nyc.gov/LegislationDetail.aspx?ID=1796964&GUID=125D4F8F-E4DE-47CA-882D-2C607A5EA819&Options=ID%7CText%7C) that would make a big difference in our ability to see and share government documents: it requires city agencies to post all requested documents to a public web portal after even a single request. If this law was in effect today, HPD would be obliged to post all the plans below. As it is, you have to rely on the careful notes taken by [our volunteers](#page=about.html)._
+_There is a bill in the NYC Council called the [OpenFOIL bill](http://legistar.council.nyc.gov/LegislationDetail.aspx?ID=1796964&GUID=125D4F8F-E4DE-47CA-882D-2C607A5EA819&Options=ID%7CText%7C) that would make a big difference in our ability to see and share government documents: it requires city agencies to post all requested documents to a public web portal after even a single request. If this law was in effect today, HPD would be obliged to post all the plans below. As it is, you have to rely on the careful notes taken by [our volunteers](http://www.urbanreviewer.org/#page=about.html)._
 
 ## Missing Plans
 HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD has not yet produced, details are missing about planned uses for the included lots. We are continuing to look for the following plans that were missing from HPD's responses to our numerous requests to date:
