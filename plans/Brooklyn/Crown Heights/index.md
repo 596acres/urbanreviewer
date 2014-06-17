@@ -1,7 +1,8 @@
 ---
 layout: plan
-title: "Crown Heights"
+title: Crown Heights
 permalink: index.html
+published: true
 ---
 
-Crown Heights was adopted in 1976, last revised in 2002, and expires in 2016. The plan includes residential use, community facilities, and accessory parking.
+The Crown Heights plan was adopted in 1976, last revised in 2002, and expires in 2016. It includes residential, community facility, and accessory parking uses for lots in the plan area.

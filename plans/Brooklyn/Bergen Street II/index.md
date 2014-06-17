@@ -1,7 +1,8 @@
 ---
 layout: plan
-title: "Bergen Street II"
+title: Bergen Street II
 permalink: index.html
+published: true
 ---
 
-Bergen Street II was last revised in 1989. The plan includes residential, accessory facility, open space, and commercial uses.
+The Bergen Street II plan was last revised in 1989. It includes residential, accessory facility, open space, and commercial uses for lots in the plan area.

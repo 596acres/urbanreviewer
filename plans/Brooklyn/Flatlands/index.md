@@ -1,7 +1,8 @@
 ---
 layout: plan
-title: "Flatlands"
+title: Flatlands
 permalink: index.html
+published: true
 ---
 
-The Flatlands plan was adopted in 1961, last revised in 1991, and expired in 2001. It calls for public service, convenience retail and service, research and testing, storage and distribution, and high-performance manufacturing uses for the site.
+The Flatlands plan was adopted in 1961, last revised in 1991, and expired in 2001. It calls for public service, convenience retail and service, research and testing, storage and distribution, and high-performance manufacturing uses for lots in the plan area.

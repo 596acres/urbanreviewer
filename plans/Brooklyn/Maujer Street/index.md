@@ -1,7 +1,8 @@
 ---
 layout: plan
-title: "Maujer Street"
+title: Maujer Street
 permalink: index.html
+published: true
 ---
 
-The Maujer Street plan was adopted in 2000 and will expire in 2040. It designates the site for residential use.
+The Maujer Street plan was adopted in 2000 and will expire in 2040. It designates lots in the plan area for residential use.

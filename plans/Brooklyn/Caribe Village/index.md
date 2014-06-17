@@ -1,7 +1,8 @@
 ---
 layout: plan
-title: "Caribe Village"
+title: Caribe Village
 permalink: index.html
+published: true
 ---
 
-Caribe Village was adopted in 1978, last revised in 1997, and expires in 2018. The plan is to promote a low-rise, low-density residential area.  
+The Caribe Village plan was adopted in 1978, last revised in 1997, and expires in 2018. It promotes a low-rise, low-density residential area.
