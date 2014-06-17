@@ -36,7 +36,6 @@ module.exports = {
 
             $('.page-nav').width($('.page-nav-column').width());
             $('.page-nav a').click(function () {
-                console.log('being clicked');
                 $('#right-pane').scrollTo($($(this).attr('href')), 300, {
                     axis: 'y',
                     margin: true,
