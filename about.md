@@ -45,7 +45,7 @@ One of the reasons we are excited to be making the plans accessible is that they
 
 **Eric Brelsford**, [596 Acres](http://596acres.org/).
 
-**Blair Brewster**, [SmartSign](http://www.smartsign.com/).
+**Blair Brewster**, is the founder and CEO of [SmartSign](http://www.smartsign.com/), a company with deep roots in Brooklyn. Blair has seen firsthand both the upside and the devastating downside to urban renewal projects. His first business - in North Adams, MA - was adjacent to a swath of commercial building blocks that were knocked down in the name of urban renewal; 40 years later, they remain largely empty. On the other hand, near his longtime home in Brooklyn Heights, the community was able to combine land held by a combination of city agencies, building a garden, playground, basketball court and Brooklyn's first community dog run. Disconnected and unloved shards of land can become invaluable community resources. Blair proudly supports 596 Acres's efforts to spread information with the power to change our cities.
 
 **Charles Chawalko** performed digital cartography and data corrections in the production and visualization of the map. His interest in the project came from his own thesis work and struggle concerning the potential privatization of his Mitchell-Lama cooperative that was born out of the Brooklyn Bridge Southwest Urban Renewal Plan. It is with hope in unveiling these hidden histories associated with urban renewal plans that we can secure spaces while creating new futures for them.
 
