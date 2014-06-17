@@ -1301,10 +1301,21 @@ module.exports = {
 
         L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-        L.tileLayer('http://{s}.tiles.mapbox.com/v3/{mapId}/{z}/{x}/{y}.png', {
+        var streets = L.tileLayer('http://{s}.tiles.mapbox.com/v3/{mapId}/{z}/{x}/{y}.png', {
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
             mapId: 'ebrelsford.ihbc8hpf',
             maxZoom: 18
+        }).addTo(map);
+
+        var satellite = new L.BingLayer('Ajio1n0EgmAAvT3zLndCpHrYR_LHJDgfDU6B0tV_1RClr7OFLzy4RnkLXlSdkJ_x');
+
+        var baseLayers = {
+            streets: streets,
+            satellite: satellite
+        };
+
+        L.control.layers(baseLayers, {}, {
+            position: 'bottomleft'
         }).addTo(map);
 
         cartodb.createLayer(map, {
@@ -1340,6 +1351,11 @@ module.exports = {
 
             map.addLayer(layer, false);
             onLotsLayerReady();
+
+            streets.bringToBack();
+            map.on('baselayerchange', function (e) {
+                e.layer.bringToBack();
+            });
         });
 
         highlightedLotLayer = L.geoJson(null, {
