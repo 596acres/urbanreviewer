@@ -970,7 +970,7 @@ module.exports = {
                 $section.wrapAll('<section class="page-section"></section>');
             });
 
-
+            $('.page-nav').width($('.page-nav-column').width());
             $('.page-nav a').click(function () {
                 $('#right-pane').scrollTo($($(this).attr('href')), 300, {
                     axis: 'y',

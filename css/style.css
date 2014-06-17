@@ -1355,19 +1355,21 @@ select {
   margin-right: 0;
   margin-top: 75px;
 }
-.page-nav {
+.page-nav-column {
   position: relative;
   min-height: 1px;
   padding-left: 0;
   padding-right: 0;
-  font-family: "GrotesqueDisplayMT-BoldExt";
-  position: fixed;
 }
 @media (min-width: 992px) {
-  .page-nav {
+  .page-nav-column {
     float: left;
     width: 16.66666667%;
   }
+}
+.page-nav {
+  font-family: "GrotesqueDisplayMT-BoldExt";
+  position: fixed;
 }
 .page-nav ul {
   font-size: 14px;
