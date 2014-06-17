@@ -12,8 +12,8 @@ We made this map by investigating the urban renewal and neighborhood redevelopme
 Although we would love to share the actual plans here, we can’t because we could not afford to purchase copies at 25 cents per page from HPD; this is the statutory rate under the [New York State Freedom of Information Law](http://www.dos.ny.gov/coog/foil2.html) (FOIL). FOIL also requires government agencies to make their documents [available for inspection](http://www.urbanreviewer.org/media/596URPFOILletter_take2.pdf); we took advantage of that portion of the law to arrange for a team of dedicated volunteers to visit the HPD Records Access office regularly for about a year to extract the information you see on the NYC Urban Reviewer from the documents. Our volunteers were not allowed to photograph or make copies of the plans. 
 
 Here are two books that we found particularly helpful: 
+NYC Department of Housing Preservation and Development. _Community Development Progress Report: 1968._  Prepared and edited by Nathan Sobel. New York City, 1968.   
 
-NYC Department of Housing Preservation and Development. _Community Development Progress Report: 1968._  Prepared and edited by Nathan Sobel. New York City, 1968.  
 NYC Department of Housing Preservation and Development. _Atlas of Urban Renewal Project Areas in the City of New York._  Prepared and edited by Nathan Sobel.  New York City, 1984.  
 
 A full bibliography is available upon request. 
@@ -42,8 +42,9 @@ HPD provided us with a list of all the plans that ever existed but was not able 
 - Hester-Allen Street (adopted approx. 1969)  
 - Morningside-Manhattanville (adopted approx. 1956)  
 - Penn Station South (adopted 1955)  
-- Seward Park (adopted approx. 1952) (This one really surprises us! It’s a really high profile stalled redevelopment that has gotten some [recent coverage in the New York Times](http://www.nytimes.com/2014/03/23/nyregion/they-kept-a-lower-east-side-lot-vacant-for-decades.html?_r=0).) 
-- United Nations (adopted 1970)
+- Seward Park (adopted approx. 1952) (This one really surprises us! It’s a really high profile stalled redevelopment that has gotten some [recent coverage in the New York Times](http://www.nytimes.com/2014/03/23/nyregion/they-kept-a-lower-east-side-lot-vacant-for-decades.html?_r=0).)  
+- United Nations (adopted 1970)  
+- Washington Square Southeast
 - West Park (adopted 1952)  
 
 **Queens**  
