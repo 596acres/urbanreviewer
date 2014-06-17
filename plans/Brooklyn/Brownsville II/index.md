@@ -1,7 +1,8 @@
 ---
 layout: plan
-title: "Brownsville II"
+title: Brownsville II
 permalink: index.html
+published: true
 ---
 
-Brownsville II was adopted in 1984, last revised in 1995, and expires in 2024. The plan includes a mix of residential, commercial, public and institutional, public open space, and industrial uses. 
+The Brownsville II plan was adopted in 1984, last revised in 1995, and expires in 2024. It includes a mix of residential, commercial, public and institutional, public open space, and industrial uses for lots in the plan area.
