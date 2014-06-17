@@ -1,7 +1,8 @@
 ---
 layout: plan
-title: "East River"
+title: East River
 permalink: index.html
+published: true
 ---
 
-East River was adopted in 1966, last revised in 1969, and expired in 2006. The plan calls for residential use.
+The East River plan was adopted in 1966, last revised in 1969, and expired in 2006. It calls for residential use.
