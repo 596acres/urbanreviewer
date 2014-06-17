@@ -1,7 +1,8 @@
 ---
 layout: plan
-title: "North Harlem III"
+title: North Harlem III
 permalink: index.html
+published: true
 ---
 
-The North Harlem III plan was adopted in 1992 and expires in 2032. It assigns public and semi-public uses to the site. 
+The North Harlem III plan was adopted in 1992 and expires in 2032. It assigns public and semi-public uses to the plan area.
