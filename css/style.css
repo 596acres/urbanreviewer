@@ -1414,7 +1414,7 @@ select {
   border-left: 1px solid #555555;
   display: none;
   height: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
   padding: 15px;
   position: absolute;
   right: 0;
