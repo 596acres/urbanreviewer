@@ -1,7 +1,8 @@
 ---
 layout: plan
-title: "Cathedral Parkway"
+title: Cathedral Parkway
 permalink: index.html
+published: true
 ---
 
-Cathedral Parkway was adopted in 1968, last revised in 2004, and expires in 2008. The plan is to stimulate residential, commercial, public and semi-public, and public open space uses. 
+The Cathedral Parkway plan was adopted in 1968, last revised in 2004, and expires in 2008. It designates residential, commercial, public and semi-public, and public open space uses for lots in the plan area.
