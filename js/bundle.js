@@ -984,10 +984,6 @@ module.exports = {
                 });
                 return false;
             });
-            $('#right-pane').scrollspy({
-               offset: -700,
-               target: '.page-nav'
-            });
         });
     }
 
