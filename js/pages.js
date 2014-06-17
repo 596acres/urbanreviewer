@@ -1,7 +1,11 @@
 var sidebar = require('./sidebar');
 
 function makeId(text) {
-    return text.toLowerCase().replace(' ', '-');
+    return text.toLowerCase()
+        .replace(/ /g, '-')
+        .replace(/\?/g, '')
+        .replace(/,/g, '')
+        .replace(/\./g, '');
 }
 
 module.exports = {
@@ -32,6 +36,7 @@ module.exports = {
 
             $('.page-nav').width($('.page-nav-column').width());
             $('.page-nav a').click(function () {
+                console.log('being clicked');
                 $('#right-pane').scrollTo($($(this).attr('href')), 300, {
                     axis: 'y',
                     margin: true,
