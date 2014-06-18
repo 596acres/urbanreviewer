@@ -12,8 +12,8 @@ We made this map by investigating the urban renewal and neighborhood redevelopme
 Although we would love to share the actual plans here, we can’t because we could not afford to purchase copies at 25 cents per page from HPD; this is the statutory rate under the [New York State Freedom of Information Law](http://www.dos.ny.gov/coog/foil2.html) (FOIL). FOIL also requires government agencies to make their documents [available for inspection](http://www.urbanreviewer.org/media/596URPFOILletter_take2.pdf); we took advantage of that portion of the law to arrange for a team of dedicated volunteers to visit the HPD Records Access office regularly for about a year to extract the information you see on the NYC Urban Reviewer from the documents. Our volunteers were not allowed to photograph or make copies of the plans. 
 
 Here are two books that we found particularly helpful: 
+NYC Department of Housing Preservation and Development. _Community Development Progress Report: 1968._  Prepared and edited by Nathan Sobel. New York City, 1968.   
 
-NYC Department of Housing Preservation and Development. _Community Development Progress Report: 1968._  Prepared and edited by Nathan Sobel. New York City, 1968.  
 NYC Department of Housing Preservation and Development. _Atlas of Urban Renewal Project Areas in the City of New York._  Prepared and edited by Nathan Sobel.  New York City, 1984.  
 
 A full bibliography is available upon request. 
@@ -27,23 +27,25 @@ HPD provided us with a list of all the plans that ever existed but was not able 
 - Bronx Park South, 3rd revision from 1998 (adopted 1965)  
 
 **Brooklyn**  
+- 49th Street-1st Avenue (adopted approx. 1972)  
+- Bergen Street (adopted approx. 1972)  
 - Lindsay Park (adopted in 1962)  
 - Lindsay-Bushwick (adopted approx. 1969)  
-- Bergen Street (adopted approx. 1972)  
-- Wallabout (adopted 1989)  
 - North Twin Pines (adopted 1971)  
-- 49th Street-1st Avenue (adopted approx. 1972)  
 - Rutland Road (adopted approx. 1971)  
+- Wallabout (adopted 1989)  
 
 **Manhattan**  
-- Harlem (adopted 1952)  
-- East 3rd Street-Avenue C (adopted approx. 1969)  
-- Hester-Allen Street (adopted approx. 1969)  
-- Seward Park (adopted approx. 1952)(This one really surprises us! It’s a really high profile stalled redevelopment that has gotten some [recent coverage in the New York Times](http://www.nytimes.com/2014/03/23/nyregion/they-kept-a-lower-east-side-lot-vacant-for-decades.html?_r=0).)  
-- Penn Station South (adopted 1955)  
-- West Park (adopted 1952)  
-- Morningside-Manhattanville (adopted approx. 1956)  
 - Bella Vista (adopted approx. 1973)  
+- East 3rd Street-Avenue C (adopted approx. 1969)  
+- Harlem (adopted 1952)  
+- Hester-Allen Street (adopted approx. 1969)  
+- Morningside-Manhattanville (adopted approx. 1956)  
+- Penn Station South (adopted 1955)  
+- Seward Park (adopted approx. 1952) (This one really surprises us! It’s a really high profile stalled redevelopment that has gotten some [recent coverage in the New York Times](http://www.nytimes.com/2014/03/23/nyregion/they-kept-a-lower-east-side-lot-vacant-for-decades.html?_r=0).)  
+- United Nations (adopted 1970)  
+- Washington Square Southeast
+- West Park (adopted 1952)  
 
 **Queens**  
 - College Point  
@@ -55,7 +57,7 @@ _What is urban renewal and master planning for our neighborhoods?  Who makes com
 
 The following books, articles, photos, and films explore questions related to urban renewal and master planning in New York and other cities.  We found them helpful to understanding the past and future of planning in our city. This is not a definitive guide but a recommended entry point. We’d love to get your feedback on this list and any insights you have from reading, watching and looking. 
 
-**MULTIMEDIA**
+**MULTIMEDIA**  
 “[Life in the model city: stories of urban renewal in New Haven](http://www.yale.edu/nhohp/modelcity/index.html),”  
 The New Haven Oral History Project (2004)  
 In a span of 15 years (from 1954 to 1969) more than 25,000 people were relocated from their homes in New Haven, Connecticut as part of the “model cities” program.  This oral history project investigates what it was like to live through such massive changes, from the perspective of people who lived in the city during the time.  
@@ -109,7 +111,7 @@ This article is about a reunion of residents who were displaced by a NYC slum cl
 Jonathan Mahler article in _New York Times_ (2012)  
 Jonathan Mahler explains the development and persistence of large scale master-planned public housing projects in New York, specifically their concentration along the waterfront or at the urban fringe.  In particular, Mahler explores NYC sites such as the Rockaways, Coney Island, and Red Hook. 
 
-**BOOKS**
+**BOOKS**  
 **Tom Angotti (2008), New York For Sale: Community Planning Confronts Global Real Estate**  
 Angotti, both observer of and longtime participant in New York community planning, focuses on the close relationships among community planning, political strategy, and control over land. After describing the political economy of New York City real estate, its close ties to global financial capital, and the roots of community planning in social movements and community organizing, Angotti turns to specific case studies to explain community planning in the context of global real estate.
 
