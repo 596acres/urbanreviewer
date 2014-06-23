@@ -24,11 +24,12 @@ _There is a bill in the NYC Council called the [OpenFOIL bill](http://legistar.c
 HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD has not yet produced, details are missing about planned uses for the included lots. We are continuing to look for the following plans that were missing from HPD's responses to our numerous requests to date:
 
 **Bronx**  
-- Bronx Park South, 3rd revision from 1998 (adopted 1965)  
+- [Bronx Park South](http://www.urbanreviewer.org/#map=16/40.8424/-73.8804&plan=Bronx+Park+South), 3rd revision from 1998 (adopted 1965)  
 
 **Brooklyn**  
 - 49th Street-1st Avenue (adopted approx. 1972)  
-- Bergen Street (adopted approx. 1972)  
+- Bergen Street (adopted approx. 1972)
+- [Bushwick II](http://www.urbanreviewer.org/#map=15/40.6951/-73.9181&plan=Bushwick+II), 6th revision from 2004 (adopted 1979)
 - Lindsay Park (adopted in 1962)  
 - Lindsay-Bushwick (adopted approx. 1969)  
 - North Twin Pines (adopted 1971)  
