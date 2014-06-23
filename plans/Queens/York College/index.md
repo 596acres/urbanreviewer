@@ -1,9 +1,12 @@
 ---
 layout: plan
-title: "York College"
+title: York College
 permalink: index.html
+published: true
 ---
 
 ![York College in the Atlas of Urban Renewal](York College.jpg)
 
 The York College plan was adopted in 1968, last revised in 1996, and expired in 2008. It outlines the creation of laboratory and office space for a new Food and Drug Administration location, including campus research buildings for CUNY and/or York College.
+
+See [References](http://www.urbanreviewer.org/#page=references.html). 
