@@ -11,3 +11,5 @@ published: true
 ![South Bronx - East 173rd - Vyse Avenue in the Atlas of Urban Renewal](South Bronx - East 173rd - Vyse Avenue.jpg)
 
 The South Bronx plan was adopted in 1967, last revised in 1994, and expired in 2007. It designates residential, commercial, open space, public, and semi-public uses for lots in the plan area.
+
+See [References](http://www.urbanreviewer.org/#page=references.html). 
