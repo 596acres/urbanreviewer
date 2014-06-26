@@ -11,7 +11,7 @@ The Lincoln Square plan was adopted in 1957, last revised in 1988, and expired i
 
 See [References](http://www.urbanreviewer.org/#page=references.html).
 
-Here's a flavor of waht was here before this plan was adopted and realized:
+Here's a flavor of what was here before this plan was adopted and realized:
 
 [A West Side Neighborhood Before Lincoln Center](https://ephemeralnewyork.wordpress.com/2014/02/03/a-west-side-neighborhood-before-lincoln-center/)
 
