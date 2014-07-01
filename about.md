@@ -33,10 +33,10 @@ In order to map those places where the BBL changed, we used the City's [Library 
 
 Where we could, we also captured what form that renewal was meant to take in the form of "dispositions." Our map lets you search for lots that were designated for “open space,” “residential” or “commercial” uses. Only some plans were this detailed, so not every lot has a specific designation. For example, some plans grouped numerous potential uses such as "housing, commercial, open space" as a disposition for a lot. Where this was the case, our tool doesn't show a specific disposition for the lot, and the lot won't show up in the highlighted lot view.
 
-The data on this map is hosted on [http://cartodb.com/](CartoDB), and we're
+The data on this map is hosted on [CartoDB](http://cartodb.com/), and we're
 grateful for the space they provided for this project. If you would like to find
 data for a specific borough or plan, you can find the data on
-[https://github.com/596acres/urbanreviewer/tree/gh-pages/data/geojson/us/ny/nyc/](GitHub).
+[GitHub](https://github.com/596acres/urbanreviewer/tree/gh-pages/data/geojson/us/ny/nyc/).
 
 
 ## Outcomes
