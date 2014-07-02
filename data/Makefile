@@ -28,7 +28,7 @@ load_pluto:
 
 load_596:
 	# Download 596 lots here:
-	# http://596acres.org/lots/csv?boroughs=Bronx%2CBrooklyn%2CManhattan%2CQueens%2CStaten%20Island&lot_types=organizing_sites%2Cpublic_accessed_sites%2Cvacant_sites%2Corganizing_lots%2Cpublic_accessed_lots%2Cvacant_lots%2C&parents_only=false&lat=40.7081&lon=-73.957&z=10&bbox=-74.347701%2C40.447328%2C-73.566299%2C40.967834&download=true
+	# http://596acres.org/lots/csv?boroughs=Bronx%2CBrooklyn%2CManhattan%2CQueens%2CStaten%20Island&lot_types=organizing_sites%2Cpublic_accessed_sites%2Cvacant_sites%2Corganizing_lots%2Cpublic_accessed_lots%2Cvacant_lots%2C&parents_only=false&download=true
 	-sqlite3 $(sqlite_db) "DROP TABLE '596_lots'"
 	-csvsql --db sqlite:///$(sqlite_db) --insert "596_lots.csv"
 
