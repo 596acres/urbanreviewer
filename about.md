@@ -76,6 +76,8 @@ whether through 596 Acres or other community-driven efforts.
 
 **DW Gibson** is the author of _Not Working: People Talk About Losing a Job and Finding Their Way in Today’s Changing Economy_. His work has appeared in such publications as _The New York Times_, _The Washington Post_, _The Daily Beast_, _The Village Voice_, and _The Caravan_. He has been a contributor to NPR’s _All Things Considered_ and is the director of the documentary, _Not Working_. For more information: www.dwgibson.net.
 
+**Jonathan Lapalme**, [596 Acres](596acres.org)
+
 **Mariana Mogilevich** is an urban and architectural historian and native New Yorker. She writes about the design and politics of the built environment in general and on public space and open space in New York in particular, and has taught urban studies and architectural history at Harvard and New York University. 
 
 **Greg Mihalko**, [Partner & Partners](http://partnerandpartners.com/), is the designer on the project, working on graphic and interaction design for the website and identity. He’s excited to visualize how the city has been planned, built and shaped into what it is today.
