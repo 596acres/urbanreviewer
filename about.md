@@ -51,6 +51,12 @@ One of the reasons we are excited to be making the plans accessible is that they
 
 - The Edgemere Urban Renewal Plan (Queens) contains dozens of lots planned as Open Space. Last year, we put signs on the set of the lots that was designated as the Edgemere Urban Renewal Park in the plans. Today, neighbors who saw these signs are running the [Edgemere Farm](http://596acres.org/en/lot/4158370033/).
 
+## Press
+
+Thanks to [Technical.ly](http://technical.ly/brooklyn/2014/06/25/urban-re-viewer-launches-documenting-urban-renewal-era-maps/), [CityLab](http://www.citylab.com/design/2014/06/every-master-plan-in-new-york-city-history-collected-in-a-single-place/373307/), [Planetizen](http://www.planetizen.com/node/69987) and [TechPresident](http://techpresident.com/news/25143/urban-reviewer-maps-new-yorks-forgotten-master-plans) for telling the story of the Urban Reviewer. 
+
+[#urbanreviewer on Twitter](https://twitter.com/search?src=typd&q=%23urbanreviewer) to join the conversation. 
+
 ## Our Team
 
 **Eric Brelsford**, [596 Acres](http://596acres.org/), is a computer programmer
