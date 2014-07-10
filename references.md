@@ -25,7 +25,7 @@ HPD provided us with a list of all the plans that ever existed but was not able 
 
 **Brooklyn**  
 - 49th Street-1st Avenue (adopted approx. 1972)  
-- Bergen Street (adopted approx. 1972)
+- Bergen Street (adopted approx. 1972)  
 - Lindsay Park (adopted in 1962)  
 - Lindsay-Bushwick (adopted approx. 1969)  
 - Rutland Road (adopted approx. 1971)  
