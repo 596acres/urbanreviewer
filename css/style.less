@@ -168,6 +168,7 @@ select {
 
 
 .search-fonts {
+    font-family: sans-serif;
     font-size: 20px;
     line-height: 40px;
 }
@@ -214,6 +215,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
         .tt-dropdown-menu {
             background: white;
+            margin-top: 5px;
             width: 100%;
         }
 
@@ -234,9 +236,11 @@ input[type="search"]::-webkit-search-results-decoration {
         .tt-suggestion {
             border-bottom: 1px solid #aaa;
             cursor: pointer;
-            padding-bottom: 5px;
             padding-left: 10px;
-            padding-top: 5px;
+
+            &:first-of-type {
+                border-top: 1px solid #aaa;
+            }
 
             p {
                 margin: 0;

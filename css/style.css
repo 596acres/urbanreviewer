@@ -1114,6 +1114,7 @@ select {
   height: 100%;
 }
 .search-fonts {
+  font-family: sans-serif;
   font-size: 20px;
   line-height: 40px;
 }
@@ -1138,6 +1139,7 @@ input[type="search"]::-webkit-search-results-decoration {
   outline: none;
 }
 #search-container #search {
+  font-family: sans-serif;
   font-size: 20px;
   line-height: 40px;
   border: 1px solid #000;
@@ -1146,6 +1148,7 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 500px;
 }
 #search-container .twitter-typeahead {
+  font-family: sans-serif;
   font-size: 20px;
   line-height: 40px;
   background: white;
@@ -1156,9 +1159,11 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 #search-container .twitter-typeahead .tt-dropdown-menu {
   background: white;
+  margin-top: 5px;
   width: 100%;
 }
 #search-container .twitter-typeahead .tt-hint {
+  font-family: sans-serif;
   font-size: 20px;
   line-height: 40px;
   border: none;
@@ -1174,9 +1179,10 @@ input[type="search"]::-webkit-search-results-decoration {
 #search-container .twitter-typeahead .tt-suggestion {
   border-bottom: 1px solid #aaa;
   cursor: pointer;
-  padding-bottom: 5px;
   padding-left: 10px;
-  padding-top: 5px;
+}
+#search-container .twitter-typeahead .tt-suggestion:first-of-type {
+  border-top: 1px solid #aaa;
 }
 #search-container .twitter-typeahead .tt-suggestion p {
   margin: 0;
