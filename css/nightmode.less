@@ -1,0 +1,65 @@
+.night-mode {
+
+    #logo {
+        background-image: url(../img/logo-night.png);
+    }
+
+    #tagline {
+        color: @night-mode-color;
+    }
+
+    #nav {
+        a {
+            color: @night-mode-color;
+        }
+    }
+
+    #map-filters-toggle {
+        .icon-bar {
+            background-color: @night-mode-color;
+        }
+
+        &:hover {
+            .icon-bar {
+                background: darken(@night-mode-color, 30%);
+            }
+        }
+    }
+
+    #date-range-picker {
+        &-label {
+            color: @night-mode-color;
+        }
+
+        .ui-rangeSlider {
+            &-bar {
+                background: @night-mode-color;
+            }
+
+            &-handle {
+                background: @night-mode-color;
+            }
+
+            &-innerBar {
+                background: darken(@night-mode-color, 50%);
+            }
+
+            &-label {
+                background: @night-mode-color;
+                color: @night-mode-color-inverse;
+            }
+        }
+    }
+
+    .leaflet-popup {
+        &-content-wrapper {
+            background: @night-mode-color;
+            color: @night-mode-color-inverse;
+        }
+
+        &-tip {
+            background: @night-mode-color;
+        }
+    }
+
+}
