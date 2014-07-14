@@ -1653,9 +1653,6 @@ input[type="search"]::-webkit-search-results-decoration {
 .leaflet-left .leaflet-control {
   margin-left: 15px;
 }
-.leaflet-bottom .leaflet-control {
-  margin-bottom: 15px;
-}
 .leaflet-bottom .leaflet-control-layers {
   margin-bottom: 5px;
 }
@@ -1663,6 +1660,9 @@ input[type="search"]::-webkit-search-results-decoration {
   background-color: #d5d5d5;
   border-radius: 0;
   box-shadow: none;
+}
+.leaflet-control-attribution a {
+  color: #000000;
 }
 .leaflet-control-layers {
   border: 3px solid #555555;

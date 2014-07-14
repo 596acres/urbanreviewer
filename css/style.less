@@ -789,10 +789,6 @@ input[type="search"]::-webkit-search-results-decoration {
     margin-left: 15px;
 }
 
-.leaflet-bottom .leaflet-control {
-    margin-bottom: 15px;
-}
-
 .leaflet-bottom .leaflet-control-layers {
     margin-bottom: 5px;
 }
@@ -801,6 +797,12 @@ input[type="search"]::-webkit-search-results-decoration {
     background-color: @control-background;
     border-radius: 0;
     box-shadow: none;
+
+    &-attribution {
+        a {
+            color: @font-color;
+        }
+    }
 
     &-layers {
         border: 3px solid @control-border;
