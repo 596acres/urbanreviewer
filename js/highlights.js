@@ -95,26 +95,6 @@ module.exports = {
             {
                 label: 'institutional',
                 helpText: 'Institutional'
-            },
-            {
-                label: 'public',
-                helpText: 'Public'
-            },
-            {
-                label: 'semi-public',
-                helpText: 'Semi-public'
-            },
-            {
-                label: 'utility',
-                helpText: 'Utility'
-            },
-            {
-                label: 'easement',
-                helpText: 'Easement'
-            },
-            {
-                label: 'street',
-                helpText: 'Street'
             }
         ];
         return _.map(dispositions, function (disposition) {
