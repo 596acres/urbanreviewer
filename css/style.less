@@ -779,79 +779,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 
 /*
- * Leaflet
- */
-@control-size: 36px;
-@control-background: lighten(@control-border, 50%);
-@control-border: @gray;
-@popup-background: @gray;
-
-.leaflet-left .leaflet-control {
-    margin-left: 15px;
-}
-
-.leaflet-bottom .leaflet-control-layers {
-    margin-bottom: 5px;
-}
-
-.leaflet-control {
-    background-color: @control-background;
-    border-radius: 0;
-    box-shadow: none;
-
-    &-attribution {
-        a {
-            color: @font-color;
-        }
-    }
-
-    &-layers {
-        border: 3px solid @control-border;
-    }
-
-    &.leaflet-bar {
-        .leaflet-control-zoom-in,
-        .leaflet-control-zoom-out {
-            background-color: @control-background;
-            border: 3px solid @control-border;
-            font-size: 20px;
-            line-height: 32px;
-            height: @control-size;
-            width: @control-size;
-
-            &:first-child,
-            &:last-child {
-                border-radius: 0;
-            }
-        }
-
-        .leaflet-control-zoom-out {
-            margin-top: 5px;
-        }
-    }
-}
-
-.leaflet-popup {
-
-    &-content-wrapper {
-        background: @popup-background;
-        border-radius: 0;
-        box-shadow: none;
-        color: white;
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    &-tip {
-        background: @popup-background;
-        box-shadow: none;
-    }
-
-}
-
-
-/*
  * Bootstrap
  */
 
@@ -886,4 +813,5 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 
+@import "leaflet.less";
 @import "nightmode.less";
