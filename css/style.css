@@ -1095,7 +1095,7 @@ select {
   position: absolute;
   left: 175px;
   text-align: left;
-  top: 80px;
+  top: 70px;
   width: 500px;
   z-index: 2000;
 }
@@ -1113,28 +1113,42 @@ select {
   width: 100%;
   height: 100%;
 }
+.search-fonts {
+  font-size: 20px;
+  line-height: 40px;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
 #search-container {
   float: left;
   position: absolute;
   left: 175px;
   top: 15px;
   text-align: left;
-  z-index: 2000;
+  z-index: 2025;
 }
 #search-container input[type=search] {
   -webkit-appearance: none;
 }
+#search-container input:focus {
+  outline: none;
+}
 #search-container #search {
-  border: 1px solid #aaa;
-  font-size: 30px;
-  line-height: 48px;
+  font-size: 20px;
+  line-height: 40px;
+  border: 1px solid #000;
   padding-left: 10px;
+  padding-right: 10px;
   width: 500px;
 }
 #search-container .twitter-typeahead {
+  font-size: 20px;
+  line-height: 40px;
   background: white;
-  font-size: 30px;
-  line-height: 48px;
   text-transform: none;
 }
 #search-container .twitter-typeahead .tt-cursor {
@@ -1145,10 +1159,10 @@ select {
   width: 100%;
 }
 #search-container .twitter-typeahead .tt-hint {
-  border: 0;
+  font-size: 20px;
+  line-height: 40px;
+  border: none;
   color: gray;
-  font-size: 30px;
-  line-height: 48px;
   padding-left: 10px;
   margin-top: 1px;
 }
