@@ -1711,7 +1711,7 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-top: 5px;
 }
 .leaflet-popup-content-wrapper {
-  background: #555555;
+  background: #000000;
   border-radius: 0;
   box-shadow: none;
   color: white;
@@ -1720,7 +1720,7 @@ input[type="search"]::-webkit-search-results-decoration {
   text-align: center;
 }
 .leaflet-popup-tip {
-  background: #555555;
+  background: #000000;
   box-shadow: none;
 }
 .night-mode #logo {
@@ -1747,4 +1747,11 @@ input[type="search"]::-webkit-search-results-decoration {
 .night-mode #date-range-picker .ui-rangeSlider-label {
   background: #ffffff;
   color: black;
+}
+.night-mode .leaflet-popup-content-wrapper {
+  background: #ffffff;
+  color: black;
+}
+.night-mode .leaflet-popup-tip {
+  background: #ffffff;
 }
