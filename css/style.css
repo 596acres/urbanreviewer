@@ -1165,6 +1165,7 @@ input[type="search"]::-webkit-search-results-decoration {
   color: gray;
   padding-left: 10px;
   margin-top: 1px;
+  width: 100%;
 }
 #search-container .twitter-typeahead .tt-suggestions {
   border-left: 1px solid #aaa;
