@@ -1002,7 +1002,7 @@
 }
 html,
 body {
-  color: #555555;
+  color: #000000;
   height: 100%;
   margin: 0;
   overflow: hidden;
@@ -1038,7 +1038,7 @@ p {
   margin: 1em 0;
 }
 a {
-  color: #555555;
+  color: #000000;
   font-weight: bold;
   text-decoration: none;
 }
@@ -1046,7 +1046,7 @@ a:hover {
   color: #000;
 }
 a:visited {
-  color: #555555;
+  color: #000000;
 }
 img {
   max-width: 100%;
@@ -1174,7 +1174,7 @@ select {
   line-height: 35px;
   position: absolute;
   left: 15px;
-  top: 245px;
+  top: 125px;
   text-align: left;
   text-transform: uppercase;
   z-index: 2000;
@@ -1279,7 +1279,7 @@ select {
   padding-right: 15px;
 }
 .filter-section-header {
-  border-bottom: 3px solid #555555;
+  border-bottom: 3px solid #000000;
   font-weight: bold;
   letter-spacing: 2px;
   margin-bottom: 5px;
@@ -1287,7 +1287,7 @@ select {
   text-transform: uppercase;
 }
 .nav-button {
-  background: #555555;
+  background: #000000;
   color: white;
   padding: 10px;
 }
@@ -1406,7 +1406,7 @@ select {
 }
 #right-pane {
   background: white;
-  border-left: 1px solid #555555;
+  border-left: 1px solid #000000;
   display: none;
   height: 100%;
   overflow-y: scroll;
@@ -1595,7 +1595,7 @@ select {
   padding: 0;
 }
 #right-pane #plans .plan-list-header {
-  border-bottom: 3px solid #555555;
+  border-bottom: 3px solid #000000;
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 2px;
@@ -1615,7 +1615,7 @@ select {
   text-align: right;
 }
 #right-pane #plans .plan {
-  border-bottom: 1px solid #555555;
+  border-bottom: 1px solid #000000;
   padding: 15px;
 }
 #right-pane #plans .plan:hover {
