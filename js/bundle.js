@@ -1403,8 +1403,6 @@ module.exports = {
         unHighlightLot();
 
         var url = 'http://urbanreviewer.cartodb.com/api/v2/sql?q=',
-            sql = 'SELECT ST_Centroid(l.the_geom) AS the_geom ' +
-                'FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id ';
             whereConditions = [],
             options = options || {};
         if (options.block) {
@@ -1419,7 +1417,6 @@ module.exports = {
         if (options.plan_name) {
             whereConditions.push("p.name = '" + options.plan_name + "'");
         }
-        sql += ' WHERE ' + whereConditions.join(' AND ');
 
         // Get geometry
         var geometrySql = 'SELECT l.the_geom AS the_geom ' +
