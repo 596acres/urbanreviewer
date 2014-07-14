@@ -312,19 +312,16 @@ $(document).ready(function () {
      * Initialize sidebar
      */
     $('#right-pane').on('open', function (e, size) {
-        if (size === 'wide' || size === 'widest') {
-            $('#date-range-picker-container').hide();
-            $('#search-container').hide();
+        $('.visible-sidebar-' + size).show();
+        $('.hidden-sidebar-' + size).hide();
 
-            if (size === 'wide') {
-                plansmap.setActiveArea({ area: 'half' });
-            }
-            else {
-                plansmap.setActiveArea({ area: 'narrow' });
-            }
+        if (size === 'wide') {
+            plansmap.setActiveArea({ area: 'half' });
+        }
+        else if (size === 'widest') {
+            plansmap.setActiveArea({ area: 'narrow' });
         }
         else if (size === 'narrow') {
-            $('#narrow-sidebar-hide-button').show();
             plansmap.setActiveArea({ area: 'most' });
             $('#date-range-picker-container').addClass('narrow-sidebar');
             $('#date-range-picker').dateRangeSlider('resize');
@@ -332,11 +329,11 @@ $(document).ready(function () {
     });
 
     $('#right-pane').on('close', function () {
-        $('#narrow-sidebar-hide-button').hide();
-        $('#date-range-picker-container').show();
+        $('.visible-sidebar-closed').show();
+        $('.hidden-sidebar-closed').hide();
+
         $('#date-range-picker-container').removeClass('narrow-sidebar');
         $('#date-range-picker').dateRangeSlider('resize');
-        $('#search-container').show();
         plansmap.setActiveArea({ area: 'full' });
 
         currentPlan = null;
