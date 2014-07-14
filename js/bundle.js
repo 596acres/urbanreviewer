@@ -1337,7 +1337,7 @@ module.exports = {
         highlightedLotLayer = L.geoJson(null, {
             style: function (feature) {
                 return {
-                    color: '#4E4E4E',
+                    color: '#000',
                     fill: false,
                     weight: 3
                 };
@@ -1470,10 +1470,12 @@ module.exports = {
         else {
             outline = planOutlines[label] = L.geoJson(null, {
                 style: function (feature) {
+                    var strokeColor = $('body').is('.night-mode') ? '#fff' : '#000';
                     return {
-                        color: '#000',
+                        color: strokeColor,
                         dashArray: '10 10 1 10',
                         fill: false,
+                        opacity: 1,
                         stroke: true
                     };
                 }
