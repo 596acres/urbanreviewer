@@ -1093,10 +1093,10 @@ select {
 #tagline {
   font-size: 16px;
   position: absolute;
-  left: 15px;
+  left: 175px;
   text-align: left;
-  top: 160px;
-  width: 150px;
+  top: 80px;
+  width: 500px;
   z-index: 2000;
 }
 #logo {
