@@ -1213,13 +1213,13 @@ input[type="search"]::-webkit-search-results-decoration {
 #map-filters-toggle .icon-bar {
   display: block;
   height: 5px;
-  background-color: gray;
+  background-color: #000000;
   margin-top: 4px;
   margin-bottom: 4px;
   width: 100%;
 }
 #map-filters-toggle:hover .icon-bar {
-  background: black;
+  background: #4d4d4d;
 }
 #narrow-sidebar-hide-button {
   display: none;
@@ -1731,6 +1731,12 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .night-mode #nav a {
   color: #ffffff;
+}
+.night-mode #map-filters-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.night-mode #map-filters-toggle:hover .icon-bar {
+  background: #b3b3b3;
 }
 .night-mode #date-range-picker-label {
   color: #ffffff;

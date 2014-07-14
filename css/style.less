@@ -280,7 +280,7 @@ input[type="search"]::-webkit-search-results-decoration {
     .icon-bar {
         display: block;
         height: 5px;
-        background-color: gray;
+        background-color: @border-color;
         margin-top: 4px;
         margin-bottom: 4px;
         width: 100%;
@@ -288,7 +288,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
     &:hover {
         .icon-bar {
-            background: black;
+            background: lighten(@border-color, 30%);
         }
     }
 }
