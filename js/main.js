@@ -360,7 +360,6 @@ $(document).ready(function () {
      * If a plan or sidebar was in the url, open it.
      */
     if (currentPlan) {
-        $('#search-container').hide();
         unloadFilters();
         unloadPlanList();
         setTitle(currentPlan);
