@@ -1058,7 +1058,7 @@ ul {
  * Forms
  */
 select {
-  background-color: #555555;
+  background-color: #000000;
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -1232,24 +1232,24 @@ select {
   width: 100%;
 }
 #date-range-picker .ui-rangeSlider-bar {
-  background: #555555;
+  background: #000000;
   height: 5px;
   margin-top: 8px;
 }
 #date-range-picker .ui-rangeSlider-handle {
-  background: #555555;
+  background: #000000;
   border: 3px solid #ffff4d;
   border-radius: 20px;
   height: 20px;
   width: 20px;
 }
 #date-range-picker .ui-rangeSlider-innerBar {
-  background: #d5d5d5;
+  background: #808080;
   height: 5px;
   margin-top: 8px;
 }
 #date-range-picker .ui-rangeSlider-label {
-  background: #555555;
+  background: #000000;
   background-image: none;
   bottom: 25px;
   color: white;
