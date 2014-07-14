@@ -1325,7 +1325,7 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-right: 15px;
 }
 .page h1 {
-  line-height: 70px;
+  line-height: 60px;
 }
 .page h2 {
   font-size: 20px;
@@ -1441,7 +1441,7 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 75%;
 }
 #right-pane h1 {
-  font-size: 40px;
+  font-size: 30px;
 }
 #right-pane h2 {
   text-transform: uppercase;
@@ -1567,7 +1567,7 @@ input[type="search"]::-webkit-search-results-decoration {
   float: right;
 }
 #right-pane #lots-content .lot h3 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
 }
 #right-pane #data div {
