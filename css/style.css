@@ -1746,11 +1746,11 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .night-mode #date-range-picker .ui-rangeSlider-label {
   background: #ffffff;
-  color: black;
+  color: #000000;
 }
 .night-mode .leaflet-popup-content-wrapper {
   background: #ffffff;
-  color: black;
+  color: #000000;
 }
 .night-mode .leaflet-popup-tip {
   background: #ffffff;
