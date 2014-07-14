@@ -1072,7 +1072,7 @@ select {
 .help-button {
   cursor: pointer;
   display: inline-block;
-  background-color: #ffffcc;
+  background-color: #ffff66;
   border-radius: 20px;
   float: right;
   font-size: 16px;
@@ -1155,7 +1155,7 @@ input[type="search"]::-webkit-search-results-decoration {
   text-transform: none;
 }
 #search-container .twitter-typeahead .tt-cursor {
-  background: #ffffcc;
+  background: #ffff66;
 }
 #search-container .twitter-typeahead .tt-dropdown-menu {
   background: white;
@@ -1259,7 +1259,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 #date-range-picker .ui-rangeSlider-handle {
   background: #000000;
-  border: 3px solid #ffff4d;
+  border: 3px solid #e5e500;
   border-radius: 20px;
   height: 20px;
   width: 20px;
@@ -1549,7 +1549,7 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 10px;
 }
 #right-pane .plan-share-story:hover {
-  color: #ffffcc;
+  color: #ffff66;
 }
 #right-pane #lots-content {
   border-top: 3px solid #444;
@@ -1568,7 +1568,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 #right-pane #lots-content .lot.highlighted,
 #right-pane #lots-content .lot:hover {
-  background-color: #ffffcc;
+  background-color: #ffff66;
 }
 #right-pane #lots-content .lot-external-links {
   float: right;
@@ -1640,7 +1640,7 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 15px;
 }
 #right-pane #plans .plan:hover {
-  background-color: #ffffcc;
+  background-color: #ffff66;
   cursor: pointer;
 }
 #right-pane #plans .plan-name {
