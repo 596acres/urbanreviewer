@@ -1290,6 +1290,10 @@ module.exports = {
             position: 'bottomleft'
         }).addTo(map);
 
+        map.on('baselayerchange', function (e) {
+            $('body').toggleClass('night-mode', e.name === 'satellite');
+        });
+
         cartodb.createLayer(map, {
             cartodb_logo: false,
             user_name: 'urbanreviewer',

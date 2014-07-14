@@ -5,6 +5,8 @@
 @interface-z-index: 2000;
 @page-header-index: @interface-z-index + 30;
 
+@night-mode-color: white;
+
 @label-font-family: "GrotesqueDisplayMT-BoldExt";
 
 @input-dropdown-color: #000;
@@ -146,14 +148,13 @@ select {
 }
 
 #logo {
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
     cursor: pointer;
     float: left;
-    width: 100%;
-
-    img {
-        max-width: 100%;
-        max-height: 100%;
-    }
+    height: 100px;
+    width: 145px;
 }
 
 
@@ -883,3 +884,6 @@ input[type="search"]::-webkit-search-results-decoration {
     font-size: 16px;
     font-weight: bold;
 }
+
+
+@import "nightmode.less";
