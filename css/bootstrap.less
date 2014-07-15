@@ -1,0 +1,53 @@
+@import "../bower_components/bootstrap/less/variables.less";
+
+@border-radius-base: 0;
+@carousel-indicator-active-bg: darken(@gray: 25%);
+@carousel-indicator-border-color: @gray;
+@tooltip-bg: black;
+@tooltip-color: white;
+
+@import "../bower_components/bootstrap/less/carousel.less";
+@import "../bower_components/bootstrap/less/grid.less";
+@import "../bower_components/bootstrap/less/utilities.less";
+@import "../bower_components/bootstrap/less/tooltip.less";
+
+
+.carousel {
+    &-control {
+        &.left,
+        &.right,
+        &:hover {
+            background-image: none;
+            color: black;
+        }
+    }
+
+    &-indicators {
+        z-index: @interface-z-index + 5;
+
+        li {
+            background-color: lighten(@gray, 50%);
+        }
+    }
+
+    &-inner {
+        height: 100%;
+
+        .item {
+            height: 100%;
+        }
+    }
+}
+
+.tooltip {
+    font-size: 16px;
+
+    &-inner {
+        padding: 10px;
+        text-align: left;
+    }
+
+    &-prefix {
+        font-weight: bold;
+    }
+}

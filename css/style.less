@@ -15,17 +15,6 @@
 
 // Import some Bootstrappiness
 @import "../bower_components/bootstrap/less/mixins.less";
-@import "../bower_components/bootstrap/less/variables.less";
-
-@carousel-indicator-active-bg: darken(@gray: 25%);
-@carousel-indicator-border-color: @gray;
-@tooltip-bg: @gray;
-@tooltip-color: white;
-
-@import "../bower_components/bootstrap/less/carousel.less";
-@import "../bower_components/bootstrap/less/grid.less";
-@import "../bower_components/bootstrap/less/utilities.less";
-@import "../bower_components/bootstrap/less/tooltip.less";
 
 
 /* Global Reset */
@@ -740,7 +729,6 @@ input[type="search"]::-webkit-search-results-decoration {
         margin-bottom: 50px;
 
         h2 {
-            color: #aaa;
             font-size: 22px;
             text-align: center;
             text-transform: none;
@@ -801,40 +789,6 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 
-/*
- * Bootstrap
- */
-
-.carousel-control {
-    &.left,
-    &.right,
-    &:hover {
-        background-image: none;
-        color: black;
-    }
-}
-
-.carousel-indicators {
-    z-index: @interface-z-index + 5;
-
-    li {
-        background-color: lighten(@gray, 50%);
-    }
-}
-
-.carousel-inner {
-    height: 100%;
-
-    .item {
-        height: 100%;
-    }
-}
-
-.tooltip {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-
+@import "bootstrap.less";
 @import "leaflet.less";
 @import "nightmode.less";

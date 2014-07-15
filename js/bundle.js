@@ -623,7 +623,17 @@ function loadFilters(alreadyOpen) {
 
     $target.append($content);
 
-    $('.help-button').tooltip();
+    $('.help-button')
+        .tooltip({
+            html: true       
+        })
+        .on('shown.bs.tooltip', function () {
+            var $prefix = $('<div></div>')
+                .addClass('tooltip-prefix')
+                .text('What does this do?');
+            $('.tooltip-inner').prepend($prefix);
+            $('.tooltip').css('top', '-=10px');
+        });
 
     filters
         .init({
