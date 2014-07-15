@@ -334,7 +334,13 @@ $(document).ready(function () {
         else if (size === 'narrow') {
             plansmap.setActiveArea({ area: 'most' });
             $('#date-range-picker-container').addClass('narrow-sidebar');
-            $('#date-range-picker').dateRangeSlider('resize');
+            try {
+                $('#date-range-picker').dateRangeSlider('resize');
+            }
+            catch (e) {
+                // Don't care if this fails, just means date range slider has
+                // not been initialized yet
+            }
         }
     });
 
@@ -377,7 +383,6 @@ $(document).ready(function () {
     if (currentPage) {
         pages.load(currentPage);
     }
-
 
     /*
      * Listen for popstate
@@ -440,4 +445,11 @@ $(document).ready(function () {
         sidebar.close();
         return false;
     });
+
+    /*
+     * Open plans sidebar if nothing's open on load.
+     */
+    if (!(currentPlan || currentPage || currentSidebar)) {
+        urbanreviewer.loadSidebar('plans', true);
+    }
 });
