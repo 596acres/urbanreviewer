@@ -215,28 +215,28 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 0;
 }
 #map-filters-toggle {
-  background: none;
-  border-radius: 4px;
+  background: #000000;
+  border-radius: 0;
   box-shadow: none;
   border: none;
   cursor: pointer;
-  padding: 5px;
+  padding: 10px;
   position: absolute;
-  right: 25px;
-  top: 25px;
-  width: 40px;
+  right: 0;
+  top: 10px;
+  width: 50px;
   z-index: 2000;
 }
 #map-filters-toggle .icon-bar {
   display: block;
-  height: 5px;
-  background-color: #000000;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  height: 3px;
+  background-color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 5px;
   width: 100%;
 }
 #map-filters-toggle:hover .icon-bar {
-  background: #4d4d4d;
+  background: #cccccc;
 }
 #narrow-sidebar-hide-button {
   display: none;

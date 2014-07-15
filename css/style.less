@@ -269,30 +269,30 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 #map-filters-toggle {
-    background: none;
-    border-radius: 4px;
+    background: @border-color;
+    border-radius: 0;
     box-shadow: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
     position: absolute;
-    right: 25px;
-    top: 25px;
-    width: 40px;
+    right: 0;
+    top: 10px;
+    width: 50px;
     z-index: @interface-z-index;
 
     .icon-bar {
         display: block;
-        height: 5px;
-        background-color: @border-color;
-        margin-top: 4px;
-        margin-bottom: 4px;
+        height: 3px;
+        background-color: difference(#fff, @border-color);
+        margin-top: 5px;
+        margin-bottom: 5px;
         width: 100%;
     }
 
     &:hover {
         .icon-bar {
-            background: lighten(@border-color, 30%);
+            background: lighten(@border-color, 80%);
         }
     }
 }
