@@ -462,4 +462,9 @@ $(document).ready(function () {
     if (!(currentPlan || currentPage || currentSidebar)) {
         urbanreviewer.loadSidebar('plans', true);
     }
+
+    $('.intro-text-dismiss').click(function () {
+        $('.intro-text').slideUp();
+        return false;
+    });
 });

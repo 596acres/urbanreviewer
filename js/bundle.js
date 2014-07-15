@@ -943,6 +943,11 @@ $(document).ready(function () {
     if (!(currentPlan || currentPage || currentSidebar)) {
         urbanreviewer.loadSidebar('plans', true);
     }
+
+    $('.intro-text-dismiss').click(function () {
+        $('.intro-text').slideUp();
+        return false;
+    });
 });
 
 },{"./cartodbapi":1,"./filters":2,"./hash":4,"./highlights":5,"./pages":7,"./planlist":8,"./plans":9,"./plansmap":11,"./search":12,"./sidebar":13,"underscore":21}],7:[function(require,module,exports){
