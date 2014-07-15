@@ -756,6 +756,12 @@ $(document).ready(function () {
             }
             urbanreviewer.selectPlan(data.plan_name);
         })
+        .on('planclick', function (data) {
+            if (currentPlan && data.plan_name === currentPlan) {
+                return;
+            }
+            urbanreviewer.selectPlan(data.plan_name);
+        })
         .on('planlotover', function (data) {
             if (currentPlan && data.plan_name === currentPlan) {
                 if (data.block !== currentLot.block || data.lot !== currentLot.lot) {
@@ -785,7 +791,11 @@ $(document).ready(function () {
                 plansmap.unHighlightLot();
                 plans.unhighlightLot();
             }
-            plansmap.clearPlanOutline({ label: 'hover' });
+        })
+        .on('planout', function (data) {
+            if (data.label === 'hover') {
+                plansmap.clearPlanOutline({ label: 'hover' });
+            }
         });
 
 
@@ -1235,8 +1245,10 @@ var highlightedLotCartoCSS = 'polygon-fill: #CFA470;' +
     '[zoom <= 14] { line-width: 3; line-color: #CFA470; }';
 var highlightedPlanCartoCSS = 'polygon-fill: #FFFFCC;';
 
-function unHighlightLot() {
-    map.closePopup();
+function unHighlightLot(e) {
+    if (!planOutlinesPopups['hover']) {
+        map.closePopup();
+    }
     highlightedLotLayer.clearLayers();           
     singleminded.forget('highlightLot_centroid');
     singleminded.forget('highlightLot_geometry');
@@ -1290,10 +1302,6 @@ module.exports = {
             position: 'bottomleft'
         }).addTo(map);
 
-        map.on('baselayerchange', function (e) {
-            $('body').toggleClass('night-mode', e.name === 'satellite');
-        });
-
         cartodb.createLayer(map, {
             cartodb_logo: false,
             user_name: 'urbanreviewer',
@@ -1329,9 +1337,24 @@ module.exports = {
             onLotsLayerReady();
 
             streets.bringToBack();
-            map.on('baselayerchange', function (e) {
-                e.layer.bringToBack();
-            });
+            map
+                .on('baselayerchange', function (e) {
+                    $('body').toggleClass('night-mode', e.name === 'satellite');
+                    e.layer.bringToBack();
+                })
+                .on('mousemove', function (e) {
+                    if (!e.latlng) { return; }
+
+                    // If we're no longer over the hover outline, close it
+                    var hoverOutline = planOutlines['hover'];
+                    if (!(hoverOutline && hoverOutline.getLayers().length > 0 && hoverOutline.getBounds())) { return; }
+                    if (!hoverOutline.getBounds().contains(e.latlng)) {
+                        if (planOutlinesPopups['hover']) {
+                            map.closePopup();
+                        }
+                        clearPlanOutline({ label: 'hover' });
+                    }
+                });
         });
 
         highlightedLotLayer = L.geoJson(null, {
@@ -1463,6 +1486,7 @@ module.exports = {
         if (!label || planOutlinesNames[label] === planName) {
             return;
         }
+        planOutlinesNames[label] = planName;
 
         if (outline) {
             clearPlanOutline({ label: label });
@@ -1472,14 +1496,26 @@ module.exports = {
                 style: function (feature) {
                     var strokeColor = $('body').is('.night-mode') ? '#fff' : '#000';
                     return {
+                        clickable: true,
                         color: strokeColor,
                         dashArray: '10 10 1 10',
-                        fill: false,
+                        fill: true,
+                        fillOpacity: 0,
                         opacity: 1,
                         stroke: true
                     };
                 }
             }).addTo(map);
+
+            if (label === 'hover') {
+                outline
+                    .on('mouseout', function () {
+                        map.fire('planout', { label: label });
+                    })
+                    .on('click', function () {
+                        map.fire('planclick', { plan_name: planOutlinesNames[label] });
+                    });
+            }
         }
 
         planOutlinesNames[label] = planName;

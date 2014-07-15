@@ -275,6 +275,12 @@ $(document).ready(function () {
             }
             urbanreviewer.selectPlan(data.plan_name);
         })
+        .on('planclick', function (data) {
+            if (currentPlan && data.plan_name === currentPlan) {
+                return;
+            }
+            urbanreviewer.selectPlan(data.plan_name);
+        })
         .on('planlotover', function (data) {
             if (currentPlan && data.plan_name === currentPlan) {
                 if (data.block !== currentLot.block || data.lot !== currentLot.lot) {
@@ -304,7 +310,11 @@ $(document).ready(function () {
                 plansmap.unHighlightLot();
                 plans.unhighlightLot();
             }
-            plansmap.clearPlanOutline({ label: 'hover' });
+        })
+        .on('planout', function (data) {
+            if (data.label === 'hover') {
+                plansmap.clearPlanOutline({ label: 'hover' });
+            }
         });
 
 
