@@ -1,9 +1,10 @@
 @gray: #4E4E4E;
 @border-color: #000;
 @font-color: #000;
-@highlight-color: #FFFF66;
+@highlight-color: #F9EF6C;
 @interface-z-index: 2000;
 @page-header-index: @interface-z-index + 30;
+@header-background-color: rgba(255, 255, 255, 0.95);
 
 @night-mode-color: white;
 @night-mode-color-inverse: black;
@@ -250,10 +251,10 @@ input[type="search"]::-webkit-search-results-decoration {
 
 #nav {
     font-family: @label-font-family;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
-    letter-spacing: .5px;
-    line-height: 35px;
+    letter-spacing: 2px;
+    line-height: 28px;
     position: absolute;
     left: 15px;
     top: 125px;
@@ -307,7 +308,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 #date-range-picker-container {
-    bottom: 10px;
+    bottom: 20px;
     left: 10%;
     right: 10%;
     position: absolute;
@@ -318,14 +319,17 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 #date-range-picker-label {
-    font-size: 16px;
-    font-weight: bold;
+    font-family: "GrotesqueDisplayMT-BoldExt";
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
     width: 100%;
 }
 
 #date-range-picker {
+    margin-bottom: 10px;
 
     .ui-rangeSlider-bar {
         background: @date-range-background-color;
@@ -352,8 +356,8 @@ input[type="search"]::-webkit-search-results-decoration {
         background-image: none;
         bottom: 25px;
         color: white;
-        font-size: 24px;
-        font-weight: bold;
+        font-size: 18px;
+        font-weight: 600;
     }
 }
 
@@ -384,6 +388,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
     &-header {
         border-bottom: 3px solid @border-color;
+        font-family: @label-font-family;
+        font-size: 10px;
         font-weight: bold;
         letter-spacing: 2px;
         margin-bottom: 5px;
@@ -428,7 +434,7 @@ input[type="search"]::-webkit-search-results-decoration {
     }
 
     &-header {
-        background: white;
+        background: @header-background-color;
         border-bottom: 1px solid #444;
         font-size: 16px;
         margin-bottom: 30px;
@@ -549,6 +555,7 @@ input[type="search"]::-webkit-search-results-decoration {
     }
 
     #plan-details {
+        font-size: 14px;
         margin-bottom: 25px;
         margin-top: 25px;
     }
@@ -558,7 +565,7 @@ input[type="search"]::-webkit-search-results-decoration {
         margin-right: -15px;
 
         &-header {
-            background: white;
+            background: @header-background-color;
             border-bottom: 1px solid #444;
             font-size: 16px;
             margin-bottom: 30px;
@@ -597,11 +604,14 @@ input[type="search"]::-webkit-search-results-decoration {
                     label {
                         display: block;
                         font-family: @label-font-family;
+                        font-size: 10px;
                         font-weight: normal;
+                        text-transform: uppercase;
                     }
                     .value {
-                        font-weight: normal;
-                        text-transform: none;
+                        font-size: 14px;
+                        font-weight: 400;
+                        text-transform: capitalize;
                     }
                 }
             }
@@ -643,10 +653,10 @@ input[type="search"]::-webkit-search-results-decoration {
         }
 
         &-share-story {
-            background-color: #444;
+            background-color: black;
             color: white;
             display: inline-block;
-            font-size: 24px;
+            font-size: 18px;
             padding: 10px;
 
             &:hover {
@@ -743,7 +753,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
         .plan-list-header {
             border-bottom: 3px solid @border-color;
-            font-size: 12px;
+            font-family: @label-font-family;
+            font-size: 10px;
             font-weight: bold;
             letter-spacing: 2px;
             margin-left: -15px;

@@ -75,7 +75,7 @@ select {
 .help-button {
   cursor: pointer;
   display: inline-block;
-  background-color: #ffff66;
+  background-color: #f9ef6c;
   border-radius: 20px;
   float: right;
   font-size: 16px;
@@ -165,7 +165,7 @@ input[type="search"]::-webkit-search-results-decoration {
   text-transform: none;
 }
 #search-container .twitter-typeahead .tt-cursor {
-  background: #ffff66;
+  background: #f9ef6c;
 }
 #search-container .twitter-typeahead .tt-dropdown-menu {
   background: white;
@@ -199,10 +199,10 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 #nav {
   font-family: "GrotesqueDisplayMT-BoldExt";
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
-  letter-spacing: .5px;
-  line-height: 35px;
+  letter-spacing: 2px;
+  line-height: 28px;
   position: absolute;
   left: 15px;
   top: 125px;
@@ -247,7 +247,7 @@ input[type="search"]::-webkit-search-results-decoration {
   z-index: 2000;
 }
 #date-range-picker-container {
-  bottom: 10px;
+  bottom: 20px;
   left: 10%;
   right: 10%;
   position: absolute;
@@ -256,11 +256,16 @@ input[type="search"]::-webkit-search-results-decoration {
   right: 35%;
 }
 #date-range-picker-label {
-  font-size: 16px;
-  font-weight: bold;
+  font-family: "GrotesqueDisplayMT-BoldExt";
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
   width: 100%;
+}
+#date-range-picker {
+  margin-bottom: 10px;
 }
 #date-range-picker .ui-rangeSlider-bar {
   background: #000000;
@@ -269,7 +274,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 #date-range-picker .ui-rangeSlider-handle {
   background: #000000;
-  border: 3px solid #e5e500;
+  border: 3px solid #ddce09;
   border-radius: 20px;
   height: 20px;
   width: 20px;
@@ -284,8 +289,8 @@ input[type="search"]::-webkit-search-results-decoration {
   background-image: none;
   bottom: 25px;
   color: white;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 600;
 }
 .panel-toggle {
   background: none;
@@ -311,6 +316,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .filter-section-header {
   border-bottom: 3px solid #000000;
+  font-family: "GrotesqueDisplayMT-BoldExt";
+  font-size: 10px;
   font-weight: bold;
   letter-spacing: 2px;
   margin-bottom: 5px;
@@ -348,7 +355,7 @@ input[type="search"]::-webkit-search-results-decoration {
   font-size: 20px;
 }
 .page-header {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #444;
   font-size: 16px;
   margin-bottom: 30px;
@@ -472,6 +479,7 @@ input[type="search"]::-webkit-search-results-decoration {
   font-size: 18px;
 }
 #right-pane #plan-details {
+  font-size: 14px;
   margin-bottom: 25px;
   margin-top: 25px;
 }
@@ -480,7 +488,7 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-right: -15px;
 }
 #right-pane .plan-header {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #444;
   font-size: 16px;
   margin-bottom: 30px;
@@ -516,11 +524,14 @@ input[type="search"]::-webkit-search-results-decoration {
 #right-pane .plan-header-content-item label {
   display: block;
   font-family: "GrotesqueDisplayMT-BoldExt";
+  font-size: 10px;
   font-weight: normal;
+  text-transform: uppercase;
 }
 #right-pane .plan-header-content-item .value {
-  font-weight: normal;
-  text-transform: none;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 #right-pane .plan-content {
   margin-top: 150px;
@@ -552,14 +563,14 @@ input[type="search"]::-webkit-search-results-decoration {
   text-transform: capitalize;
 }
 #right-pane .plan-share-story {
-  background-color: #444;
+  background-color: black;
   color: white;
   display: inline-block;
-  font-size: 24px;
+  font-size: 18px;
   padding: 10px;
 }
 #right-pane .plan-share-story:hover {
-  color: #ffff66;
+  color: #f9ef6c;
 }
 #right-pane #lots-content {
   border-top: 3px solid #444;
@@ -578,7 +589,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 #right-pane #lots-content .lot.highlighted,
 #right-pane #lots-content .lot:hover {
-  background-color: #ffff66;
+  background-color: #f9ef6c;
 }
 #right-pane #lots-content .lot-external-links {
   float: right;
@@ -632,7 +643,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 #right-pane #plans .plan-list-header {
   border-bottom: 3px solid #000000;
-  font-size: 12px;
+  font-family: "GrotesqueDisplayMT-BoldExt";
+  font-size: 10px;
   font-weight: bold;
   letter-spacing: 2px;
   margin-left: -15px;
@@ -655,7 +667,7 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 15px;
 }
 #right-pane #plans .plan:hover {
-  background-color: #ffff66;
+  background-color: #f9ef6c;
   cursor: pointer;
 }
 #right-pane #plans .plan-name {
