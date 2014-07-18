@@ -24,18 +24,18 @@ _There is a bill in the NYC Council called the [OpenFOIL bill](http://legistar.c
 HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD has not yet produced, details are missing about planned uses for the included lots. We are continuing to look for the following plans that were missing from HPD's responses to our numerous requests to date:
 
 **Brooklyn**  
-- 49th Street-1st Avenue (adopted approx. 1972)  
-- Bergen Street (adopted approx. 1972)  
+- 49th Street-1st Avenue (adopted approx. 1972)*  
+- Bergen Street (adopted approx. 1972)*  
 - Lindsay Park (adopted in 1962)  
 - Lindsay-Bushwick (adopted approx. 1969)  
-- Rutland Road (adopted approx. 1971)  
+- Rutland Road (adopted approx. 1971)*  
 - Wallabout (adopted 1989)  
 
 **Manhattan**  
 - Bella Vista (adopted approx. 1973)  
 - Corlears Hook (adopted 1952)
-- East 3rd Street-Avenue C (adopted approx. 1969)  
-- Hester-Allen Street (adopted approx. 1969)  
+- East 3rd Street-Avenue C (adopted approx. 1969)*  
+- Hester-Allen Street (adopted approx. 1969)*  
 - Morningside-Manhattanville (adopted approx. 1956)  
 - Penn Station South (adopted 1955)  
 - Seward Park (adopted approx. 1952) (This one really surprises us! It’s a really high profile stalled redevelopment that has gotten some [recent coverage in the New York Times](http://www.nytimes.com/2014/03/23/nyregion/they-kept-a-lower-east-side-lot-vacant-for-decades.html?_r=0).)  
@@ -47,6 +47,8 @@ HPD provided us with a list of all the plans that ever existed but was not able 
 - College Point  
 
 This list will be updated and detailed planned use information will be added as it becomes available. If you have the most recent revision of any of the plans above and would like to share it, please [contact us](#page=contact.html). 
+
+* HPD's records reflect that these plans have been lost. We are searching for them in other City archives. 
 
 ## Further Investigation
 _What is urban renewal and master planning for our neighborhoods?  Who makes comprehensive neighborhood plans and why?  How have decisions been made about master planning in our cities?  What kinds of narratives were used to promote urban renewal plans?_
