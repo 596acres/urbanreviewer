@@ -7,7 +7,7 @@ published: true
 # Essays
 
 
-## La renovación urbana en Nueva York / _What Was, And What Is, Urban Renewal in New York City?_
+## Qué era y qué es la renovación urbana en Nueva York? / _What Was, And What Is, Urban Renewal in New York City?_
 by Mariana Mogilevich
 
 En nuestra ciudad, de tan alta densidad, no se encuentran muchos terrenos baldíos de gran superficie; sin embargo, existen. Los hay en el Broadway Triangle, en Brooklyn, en la Seward Park Urban Renewal Area (SPURA) del Lower East Side y en partes de Edgemere y de Willets Point en Queens. La ciudad adquirió estos terrenos y demolió los edificios como parte de proyectos de reurbanización. Lo que vaya a pasar con ellos está aun en el aire. Para entender qué pasó y que podría pasar en el futuro, tenemos que conocer la historia de la renovación urbana en Nueva York. Este proceso, aunque empezó  hace más de sesenta años, sigue siendo un factor activo y polémico de cambio en los barrios de Nueva York.  
