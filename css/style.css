@@ -241,11 +241,18 @@ input[type="search"]::-webkit-search-results-decoration {
   background: #cccccc;
 }
 #narrow-sidebar-hide-button {
+  background: black;
+  border-radius: 0;
+  color: white;
   display: none;
-  font-size: 50px;
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 35px;
+  height: 35px;
   position: absolute;
-  right: 28%;
+  right: 27%;
   top: 15px;
+  width: 35px;
   z-index: 2000;
 }
 #date-range-picker-container {
