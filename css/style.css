@@ -200,7 +200,6 @@ input[type="search"]::-webkit-search-results-decoration {
 #nav {
   font-family: "GrotesqueDisplayMT-BoldExt";
   font-size: 14px;
-  font-weight: bold;
   letter-spacing: 2px;
   line-height: 28px;
   position: absolute;
@@ -213,6 +212,9 @@ input[type="search"]::-webkit-search-results-decoration {
 #nav ul {
   list-style: none;
   padding: 0;
+}
+#nav a {
+  font-weight: normal;
 }
 #map-filters-toggle {
   background: #000000;
@@ -315,10 +317,10 @@ input[type="search"]::-webkit-search-results-decoration {
   padding-right: 15px;
 }
 .filter-section-header {
-  border-bottom: 3px solid #000000;
+  border-bottom: 2px solid #000000;
   font-family: "GrotesqueDisplayMT-BoldExt";
   font-size: 10px;
-  font-weight: bold;
+  font-weight: normal;
   letter-spacing: 2px;
   margin-bottom: 5px;
   padding-bottom: 3px;
@@ -352,14 +354,14 @@ input[type="search"]::-webkit-search-results-decoration {
   line-height: 60px;
 }
 .page h2 {
-  font-size: 20px;
+  font-size: 18px;
 }
 .page-header {
   background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #444;
   font-size: 16px;
   margin-bottom: 30px;
-  margin-left: -15px;
+  margin-left: -30px;
   padding-bottom: 5px;
   padding-top: 10px;
   position: fixed;
@@ -414,6 +416,7 @@ input[type="search"]::-webkit-search-results-decoration {
   list-style: none;
   margin-top: 50px;
   padding: 0;
+  text-transform: uppercase;
 }
 .page-nav ul li {
   padding-bottom: 5px;
@@ -465,7 +468,7 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 75%;
 }
 #right-pane h1 {
-  font-size: 30px;
+  font-size: 26px;
 }
 #right-pane h2 {
   text-transform: uppercase;
@@ -534,7 +537,7 @@ input[type="search"]::-webkit-search-results-decoration {
   text-transform: capitalize;
 }
 #right-pane .plan-content {
-  margin-top: 150px;
+  margin-top: 70px;
 }
 #right-pane .plan-content > section {
   border-top: 2px solid black;
@@ -623,6 +626,9 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-right: 5px;
   width: 14px;
 }
+#right-pane #plan-list-filters-link:hover {
+  color: #f9ef6c;
+}
 #right-pane #filters-plan-list-link {
   float: right;
   margin-top: -25px;
@@ -633,7 +639,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 #right-pane #plan-list-container h2,
 #right-pane #filters-container h2 {
-  font-size: 22px;
+  font-size: 18px;
   text-align: center;
   text-transform: none;
 }
@@ -687,7 +693,7 @@ input[type="search"]::-webkit-search-results-decoration {
   line-height: 18px;
   margin-left: -15px;
   margin-right: -15px;
-  margin-top: 15px;
+  margin-top: 30px;
   padding: 10px;
 }
 #right-pane .intro-text h3 {
