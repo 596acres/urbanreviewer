@@ -1,8 +1,8 @@
 @import "../bower_components/bootstrap/less/variables.less";
 
 @border-radius-base: 0;
-@carousel-indicator-active-bg: darken(@gray: 25%);
-@carousel-indicator-border-color: @gray;
+@carousel-indicator-active-bg: black;
+@carousel-indicator-border-color: black;
 @tooltip-bg: black;
 @tooltip-color: white;
 
@@ -30,7 +30,16 @@
         z-index: @interface-z-index + 5;
 
         li {
-            background-color: lighten(@gray, 50%);
+            background-color: transparent;
+            margin-right: 5px;
+
+            &.active {
+                margin-right: 5px;
+            }
+
+            &:last-child {
+                margin-right: 1px;
+            }
         }
     }
 
