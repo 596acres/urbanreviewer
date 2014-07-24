@@ -58,15 +58,8 @@ module.exports = {
 
         L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-        var streetsOptions = {
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
-            mapId: 'ebrelsford.ihbc8hpf',
-            maxZoom: 18
-        };
-        if (window.devicePixelRatio && window.devicePixelRatio >= 2.0) {
-            streetsOptions.mapId = 'ebrelsford.j23b19fh';
-        }
-        var streets = L.tileLayer('http://{s}.tiles.mapbox.com/v3/{mapId}/{z}/{x}/{y}.png', streetsOptions).addTo(map);
+        var streets = L.mapbox.tileLayer('ebrelsford.ihbc8hpf', { detectRetina: true })
+            .addTo(map);
 
         var satellite = new L.BingLayer('Ajio1n0EgmAAvT3zLndCpHrYR_LHJDgfDU6B0tV_1RClr7OFLzy4RnkLXlSdkJ_x');
 
