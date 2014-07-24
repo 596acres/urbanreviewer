@@ -177,22 +177,22 @@ input[type="search"]::-webkit-search-results-decoration {
   font-size: 20px;
   line-height: 40px;
   border: none;
-  color: gray;
+  color: #a7a9ab;
   padding-left: 40px;
   margin-top: 1px;
   width: 100%;
 }
 #search-container .twitter-typeahead .tt-suggestions {
-  border-left: 1px solid #aaa;
-  border-right: 1px solid #aaa;
+  border-left: 1px solid #a7a9ab;
+  border-right: 1px solid #a7a9ab;
 }
 #search-container .twitter-typeahead .tt-suggestion {
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #a7a9ab;
   cursor: pointer;
   padding-left: 40px;
 }
 #search-container .twitter-typeahead .tt-suggestion:first-of-type {
-  border-top: 1px solid #aaa;
+  border-top: 1px solid #a7a9ab;
 }
 #search-container .twitter-typeahead .tt-suggestion p {
   margin: 0;

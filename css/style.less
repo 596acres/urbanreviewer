@@ -1,3 +1,4 @@
+@autocomplete-color: #A7A9AB;
 @gray: #4E4E4E;
 @border-color: #000;
 @font-color: #000;
@@ -222,24 +223,24 @@ input[type="search"]::-webkit-search-results-decoration {
         .tt-hint {
             .search-fonts();
             border: none;
-            color: gray;
+            color: @autocomplete-color;
             padding-left: @search-padding-left;
             margin-top: 1px;
             width: 100%;
         }
 
         .tt-suggestions {
-            border-left: 1px solid #aaa;
-            border-right: 1px solid #aaa;
+            border-left: 1px solid @autocomplete-color;
+            border-right: 1px solid @autocomplete-color;
         }
 
         .tt-suggestion {
-            border-bottom: 1px solid #aaa;
+            border-bottom: 1px solid @autocomplete-color;
             cursor: pointer;
             padding-left: @search-padding-left;
 
             &:first-of-type {
-                border-top: 1px solid #aaa;
+                border-top: 1px solid @autocomplete-color;
             }
 
             p {
