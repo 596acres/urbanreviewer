@@ -40,7 +40,6 @@ HPD provided us with a list of all the plans that ever existed but was not able 
 - Penn Station South (adopted 1955)  
 - Seward Park (adopted approx. 1952) (This one really surprises us! It’s a really high profile stalled redevelopment that has gotten some [recent coverage in the New York Times](http://www.nytimes.com/2014/03/23/nyregion/they-kept-a-lower-east-side-lot-vacant-for-decades.html?_r=0).)  
 - United Nations (adopted 1970)  
-- Washington Square Southeast
 - West Park (adopted 1952)  
 
 **Queens**  
