@@ -32,6 +32,10 @@ I’ve continued with my work (as a founding member and the first president) of 
 
 I do think Model Cities served as a springboard, if you will, to get those of us who longed for something better, to take the bull by the horns, to get involved in something larger than oneself which has a direct bearing on your life and that of those around you.  It gave us the opportunity to envision—and work toward our vision of  a better community.  It gave me  tools to help me realize that I can make a difference. Model Cities is where I first became introduced to the Black Panthers, and then became involved in organizing—I became involved in wanting to build things rather than, as some felt, “burn this mother down,”—I wanted to organize,to build the community up.
 
+I feel strongly about getting young people involved in “building things up” in their communities.  I think we need to harness all that creative energy which often turns into negativity and violence, and get them involved in projects where they can see they’re making a difference—like building urban farms and gardens.  We’ve worked with numerous young people over the years and even the tough guys get inspired when they see what they can accomplish in a community garden.
+
+Presently, I co-host a radio program  called “Harlem 411” on a local community radio station at CUNY here in Harlem.  We cover community events, local, national and international news, and interview people who have information or services of value to offer others.  I rely a lot on making links, “connecting the dots,” so to speak, and using the airwaves to educate, alert and organize.  I also engineer a program called “Inside Housing and Communities,” which covers many facets of urban development.  So in a way things have come full circle.
+
 
 
 ## Qué era y qué es la renovación urbana en Nueva York? / _What Was, And What Is, Urban Renewal in New York City?_
