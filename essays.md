@@ -28,6 +28,12 @@ So while nothing  immediately tangible - no huge turn-around - came out of Model
 
 And my experiences taught me to have a vision, to pay attention to detail, to consider and weigh possibilities. As I transitioned from Model Cities and Street Academy, I took tools which stuck with me, and which I know later came to bear on what I’ve done and am doing here in NYC, especially as it relates to community gardens and grassroots neighborhood revitalization.  Working here beginning in Brooklyn in the late 70’s  with reclaiming abandoned properties, and then in the 80’s in Harlem starting gardens on vacant lots and getting people involved.  Back in  the 80’s whenever we had a block party we’d call it a “party with a purpose” and get down into those courtyards of abandoned brownstones with shovels and Clorox and clean them out.  Every event had a work component that got folks involved. 
 
+I’ve continued with my work (as a founding member and the first president) of NYCCGC, as well as our continued work with the Joseph Daniel Wilson Memorial Garden here, our annual Harlem Green Community Garden Tour and workshop series, and also my work with the Circle of brothers and the Community Emergency Response Team.   It’s about people taking control of their own lives, and having the wherewithal to do that—whether it’s cleaning up a vacant lot and growing your own food, greening your neighborhood, or being personally ready for any disaster that might come your way.
+
+I do think Model Cities served as a springboard, if you will, to get those of us who longed for something better, to take the bull by the horns, to get involved in something larger than oneself which has a direct bearing on your life and that of those around you.  It gave us the opportunity to envision—and work toward our vision of  a better community.  It gave me  tools to help me realize that I can make a difference. Model Cities is where I first became introduced to the Black Panthers, and then became involved in organizing—I became involved in wanting to build things rather than, as some felt, “burn this mother down,”—I wanted to organize,to build the community up.
+
+
+
 ## Qué era y qué es la renovación urbana en Nueva York? / _What Was, And What Is, Urban Renewal in New York City?_
 by Mariana Mogilevich
 
