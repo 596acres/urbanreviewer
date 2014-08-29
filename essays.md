@@ -39,40 +39,40 @@ Presently, I co-host a radio program  called “Harlem 411” on a local communi
 ## “We could have studied city-making”
 by Matthew Delsesto
 
-_In the street outside a school
-what the children learn
-possesses them.
-Little boys yell as they stone a flock of bees
-trying to swarm
-between the lunchroom window and an iron grate.
-The boys sling furious rocks
-smashing the windows.
-The bees, buzzing their anger,
-are slow to attack.
-Then one boy is stung
-into quicker destruction
-and the school guards come
-long wooden sticks held out before them
-they advance upon the hive
-beating the almost finished rooms of wax apart
-mashing the new tunnels in
-while fresh honey drips
-down their broomsticks
-and the little boy feet becoming expert
-in destruction
-trample the remaining and bewildered bees
-into the earth._
-
-_Curious and apart
-four little girls look on in fascination
-learning a secret lesson
-and trying to understand their own destruction.
-One girl cries out
-"Hey, the bees weren't making any trouble!"
-and she steps across the feebly buzzing ruins
-to peer up at the empty, grated nook
-"We could have studied honey-making!"_
-- Audre Lorde, “The Bees”
+_In the street outside a school  
+what the children learn  
+possesses them.  
+Little boys yell as they stone a flock of bees  
+trying to swarm  
+between the lunchroom window and an iron grate.  
+The boys sling furious rocks  
+smashing the windows.  
+The bees, buzzing their anger,  
+are slow to attack.  
+Then one boy is stung  
+into quicker destruction  
+and the school guards come  
+long wooden sticks held out before them  
+they advance upon the hive  
+beating the almost finished rooms of wax apart  
+mashing the new tunnels in  
+while fresh honey drips  
+down their broomsticks  
+and the little boy feet becoming expert  
+in destruction  
+trample the remaining and bewildered bees  
+into the earth._  
+  
+_Curious and apart  
+four little girls look on in fascination  
+learning a secret lesson  
+and trying to understand their own destruction.  
+One girl cries out  
+"Hey, the bees weren't making any trouble!"  
+and she steps across the feebly buzzing ruins  
+to peer up at the empty, grated nook  
+"We could have studied honey-making!"_  
+- Audre Lorde, “The Bees”  
 
 In 2010, The Boston Redevelopment Authority began an initiative to re-zone Boston neighborhoods for urban agriculture.  The purpose of this was to make urban agriculture a permitted land use in the city, particularly for local commercial farmers to utilize vacant land.  The first pilot project was to be in Dorchester, a Boston neighborhood that is more than one-third African American.  Poverty and vacant land persist in parts of Dorchester, as a legacy of the massive political and economic disinvestment of the 70s and 80s. 
 
