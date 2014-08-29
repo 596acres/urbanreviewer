@@ -17,6 +17,8 @@ Around 1965 or ’66, the Model Cities Project came to Paterson. A combination o
 
 Right after the July ’64 riots, Mayor Frank Graves had approached Washington about funding for jobs and education.  Of course, there had been the 1963 March on Washington before Kennedy’s death—after Kennedy died anger and disenchantment with the status quo escalated.  Authorities realized something had to be done.
 
+It was around then that I began to be involved with the Street Academy - part of  Model Cities. I guess you could say I was a "field Officer."  I found myself attending meetings in schools, churches, Masonic halls, even bars and people’s homes.  We would go to different sites and projects, recruiting young people.  We had a lot of organizational meetings to get people to talk to local business people as well as D.C. - mostly to create jobs.  We talked with religious leaders and high school kids to get them to stay in school; we would network with other cities like Elizabeth, Newark, Jersey City, because all were in a similar situation. 
+Pretty much out of all that many programs developed—like the Neighborhood Youth Corps, Manpower-- the Street Academies  came to be known as “Freedom Schools.”  All this was really created as a response to the ongoing insurrection.  Nationwide inner city conditions were all pretty much the same.
 
 
 ## Qué era y qué es la renovación urbana en Nueva York? / _What Was, And What Is, Urban Renewal in New York City?_
