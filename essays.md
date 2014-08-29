@@ -13,6 +13,9 @@ _In 1966 Congress approved the Model Cities Act, which sought to change how urba
 
 _A key feature of Model Cities was its insistence on “widespread citizen participation” in planning—the people who would be affected by urban renewal plans should have a strong hand in shaping them. The Model Cities program, which only lasted until 1973, was overextended, applied to too many cities without enough funding to support them, especially as the Vietnam War escalated and claimed more attention and money. And what funds and programs did develop were fought over by different interest groups, slowing down the process and failing to provide effective participation. But some of the roots of community planning can be found in this planning experiment._
 
+Around 1965 or ’66, the Model Cities Project came to Paterson. A combination of things which  led to riots and rebellion were really the reason Model Cities was developed. People were just tired of the lack of jobs and affordable housing, and they were realizing they didn’t have to be so servile, so accepting of bad conditions.  Dr. King and Malcolm were having an effect on both youth and adults; their influence was opening people’s minds. The Black Power movement was starting to develop on a nationwide scale.
+
+Right after the July ’64 riots, Mayor Frank Graves had approached Washington about funding for jobs and education.  Of course, there had been the 1963 March on Washington before Kennedy’s death—after Kennedy died anger and disenchantment with the status quo escalated.  Authorities realized something had to be done.
 
 
 
