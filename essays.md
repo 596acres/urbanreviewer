@@ -138,6 +138,7 @@ El programa de renovación urbana experimentó un cambio aún mayor en los años
 _As New Yorkers contested the city’s urban renewal plans, the program underwent greater change in the 1960s and 1970s. The residents of what was designated the Cooper Square urban renewal area in the Lower East Side didn’t like the city’s plans to demolish their neighborhood and replace it with middle-income housing, so they made their own plan to preserve housing for low-income people on the site. The city finally approved this first community plan in 1970 and it remains in effect today. In 1966, a new federal program called Model Cities demanded citizen participation in urban renewal plans by those who would be affected by them. The Model Cities program enlisted residents to tackle social and economic issues, as well as physical ones, in troubled neighborhoods in Harlem, central Brooklyn, and the South Bronx. Model Cities called for comprehensive neighborhood renewal, with job training, health and educational programs as well as new and rehabilitated housing. Underfunded and the site of political battles, the Model Cities plans did not live up to their promise._
 
 ![Model Cities report, 1967](img/essays/Mogilevich_People_and_Plans.jpg) 
+
 Informe del programa Model Cities sobre vivienda urbana para la ciudad de Nueva York / 
 _Model Cities housing report for New York City, 1967_
 
