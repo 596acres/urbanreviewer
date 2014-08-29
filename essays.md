@@ -36,7 +36,66 @@ I feel strongly about getting young people involved in “building things up” 
 
 Presently, I co-host a radio program  called “Harlem 411” on a local community radio station at CUNY here in Harlem.  We cover community events, local, national and international news, and interview people who have information or services of value to offer others.  I rely a lot on making links, “connecting the dots,” so to speak, and using the airwaves to educate, alert and organize.  I also engineer a program called “Inside Housing and Communities,” which covers many facets of urban development.  So in a way things have come full circle.
 
+## “We could have studied city-making”
+by Matthew Delsesto
 
+_In the street outside a school
+what the children learn
+possesses them.
+Little boys yell as they stone a flock of bees
+trying to swarm
+between the lunchroom window and an iron grate.
+The boys sling furious rocks
+smashing the windows.
+The bees, buzzing their anger,
+are slow to attack.
+Then one boy is stung
+into quicker destruction
+and the school guards come
+long wooden sticks held out before them
+they advance upon the hive
+beating the almost finished rooms of wax apart
+mashing the new tunnels in
+while fresh honey drips
+down their broomsticks
+and the little boy feet becoming expert
+in destruction
+trample the remaining and bewildered bees
+into the earth._
+
+_Curious and apart
+four little girls look on in fascination
+learning a secret lesson
+and trying to understand their own destruction.
+One girl cries out
+"Hey, the bees weren't making any trouble!"
+and she steps across the feebly buzzing ruins
+to peer up at the empty, grated nook
+"We could have studied honey-making!"_
+- Audre Lorde, “The Bees”
+
+In 2010, The Boston Redevelopment Authority began an initiative to re-zone Boston neighborhoods for urban agriculture.  The purpose of this was to make urban agriculture a permitted land use in the city, particularly for local commercial farmers to utilize vacant land.  The first pilot project was to be in Dorchester, a Boston neighborhood that is more than one-third African American.  Poverty and vacant land persist in parts of Dorchester, as a legacy of the massive political and economic disinvestment of the 70s and 80s. 
+
+At one of the initial community meetings in Dorchester, there was a small team from the Boston Redevelopment Authority, local leaders from neighborhood organizations, and concerned residents.  A project leader from the Redevelopment Authority delivered a PowerPoint presentation to explain the scope of the project.  This white man told a story that many in the “local food” movement are familiar with—a story about the lack of access to healthy food in poor neighborhoods and the great potential of alternative forms of local food production. The project, he said, was part of a greener Boston for all. 
+
+Despite his enthusiasm, there was a noticeable tension growing in the room that exploded when the question and answer period came.  One woman insisted the city was trying to poison the community by making them grow food in toxic soil.  Another resident suggested that if the city really wanted to solve their food problems, the redevelopment authority could fund an affordable grocery store, like Safeway, to be built on the lot. One woman furiously explained how this was just another example of the city coming to destroy her neighborhood with a plan that no one wants.  
+
+The contrast between the clean rational PowerPoint presentation with all the facts and the angry reactions of community members was vivid.  The white man’s rhetoric about sustainability and local food clashed with the residents’ vision for their community. 
+He went back over the benefits of urban agriculture, explained the soil testing measures, and said more about the city’s sincere effort to reach out to historically disadvantaged neighborhoods.  But, be careful, this guard of the city’s redevelopment agency acting on the mayor’s initiative cautioned:  if you don’t want this, there are plenty of other neighborhoods like the hip Jamaica Plain neighborhood that would jump at the possibility of more urban agriculture.  
+
+The many unresolved issues in this meeting would lead to beginning of a process, through the Mayor’s Urban Agriculture Working group and countless stakeholder meetings, to write a more comprehensive city-wide law permitting and regulating the use of farming activities in Boston. From the perspective of the city government the issue was mostly resolved when Article 89 was adopted into law in December 2013, but there is still much to learn from the initial community opposition. 
+
+While urban agriculture looks good on paper, language of local food and green cities has been developed in ways that do not necessarily reflect the history and experience of people living in in neighborhoods.  In the history of US cities like Boston, many white men have entered communities like Dorchester, to sling rocks at residents with threats of urban renewal and planned shrinkage or empty promises for reform. 
+
+Informal, a lack of cohesion, insanitary, blighted, slum—these words have all been used to describe immigrant or minority communities, to make way for all kinds of new interventions.  Especially when urban renewal was most active, governments in cities across the United States used these labels to justify the demolition of bustling, vibrant neighborhoods, because city officials—who were well trained in modern science and architecture—could not understand or classify them. 
+
+Looking back I can see that in some ways, I was really standing as a witness to Audre Lorde’s poem about the bees:  this community in Dorchester had been undermined and knocked down through years of intervention, violence, and destruction by all kinds of authorities—the police, regulators, redevelopment authorities.
+
+The most haunting part is that I could see myself giving the exact same presentation, stepping in to trample what remained.  It was all easy to ignore my own position in this unfolding drama, and be complacent in a destruction that is really my own.
+
+I had not considered that an agriculture project could be a paternalistic intervention and destruction, undermining a community’s progress.  One of the reasons for this massive oversight is that I grew up within easy reach of a large well-lit grocery store with fresh produce from around the world, and a family that could afford to buy this food.  I often assumed that the abundance of healthy food available in my home was a universal experience.  In my own life I have been mostly sheltered from the daily struggle that too many parents face just to feed their children each day.
+
+But the question still remains, will I, will we, learn the “secret lesson” of these recurring tragedies? On the ruins advanced by harsh wooden sticks of racist segregations, poverty programs, or good intentions, can we see what else is emerging now?  What kinds of practices have sustained people through these painful moments of destruction, and where are we able to study and practice this next generation of city making?
 
 ## Qué era y qué es la renovación urbana en Nueva York? / _What Was, And What Is, Urban Renewal in New York City?_
 by Mariana Mogilevich
