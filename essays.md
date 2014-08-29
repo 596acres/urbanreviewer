@@ -6,6 +6,15 @@ published: true
 
 # Essays
 
+## Model Cities
+by Haja Worley, with editorial support from Cindy Worley
+
+_In 1966 Congress approved the Model Cities Act, which sought to change how urban renewal took place in American Cities. Part of President Lyndon B. Johnson’s War on Poverty, Model Cities responded to both criticism of how urban renewal had been conducted so far and the growing problems in the country’s inner cities, which by then had let to a series of summer “riots.” Designed to spur comprehensive renewal in some of the most troubled urban neighborhoods, Model Cities plans were meant to consider the social and economic health of neighborhoods, and not just their physical condition. Education, jobs training, and healthcare would be planned for alongside new housing and community facilities._
+
+_A key feature of Model Cities was its insistence on “widespread citizen participation” in planning—the people who would be affected by urban renewal plans should have a strong hand in shaping them. The Model Cities program, which only lasted until 1973, was overextended, applied to too many cities without enough funding to support them, especially as the Vietnam War escalated and claimed more attention and money. And what funds and programs did develop were fought over by different interest groups, slowing down the process and failing to provide effective participation. But some of the roots of community planning can be found in this planning experiment._
+
+
+
 
 ## Qué era y qué es la renovación urbana en Nueva York? / _What Was, And What Is, Urban Renewal in New York City?_
 by Mariana Mogilevich
