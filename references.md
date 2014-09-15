@@ -33,7 +33,7 @@ HPD provided us with a list of all the plans that ever existed but was not able 
 
 **Manhattan**  
 - Bella Vista (adopted approx. 1973)  
-- Corlears Hook (adopted 1952)
+- Corlears Hook (adopted 1952)  
 - East 3rd Street-Avenue C (adopted approx. 1969)*  
 - Hester-Allen Street (adopted approx. 1969)*  
 - Morningside-Manhattanville (adopted approx. 1956)  

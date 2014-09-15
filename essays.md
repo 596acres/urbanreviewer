@@ -6,6 +6,96 @@ published: true
 
 # Essays
 
+## Model Cities
+by Haja Worley, with editorial support from Cindy Worley
+
+_In 1966 Congress approved the Model Cities Act, which sought to change how urban renewal took place in American Cities. Part of President Lyndon B. Johnson’s War on Poverty, Model Cities responded to both criticism of how urban renewal had been conducted so far and the growing problems in the country’s inner cities, which by then had let to a series of summer “riots.” Designed to spur comprehensive renewal in some of the most troubled urban neighborhoods, Model Cities plans were meant to consider the social and economic health of neighborhoods, and not just their physical condition. Education, jobs training, and healthcare would be planned for alongside new housing and community facilities._
+
+_A key feature of Model Cities was its insistence on “widespread citizen participation” in planning—the people who would be affected by urban renewal plans should have a strong hand in shaping them. The Model Cities program, which only lasted until 1973, was overextended, applied to too many cities without enough funding to support them, especially as the Vietnam War escalated and claimed more attention and money. And what funds and programs did develop were fought over by different interest groups, slowing down the process and failing to provide effective participation. But some of the roots of community planning can be found in this planning experiment._
+
+Around 1965 or ’66, the Model Cities Project came to Paterson. A combination of things which  led to riots and rebellion were really the reason Model Cities was developed. People were just tired of the lack of jobs and affordable housing, and they were realizing they didn’t have to be so servile, so accepting of bad conditions.  Dr. King and Malcolm were having an effect on both youth and adults; their influence was opening people’s minds. The Black Power movement was starting to develop on a nationwide scale.
+
+Right after the July ’64 riots, Mayor Frank Graves had approached Washington about funding for jobs and education.  Of course, there had been the 1963 March on Washington before Kennedy’s death—after Kennedy died anger and disenchantment with the status quo escalated.  Authorities realized something had to be done.
+
+It was around then that I began to be involved with the Street Academy - part of  Model Cities. I guess you could say I was a "field Officer."  I found myself attending meetings in schools, churches, Masonic halls, even bars and people’s homes.  We would go to different sites and projects, recruiting young people.  We had a lot of organizational meetings to get people to talk to local business people as well as D.C. - mostly to create jobs.  We talked with religious leaders and high school kids to get them to stay in school; we would network with other cities like Elizabeth, Newark, Jersey City, because all were in a similar situation. 
+Pretty much out of all that many programs developed—like the Neighborhood Youth Corps, Manpower-- the Street Academies  came to be known as “Freedom Schools.”  All this was really created as a response to the ongoing insurrection.  Nationwide inner city conditions were all pretty much the same.
+
+Still, many of these programs didn’t really create lasting jobs; they just created more programs which were often temporary—and there was some corruption because people didn’t know how to properly use the programs and the money that came with it.  Business people were so shook up by the riots they were willing to give militants free space just to appease folks, and in some instances people used that fear to get what they wanted for personal gain. For instance, folks were given office space in Riverview Towers in Paterson; they moved into high rises and started wearing fancy clothes, but had no real connection to the people.  A weakness of Model Cities was that it threw money at a problem without having enough people in place who knew how to use the money wisely.
+
+But I guess you could say Model Cities laid the groundwork, in a sense, for programs that came later—like Job Corps, Americorps, Neighborhood Youth Corps, and here in NYC the  City Volunteer Corps (a great program which was unfortunately abandoned in the 90’s). There was a certain continuity in that.  But no real hands-on institutions or change came directly out of Model Cities in Paterson or other New Jersey Cities.  A few small businesses took people on but on a large scale no remedy that was necessary happened.  Paterson, Jersey City and Newark all continued on a downward slide.
+
+So while nothing  immediately tangible - no huge turn-around - came out of Model Cities, nonetheless, I think Model Cities did empower people.  Not perhaps on a grand scale.  But for me personally, for instance, I met and worked with well-known organizers like Junious Williams ,who, after the riot of 1967 in Newark, had become something of a legend for all the organizing he’d been doing with the Office of Equal  Opportunities  in Newark.  Junious was appointed head of Model Cities in Paterson.
+
+And my experiences taught me to have a vision, to pay attention to detail, to consider and weigh possibilities. As I transitioned from Model Cities and Street Academy, I took tools which stuck with me, and which I know later came to bear on what I’ve done and am doing here in NYC, especially as it relates to community gardens and grassroots neighborhood revitalization.  Working here beginning in Brooklyn in the late 70’s  with reclaiming abandoned properties, and then in the 80’s in Harlem starting gardens on vacant lots and getting people involved.  Back in  the 80’s whenever we had a block party we’d call it a “party with a purpose” and get down into those courtyards of abandoned brownstones with shovels and Clorox and clean them out.  Every event had a work component that got folks involved. 
+
+I’ve continued with my work (as a founding member and the first president) of NYCCGC, as well as our continued work with the Joseph Daniel Wilson Memorial Garden here, our annual Harlem Green Community Garden Tour and workshop series, and also my work with the Circle of brothers and the Community Emergency Response Team.   It’s about people taking control of their own lives, and having the wherewithal to do that—whether it’s cleaning up a vacant lot and growing your own food, greening your neighborhood, or being personally ready for any disaster that might come your way.
+
+I do think Model Cities served as a springboard, if you will, to get those of us who longed for something better, to take the bull by the horns, to get involved in something larger than oneself which has a direct bearing on your life and that of those around you.  It gave us the opportunity to envision—and work toward our vision of  a better community.  It gave me  tools to help me realize that I can make a difference. Model Cities is where I first became introduced to the Black Panthers, and then became involved in organizing—I became involved in wanting to build things rather than, as some felt, “burn this mother down,”—I wanted to organize,to build the community up.
+
+I feel strongly about getting young people involved in “building things up” in their communities.  I think we need to harness all that creative energy which often turns into negativity and violence, and get them involved in projects where they can see they’re making a difference—like building urban farms and gardens.  We’ve worked with numerous young people over the years and even the tough guys get inspired when they see what they can accomplish in a community garden.
+
+Presently, I co-host a radio program  called “Harlem 411” on a local community radio station at CUNY here in Harlem.  We cover community events, local, national and international news, and interview people who have information or services of value to offer others.  I rely a lot on making links, “connecting the dots,” so to speak, and using the airwaves to educate, alert and organize.  I also engineer a program called “Inside Housing and Communities,” which covers many facets of urban development.  So in a way things have come full circle.
+
+## “We could have studied city-making”
+by Matthew Delsesto
+
+_In the street outside a school  
+what the children learn  
+possesses them.  
+Little boys yell as they stone a flock of bees  
+trying to swarm  
+between the lunchroom window and an iron grate.  
+The boys sling furious rocks  
+smashing the windows.  
+The bees, buzzing their anger,  
+are slow to attack.  
+Then one boy is stung  
+into quicker destruction  
+and the school guards come  
+long wooden sticks held out before them  
+they advance upon the hive  
+beating the almost finished rooms of wax apart  
+mashing the new tunnels in  
+while fresh honey drips  
+down their broomsticks  
+and the little boy feet becoming expert  
+in destruction  
+trample the remaining and bewildered bees  
+into the earth._  
+  
+_Curious and apart  
+four little girls look on in fascination  
+learning a secret lesson  
+and trying to understand their own destruction.  
+One girl cries out  
+"Hey, the bees weren't making any trouble!"  
+and she steps across the feebly buzzing ruins  
+to peer up at the empty, grated nook  
+"We could have studied honey-making!"_  
+- Audre Lorde, “The Bees”  
+
+In 2010, The Boston Redevelopment Authority began an initiative to re-zone Boston neighborhoods for urban agriculture.  The purpose of this was to make urban agriculture a permitted land use in the city, particularly for local commercial farmers to utilize vacant land.  The first pilot project was to be in Dorchester, a Boston neighborhood that is more than one-third African American.  Poverty and vacant land persist in parts of Dorchester, as a legacy of the massive political and economic disinvestment of the 70s and 80s. 
+
+At one of the initial community meetings in Dorchester, there was a small team from the Boston Redevelopment Authority, local leaders from neighborhood organizations, and concerned residents.  A project leader from the Redevelopment Authority delivered a PowerPoint presentation to explain the scope of the project.  This white man told a story that many in the “local food” movement are familiar with—a story about the lack of access to healthy food in poor neighborhoods and the great potential of alternative forms of local food production. The project, he said, was part of a greener Boston for all. 
+
+Despite his enthusiasm, there was a noticeable tension growing in the room that exploded when the question and answer period came.  One woman insisted the city was trying to poison the community by making them grow food in toxic soil.  Another resident suggested that if the city really wanted to solve their food problems, the redevelopment authority could fund an affordable grocery store, like Safeway, to be built on the lot. One woman furiously explained how this was just another example of the city coming to destroy her neighborhood with a plan that no one wants.  
+
+The contrast between the clean rational PowerPoint presentation with all the facts and the angry reactions of community members was vivid.  The white man’s rhetoric about sustainability and local food clashed with the residents’ vision for their community. 
+He went back over the benefits of urban agriculture, explained the soil testing measures, and said more about the city’s sincere effort to reach out to historically disadvantaged neighborhoods.  But, be careful, this guard of the city’s redevelopment agency acting on the mayor’s initiative cautioned:  if you don’t want this, there are plenty of other neighborhoods like the hip Jamaica Plain neighborhood that would jump at the possibility of more urban agriculture.  
+
+The many unresolved issues in this meeting would lead to beginning of a process, through the Mayor’s Urban Agriculture Working group and countless stakeholder meetings, to write a more comprehensive city-wide law permitting and regulating the use of farming activities in Boston. From the perspective of the city government the issue was mostly resolved when Article 89 was adopted into law in December 2013, but there is still much to learn from the initial community opposition. 
+
+While urban agriculture looks good on paper, language of local food and green cities has been developed in ways that do not necessarily reflect the history and experience of people living in in neighborhoods.  In the history of US cities like Boston, many white men have entered communities like Dorchester, to sling rocks at residents with threats of urban renewal and planned shrinkage or empty promises for reform. 
+
+Informal, a lack of cohesion, insanitary, blighted, slum—these words have all been used to describe immigrant or minority communities, to make way for all kinds of new interventions.  Especially when urban renewal was most active, governments in cities across the United States used these labels to justify the demolition of bustling, vibrant neighborhoods, because city officials—who were well trained in modern science and architecture—could not understand or classify them. 
+
+Looking back I can see that in some ways, I was really standing as a witness to Audre Lorde’s poem about the bees:  this community in Dorchester had been undermined and knocked down through years of intervention, violence, and destruction by all kinds of authorities—the police, regulators, redevelopment authorities.
+
+The most haunting part is that I could see myself giving the exact same presentation, stepping in to trample what remained.  It was all easy to ignore my own position in this unfolding drama, and be complacent in a destruction that is really my own.
+
+I had not considered that an agriculture project could be a paternalistic intervention and destruction, undermining a community’s progress.  One of the reasons for this massive oversight is that I grew up within easy reach of a large well-lit grocery store with fresh produce from around the world, and a family that could afford to buy this food.  I often assumed that the abundance of healthy food available in my home was a universal experience.  In my own life I have been mostly sheltered from the daily struggle that too many parents face just to feed their children each day.
+
+But the question still remains, will I, will we, learn the “secret lesson” of these recurring tragedies? On the ruins advanced by harsh wooden sticks of racist segregations, poverty programs, or good intentions, can we see what else is emerging now?  What kinds of practices have sustained people through these painful moments of destruction, and where are we able to study and practice this next generation of city making?
 
 ## Qué era y qué es la renovación urbana en Nueva York? / _What Was, And What Is, Urban Renewal in New York City?_
 by Mariana Mogilevich
@@ -47,7 +137,9 @@ El programa de renovación urbana experimentó un cambio aún mayor en los años
 
 _As New Yorkers contested the city’s urban renewal plans, the program underwent greater change in the 1960s and 1970s. The residents of what was designated the Cooper Square urban renewal area in the Lower East Side didn’t like the city’s plans to demolish their neighborhood and replace it with middle-income housing, so they made their own plan to preserve housing for low-income people on the site. The city finally approved this first community plan in 1970 and it remains in effect today. In 1966, a new federal program called Model Cities demanded citizen participation in urban renewal plans by those who would be affected by them. The Model Cities program enlisted residents to tackle social and economic issues, as well as physical ones, in troubled neighborhoods in Harlem, central Brooklyn, and the South Bronx. Model Cities called for comprehensive neighborhood renewal, with job training, health and educational programs as well as new and rehabilitated housing. Underfunded and the site of political battles, the Model Cities plans did not live up to their promise._
 
-![Model Cities report, 1967](img/essays/Mogilevich_People_and_Plans.jpg) Informe del programa Model Cities sobre vivienda urbana para la ciudad de Nueva York / 
+![Model Cities report, 1967](img/essays/Mogilevich_People_and_Plans.jpg) 
+
+Informe del programa Model Cities sobre vivienda urbana para la ciudad de Nueva York / 
 _Model Cities housing report for New York City, 1967_
 
 La financiación federal para la renovación urbana se acabó en 1974, pero no fue ese el fin de la historia en Nueva York. En virtud de la Ley de Renovación Urbana del Estado de Nueva York, la ciudad puede emprender programas de renovación urbana en “zonas marginales o deprimidas o que están llegando a serlo en razón de condiciones, factores o características deficientes, insalubres,  deterioradas o en deterioro, haya o no una decadencia física tangible”. Puede hacerlo para “proteger y promover la seguridad, la salud, la moral y el bienstar de la población”y también para “promover el crecimiento y el desarrollo”. La ciudad se ha valido de la renovación urbana para formular planes y despejar zonas a fin de dar lugar a proyectos de vivienda y proyectos industriales o comerciales, como centros comerciales o edificios de oficinas. Aunque algunos de los planes que se han desarrollado a partir de los años setenta se han concentrado en lotes más pequeños, otros no se alejan tanto de la amplia visión imperante en los años cincuenta.
