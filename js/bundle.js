@@ -1312,7 +1312,7 @@ module.exports = {
 
         L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-        var streets = L.mapbox.tileLayer('ebrelsford.ihbc8hpf', { detectRetina: true })
+        var streets = L.mapbox.tileLayer('urbanreviewer.8b5195d9', { detectRetina: true })
             .addTo(map);
 
         var satellite = new L.BingLayer('Ajio1n0EgmAAvT3zLndCpHrYR_LHJDgfDU6B0tV_1RClr7OFLzy4RnkLXlSdkJ_x');
