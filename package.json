@@ -15,6 +15,7 @@
     "underscore": "^1.6.0"
   },
   "devDependencies": {
+    "grunt-cli": "^0.1.13",
     "grunt-contrib-cssmin": "~0.7.0",
     "grunt-contrib-handlebars": "^0.8.0"
   },

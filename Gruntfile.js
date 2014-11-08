@@ -73,4 +73,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
+
+    grunt.registerTask('dev', ['browserify', 'watch']);
 };
