@@ -1,3 +1,4 @@
+require('bootstrap.tooltip');
 var _ = require('underscore');
 
 var cartodbapi = require('./cartodbapi');

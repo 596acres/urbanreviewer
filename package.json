@@ -26,7 +26,8 @@
   "author": "Eric Brelsford",
   "license": "BSD-2-Clause",
   "browser": {
-    "bootstrap.carousel": "./bower_components/bootstrap/js/carousel.js"
+    "bootstrap.carousel": "./bower_components/bootstrap/js/carousel.js",
+    "bootstrap.tooltip": "./bower_components/bootstrap/js/tooltip.js"
   },
   "browserify": {
     "transform": ["browserify-shim"]
