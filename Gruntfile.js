@@ -36,22 +36,7 @@ module.exports = function(grunt) {
 
         watch: {
             browserify: {
-                files: [
-                    "js/cartodbapi.js",
-                    "js/filters.js",
-                    "js/geocode.js",
-                    "js/hash.js",
-                    "js/highlights.js",
-                    "js/main.js",
-                    "js/pages.js",
-                    "js/planlist.js",
-                    "js/plans.js",
-                    "js/plansfilters.js",
-                    "js/plansmap.js",
-                    "js/search.js",
-                    "js/sidebar.js",
-                    "js/singleminded.js"
-                ],
+                files: ["js/*.js", "!js/bundle.js"],
                 tasks: ["browserify"]
             },
 
