@@ -1,4 +1,53 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var defaultCartoCSS = '#lots{ polygon-fill: #000; polygon-opacity: 0.75; line-color: #FFF; line-width: 0.5; line-opacity: 0.75; [zoom < 14] { line-width: 1; } }';
+var nightmodeCartoCSS = '#lots{ polygon-fill: #FFF; polygon-opacity: 0.75; line-color: #FFF; line-width: 0.5; line-opacity: 0.75; [zoom < 14] { line-width: 1; } }';
+var highlightedLotCartoCSS = 'polygon-fill: #CFA470;' +
+    '[zoom <= 12] { line-width: 5; line-color: #CFA470; }' +
+    '[zoom <= 14] { line-width: 3; line-color: #CFA470; }';
+var highlightedPlanCartoCSS = 'polygon-fill: #F9EF6C;';
+
+
+module.exports = {
+
+    cartocss: function (opts) {
+        opts = opts || {};
+        var cartocss = defaultCartoCSS;
+
+        // Choose day / night mode
+        if (opts.mode && opts.mode === 'nightmode') {
+            cartocss = nightmodeCartoCSS;
+        }
+
+        // Highlight plan
+        if (opts.plan) {
+            cartocss += '#lots[plan_name="' + opts.plan + '"]{' +
+                highlightedPlanCartoCSS +
+            '}';
+        }
+
+        // Filters
+        var selector = '#lots';
+
+        if (opts.dispositions && opts.dispositions.length > 0) {
+            selector += _.map(opts.dispositions, function (disposition) {
+                return '[disposition_filterable=~".*' + disposition + '.*"]';
+            }).join('');
+        }
+        if (opts.public_vacant && opts.public_vacant === true) {
+            selector += '[in_596=true]';
+        }
+
+        // Only add the highlighted CartoCSS if there are things to highlight
+        if (selector !== '#lots') {
+            cartocss += selector + '{' + highlightedLotCartoCSS + '}';
+        }
+
+        return cartocss;
+    }
+
+};
+
+},{}],2:[function(require,module,exports){
 var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql/';
 
 function getSqlUrl(sql) {
@@ -21,7 +70,7 @@ module.exports = {
 
 };
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 var plansmap = require('./plansmap');
 
 var eventEmitter = $({});
@@ -210,7 +259,7 @@ module.exports = {
 
 };
 
-},{"./plansmap":11}],3:[function(require,module,exports){
+},{"./plansmap":12}],4:[function(require,module,exports){
 var geocoder = new google.maps.Geocoder();
 
 function to_google_bounds(bounds) {
@@ -269,7 +318,7 @@ module.exports = {
 
 };
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 var jsurl = require('jsurl');
 var querystring = require('querystring');
 
@@ -355,7 +404,7 @@ module.exports = {
 
 };
 
-},{"jsurl":18,"querystring":17}],5:[function(require,module,exports){
+},{"jsurl":19,"querystring":18}],6:[function(require,module,exports){
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 
@@ -478,7 +527,7 @@ module.exports = {
 
 };
 
-},{"./plansmap":11,"underscore":21}],6:[function(require,module,exports){
+},{"./plansmap":12,"underscore":22}],7:[function(require,module,exports){
 var _ = require('underscore');
 
 var cartodbapi = require('./cartodbapi');
@@ -950,7 +999,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./cartodbapi":1,"./filters":2,"./hash":4,"./highlights":5,"./pages":7,"./planlist":8,"./plans":9,"./plansmap":11,"./search":12,"./sidebar":13,"underscore":21}],7:[function(require,module,exports){
+},{"./cartodbapi":2,"./filters":3,"./hash":5,"./highlights":6,"./pages":8,"./planlist":9,"./plans":10,"./plansmap":12,"./search":13,"./sidebar":14,"underscore":22}],8:[function(require,module,exports){
 var sidebar = require('./sidebar');
 
 function makeId(text) {
@@ -1002,7 +1051,7 @@ module.exports = {
 
 };
 
-},{"./sidebar":13}],8:[function(require,module,exports){
+},{"./sidebar":14}],9:[function(require,module,exports){
 var cartodbapi = require('./cartodbapi');
 var plansfilters = require('./plansfilters');
 var plansmap = require('./plansmap');
@@ -1040,7 +1089,7 @@ module.exports = {
     load: load
 };
 
-},{"./cartodbapi":1,"./plansfilters":10,"./plansmap":11}],9:[function(require,module,exports){
+},{"./cartodbapi":2,"./plansfilters":11,"./plansmap":12}],10:[function(require,module,exports){
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
 var plansmap = require('./plansmap');
@@ -1199,7 +1248,7 @@ module.exports = {
 
 };
 
-},{"./cartodbapi":1,"./plansmap":11,"./sidebar":13,"underscore":21}],10:[function(require,module,exports){
+},{"./cartodbapi":2,"./plansmap":12,"./sidebar":14,"underscore":22}],11:[function(require,module,exports){
 var _ = require('underscore');
 
 var lastFilters = {};
@@ -1251,13 +1300,17 @@ module.exports = {
     getWhereClause: getWhereClause
 };
 
-},{"underscore":21}],11:[function(require,module,exports){
+},{"underscore":22}],12:[function(require,module,exports){
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
+var cartocss = require('./cartocss').cartocss;
 var plansfilters = require('./plansfilters');
 var singleminded = require('./singleminded');
 
 var map,
+    currentMode = 'daymode',
+    currentPlan,
+    filters = {},
     lotsLayer,
     highlightCartoCSS,
     highlightedLotLayer,
@@ -1266,11 +1319,16 @@ var map,
     planOutlinesPopups = {},
     userMarker;
 
-var defaultCartoCSS = '#lots{ polygon-fill: #000; polygon-opacity: 0.75; line-color: #FFF; line-width: 0.5; line-opacity: 0.75; [zoom < 14] { line-width: 1; } }';
-var highlightedLotCartoCSS = 'polygon-fill: #CFA470;' +
-    '[zoom <= 12] { line-width: 5; line-color: #CFA470; }' +
-    '[zoom <= 14] { line-width: 3; line-color: #CFA470; }';
-var highlightedPlanCartoCSS = 'polygon-fill: #F9EF6C;';
+
+function updateStyles() {
+    // Update the plan's styles using the current state
+    lotsLayer.setCartoCSS(cartocss({ 
+        dispositions: filters.dispositions,
+        mode: currentMode,
+        plan: currentPlan,
+        public_vacant: filters.publicVacant,
+    }));
+}
 
 function unHighlightLot(e) {
     if (!planOutlinesPopups['hover']) {
@@ -1282,11 +1340,8 @@ function unHighlightLot(e) {
 }
 
 function unhighlightLotsInPlan() {
-    var cartocss = defaultCartoCSS;
-    if (highlightCartoCSS) {
-       cartocss += highlightCartoCSS;
-    }
-    lotsLayer.setCartoCSS(cartocss);
+    currentPlan = null;
+    updateStyles();
 }
 
 function clearPlanOutline(options) {
@@ -1331,7 +1386,7 @@ module.exports = {
             user_name: 'urbanreviewer',
             type: 'cartodb',
             sublayers: [{
-                cartocss: defaultCartoCSS,
+                cartocss: cartocss(),
                 interactivity: 'block, lot, plan_name, borough',
                 sql: 'SELECT l.*, p.name AS plan_name, p.borough AS borough FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id'
             }]
@@ -1364,6 +1419,8 @@ module.exports = {
             map
                 .on('baselayerchange', function (e) {
                     $('body').toggleClass('night-mode', e.name === 'satellite');
+                    currentMode = e.name === 'satellite' ? 'nightmode' : 'daymode';
+                    updateStyles();
                     e.layer.bringToBack();
                 })
                 .on('mousemove', function (e) {
@@ -1460,24 +1517,11 @@ module.exports = {
 
     highlightLots: function (options) {
         options = options || {};
-        highlightCartoCSS = '';
-        var selector = '#lots';
 
-        if (options.dispositions && options.dispositions.length > 0) {
-            selector += _.map(options.dispositions, function (disposition) {
-                return '[disposition_filterable=~".*' + disposition + '.*"]';
-            }).join('');
-        }
-        if (options.public_vacant && options.public_vacant === true) {
-            selector += '[in_596=true]';
-        }
+        filters.dispositions = options.dispositions;
+        filters.publicVacant = options.public_vacant;
 
-        // Only add the highlighted CartoCSS if there are things to highlight
-        if (selector !== '#lots') {
-            highlightCartoCSS = selector + '{' + highlightedLotCartoCSS + '}';
-        }
-
-        lotsLayer.setCartoCSS(defaultCartoCSS + highlightCartoCSS);
+        updateStyles();
     },
 
     clearPlanOutline: clearPlanOutline,
@@ -1485,20 +1529,9 @@ module.exports = {
     unhighlightLotsInPlan: unhighlightLotsInPlan,
 
     highlightLotsInPlan: function (planName) {
-        unhighlightLotsInPlan;
-        var cartocss = '';
-
-        if (planName) {
-            cartocss += '#lots[plan_name="' + planName + '"]{' +
-                highlightedPlanCartoCSS +
-            '}';
-        }
-
-        cartocss = defaultCartoCSS + cartocss;
-        if (highlightCartoCSS) {
-           cartocss += highlightCartoCSS;
-        }
-        lotsLayer.setCartoCSS(cartocss);
+        unhighlightLotsInPlan();
+        currentPlan = planName;
+        updateStyles();
     },
 
     addPlanOutline: function (planName, options) {
@@ -1580,7 +1613,7 @@ module.exports = {
 
 };
 
-},{"./cartodbapi":1,"./plansfilters":10,"./singleminded":14,"underscore":21}],12:[function(require,module,exports){
+},{"./cartocss":1,"./cartodbapi":2,"./plansfilters":11,"./singleminded":15,"underscore":22}],13:[function(require,module,exports){
 var cartodbapi = require('./cartodbapi');
 var filters = require('./filters');
 var geocode = require('./geocode');
@@ -1660,7 +1693,7 @@ module.exports = {
     search: search
 };
 
-},{"./cartodbapi":1,"./filters":2,"./geocode":3,"./plansfilters":10,"typeahead.js":20}],13:[function(require,module,exports){
+},{"./cartodbapi":2,"./filters":3,"./geocode":4,"./plansfilters":11,"typeahead.js":21}],14:[function(require,module,exports){
 var _ = require('underscore');
 
 var sizes = ['narrow', 'wide', 'widest'],
@@ -1713,7 +1746,7 @@ module.exports = {
     close: close
 };
 
-},{"underscore":21}],14:[function(require,module,exports){
+},{"underscore":22}],15:[function(require,module,exports){
 //
 // A simple AJAX request queue of length 1.
 //
@@ -1746,7 +1779,7 @@ module.exports = {
     remember: remember
 };
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1832,7 +1865,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1919,15 +1952,15 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":15,"./encode":16}],18:[function(require,module,exports){
+},{"./decode":16,"./encode":17}],19:[function(require,module,exports){
 module.exports = require('./lib/jsurl')
-},{"./lib/jsurl":19}],19:[function(require,module,exports){
+},{"./lib/jsurl":20}],20:[function(require,module,exports){
 /**
  * Copyright (c) 2011 Bruno Jouhier <bruno.jouhier@sage.com>
  *
@@ -2073,7 +2106,7 @@ module.exports = require('./lib/jsurl')
 		})();
 	}
 })(typeof exports !== 'undefined' ? exports : (window.JSURL = window.JSURL || {}));
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /*!
  * typeahead.js 0.10.2
  * https://github.com/twitter/typeahead.js
@@ -3790,7 +3823,7 @@ module.exports = require('./lib/jsurl')
         };
     })();
 })(window.jQuery);
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -5135,4 +5168,4 @@ module.exports = require('./lib/jsurl')
   }
 }).call(this);
 
-},{}]},{},[6])
+},{}]},{},[7])

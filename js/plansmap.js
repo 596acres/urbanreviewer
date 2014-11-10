@@ -1,9 +1,13 @@
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
+var cartocss = require('./cartocss').cartocss;
 var plansfilters = require('./plansfilters');
 var singleminded = require('./singleminded');
 
 var map,
+    currentMode = 'daymode',
+    currentPlan,
+    filters = {},
     lotsLayer,
     highlightCartoCSS,
     highlightedLotLayer,
@@ -12,11 +16,16 @@ var map,
     planOutlinesPopups = {},
     userMarker;
 
-var defaultCartoCSS = '#lots{ polygon-fill: #000; polygon-opacity: 0.75; line-color: #FFF; line-width: 0.5; line-opacity: 0.75; [zoom < 14] { line-width: 1; } }';
-var highlightedLotCartoCSS = 'polygon-fill: #CFA470;' +
-    '[zoom <= 12] { line-width: 5; line-color: #CFA470; }' +
-    '[zoom <= 14] { line-width: 3; line-color: #CFA470; }';
-var highlightedPlanCartoCSS = 'polygon-fill: #F9EF6C;';
+
+function updateStyles() {
+    // Update the plan's styles using the current state
+    lotsLayer.setCartoCSS(cartocss({ 
+        dispositions: filters.dispositions,
+        mode: currentMode,
+        plan: currentPlan,
+        public_vacant: filters.publicVacant,
+    }));
+}
 
 function unHighlightLot(e) {
     if (!planOutlinesPopups['hover']) {
@@ -28,11 +37,8 @@ function unHighlightLot(e) {
 }
 
 function unhighlightLotsInPlan() {
-    var cartocss = defaultCartoCSS;
-    if (highlightCartoCSS) {
-       cartocss += highlightCartoCSS;
-    }
-    lotsLayer.setCartoCSS(cartocss);
+    currentPlan = null;
+    updateStyles();
 }
 
 function clearPlanOutline(options) {
@@ -77,7 +83,7 @@ module.exports = {
             user_name: 'urbanreviewer',
             type: 'cartodb',
             sublayers: [{
-                cartocss: defaultCartoCSS,
+                cartocss: cartocss(),
                 interactivity: 'block, lot, plan_name, borough',
                 sql: 'SELECT l.*, p.name AS plan_name, p.borough AS borough FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id'
             }]
@@ -110,6 +116,8 @@ module.exports = {
             map
                 .on('baselayerchange', function (e) {
                     $('body').toggleClass('night-mode', e.name === 'satellite');
+                    currentMode = e.name === 'satellite' ? 'nightmode' : 'daymode';
+                    updateStyles();
                     e.layer.bringToBack();
                 })
                 .on('mousemove', function (e) {
@@ -206,24 +214,11 @@ module.exports = {
 
     highlightLots: function (options) {
         options = options || {};
-        highlightCartoCSS = '';
-        var selector = '#lots';
 
-        if (options.dispositions && options.dispositions.length > 0) {
-            selector += _.map(options.dispositions, function (disposition) {
-                return '[disposition_filterable=~".*' + disposition + '.*"]';
-            }).join('');
-        }
-        if (options.public_vacant && options.public_vacant === true) {
-            selector += '[in_596=true]';
-        }
+        filters.dispositions = options.dispositions;
+        filters.publicVacant = options.public_vacant;
 
-        // Only add the highlighted CartoCSS if there are things to highlight
-        if (selector !== '#lots') {
-            highlightCartoCSS = selector + '{' + highlightedLotCartoCSS + '}';
-        }
-
-        lotsLayer.setCartoCSS(defaultCartoCSS + highlightCartoCSS);
+        updateStyles();
     },
 
     clearPlanOutline: clearPlanOutline,
@@ -231,20 +226,9 @@ module.exports = {
     unhighlightLotsInPlan: unhighlightLotsInPlan,
 
     highlightLotsInPlan: function (planName) {
-        unhighlightLotsInPlan;
-        var cartocss = '';
-
-        if (planName) {
-            cartocss += '#lots[plan_name="' + planName + '"]{' +
-                highlightedPlanCartoCSS +
-            '}';
-        }
-
-        cartocss = defaultCartoCSS + cartocss;
-        if (highlightCartoCSS) {
-           cartocss += highlightCartoCSS;
-        }
-        lotsLayer.setCartoCSS(cartocss);
+        unhighlightLotsInPlan();
+        currentPlan = planName;
+        updateStyles();
     },
 
     addPlanOutline: function (planName, options) {
