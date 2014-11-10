@@ -1,3 +1,4 @@
+require('bootstrap.carousel');
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
 var plansmap = require('./plansmap');

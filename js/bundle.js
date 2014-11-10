@@ -1,4 +1,211 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+/* ========================================================================
+ * Bootstrap: carousel.js v3.1.1
+ * http://getbootstrap.com/javascript/#carousel
+ * ========================================================================
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // CAROUSEL CLASS DEFINITION
+  // =========================
+
+  var Carousel = function (element, options) {
+    this.$element    = $(element)
+    this.$indicators = this.$element.find('.carousel-indicators')
+    this.options     = options
+    this.paused      =
+    this.sliding     =
+    this.interval    =
+    this.$active     =
+    this.$items      = null
+
+    this.options.pause == 'hover' && this.$element
+      .on('mouseenter', $.proxy(this.pause, this))
+      .on('mouseleave', $.proxy(this.cycle, this))
+  }
+
+  Carousel.DEFAULTS = {
+    interval: 5000,
+    pause: 'hover',
+    wrap: true
+  }
+
+  Carousel.prototype.cycle =  function (e) {
+    e || (this.paused = false)
+
+    this.interval && clearInterval(this.interval)
+
+    this.options.interval
+      && !this.paused
+      && (this.interval = setInterval($.proxy(this.next, this), this.options.interval))
+
+    return this
+  }
+
+  Carousel.prototype.getActiveIndex = function () {
+    this.$active = this.$element.find('.item.active')
+    this.$items  = this.$active.parent().children()
+
+    return this.$items.index(this.$active)
+  }
+
+  Carousel.prototype.to = function (pos) {
+    var that        = this
+    var activeIndex = this.getActiveIndex()
+
+    if (pos > (this.$items.length - 1) || pos < 0) return
+
+    if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(pos) })
+    if (activeIndex == pos) return this.pause().cycle()
+
+    return this.slide(pos > activeIndex ? 'next' : 'prev', $(this.$items[pos]))
+  }
+
+  Carousel.prototype.pause = function (e) {
+    e || (this.paused = true)
+
+    if (this.$element.find('.next, .prev').length && $.support.transition) {
+      this.$element.trigger($.support.transition.end)
+      this.cycle(true)
+    }
+
+    this.interval = clearInterval(this.interval)
+
+    return this
+  }
+
+  Carousel.prototype.next = function () {
+    if (this.sliding) return
+    return this.slide('next')
+  }
+
+  Carousel.prototype.prev = function () {
+    if (this.sliding) return
+    return this.slide('prev')
+  }
+
+  Carousel.prototype.slide = function (type, next) {
+    var $active   = this.$element.find('.item.active')
+    var $next     = next || $active[type]()
+    var isCycling = this.interval
+    var direction = type == 'next' ? 'left' : 'right'
+    var fallback  = type == 'next' ? 'first' : 'last'
+    var that      = this
+
+    if (!$next.length) {
+      if (!this.options.wrap) return
+      $next = this.$element.find('.item')[fallback]()
+    }
+
+    if ($next.hasClass('active')) return this.sliding = false
+
+    var e = $.Event('slide.bs.carousel', { relatedTarget: $next[0], direction: direction })
+    this.$element.trigger(e)
+    if (e.isDefaultPrevented()) return
+
+    this.sliding = true
+
+    isCycling && this.pause()
+
+    if (this.$indicators.length) {
+      this.$indicators.find('.active').removeClass('active')
+      this.$element.one('slid.bs.carousel', function () {
+        var $nextIndicator = $(that.$indicators.children()[that.getActiveIndex()])
+        $nextIndicator && $nextIndicator.addClass('active')
+      })
+    }
+
+    if ($.support.transition && this.$element.hasClass('slide')) {
+      $next.addClass(type)
+      $next[0].offsetWidth // force reflow
+      $active.addClass(direction)
+      $next.addClass(direction)
+      $active
+        .one($.support.transition.end, function () {
+          $next.removeClass([type, direction].join(' ')).addClass('active')
+          $active.removeClass(['active', direction].join(' '))
+          that.sliding = false
+          setTimeout(function () { that.$element.trigger('slid.bs.carousel') }, 0)
+        })
+        .emulateTransitionEnd($active.css('transition-duration').slice(0, -1) * 1000)
+    } else {
+      $active.removeClass('active')
+      $next.addClass('active')
+      this.sliding = false
+      this.$element.trigger('slid.bs.carousel')
+    }
+
+    isCycling && this.cycle()
+
+    return this
+  }
+
+
+  // CAROUSEL PLUGIN DEFINITION
+  // ==========================
+
+  var old = $.fn.carousel
+
+  $.fn.carousel = function (option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.carousel')
+      var options = $.extend({}, Carousel.DEFAULTS, $this.data(), typeof option == 'object' && option)
+      var action  = typeof option == 'string' ? option : options.slide
+
+      if (!data) $this.data('bs.carousel', (data = new Carousel(this, options)))
+      if (typeof option == 'number') data.to(option)
+      else if (action) data[action]()
+      else if (options.interval) data.pause().cycle()
+    })
+  }
+
+  $.fn.carousel.Constructor = Carousel
+
+
+  // CAROUSEL NO CONFLICT
+  // ====================
+
+  $.fn.carousel.noConflict = function () {
+    $.fn.carousel = old
+    return this
+  }
+
+
+  // CAROUSEL DATA-API
+  // =================
+
+  $(document).on('click.bs.carousel.data-api', '[data-slide], [data-slide-to]', function (e) {
+    var $this   = $(this), href
+    var $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
+    var options = $.extend({}, $target.data(), $this.data())
+    var slideIndex = $this.attr('data-slide-to')
+    if (slideIndex) options.interval = false
+
+    $target.carousel(options)
+
+    if (slideIndex = $this.attr('data-slide-to')) {
+      $target.data('bs.carousel').to(slideIndex)
+    }
+
+    e.preventDefault()
+  })
+
+  $(window).on('load', function () {
+    $('[data-ride="carousel"]').each(function () {
+      var $carousel = $(this)
+      $carousel.carousel($carousel.data())
+    })
+  })
+
+}(jQuery);
+
+},{}],2:[function(require,module,exports){
 var defaultCartoCSS = '#lots{ polygon-fill: #000; polygon-opacity: 0.75; line-color: #FFF; line-width: 0.5; line-opacity: 0.75; [zoom < 14] { line-width: 1; } }';
 var nightmodeCartoCSS = '#lots{ polygon-fill: #FFF; polygon-opacity: 0.75; line-color: #FFF; line-width: 0.5; line-opacity: 0.75; [zoom < 14] { line-width: 1; } }';
 var highlightedLotCartoCSS = 'polygon-fill: #CFA470;' +
@@ -47,7 +254,7 @@ module.exports = {
 
 };
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql/';
 
 function getSqlUrl(sql) {
@@ -70,7 +277,7 @@ module.exports = {
 
 };
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var plansmap = require('./plansmap');
 
 var eventEmitter = $({});
@@ -259,7 +466,7 @@ module.exports = {
 
 };
 
-},{"./plansmap":12}],4:[function(require,module,exports){
+},{"./plansmap":13}],5:[function(require,module,exports){
 var geocoder = new google.maps.Geocoder();
 
 function to_google_bounds(bounds) {
@@ -318,7 +525,7 @@ module.exports = {
 
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 var jsurl = require('jsurl');
 var querystring = require('querystring');
 
@@ -404,7 +611,7 @@ module.exports = {
 
 };
 
-},{"jsurl":19,"querystring":18}],6:[function(require,module,exports){
+},{"jsurl":20,"querystring":19}],7:[function(require,module,exports){
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 
@@ -527,7 +734,7 @@ module.exports = {
 
 };
 
-},{"./plansmap":12,"underscore":22}],7:[function(require,module,exports){
+},{"./plansmap":13,"underscore":23}],8:[function(require,module,exports){
 var _ = require('underscore');
 
 var cartodbapi = require('./cartodbapi');
@@ -999,7 +1206,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./cartodbapi":2,"./filters":3,"./hash":5,"./highlights":6,"./pages":8,"./planlist":9,"./plans":10,"./plansmap":12,"./search":13,"./sidebar":14,"underscore":22}],8:[function(require,module,exports){
+},{"./cartodbapi":3,"./filters":4,"./hash":6,"./highlights":7,"./pages":9,"./planlist":10,"./plans":11,"./plansmap":13,"./search":14,"./sidebar":15,"underscore":23}],9:[function(require,module,exports){
 var sidebar = require('./sidebar');
 
 function makeId(text) {
@@ -1051,7 +1258,7 @@ module.exports = {
 
 };
 
-},{"./sidebar":14}],9:[function(require,module,exports){
+},{"./sidebar":15}],10:[function(require,module,exports){
 var cartodbapi = require('./cartodbapi');
 var plansfilters = require('./plansfilters');
 var plansmap = require('./plansmap');
@@ -1089,7 +1296,8 @@ module.exports = {
     load: load
 };
 
-},{"./cartodbapi":2,"./plansfilters":11,"./plansmap":12}],10:[function(require,module,exports){
+},{"./cartodbapi":3,"./plansfilters":12,"./plansmap":13}],11:[function(require,module,exports){
+require('bootstrap.carousel');
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
 var plansmap = require('./plansmap');
@@ -1248,7 +1456,7 @@ module.exports = {
 
 };
 
-},{"./cartodbapi":2,"./plansmap":12,"./sidebar":14,"underscore":22}],11:[function(require,module,exports){
+},{"./cartodbapi":3,"./plansmap":13,"./sidebar":15,"bootstrap.carousel":1,"underscore":23}],12:[function(require,module,exports){
 var _ = require('underscore');
 
 var lastFilters = {};
@@ -1300,7 +1508,7 @@ module.exports = {
     getWhereClause: getWhereClause
 };
 
-},{"underscore":22}],12:[function(require,module,exports){
+},{"underscore":23}],13:[function(require,module,exports){
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
 var cartocss = require('./cartocss').cartocss;
@@ -1613,7 +1821,7 @@ module.exports = {
 
 };
 
-},{"./cartocss":1,"./cartodbapi":2,"./plansfilters":11,"./singleminded":15,"underscore":22}],13:[function(require,module,exports){
+},{"./cartocss":2,"./cartodbapi":3,"./plansfilters":12,"./singleminded":16,"underscore":23}],14:[function(require,module,exports){
 var cartodbapi = require('./cartodbapi');
 var filters = require('./filters');
 var geocode = require('./geocode');
@@ -1693,7 +1901,7 @@ module.exports = {
     search: search
 };
 
-},{"./cartodbapi":2,"./filters":3,"./geocode":4,"./plansfilters":11,"typeahead.js":21}],14:[function(require,module,exports){
+},{"./cartodbapi":3,"./filters":4,"./geocode":5,"./plansfilters":12,"typeahead.js":22}],15:[function(require,module,exports){
 var _ = require('underscore');
 
 var sizes = ['narrow', 'wide', 'widest'],
@@ -1746,7 +1954,7 @@ module.exports = {
     close: close
 };
 
-},{"underscore":22}],15:[function(require,module,exports){
+},{"underscore":23}],16:[function(require,module,exports){
 //
 // A simple AJAX request queue of length 1.
 //
@@ -1779,7 +1987,7 @@ module.exports = {
     remember: remember
 };
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1865,7 +2073,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -1952,15 +2160,15 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":16,"./encode":17}],19:[function(require,module,exports){
+},{"./decode":17,"./encode":18}],20:[function(require,module,exports){
 module.exports = require('./lib/jsurl')
-},{"./lib/jsurl":20}],20:[function(require,module,exports){
+},{"./lib/jsurl":21}],21:[function(require,module,exports){
 /**
  * Copyright (c) 2011 Bruno Jouhier <bruno.jouhier@sage.com>
  *
@@ -2106,7 +2314,7 @@ module.exports = require('./lib/jsurl')
 		})();
 	}
 })(typeof exports !== 'undefined' ? exports : (window.JSURL = window.JSURL || {}));
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 /*!
  * typeahead.js 0.10.2
  * https://github.com/twitter/typeahead.js
@@ -3823,7 +4031,7 @@ module.exports = require('./lib/jsurl')
         };
     })();
 })(window.jQuery);
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 //     Underscore.js 1.6.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -5168,4 +5376,4 @@ module.exports = require('./lib/jsurl')
   }
 }).call(this);
 
-},{}]},{},[7])
+},{}]},{},[8])
