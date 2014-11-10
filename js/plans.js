@@ -1,4 +1,5 @@
 require('bootstrap.carousel');
+require('jquery.colorbox');
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
 var plansmap = require('./plansmap');
