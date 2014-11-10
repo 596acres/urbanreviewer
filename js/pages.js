@@ -1,4 +1,5 @@
 var sidebar = require('./sidebar');
+require('jquery.scrollTo');
 
 function makeId(text) {
     return text.toLowerCase()

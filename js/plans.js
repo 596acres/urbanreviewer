@@ -1,5 +1,6 @@
 require('bootstrap.carousel');
 require('jquery.colorbox');
+require('jquery.scrollTo');
 var _ = require('underscore');
 var cartodbapi = require('./cartodbapi');
 var plansmap = require('./plansmap');
