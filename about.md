@@ -53,7 +53,7 @@ One of the reasons we are excited to be making the plans accessible is that they
 
 ## Press
 
-Thanks to [Technical.ly](http://technical.ly/brooklyn/2014/06/25/urban-re-viewer-launches-documenting-urban-renewal-era-maps/), [CityLab](http://www.citylab.com/design/2014/06/every-master-plan-in-new-york-city-history-collected-in-a-single-place/373307/), [Planetizen](http://www.planetizen.com/node/69987), [Untapped Cities](http://untappedcities.com/2014/07/04/fun-maps-the-urban-reviewer-map-by-596-acres-shows-us-master-plans-since-1952/), [TechPresident](http://techpresident.com/news/25143/urban-reviewer-maps-new-yorks-forgotten-master-plans) and [Urban Omnibus](http://urbanomnibus.net/2014/11/you-are-now-entering-an-active-urban-renewal-area/) for telling the story of the Urban Reviewer. 
+Thanks to [Technical.ly](http://technical.ly/brooklyn/2014/06/25/urban-re-viewer-launches-documenting-urban-renewal-era-maps/), [CityLab](http://www.citylab.com/design/2014/06/every-master-plan-in-new-york-city-history-collected-in-a-single-place/373307/), [Planetizen](http://www.planetizen.com/node/69987), [Untapped Cities](http://untappedcities.com/2014/07/04/fun-maps-the-urban-reviewer-map-by-596-acres-shows-us-master-plans-since-1952/), [TechPresident](http://techpresident.com/news/25143/urban-reviewer-maps-new-yorks-forgotten-master-plans), [Urban Omnibus](http://urbanomnibus.net/2014/11/you-are-now-entering-an-active-urban-renewal-area/) and [Fast Company](http://www.fastcoexist.com/3038089/mapping-new-yorks-vacant-lots-to-use-them-to-create-a-more-vibrant-city) for telling the story of the Urban Reviewer. 
 
 [#urbanreviewer on Twitter](https://twitter.com/search?src=typd&q=%23urbanreviewer) to join the conversation.
 
