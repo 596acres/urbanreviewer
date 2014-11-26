@@ -1,4 +1,4 @@
-var defaultCartoCSS = '#lots{ polygon-fill: #000; polygon-opacity: 0.75; line-color: #FFF; line-width: 0.5; line-opacity: 0.75; [zoom < 14] { line-width: 1; } }';
+var defaultCartoCSS = '#lots{ polygon-fill: #000; polygon-opacity: 0.75; line-color: #000; line-width: 0.5; line-opacity: 0.75; [zoom < 14] { line-width: 1; } }';
 var nightmodeCartoCSS = '#lots{ polygon-fill: #FFF; polygon-opacity: 0.75; line-color: #FFF; line-width: 0.5; line-opacity: 0.75; [zoom < 14] { line-width: 1; } }';
 var highlightedLotCartoCSS = 'polygon-fill: #CFA470;' +
     '[zoom <= 12] { line-width: 5; line-color: #CFA470; }' +
