@@ -8,6 +8,9 @@ select_dispositions = b.filterable_disposition AS disp_filt, b.edited_dispositio
 join_596 = LEFT OUTER JOIN '596_lots' fns ON fns.bbl= b.BBL
 select_596 = (fns.bbl IS NOT NULL) AS in_596
 
+join_parking = LEFT OUTER JOIN 'parking_lots' parking ON parking.bbl= b.BBL
+select_parking = (parking.bbl IS NOT NULL) AS in_parking
+
 csvs:
 	# Take latest borough Excel files, turn each into its own, cleaned CSV with
 	# a BBL column
@@ -31,6 +34,12 @@ load_596:
 	# http://596acres.org/lots/csv?boroughs=Bronx%2CBrooklyn%2CManhattan%2CQueens%2CStaten%20Island&lot_types=organizing_sites%2Cpublic_accessed_sites%2Cvacant_sites%2Corganizing_lots%2Cpublic_accessed_lots%2Cvacant_lots%2C&parents_only=false&download=true
 	-sqlite3 $(sqlite_db) "DROP TABLE '596_lots'"
 	-csvsql --db sqlite:///$(sqlite_db) --insert "596_lots.csv"
+
+load_parking_lots:
+	# Extracted from PLUTO by Charles, parcels in plans that were not designated
+	# parking lots but are now being used as parking lots.
+	-sqlite3 $(sqlite_db) "DROP TABLE 'parking_lots'"
+	-csvsql --db sqlite:///$(sqlite_db) --insert "parking_lots.csv"
 
 load_lots: csvs
 	-sqlite3 $(sqlite_db) "DROP TABLE 'Lot dispositions'"
@@ -61,18 +70,18 @@ load_lots: csvs
 	python add_dispositions.py --borough "Staten Island" --db $(sqlite_db)
 	python fix_duplicate_dispositions.py --borough "Staten Island" --db $(sqlite_db)
 
-shps: load_lots load_596
+shps: load_lots load_596 load_parking_lots
 	mkdir -p shp
 
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM BXMapPLUTO p INNER JOIN Bronx b ON b.BBL=p.BBL $(join_596)" shp/Bronx.shp $(sqlite_db)
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596), $(select_parking) FROM BXMapPLUTO p INNER JOIN Bronx b ON b.BBL=p.BBL $(join_596) $(join_parking)" shp/Bronx.shp $(sqlite_db)
 
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM BKMapPLUTO p INNER JOIN Brooklyn b ON b.BBL=p.BBL $(join_596)" shp/Brooklyn.shp $(sqlite_db)
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596), $(select_parking) FROM BKMapPLUTO p INNER JOIN Brooklyn b ON b.BBL=p.BBL $(join_596) $(join_parking)" shp/Brooklyn.shp $(sqlite_db)
 
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM MNMapPLUTO p INNER JOIN Manhattan b ON b.BBL=p.BBL $(join_596)" shp/Manhattan.shp $(sqlite_db)
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596), $(select_parking) FROM MNMapPLUTO p INNER JOIN Manhattan b ON b.BBL=p.BBL $(join_596) $(join_parking)" shp/Manhattan.shp $(sqlite_db)
 
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM QNMapPLUTO p INNER JOIN Queens b ON b.BBL=p.BBL $(join_596)" shp/Queens.shp $(sqlite_db)
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596), $(select_parking) FROM QNMapPLUTO p INNER JOIN Queens b ON b.BBL=p.BBL $(join_596) $(join_parking)" shp/Queens.shp $(sqlite_db)
 
-	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596) FROM SIMapPLUTO p INNER JOIN 'Staten Island' b ON b.BBL=p.BBL $(join_596)" "shp/Staten Island.shp" $(sqlite_db)
+	ogr2ogr -overwrite -f "ESRI Shapefile" -sql "SELECT p.GEOMETRY, $(select_boroughs), $(select_dispositions), $(select_596), $(select_parking) FROM SIMapPLUTO p INNER JOIN 'Staten Island' b ON b.BBL=p.BBL $(join_596) $(join_parking)" "shp/Staten Island.shp" $(sqlite_db)
 
 merge: shps
 	rm -f shp/merge.*
@@ -87,7 +96,7 @@ simplify: merge
 
 geojson: simplify
 	rm -f lots.geojson
-	ogr2ogr -f "GeoJSON" -sql "SELECT BBL, block, lot, plan_name, disp_filt AS disposition_filterable, disp_edit AS disposition_display, in_596 FROM simplified" lots.geojson shp/simplified.shp
+	ogr2ogr -f "GeoJSON" -sql "SELECT BBL, block, lot, plan_name, disp_filt AS disposition_filterable, disp_edit AS disposition_display, in_596, in_parking FROM simplified" lots.geojson shp/simplified.shp
 
 merge_csvs: csvs
 	cat csv/Manhattan.csv > merge.csv
