@@ -6,6 +6,8 @@ published: true
 
 # About
 
+**Join us January 11 to February 8, 2015 at the Queens Museum for Reviewing Renewal. We will be putting all 155+ Urban Renewal Area Plans that NYC ever adopted on the panorama, with accompanying programs every Sunday. [Click for details](http://596acres.org/en/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/).**
+
 **Reviewing Past Urban Plans > Discovering Present Impact > Supporting Future Actions**
 
 The City of New York has adopted over 150 master plans for our neighborhoods. You can see which areas have been affected and what those grand plans were here. 
