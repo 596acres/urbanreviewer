@@ -5,8 +5,8 @@ permalink: index.html
 published: true
 ---
 
-![Bronxchester, NYC Department of Housing Preservation and Development. Atlas of Urban Renewal Project Areas in the City of New York. Prepared and edited by Nathan Sobel. New York City, 1984.](Bronx Park South.jpg)
-![Bronxchester, NYC Department of Housing Preservation and Development.Community Development Progress Report: 1968. Prepared and edited by Nathan Sobel. New York City, 1968.](Bronx Park 1968.png)
+![Bronx Park South, NYC Department of Housing Preservation and Development. Atlas of Urban Renewal Project Areas in the City of New York. Prepared and edited by Nathan Sobel. New York City, 1984.](Bronx Park South.jpg)
+![Bronx Park South, NYC Department of Housing Preservation and Development.Community Development Progress Report: 1968. Prepared and edited by Nathan Sobel. New York City, 1968.](Bronx Park 1968.png)
 
 The Bronx Park South plan was adopted in 1965, revised in 1989, and revised again in 1998. HPD has made the second revision available to our team but not the third. The plan is still active. Uses for lots in the plan area include residential, commercial retail and service establishments, community facilities, and a public park.
 
