@@ -5,6 +5,6 @@ permalink: index.html
 published: true
 ---
 
-The River Walk plan was last revised in 1989. It entails rezoning the plan area from a manufacturing designation and proposes uses including a mapped park along the water, marina, public open space, hotel/conference center, commercial, commercial parking garages, offices, multi-family housing, and supermarket.
+The River Walk plan was one of many plans that was proposed and never adopted. This shadow-history of Urban Renewal is fascinating but not the focus of this tool. We will be removing it soon - enjoy it while you can! 
 
-See [References](http://www.urbanreviewer.org/#page=references.html). 
+See [References](http://www.urbanreviewer.org/#page=references.html).
