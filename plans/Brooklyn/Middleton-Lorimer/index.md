@@ -5,6 +5,6 @@ permalink: index.html
 published: true
 ---
 
-The Middleton–Lorimer plan was last revised in 1989. It designates the plan area for residential use.
+The Middleton–Lorimer plan was adopted in approximately 1989 and expires in approximately 2029. It designates the plan area for residential use.
 
 See [References](http://www.urbanreviewer.org/#page=references.html).
