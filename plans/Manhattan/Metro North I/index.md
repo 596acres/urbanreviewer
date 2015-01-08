@@ -5,7 +5,7 @@ permalink: index.html
 published: true
 ---
 
-![Metro North I in the Atlas of Urban Renewal](Metro North I.jpg)
+![Metro North I, NYC Department of Housing Preservation and Development. Atlas of Urban Renewal Project Areas in the City of New York. Prepared and edited by Nathan Sobel. New York City, 1984.](Metro North I.jpg)
 
 The Metro North I plan was adopted in 1968, last revised in 1988, and expired in 2008. It designates lots in the plan area for residential use.
 
