@@ -5,7 +5,7 @@ permalink: index.html
 published: true
 ---
 
-<!---![Coney Island West NYC Department of Housing Preservation and Development. Atlas of Urban Renewal Project Areas in the City of New York. Prepared and edited by Nathan Sobel. New York City, 1984.](Coney Island West.jpg)
+<!---![Coney Island West, NYC Department of Housing Preservation and Development. Atlas of Urban Renewal Project Areas in the City of New York. Prepared and edited by Nathan Sobel. New York City, 1984.](Coney Island West.jpg)
 
 ![Coney Island West, NYC Department of Housing Preservation and Development. Community Development Progress Report: 1968. Prepared and edited by Nathan Sobel. New York City, 1968.](Coney Island West 1968.png)-->
 
