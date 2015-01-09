@@ -5,7 +5,10 @@ permalink: index.html
 published: true
 ---
 
-![West Side in the Atlas of Urban Renewal](West Side.jpg)
+<!---![West Side, NYC Department of Housing Preservation and Development. Community Development Progress Report: 1968. Prepared and edited by Nathan Sobel. New York City, 1968.](West Side 1968 I.png)
+![West Side Community Development Progress Report: 1968. Prepared and edited by Nathan Sobel. New York City, 1968.](West Side 1968 II.png)
+![West Side, NYC Department of Housing Preservation and Development. Community Development Progress Report: 1968. Prepared and edited by Nathan Sobel. New York City, 1968.](West Side 1968 Iii.png)-->
+![West Side, NYC Department of Housing Preservation and Development. Atlas of Urban Renewal Project Areas in the City of New York. Prepared and edited by Nathan Sobel. New York City, 1984.](West Side.jpg)
 
 The West Side plan was adopted in 1962, last revised in 2000, and expired in 2002. It includes a range of low-income, moderate-income, and market-rate housing, public school facilities, public park or playground, public health facility, and commercial uses for lots in the plan area.
 
