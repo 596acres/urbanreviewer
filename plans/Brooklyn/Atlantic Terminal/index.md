@@ -5,7 +5,7 @@ permalink: index.html
 published: true
 ---
 
-<--![Atlantic Terminal, NYC Department of Housing Preservation and Development. Community Development Progress Report: 1968. Prepared and edited by Nathan Sobel. New York City, 1968.](Atlantic Terminal 1968 I.png)
+<---![Atlantic Terminal, NYC Department of Housing Preservation and Development. Community Development Progress Report: 1968. Prepared and edited by Nathan Sobel. New York City, 1968.](Atlantic Terminal 1968 I.png)
 ![Atlantic Terminal, NYC Department of Housing Preservation and Development. Community Development Progress Report: 1968. Prepared and edited by Nathan Sobel. New York City, 1968.](Atlantic Terminal 1968 II.png)
 ![Atlantic Terminal, NYC Department of Housing Preservation and Development. Community Development Progress Report: 1968. Prepared and edited by Nathan Sobel. New York City, 1968.](Atlantic Terminal 1968 III.png)
 ![Atlantic Terminal, NYC Department of Housing Preservation and Development. Community Development Progress Report: 1968. Prepared and edited by Nathan Sobel. New York City, 1968.](Atlantic Terminal 1968 IV.png)-->
