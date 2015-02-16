@@ -6,10 +6,6 @@ published: true
 
 # About
 
-**Join us January 11 to February 8, 2015, at the Queens Museum for [Reviewing Renewal](http://596acres.org/en/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/). We will be putting all 155+ Urban Renewal Area Plans that NYC ever adopted on the panorama, with accompanying programs every Sunday. [Click for details](http://596acres.org/en/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/).**
-
--|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-
-
 **Reviewing Past Urban Plans > Discovering Present Impact > Supporting Future Actions**
 
 The City of New York has adopted over 150 master plans for our neighborhoods. You can see which areas have been affected and what those grand plans were here. 
@@ -42,6 +38,21 @@ grateful for the space they provided for this project. If you would like to find
 data for a specific borough or plan, you can find the data on
 [GitHub](https://github.com/596acres/urbanreviewer/tree/gh-pages/data/geojson/us/ny/nyc/).
 
+## Reviewing Renewal on the Queens Museum Panorama, 2015
+
+From January 11 to February 8, 2015, the Urban Reviewer came to life as an intervention on the Panorama of the City of New York at the Queens Museum for [Reviewing Renewal](http://www.queensmuseum.org/exhibitions/2015/01/05/reviewing-renewal/). We put all 155+ Urban Renewal Area Plans that NYC ever adopted on the panorama, with accompanying programs every Sunday and wall treatments that invited visitors to see and shape urban renewal in our city. Writing for Thought Catalouge, Roxanne Earley reviewed the show: [Dear New Yorkers, Your Neighborhood is a Slum](http://thoughtcatalog.com/roxanne-earley/2015/02/dear-new-yorkers-your-neighborhood-is-a-slum/) (February 5, 2015). Documentation from the show will be available on line later in 2015.
+
+**Curator:** Paula Z. Segal, Esq., 596 Acres, Inc.
+**Exhibition Design:** Mary Bereschka, Greg Mihalko, Stephen von Muehlen
+**Design:** Partner & Partners
+**Event Production:** Amy Fitzgerald, Oksana Mironova
+**Documentation:** Badrul Hisham Ismail, Christina Sukhgian Houle, Molly Garfinkel (City Lore)
+
+Photos of each programming day: [January 11](http://596acres.org/en/photos/album/53/); [January 18](http://596acres.org/en/photos/album/54/); [January 25](http://596acres.org/en/photos/album/55/); [February 1](http://596acres.org/en/photos/album/56/); [February 8](https://www.facebook.com/media/set/?set=a.772384782797956.1073741853.212988388737601&type=3).
+
+## Urban Reviewer part of Spontaneous Interventions on Governor's Island, 2014
+
+We experimented with bringing the Urban Reviewer into a physical space for the first time during 596 Acres' residency on Governor's Island as part of [Spontaneous Interventions](http://www.spontaneousinterventions.org/). [Photos here](http://596acres.org/en/photos/album/52/). 
 
 ## Outcomes
 
@@ -67,14 +78,7 @@ CartoDB [Map of the Week](http://blog.cartodb.com/map-of-the-week-urban-reviewer
 
 ## Our Team
 
-**Eric Brelsford**, [596 Acres](http://596acres.org/), is a computer programmer
-and mapmaker. He worked on most of the processing that went into the data behind
-this site, from cleaning the data to turning the data about each parcel into
-something that could be put on a map to putting the data on this map. Eric tries
-not to miss an opportunity to make a map that helps us understand the space
-around us, particularly in New York. Mapping urban renewal has been a unique 
-opportunity to link the history of this space with the present and future of it,
-whether through 596 Acres or other community-driven efforts.
+**Eric Brelsford**, [596 Acres](http://596acres.org/), is a computer programmer and mapmaker. He worked on most of the processing that went into the data behind this site, from cleaning the data to turning the data about each parcel into something that could be put on a map to putting the data on this map. Eric tries not to miss an opportunity to make a map that helps us understand the space around us, particularly in New York. Mapping urban renewal has been a unique opportunity to link the history of this space with the present and future of it, whether through 596 Acres or other community-driven efforts.
 
 **Blair Brewster** is the founder and CEO of [SmartSign](http://www.smartsign.com/), a company with deep roots in Brooklyn. Blair has seen firsthand both the upside and the devastating downside to urban renewal projects. His first business - in North Adams, MA - was adjacent to a swath of commercial building blocks that were knocked down in the name of urban renewal; 40 years later, they remain largely empty. On the other hand, near his longtime home in Brooklyn Heights, the community was able to combine land held by a combination of city agencies, building a garden, playground, basketball court and Brooklyn's first community dog run. Disconnected and unloved shards of land can become invaluable community resources. Blair proudly supports 596 Acres's efforts to spread information with the power to change our cities.
 
@@ -82,7 +86,7 @@ whether through 596 Acres or other community-driven efforts.
 
 **Matt Delsesto** has been working on this data liberation mission since the summer of 2013 when he first encountered the overwhelming stack of urban renewal plans on the 6th floor of Housing Preservation and Development offices.  He became excited when he recognized streets on pieces of paper in the windowless room, and learned that if we think our neighborhoods are missing pieces, it's because they probably are.
 
-**DW Gibson** is the author of _Not Working: People Talk About Losing a Job and Finding Their Way in Today’s Changing Economy_. His work has appeared in such publications as _The New York Times_, _The Washington Post_, _The Daily Beast_, _The Village Voice_, and _The Caravan_. He has been a contributor to NPR’s _All Things Considered_ and is the director of the documentary, _Not Working_. For more information: www.dwgibson.net.
+**DW Gibson** is the author of _Not Working: People Talk About Losing a Job and Finding Their Way in Today’s Changing Economy_. His work has appeared in such publications as _The New York Times_, _The Washington Post_, _The Daily Beast_, _The Village Voice_, and _The Caravan_. He has been a contributor to NPR’s _All Things Considered_ and is the director of the documentary, _Not Working_. His forthcoming book _The Edge Becomes the Center_, an an oral history of gentrification in New York City due out in May 2015 from Overlook Press, features voices from the 596 Acres network. www.dwgibson.net
 
 **Jonathan Lapalme**, [596 Acres](596acres.org)
 
