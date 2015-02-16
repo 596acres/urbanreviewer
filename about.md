@@ -38,19 +38,21 @@ grateful for the space they provided for this project. If you would like to find
 data for a specific borough or plan, you can find the data on
 [GitHub](https://github.com/596acres/urbanreviewer/tree/gh-pages/data/geojson/us/ny/nyc/).
 
-## Reviewing Renewal on the Queens Museum Panorama, 2015
+## Reviewing Renewal Presentations
+
+**Reviewing Renewal on the Queens Museum Panorama, 2015**
 
 From January 11 to February 8, 2015, the Urban Reviewer came to life as an intervention on the Panorama of the City of New York at the Queens Museum for [Reviewing Renewal](http://www.queensmuseum.org/exhibitions/2015/01/05/reviewing-renewal/). We put all 155+ Urban Renewal Area Plans that NYC ever adopted on the panorama, with accompanying programs every Sunday and wall treatments that invited visitors to see and shape urban renewal in our city. Writing for Thought Catalouge, Roxanne Earley reviewed the show: [Dear New Yorkers, Your Neighborhood is a Slum](http://thoughtcatalog.com/roxanne-earley/2015/02/dear-new-yorkers-your-neighborhood-is-a-slum/) (February 5, 2015). Documentation from the show will be available on line later in 2015.
 
-**Curator:** Paula Z. Segal, Esq., 596 Acres, Inc.
-**Exhibition Design:** Mary Bereschka, Greg Mihalko, Stephen von Muehlen
-**Design:** Partner & Partners
-**Event Production:** Amy Fitzgerald, Oksana Mironova
-**Documentation:** Badrul Hisham Ismail, Christina Sukhgian Houle, Molly Garfinkel (City Lore)
+**Curator:** Paula Z. Segal, Esq., 596 Acres, Inc.  
+**Exhibition Design:** Mary Bereschka, Greg Mihalko, Stephen von Muehlen  
+**Design:** Partner & Partners  
+**Event Production:** Amy Fitzgerald, Oksana Mironova  
+**Documentation:** Badrul Hisham Ismail, Christina Sukhgian Houle, Molly Garfinkel (City Lore)  
 
 Photos of each programming day: [January 11](http://596acres.org/en/photos/album/53/); [January 18](http://596acres.org/en/photos/album/54/); [January 25](http://596acres.org/en/photos/album/55/); [February 1](http://596acres.org/en/photos/album/56/); [February 8](https://www.facebook.com/media/set/?set=a.772384782797956.1073741853.212988388737601&type=3).
 
-## Urban Reviewer part of Spontaneous Interventions on Governor's Island, 2014
+**Urban Reviewer part of Spontaneous Interventions on Governor's Island, 2014**
 
 We experimented with bringing the Urban Reviewer into a physical space for the first time during 596 Acres' residency on Governor's Island as part of [Spontaneous Interventions](http://www.spontaneousinterventions.org/). [Photos here](http://596acres.org/en/photos/album/52/). 
 
