@@ -9,7 +9,7 @@ var sidebar = require('./sidebar');
 var scrollToHeight;
 
 function addPlanContent($location, borough, planName) {
-    var planDirectory = 'plans/' + borough + '/' + planName.replace('/', '-');
+    var planDirectory = 'plans/' + borough + '/' + encodeURIComponent(planName.replace('/', '-'));
     $.get(planDirectory, function (content) {
         $location.append(content);
 

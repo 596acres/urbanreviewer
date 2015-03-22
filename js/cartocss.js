@@ -19,6 +19,7 @@ module.exports = {
 
         // Highlight plan
         if (opts.plan) {
+            // XXX this breaks for plans with #s in their names
             cartocss += '#lots[plan_name="' + opts.plan + '"]{' +
                 highlightedPlanCartoCSS +
             '}';

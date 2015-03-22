@@ -3857,6 +3857,7 @@ module.exports = {
 
         // Highlight plan
         if (opts.plan) {
+            // XXX this breaks for plans with #s in their names
             cartocss += '#lots[plan_name="' + opts.plan + '"]{' +
                 highlightedPlanCartoCSS +
             '}';
@@ -4951,7 +4952,7 @@ var sidebar = require('./sidebar');
 var scrollToHeight;
 
 function addPlanContent($location, borough, planName) {
-    var planDirectory = 'plans/' + borough + '/' + planName.replace('/', '-');
+    var planDirectory = 'plans/' + borough + '/' + encodeURIComponent(planName.replace('/', '-'));
     $.get(planDirectory, function (content) {
         $location.append(content);
 
@@ -5367,6 +5368,7 @@ module.exports = {
         var geometrySql = 'SELECT l.the_geom AS the_geom ' +
                 'FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id ';
         geometrySql += ' WHERE ' + whereConditions.join(' AND ');
+        geometrySql = encodeURIComponent(geometrySql);
         singleminded.remember('highlightLot_geometry', 
             $.get(url + geometrySql + '&format=GeoJSON', function (data) {
                 highlightedLotLayer.addData(data);           

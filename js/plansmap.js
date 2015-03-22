@@ -210,6 +210,7 @@ module.exports = {
         var geometrySql = 'SELECT l.the_geom AS the_geom ' +
                 'FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id ';
         geometrySql += ' WHERE ' + whereConditions.join(' AND ');
+        geometrySql = encodeURIComponent(geometrySql);
         singleminded.remember('highlightLot_geometry', 
             $.get(url + geometrySql + '&format=GeoJSON', function (data) {
                 highlightedLotLayer.addData(data);           
