@@ -1,11 +1,11 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         browserify: {
-            options: {
-                watch: true
-            },
-            standalone: {
-                src: ['js/main.js'],
+            production: {
+                options: {
+                    watch: true
+                },
+                src: 'js/main.js',
                 dest: 'js/bundle.js'
             }
         },
@@ -22,7 +22,8 @@ module.exports = function(grunt) {
                 files: {
                     src: [
                         'js/*.js',
-                        '!<%= browserify.standalone.dest %>'
+                        '!<%= browserify.production.dest %>',
+                        '!<%= uglify.production.dest %>'
                     ]
                 }
             }
@@ -48,6 +49,13 @@ module.exports = function(grunt) {
             }
         },
 
+        uglify: {
+            production: {
+                src: '<%= browserify.production.dest %>',
+                dest: 'js/bundle.min.js'
+            }
+        },
+
         watch: {
             jshint: {
                 files: ['js/*.js'],
@@ -62,8 +70,12 @@ module.exports = function(grunt) {
             handlebars: {
                 files: ["handlebars_templates/*.hbs"],
                 tasks: ['handlebars']
-            }
+            },
 
+            uglify: {
+                files: ['<%= browserify.production.dest %>'],
+                tasks: ['uglify']
+            }
         }
     });
 
@@ -72,6 +84,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('dev', ['browserify', 'watch']);
