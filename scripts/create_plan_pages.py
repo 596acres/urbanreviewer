@@ -10,7 +10,7 @@ def index_text(plan_name):
     return """---
 layout: plan
 title: "%s"
-permalink: index.html
+published: true
 ---
 """ % plan_name
 
