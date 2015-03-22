@@ -12,6 +12,16 @@ var plansmap = require('./plansmap');
 var search = require('./search');
 var sidebar = require('./sidebar');
 
+require('../bower_components/jqrangeslider/jQRangeSliderMouseTouch');
+require('../bower_components/jqrangeslider/jQRangeSliderDraggable');
+require('../bower_components/jqrangeslider/jQRangeSliderHandle');
+require('../bower_components/jqrangeslider/jQRangeSliderBar');
+require('../bower_components/jqrangeslider/jQRangeSliderLabel');
+require('../bower_components/jqrangeslider/jQRangeSlider');
+require('../bower_components/jqrangeslider/jQDateRangeSliderHandle');
+require('../bower_components/jqrangeslider/jQDateRangeSlider');
+
+
 // State
 var currentPage,
     currentPlan,

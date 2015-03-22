@@ -4,6 +4,10 @@ var cartocss = require('./cartocss').cartocss;
 var plansfilters = require('./plansfilters');
 var singleminded = require('./singleminded');
 
+require('../bower_components/leaflet-active-area/src/L.activearea');
+require('../bower_components/leaflet-plugins/layer/tile/Bing');
+require('../bower_components/leaflet-usermarker/src/leaflet.usermarker');
+
 var map,
     currentMode = 'daymode',
     currentPlan,
