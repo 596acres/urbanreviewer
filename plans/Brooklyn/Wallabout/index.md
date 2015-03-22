@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: Wallabout
-permalink: index.html
 published: true
 ---
 

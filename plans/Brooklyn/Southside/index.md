@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: Southside
-permalink: index.html
 published: true
 ---
 

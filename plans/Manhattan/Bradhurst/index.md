@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: Bradhurst
-permalink: index.html
 published: true
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: East River
-permalink: index.html
 published: true
 ---
 

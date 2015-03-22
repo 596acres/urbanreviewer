@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: Williamsburg
-permalink: index.html
 published: true
 ---
 

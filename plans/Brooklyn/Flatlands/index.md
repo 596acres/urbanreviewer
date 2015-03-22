@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: Flatlands
-permalink: index.html
 published: true
 ---
 

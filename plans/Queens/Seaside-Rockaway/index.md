@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: "Seaside-Rockaway"
-permalink: index.html
 published: true
 ---
 

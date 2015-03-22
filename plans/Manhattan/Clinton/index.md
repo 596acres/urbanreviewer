@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: Clinton
-permalink: index.html
 published: true
 ---
 

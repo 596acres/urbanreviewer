@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: "Zerega Park South (James J. Lyons)"
-permalink: index.html
 ---
 
 The Zerega Park South (James J. Lyons) plan for the South Zerega Avenue urban

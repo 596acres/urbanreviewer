@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: Seward Park
-permalink: index.html
 published: true
 ---
 

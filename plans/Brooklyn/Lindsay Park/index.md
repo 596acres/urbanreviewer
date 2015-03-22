@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: Lindsay Park
-permalink: index.html
 published: true
 ---
 

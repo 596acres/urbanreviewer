@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: United Nations
-permalink: index.html
 published: true
 ---
 

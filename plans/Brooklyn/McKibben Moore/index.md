@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: McKibben Moore
-permalink: index.html
 published: true
 ---
 

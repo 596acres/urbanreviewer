@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: "Schermerhorn-Pacific"
-permalink: index.html
 published: true
 ---
 

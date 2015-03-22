@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: Melrose Commons
-permalink: index.html
 published: true
 ---
 

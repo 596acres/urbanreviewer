@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: "Essex-Linwood"
-permalink: index.html
 published: true
 ---
 

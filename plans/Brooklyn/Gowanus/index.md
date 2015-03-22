@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: Gowanus
-permalink: index.html
 published: true
 ---
 

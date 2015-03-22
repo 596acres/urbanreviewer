@@ -1,7 +1,6 @@
 ---
 layout: plan
 title: Coney Island I
-permalink: index.html
 published: true
 ---
 
