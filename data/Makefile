@@ -1,4 +1,5 @@
 pluto_dir = ${PLUTO_DIR}
+scripts_dir = ../scripts/
 sqlite_db = working.db
 
 select_boroughs = CAST(b.BBL as text) AS BBL, b.Borough AS borough, b.Block AS block, b.Lot AS lot, b.'Name of Plan' AS plan_name
@@ -15,11 +16,11 @@ csvs:
 	# Take latest borough Excel files, turn each into its own, cleaned CSV with
 	# a BBL column
 	mkdir -p csv
-	in2csv excel/Bronx.xlsx | csvcut -c 1-12 | python add_bbls.py > csv/Bronx.csv
-	in2csv excel/Brooklyn.xlsx | csvcut -c 1-12 | python add_bbls.py > csv/Brooklyn.csv
-	in2csv excel/Manhattan.xlsx | csvcut -c 1-12 | python add_bbls.py > csv/Manhattan.csv
-	in2csv excel/Queens.xlsx | csvcut -c 1-12 | python add_bbls.py > csv/Queens.csv
-	in2csv "excel/Staten Island.xlsx" | csvcut -c 1-12 | python add_bbls.py > "csv/Staten Island.csv"
+	in2csv excel/Bronx.xlsx | csvcut -c 1-12 | python $(scripts_dir)add_bbls.py > csv/Bronx.csv
+	in2csv excel/Brooklyn.xlsx | csvcut -c 1-12 | python $(scripts_dir)add_bbls.py > csv/Brooklyn.csv
+	in2csv excel/Manhattan.xlsx | csvcut -c 1-12 | python $(scripts_dir)add_bbls.py > csv/Manhattan.csv
+	in2csv excel/Queens.xlsx | csvcut -c 1-12 | python $(scripts_dir)add_bbls.py > csv/Queens.csv
+	in2csv "excel/Staten Island.xlsx" | csvcut -c 1-12 | python $(scripts_dir)add_bbls.py > "csv/Staten Island.csv"
 
 load_pluto:
 	rm -f $(sqlite_db)
@@ -48,28 +49,28 @@ load_lots: csvs
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Bronx'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Bronx.csv
-	python add_dispositions.py --borough Bronx --db $(sqlite_db)
-	python fix_duplicate_dispositions.py --borough Bronx --db $(sqlite_db)
+	python $(scripts_dir)add_dispositions.py --borough Bronx --db $(sqlite_db)
+	python $(scripts_dir)fix_duplicate_dispositions.py --borough Bronx --db $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Brooklyn'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Brooklyn.csv
-	python add_dispositions.py --borough Brooklyn --db $(sqlite_db)
-	python fix_duplicate_dispositions.py --borough Brooklyn --db $(sqlite_db)
+	python $(scripts_dir)add_dispositions.py --borough Brooklyn --db $(sqlite_db)
+	python $(scripts_dir)fix_duplicate_dispositions.py --borough Brooklyn --db $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Manhattan'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Manhattan.csv
-	python add_dispositions.py --borough Manhattan --db $(sqlite_db)
-	python fix_duplicate_dispositions.py --borough Manhattan --db $(sqlite_db)
+	python $(scripts_dir)add_dispositions.py --borough Manhattan --db $(sqlite_db)
+	python $(scripts_dir)fix_duplicate_dispositions.py --borough Manhattan --db $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) 'DROP TABLE Queens'
 	-csvsql --db sqlite:///$(sqlite_db) --insert csv/Queens.csv
-	python add_dispositions.py --borough Queens --db $(sqlite_db)
-	python fix_duplicate_dispositions.py --borough Queens --db $(sqlite_db)
+	python $(scripts_dir)add_dispositions.py --borough Queens --db $(sqlite_db)
+	python $(scripts_dir)fix_duplicate_dispositions.py --borough Queens --db $(sqlite_db)
 
 	-sqlite3 $(sqlite_db) "DROP TABLE 'Staten Island'"
 	-csvsql --db sqlite:///$(sqlite_db) --insert "csv/Staten Island.csv"
-	python add_dispositions.py --borough "Staten Island" --db $(sqlite_db)
-	python fix_duplicate_dispositions.py --borough "Staten Island" --db $(sqlite_db)
+	python $(scripts_dir)add_dispositions.py --borough "Staten Island" --db $(sqlite_db)
+	python $(scripts_dir)fix_duplicate_dispositions.py --borough "Staten Island" --db $(sqlite_db)
 
 shps: load_lots load_596 load_parking_lots
 	mkdir -p shp
@@ -110,18 +111,18 @@ plan_table: merge_csvs
 	csvcut -c "Borough,Name of Plan,Date Adopted,Status,Expiration,Last Updated" merge.csv | uniq > plans.csv
 
 add_to_cartodb: geojson plan_table
-	python add_to_cartodb.py --plans plans.csv --lots lots.geojson
+	python $(scripts_dir)add_to_cartodb.py --plans plans.csv --lots lots.geojson
 
 plan_geojsons: geojson plan_table
 	rm -rf geojson/us/ny/nyc/*
 	mkdir -p geojson/us/ny/nyc
-	python create_plan_geojsons.py --plans plans.csv --lots lots.geojson --dst geojson/us/ny/nyc
-	python create_borough_geojsons.py --plans plans.csv --lots lots.geojson --dst geojson/us/ny/nyc
+	python $(scripts_dir)create_plan_geojsons.py --plans plans.csv --lots lots.geojson --dst geojson/us/ny/nyc
+	python $(scripts_dir)create_borough_geojsons.py --plans plans.csv --lots lots.geojson --dst geojson/us/ny/nyc
 	cp lots.geojson geojson/us/ny/nyc/nyc.geojson
 
 create_plan_pages: plan_table
-	python create_plan_pages.py --dst ../plans --plans plans.csv
+	python $(scripts_dir)create_plan_pages.py --dst ../plans --plans plans.csv
 
 append_plan_summaries: create_plan_pages
 	# This summaries file is in Google Drive
-	python append_plan_summaries.py --dst ../plans --summaries "Plan summaries.csv"
+	python $(scripts_dir)append_plan_summaries.py --dst ../plans --summaries "Plan summaries.csv"
