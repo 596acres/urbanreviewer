@@ -32,7 +32,7 @@ function updateStyles() {
 }
 
 function unHighlightLot(e) {
-    if (!planOutlinesPopups['hover']) {
+    if (!planOutlinesPopups.hover) {
         map.closePopup();
     }
     highlightedLotLayer.clearLayers();           
@@ -128,10 +128,10 @@ module.exports = {
                     if (!e.latlng) { return; }
 
                     // If we're no longer over the hover outline, close it
-                    var hoverOutline = planOutlines['hover'];
+                    var hoverOutline = planOutlines.hover;
                     if (!(hoverOutline && hoverOutline.getLayers().length > 0 && hoverOutline.getBounds())) { return; }
                     if (!hoverOutline.getBounds().contains(e.latlng)) {
-                        if (planOutlinesPopups['hover']) {
+                        if (planOutlinesPopups.hover) {
                             map.closePopup();
                         }
                         clearPlanOutline({ label: 'hover' });
@@ -160,7 +160,7 @@ module.exports = {
             left: '0',
             right: '0',
             height: '100%'
-        }
+        };
 
         if (options.area === 'narrow') {
             activeAreaOptions.right = '75%';
@@ -188,8 +188,8 @@ module.exports = {
         unHighlightLot();
 
         var url = 'http://urbanreviewer.cartodb.com/api/v2/sql?q=',
-            whereConditions = [],
-            options = options || {};
+            whereConditions = [];
+        options = options || {};
         if (options.block) {
             whereConditions.push('l.block = ' + options.block);
         }

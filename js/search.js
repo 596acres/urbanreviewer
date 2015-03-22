@@ -28,7 +28,7 @@ var plansBloodhound = new Bloodhound({
                 return {
                     name: row.name,
                     borough: row.borough
-                }
+                };
             });
         }
     }

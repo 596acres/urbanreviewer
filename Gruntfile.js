@@ -1,6 +1,9 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         browserify: {
+            options: {
+                watch: true
+            },
             standalone: {
                 src: ['js/main.js'],
                 dest: 'js/bundle.js'
@@ -11,6 +14,17 @@ module.exports = function(grunt) {
             minify: {
                 src: 'css/style.css',
                 dest: 'css/style.min.css'
+            }
+        },
+
+        jshint: {
+            all: {
+                files: {
+                    src: [
+                        'js/*.js',
+                        '!<%= browserify.standalone.dest %>'
+                    ]
+                }
             }
         },
 
@@ -35,9 +49,9 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            browserify: {
-                files: ["js/*.js", "!js/bundle.js"],
-                tasks: ["browserify"]
+            jshint: {
+                files: ['js/*.js'],
+                tasks: ['jshint']
             },
 
             less: {
@@ -56,6 +70,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-handlebars');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
 

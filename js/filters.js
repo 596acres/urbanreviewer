@@ -153,7 +153,7 @@ module.exports = {
         }
 
         if (options.lastUpdated) {
-            $lastUpdated = $(options.lastUpdated)
+            $lastUpdated = $(options.lastUpdated);
             $lastUpdated
                 .change(function () {
                     var selected = $(this).find(':selected'),

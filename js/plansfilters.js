@@ -24,15 +24,16 @@ function getWhereClause(filters, extendLastFilters) {
         whereConditions.push("status ILIKE '%expired%'");
     }
 
+    var year;
     if (filters.lastUpdatedMin) {
-        var year = parseInt(filters.lastUpdatedMin);
+        year = parseInt(filters.lastUpdatedMin);
         if (year) {
             whereConditions.push("p.updated >= '" + year + "-01-01'");
         }
     }
 
     if (filters.lastUpdatedMax) {
-        var year = parseInt(filters.lastUpdatedMax);
+        year = parseInt(filters.lastUpdatedMax);
         if (year) {
             whereConditions.push("p.updated < '" + (year + 1) + "-01-01'");
         }

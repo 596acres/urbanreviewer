@@ -29,7 +29,7 @@ module.exports = {
                         $('<a></a>')
                             .attr('href', '#' + id)
                             .html(text)
-                    )
+                    );
                 $('.page-nav ul').append($navItem);
                 var $section = $(this).nextUntil('h2').add($(this));
                 $section.wrapAll('<section class="page-section"></section>');

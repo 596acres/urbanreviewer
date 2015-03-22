@@ -46,7 +46,7 @@ function addPlansToPlanList(filters) {
         $ele.find('.plan')
             .click(function () {
                 urbanreviewer.selectPlan($(this).data('name'));
-            })
+            });
     });
 }
 
@@ -89,11 +89,12 @@ var urbanreviewer = {
 };
 
 function setTitle(title) {
+    var displayTitle;
     if (title === undefined) {
         displayTitle = currentTitle;
     }
     else {
-        var displayTitle = 'Urban Reviewer';
+        displayTitle = 'Urban Reviewer';
         if (title) {
             displayTitle = title + ' | ' + displayTitle;
         }
@@ -358,7 +359,7 @@ $(document).ready(function () {
             try {
                 $('#date-range-picker').dateRangeSlider('resize');
             }
-            catch (e) {
+            catch (exception) {
                 // Don't care if this fails, just means date range slider has
                 // not been initialized yet
             }
