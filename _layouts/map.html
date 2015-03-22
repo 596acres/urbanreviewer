@@ -69,7 +69,12 @@
 
         <script src="bower_components/handlebars/handlebars.runtime.min.js"></script>
         <script src="handlebars_templates/handlebars_templates.js"></script>
-        <script src="js/bundle.min.js"></script>
+
+        {% if site.production %}
+            <script src="js/bundle.min.js"></script>
+        {% else %}
+            <script src="js/bundle.dev.js"></script>
+        {% endif %}
 
         <!-- Piwik -->
         <script type="text/javascript">

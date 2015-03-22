@@ -3,4 +3,4 @@ markdown: redcarpet
 include: [plans]
 exclude: ['Gruntfile.js', 'Guardfile', 'bower.json', '/data']
 encoding: utf-8
-production: true
+production: false

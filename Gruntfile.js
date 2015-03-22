@@ -1,6 +1,16 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         browserify: {
+            dev: {
+                options: {
+                    browserifyOptions: {
+                        debug: true
+                    },
+                    watch: true
+                },
+                src: 'js/main.js',
+                dest: 'js/bundle.dev.js'
+            },
             production: {
                 options: {
                     watch: true
@@ -22,6 +32,7 @@ module.exports = function(grunt) {
                 files: {
                     src: [
                         'js/*.js',
+                        '!<%= browserify.dev.dest %>',
                         '!<%= browserify.production.dest %>',
                         '!<%= uglify.production.dest %>'
                     ]
