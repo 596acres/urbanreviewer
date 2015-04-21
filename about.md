@@ -52,7 +52,7 @@ _Design:_ Partner & Partners
 _Event Production:_ Amy Fitzgerald, Oksana Mironova  
 _Documentation:_ Badrul Hisham Ismail, Christina Sukhgian Houle, Molly Garfinkel (City Lore)  
 
-Photos of each programming day: [January 11](http://596acres.org/en/photos/album/53/); [January 18](http://596acres.org/en/photos/album/54/); [January 25](http://596acres.org/en/photos/album/55/); [February 1](http://596acres.org/en/photos/album/56/); [February 8](https://www.facebook.com/media/set/?set=a.772384782797956.1073741853.212988388737601&type=3).
+Photos of each programming day: [January 11](http://596acres.org/en/photos/album/53/); [January 18](http://596acres.org/en/photos/album/54/); [January 25](http://596acres.org/en/photos/album/55/); [February 1](http://596acres.org/en/photos/album/56/); [February 8](http://596acres.org/en/photos/album/57/).
 
 **Urban Reviewer part of Spontaneous Interventions on Governor's Island, 2014**
 
