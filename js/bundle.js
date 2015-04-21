@@ -4958,6 +4958,9 @@ var scrollToHeight;
 
 function addPlanContent($location, borough, planName) {
     var planDirectory = 'plans/' + borough + '/' + encodeURIComponent(planName.replace('/', '-'));
+    if (window.console) {
+        console.log('Plan directory: ' + planDirectory);
+    }
     $.get(planDirectory, function (content) {
         $location.append(content);
 
@@ -5003,7 +5006,9 @@ function addPlanContent($location, borough, planName) {
         }
     })
     .fail(function () {
-        console.warn('Failed to get page for ' + planName + ': ' + planDirectory);
+        if (window.console) {
+            console.warn('Failed to get page for ' + planName + ': ' + planDirectory);
+        }
     });
 }
 
