@@ -4167,14 +4167,14 @@ var querystring = require('querystring');
 
 function formatPlan(plan) {
     if (plan) {
-        return plan.replace(/ /g, '+');
+        return encodeURIComponent(plan).replace(/%20/g, '+');
     }
     return plan;
 }
 
 function parsePlan(plan) {
     if (plan) {
-        return plan.replace(/\+/g, ' ');
+        return decodeURIComponent(plan.replace(/\+/g, '%20'));
     }
     return plan;
 }
