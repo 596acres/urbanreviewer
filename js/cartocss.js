@@ -19,8 +19,13 @@ module.exports = {
 
         // Highlight plan
         if (opts.plan) {
-            // XXX this breaks for plans with #s in their names
-            cartocss += '#lots[plan_name="' + opts.plan + '"]{' +
+            var planSelector = 'plan_name="' + opts.plan + '"';
+            // Work around plans with # in their name by using regex matches.
+            // Putting # in a CartoCSS selector breaks CartoDB.
+            if (opts.plan.indexOf('#') > 0) {
+                planSelector = 'plan_name=~"' + opts.plan.replace(/\#/g, '.') + '"';
+            }
+            cartocss += '#lots[' + planSelector + ']{' +
                 highlightedPlanCartoCSS +
             '}';
         }
