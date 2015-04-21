@@ -4957,7 +4957,6 @@ var sidebar = require('./sidebar');
 var scrollToHeight;
 
 function addPlanContent($location, borough, planName) {
-    // TODO also encode # ??
     var planDirectory = 'plans/' + borough + '/' + encodeURIComponent(planName.replace('/', '-'));
     $.get(planDirectory, function (content) {
         $location.append(content);
@@ -5002,6 +5001,9 @@ function addPlanContent($location, borough, planName) {
         if ($items.length === 1) {
             $('.carousel-control,.carousel-indicators').hide();
         }
+    })
+    .fail(function () {
+        console.warn('Failed to get page for ' + planName);
     });
 }
 
