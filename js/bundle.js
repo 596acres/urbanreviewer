@@ -5003,7 +5003,7 @@ function addPlanContent($location, borough, planName) {
         }
     })
     .fail(function () {
-        console.warn('Failed to get page for ' + planName);
+        console.warn('Failed to get page for ' + planName + ': ' + planDirectory);
     });
 }
 
