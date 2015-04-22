@@ -9,10 +9,7 @@ var sidebar = require('./sidebar');
 var scrollToHeight;
 
 function addPlanContent($location, borough, planName) {
-    var planDirectory = 'plans/' + borough + '/' + encodeURIComponent(planName.replace('/', '-'));
-    if (window.console) {
-        console.log('Plan directory: ' + planDirectory);
-    }
+    var planDirectory = 'plans/' + borough + '/' + encodeURIComponent(planName.replace('/', '-')) + '/';
     $.get(planDirectory, function (content) {
         $location.append(content);
 
