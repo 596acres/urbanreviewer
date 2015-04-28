@@ -50,6 +50,7 @@ module.exports = {
                 return false;
             });
 
+            // Links that go in the sidebar
             $('.page-nav').width($('.page-nav-column').width());
             $('.page-nav a').click(function () {
                 scrollToSection($(this).attr('href'));
