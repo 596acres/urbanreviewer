@@ -4252,6 +4252,11 @@ module.exports = {
 };
 
 },{"jsurl":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/node_modules/jsurl/index.js","querystring":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/node_modules/grunt-browserify/node_modules/browserify/node_modules/querystring-es3/index.js"}],"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/highlights.js":[function(require,module,exports){
+//
+// highlights
+//
+// Highlighting parcels on the map by disposition or current state.
+//
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 

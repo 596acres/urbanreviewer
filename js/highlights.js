@@ -1,3 +1,8 @@
+//
+// highlights
+//
+// Highlighting parcels on the map by disposition or current state.
+//
 var plansmap = require('./plansmap');
 var _ = require('underscore');
 
