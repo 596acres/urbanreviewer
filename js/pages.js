@@ -9,6 +9,15 @@ function makeId(text) {
         .replace(/\./g, '');
 }
 
+function scrollToSection(id) {
+    $('#right-pane').scrollTo(id, 300, {
+        axis: 'y',
+        margin: true,
+        offset: -115,
+        queue: false                    
+    });
+}
+
 module.exports = {
 
     load: function (url, $target) {
@@ -35,14 +44,15 @@ module.exports = {
                 $section.wrapAll('<section class="page-section"></section>');
             });
 
+            // Internal links in the body of the page: attempt to scroll to section
+            $('#page-content a[href^=#]').click(function () {
+                scrollToSection($(this).attr('href'));
+                return false;
+            });
+
             $('.page-nav').width($('.page-nav-column').width());
             $('.page-nav a').click(function () {
-                $('#right-pane').scrollTo($($(this).attr('href')), 300, {
-                    axis: 'y',
-                    margin: true,
-                    offset: -115,
-                    queue: false                    
-                });
+                scrollToSection($(this).attr('href'));
                 return false;
             });
         });

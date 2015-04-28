@@ -435,7 +435,7 @@ input[type="search"]::-webkit-search-results-decoration {
         max-width: 100%;
     }
 
-    p, h2 {
+    p, h2, h3 {
         margin-left: 15px;
         margin-right: 15px;
     }
@@ -487,6 +487,11 @@ input[type="search"]::-webkit-search-results-decoration {
 
     &-section {
         margin-bottom: 100px;
+
+        & > * {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
     }
 
     &-content-container {
@@ -834,6 +839,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 
+@import "archive";
 @import "bootstrap.less";
 @import "leaflet.less";
 @import "nightmode.less";

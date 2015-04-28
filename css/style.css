@@ -357,7 +357,8 @@ input[type="search"]::-webkit-search-results-decoration {
   max-width: 100%;
 }
 .page p,
-.page h2 {
+.page h2,
+.page h3 {
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -400,6 +401,10 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .page-section {
   margin-bottom: 100px;
+}
+.page-section > * {
+  margin-left: 15px;
+  margin-right: 15px;
 }
 .page-content-container {
   margin-left: 0;
@@ -709,6 +714,9 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 #right-pane .intro-text h3 {
   font-size: 16px;
+}
+#essays ~ h3 {
+  margin-top: 50px;
 }
 .btn {
   display: inline-block;
@@ -1200,7 +1208,7 @@ input[type="button"].btn-block {
   height: 10px;
   margin: 1px;
   text-indent: -999px;
-  border: 1px solid #000000;
+  border: 1px solid black;
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
@@ -1210,7 +1218,7 @@ input[type="button"].btn-block {
   margin: 0;
   width: 12px;
   height: 12px;
-  background-color: #000000;
+  background-color: black;
 }
 .carousel-caption {
   position: absolute;
@@ -2001,10 +2009,10 @@ input[type="button"].btn-block {
 .tooltip-inner {
   max-width: 200px;
   padding: 3px 8px;
-  color: #ffffff;
+  color: white;
   text-align: center;
   text-decoration: none;
-  background-color: #000000;
+  background-color: black;
   border-radius: 0;
 }
 .tooltip-arrow {
@@ -2019,52 +2027,52 @@ input[type="button"].btn-block {
   left: 50%;
   margin-left: -5px;
   border-width: 5px 5px 0;
-  border-top-color: #000000;
+  border-top-color: black;
 }
 .tooltip.top-left .tooltip-arrow {
   bottom: 0;
   left: 5px;
   border-width: 5px 5px 0;
-  border-top-color: #000000;
+  border-top-color: black;
 }
 .tooltip.top-right .tooltip-arrow {
   bottom: 0;
   right: 5px;
   border-width: 5px 5px 0;
-  border-top-color: #000000;
+  border-top-color: black;
 }
 .tooltip.right .tooltip-arrow {
   top: 50%;
   left: 0;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
-  border-right-color: #000000;
+  border-right-color: black;
 }
 .tooltip.left .tooltip-arrow {
   top: 50%;
   right: 0;
   margin-top: -5px;
   border-width: 5px 0 5px 5px;
-  border-left-color: #000000;
+  border-left-color: black;
 }
 .tooltip.bottom .tooltip-arrow {
   top: 0;
   left: 50%;
   margin-left: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000000;
+  border-bottom-color: black;
 }
 .tooltip.bottom-left .tooltip-arrow {
   top: 0;
   left: 5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000000;
+  border-bottom-color: black;
 }
 .tooltip.bottom-right .tooltip-arrow {
   top: 0;
   right: 5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000000;
+  border-bottom-color: black;
 }
 .btn {
   font-weight: bold;
@@ -2111,7 +2119,7 @@ input[type="button"].btn-block {
   margin-bottom: 5px;
 }
 .leaflet-control {
-  background-color: #ffffff;
+  background-color: white;
   border-radius: 0;
   box-shadow: none;
 }
@@ -2126,7 +2134,7 @@ input[type="button"].btn-block {
 }
 .leaflet-control.leaflet-bar .leaflet-control-zoom-in,
 .leaflet-control.leaflet-bar .leaflet-control-zoom-out {
-  background-color: #ffffff;
+  background-color: white;
   border: 3px solid #000000;
   font-size: 20px;
   line-height: 32px;
@@ -2159,37 +2167,37 @@ input[type="button"].btn-block {
   background-image: url(../img/logo-night.png);
 }
 .night-mode #tagline {
-  color: #ffffff;
+  color: white;
 }
 .night-mode #nav a {
-  color: #ffffff;
+  color: white;
 }
 .night-mode #map-filters-toggle .icon-bar {
-  background-color: #ffffff;
+  background-color: white;
 }
 .night-mode #map-filters-toggle:hover .icon-bar {
   background: #b3b3b3;
 }
 .night-mode #date-range-picker-label {
-  color: #ffffff;
+  color: white;
 }
 .night-mode #date-range-picker .ui-rangeSlider-bar {
-  background: #ffffff;
+  background: white;
 }
 .night-mode #date-range-picker .ui-rangeSlider-handle {
-  background: #ffffff;
+  background: white;
 }
 .night-mode #date-range-picker .ui-rangeSlider-innerBar {
   background: #808080;
 }
 .night-mode #date-range-picker .ui-rangeSlider-label {
-  background: #ffffff;
-  color: #000000;
+  background: white;
+  color: black;
 }
 .night-mode .leaflet-popup-content-wrapper {
-  background: #ffffff;
-  color: #000000;
+  background: white;
+  color: black;
 }
 .night-mode .leaflet-popup-tip {
-  background: #ffffff;
+  background: white;
 }
