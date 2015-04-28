@@ -28,6 +28,7 @@ module.exports = {
             $('#page-content').append(pageContent);
             $('#page-content h1').appendTo($('.page-header-content'));
 
+            // Make sections for each h2 in the page content
             var $headings = $('#page-content').find('h2');
             $headings.each(function () {
                 var text = $(this).html(),
