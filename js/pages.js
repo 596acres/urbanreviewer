@@ -1,3 +1,8 @@
+//
+// pages
+//
+// Load content pages and set up the navigation bar
+//
 var sidebar = require('./sidebar');
 require('jquery.scrollTo');
 
