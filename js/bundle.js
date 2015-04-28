@@ -4181,8 +4181,10 @@ function parsePlan(plan) {
 
 module.exports = {
 
+    /*
+     * Parse hash for the map. Based on OSM's parseHash.
+     */
     parseHash: function(hash) {
-        // Parse hash for the map. Based on OSM's parseHash.
         var args = {};
 
         var i = hash.indexOf('#');
@@ -4211,8 +4213,10 @@ module.exports = {
         return args;
     },
 
+    /*
+     * Format hash for the map. Based on OSM's formatHash.
+     */
     formatHash: function(options) {
-        // Format hash for the map. Based on OSM's formatHash.
         var center = options.map.getCenter(),
             zoom = options.map.getZoom();
         center = center.wrap();
