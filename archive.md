@@ -224,6 +224,8 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 To view more photos from each programming day, please select: [January 11 (opening day)](http://596acres.org/en/photos/album/53/), [January 18](http://596acres.org/en/photos/album/54/), [January 25](http://596acres.org/en/photos/album/55/), [February 1](http://596acres.org/en/photos/album/56/), [February 8 (closing day)](http://596acres.org/en/photos/album/57/).
 
 
+
+
 **Urban Reviewer at Spontaneous Interventions on Governor's Island**
 
 
