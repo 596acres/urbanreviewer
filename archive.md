@@ -10,6 +10,8 @@ In this archive you can find documentation of talks, discussions, film screening
 
 
 
+
+
 ## Reviewing Renewal
 
 From **January 11 to February 8, 2015**, the Urban Reviewer came to life as an intervention on the Panorama of the City of New York at the** Queens Museum** for **Reviewing Renewal**. We put all 155+ Urban Renewal Area Plans that NYC ever adopted on the Panorama, with accompanying programs every Sunday and wall treatments that invited visitors to see and shape urban renewal in our city. For more information on the exhibition, including a full program of related events, please visit the [Queens Museum’s website](http://www.queensmuseum.org/2015/01/reviewing-renewal). 
