@@ -6,11 +6,23 @@ published: true
 
 # Archive
 
+In this archive you can find documentation of talks, discussions, film screenings, tours, and other events that took place as part of or relating to the Urban Reviewer. In the past, two major presentations of the Urban Reviewer took place at the **Queens Museum (“Reviewing Renewal”)** in early 2015 and as part of **Spontaneous Interventions on Governor’s Island** in summer 2014. 
+
 
 ## Reviewing Renewal
 
+From **January 11 to February 8, 2015**, the Urban Reviewer came to life as an intervention on the Panorama of the City of New York at the** Queens Museum** for **Reviewing Renewal**. We put all 155+ Urban Renewal Area Plans that NYC ever adopted on the Panorama, with accompanying programs every Sunday and wall treatments that invited visitors to see and shape urban renewal in our city. For more information on the exhibition, including a full program of related events, please visit the [Queens Museum’s website](http://www.queensmuseum.org/2015/01/reviewing-renewal). 
+
+Curator: Paula Z. Segal, Esq., 596 Acres, Inc.
+Exhibition Design: Mary Bereschka, Greg Mihalko, Stephan von Muehlen 
+Design: Partner & Partners
+Event Production: Amy Fitzgerald, Oksana Mironova
+Documentation: Badrul Hisham Ismail, Christina Sukhgian Houle, Molly Garfinkel (City Lore) 
+
 
 ## Spontaneous Interventions
+
+We experimented with bringing the Urban Reviewer into a physical space for the first time during **596 Acres' residency on Governor's Island** as part of **Spontaneous Interventions** in summer 2014. For more information, please visit [Spontaneous Interventions' website](http://www.spontaneousinterventions.org/).
 
 
 ## Essays
@@ -204,3 +216,17 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 
 
 ## Photos
+
+
+**Reviewing Renewal at the Queens Museum**
+
+
+To view more photos from each programming day, please select: [January 11 (opening day)](http://596acres.org/en/photos/album/53/), [January 18](http://596acres.org/en/photos/album/54/), [January 25](http://596acres.org/en/photos/album/55/), [February 1](http://596acres.org/en/photos/album/56/), [February 8 (closing day)](http://596acres.org/en/photos/album/57/).
+
+
+
+
+**Urban Reviewer at Spontaneous Interventions on Governor's Island**
+
+
+To view more photos from the redisency at Spontaneous Interventions, please visit [596 Acres' website](http://596acres.org/en/photos/album/52/). 
