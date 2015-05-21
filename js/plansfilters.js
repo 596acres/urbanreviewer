@@ -8,18 +8,15 @@ function getWhereClause(filters, extendLastFilters) {
     if (extendLastFilters === undefined || extendLastFilters === true) {
         filters = _.extend(lastFilters, filters);
     }
-
     if (filters.start) {
         whereConditions.push("p.adopted >= '" + filters.start + "-01-01'");
     }
     if (filters.end) {
         whereConditions.push("p.adopted <= '" + filters.end + "-01-01'");
     }
-
     if (filters.active) {
         whereConditions.push("status ILIKE '%active%'");
     }
-
     if (filters.expired) {
         whereConditions.push("status ILIKE '%expired%'");
     }
