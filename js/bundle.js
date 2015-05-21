@@ -4781,7 +4781,7 @@ $(document).ready(function () {
         unloadPlanList();
         setTitle(currentPlan);
         plans.load($('#right-pane'), { plan_name: currentPlan });
-        plansmap.addPlanOutline(currentPlan, { label: 'select' });
+        plansmap.addPlanOutline(currentPlan, { label: 'select', zoomToPlan: true });
     }
 
     if (currentPage) {
