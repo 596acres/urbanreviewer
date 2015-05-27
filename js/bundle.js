@@ -4102,7 +4102,33 @@ module.exports = {
 
 };
 
-},{"./plansmap":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/plansmap.js"}],"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/geocode.js":[function(require,module,exports){
+},{"./plansmap":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/plansmap.js"}],"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/gallery.js":[function(require,module,exports){
+module.exports = {
+    init: function () {
+        $('body').on('pageloaded', function () {
+            // Find photo lists, add "gallery" class to them
+            var $galleries = $('ul > li img').parents('ul');
+            $galleries.addClass('gallery')
+                .append($('<div></div>').addClass('clearfix'));
+
+            $galleries.each(function (i) {
+                // Images in galleries can only take up 1/3rd of the gallery's 
+                // width
+                var width = ($(this).innerWidth() - 50) / 3 - 1;
+                $(this).find('li').css('max-width', width + 'px');
+
+                // Images in galleries should use colorbox
+                $(this).find('a').colorbox({
+                    maxHeight: '100%',
+                    maxWidth: '100%',
+                    rel: 'gallery' + i
+                });
+            });
+        });
+    }
+};
+
+},{}],"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/geocode.js":[function(require,module,exports){
 var geocoder = new google.maps.Geocoder();
 
 function to_google_bounds(bounds) {
@@ -4618,6 +4644,7 @@ function unloadPlanList() {
 }
 
 $(document).ready(function () {
+    require('./gallery').init();
 
     /*
      * Initialize map
@@ -4863,7 +4890,7 @@ $(document).ready(function () {
     });
 });
 
-},{"../bower_components/jqrangeslider/jQDateRangeSlider":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQDateRangeSlider.js","../bower_components/jqrangeslider/jQDateRangeSliderHandle":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQDateRangeSliderHandle.js","../bower_components/jqrangeslider/jQRangeSlider":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSlider.js","../bower_components/jqrangeslider/jQRangeSliderBar":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSliderBar.js","../bower_components/jqrangeslider/jQRangeSliderDraggable":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSliderDraggable.js","../bower_components/jqrangeslider/jQRangeSliderHandle":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSliderHandle.js","../bower_components/jqrangeslider/jQRangeSliderLabel":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSliderLabel.js","../bower_components/jqrangeslider/jQRangeSliderMouseTouch":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSliderMouseTouch.js","./cartodbapi":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/cartodbapi.js","./filters":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/filters.js","./hash":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/hash.js","./highlights":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/highlights.js","./pages":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/pages.js","./planlist":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/planlist.js","./plans":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/plans.js","./plansmap":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/plansmap.js","./search":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/search.js","./sidebar":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/sidebar.js","bootstrap.tooltip":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/bootstrap/js/tooltip.js","underscore":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/node_modules/underscore/underscore.js"}],"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/pages.js":[function(require,module,exports){
+},{"../bower_components/jqrangeslider/jQDateRangeSlider":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQDateRangeSlider.js","../bower_components/jqrangeslider/jQDateRangeSliderHandle":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQDateRangeSliderHandle.js","../bower_components/jqrangeslider/jQRangeSlider":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSlider.js","../bower_components/jqrangeslider/jQRangeSliderBar":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSliderBar.js","../bower_components/jqrangeslider/jQRangeSliderDraggable":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSliderDraggable.js","../bower_components/jqrangeslider/jQRangeSliderHandle":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSliderHandle.js","../bower_components/jqrangeslider/jQRangeSliderLabel":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSliderLabel.js","../bower_components/jqrangeslider/jQRangeSliderMouseTouch":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/jqrangeslider/jQRangeSliderMouseTouch.js","./cartodbapi":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/cartodbapi.js","./filters":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/filters.js","./gallery":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/gallery.js","./hash":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/hash.js","./highlights":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/highlights.js","./pages":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/pages.js","./planlist":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/planlist.js","./plans":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/plans.js","./plansmap":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/plansmap.js","./search":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/search.js","./sidebar":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/sidebar.js","bootstrap.tooltip":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/bower_components/bootstrap/js/tooltip.js","underscore":"/home/eric/Documents/596/urbanreviewer/urbanreviewer/node_modules/underscore/underscore.js"}],"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/pages.js":[function(require,module,exports){
 //
 // pages
 //
@@ -4928,6 +4955,8 @@ module.exports = {
                 scrollToSection($(this).attr('href'));
                 return false;
             });
+
+            $('body').trigger('pageloaded');
         });
     }
 

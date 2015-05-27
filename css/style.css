@@ -2112,6 +2112,18 @@ input[type="button"].btn-block {
 .tooltip-prefix {
   font-weight: bold;
 }
+.gallery {
+  list-style: none;
+  padding-left: 0;
+}
+.gallery li {
+  float: left;
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+.gallery li:nth-of-type(3n+1) {
+  margin-left: 0;
+}
 .leaflet-left .leaflet-control {
   margin-left: 15px;
 }

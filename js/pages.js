@@ -62,6 +62,8 @@ module.exports = {
                 scrollToSection($(this).attr('href'));
                 return false;
             });
+
+            $('body').trigger('pageloaded');
         });
     }
 

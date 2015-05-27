@@ -236,6 +236,7 @@ function unloadPlanList() {
 }
 
 $(document).ready(function () {
+    require('./gallery').init();
 
     /*
      * Initialize map
