@@ -222,6 +222,9 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 **Reviewing Renewal: On the Model and Modelling** <br>with Peter Richardson @ Queens Museum, Saturday, January 11, 2015<br>_For more information on this event visit the Queens Museum website_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u6VUZDtGhBE" frameborder="0" allowfullscreen></iframe>
 
+**Reviewing Renewal: The Manhattan Projects Tour** <br>by Samuel Zipp @ Queens Museum, Saturday, January 25, 2015<br>_For more information on this event visit the Queens Museum website_
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5Ul1rCDhJrk" frameborder="0" allowfullscreen></iframe>
+
 ## Audio
 
 
