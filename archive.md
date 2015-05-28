@@ -234,7 +234,7 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 ## Photos
 
 
-**Reviewing Renewal at the Queens Museum** <br>_To view more photos from each programming day, please select: [January 11 (opening day)](http://596acres.org/en/photos/album/53/), [January 18](http://596acres.org/en/photos/album/54/), [January 25](http://596acres.org/en/photos/album/55/), [February 1](http://596acres.org/en/photos/album/56/), [February 8 (closing day)](http://596acres.org/en/photos/album/57/)._
+**Reviewing Renewal at the Queens Museum** <br>_To view more photos from each programming day, please select: [January 11 (opening day)](http://596acres.org/en/photos/album/53/), [January 18](http://596acres.org/en/photos/album/54/), [January 25](http://596acres.org/en/photos/album/55/), [February 1](http://596acres.org/en/photos/album/56/), [February 8 (closing day)](http://596acres.org/en/photos/album/57/)._<br>
 * [![](img/archive/RR_1_thumb.jpg)](img/archive/RR_1.jpg)
 * [![](img/archive/RR_2_thumb.jpg)](img/archive/RR_2.jpg)
 * [![](img/archive/RR_3_thumb.jpg)](img/archive/RR_3.jpg)
