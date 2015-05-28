@@ -234,7 +234,7 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 ## Photos
 
 
-**Reviewing Renewal at the Queens Museum** <br>_To view more photos from each programming day, please select: [January 11 (opening day)](http://596acres.org/en/photos/album/53/), [January 18](http://596acres.org/en/photos/album/54/), [January 25](http://596acres.org/en/photos/album/55/), [February 1](http://596acres.org/en/photos/album/56/), [February 8 (closing day)](http://596acres.org/en/photos/album/57/)._<br>
+**Reviewing Renewal at the Queens Museum** 
 
 * [![](img/archive/RR1thumb.jpg)](img/archive/RR1.jpg)
 * [![](img/archive/RR2thumb.jpg)](img/archive/RR2.jpg)
@@ -244,11 +244,13 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 * [![](img/archive/RR6thumb.jpg)](img/archive/RR6.jpg)
 * [![](img/archive/RR7thumb.jpg)](img/archive/RR7.jpg)
 
+<p>_To view more photos from each programming day, please select: [January 11 (opening day)](http://596acres.org/en/photos/album/53/), [January 18](http://596acres.org/en/photos/album/54/), [January 25](http://596acres.org/en/photos/album/55/), [February 1](http://596acres.org/en/photos/album/56/), [February 8 (closing day)](http://596acres.org/en/photos/album/57/)._
 
-**Urban Reviewer at Spontaneous Interventions on Governor's Island** <br>_To view more photos from the redisency at Spontaneous Interventions, please visit [596 Acres' website](http://596acres.org/en/photos/album/52/)._
+**Urban Reviewer at Spontaneous Interventions on Governor's Island** 
 
 * [![](img/archive/SI_1_thumb.jpg)](img/archive/SI_1.jpg)
 * [![](img/archive/SI_2_thumb.jpg)](img/archive/SI_2.jpg)
 * [![](img/archive/SI_3_thumb.jpg)](img/archive/SI_3.jpg)
 * [![](img/archive/SI_4_thumb.jpg)](img/archive/SI_4.jpg)
 
+<p>_To view more photos from the redisency at Spontaneous Interventions, please visit [596 Acres' website](http://596acres.org/en/photos/album/52/)._
