@@ -242,7 +242,9 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 * [![](img/archive/RR_4_thumb.jpg)](img/archive/RR_4.jpg)
 * [![](img/archive/RR_5_thumb.jpg)](img/archive/RR_5.jpg)
 * [![](img/archive/RR_6_thumb.jpg)](img/archive/RR_6.jpg)
-* [![](img/archive/RR_7_thumb.jpg)](img/archive/RR_7.jpg)<br>To view more photos from each programming day, please select: [January 11 (opening day)](http://596acres.org/en/photos/album/53/), [January 18](http://596acres.org/en/photos/album/54/), [January 25](http://596acres.org/en/photos/album/55/), [February 1](http://596acres.org/en/photos/album/56/), [February 8 (closing day)](http://596acres.org/en/photos/album/57/).
+* [![](img/archive/RR_7_thumb.jpg)](img/archive/RR_7.jpg)
+
+To view more photos from each programming day, please select: [January 11 (opening day)](http://596acres.org/en/photos/album/53/), [January 18](http://596acres.org/en/photos/album/54/), [January 25](http://596acres.org/en/photos/album/55/), [February 1](http://596acres.org/en/photos/album/56/), [February 8 (closing day)](http://596acres.org/en/photos/album/57/).
 
 
 
@@ -252,4 +254,6 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 * [![](img/archive/SI_1_thumb.jpg)](img/archive/SI_1.jpg)
 * [![](img/archive/SI_2_thumb.jpg)](img/archive/SI_2.jpg)
 * [![](img/archive/SI_3_thumb.jpg)](img/archive/SI_3.jpg)
-* [![](img/archive/SI_4_thumb.jpg)](img/archive/SI_4.jpg)<br>To view more photos from the redisency at Spontaneous Interventions, please visit [596 Acres' website](http://596acres.org/en/photos/album/52/).
+* [![](img/archive/SI_4_thumb.jpg)](img/archive/SI_4.jpg)
+
+To view more photos from the redisency at Spontaneous Interventions, please visit [596 Acres' website](http://596acres.org/en/photos/album/52/).
