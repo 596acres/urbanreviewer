@@ -5,6 +5,7 @@ published: true
 ---
 
 
+
 # Archive
 
 In this archive you can find documentation of talks, discussions, film screenings, tours, and other events that took place as part of or relating to the Urban Reviewer. In the past, two major presentations of the Urban Reviewer took place at the **Queens Museum (“Reviewing Renewal”)** in early 2015 and as part of **Spontaneous Interventions on Governor’s Island** in summer 2014. 
@@ -212,6 +213,10 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 
 ## Videos
 
+**Reviewing Renewal: A Willet’s Point Walk**
+with Dr. Jack Eichenbaum, Queens Borough Historian
+@ Queens Museum, Saturday, January 11, 12:30 pm - 2 pm
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-mxOUe7Quw8" frameborder="0" allowfullscreen></iframe>
 
 ## Audio
 
