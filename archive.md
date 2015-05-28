@@ -213,11 +213,11 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 
 ## Videos
 
-**Reviewing Renewal: A Willet’s Point Walk**<br>with Dr. Jack Eichenbaum, Queens Borough Historian<br>@ Queens Museum, Saturday, January 11, 2015<br><iframe width="560" height="315" src="https://www.youtube.com/embed/-mxOUe7Quw8" frameborder="0" allowfullscreen></iframe>
+**Reviewing Renewal: A Willet’s Point Walk**<br>with Dr. Jack Eichenbaum, Queens Borough Historian<br>@ Queens Museum, Saturday, January 11, 2015<br><iframe width="560" height="315" src="https://www.youtube.com/embed/-mxOUe7Quw8" frameborder="0" allowfullscreen></iframe><br>For more information on this event visit the Queens Museum website
 
+**Reviewing Renewal: “Who Makes A Neighborhood?”**<br>A reading by author DW Gibson<br>@ Queens Museum, Saturday, January 11, 2015<br><iframe width="560" height="315" src="https://www.youtube.com/embed/cOA2GqYkWqo" frameborder="0" allowfullscreen></iframe><br>For more information on this event visit the Queens Museum website
 
-**Reviewing Renewal: “Who Makes A Neighborhood?”**<br>A reading by author DW Gibson<br>@ Queens Museum, Saturday, January 11, 2015<br><iframe width="560" height="315" src="https://www.youtube.com/embed/cOA2GqYkWqo" frameborder="0" allowfullscreen></iframe>
-
+**Reviewing Renewal: On the Model and Modelling **<br>with Peter Richardson<br>@ Queens Museum, Saturday, January 11, 2015<br><iframe width="560" height="315" src="https://www.youtube.com/embed/u6VUZDtGhBE" frameborder="0" allowfullscreen></iframe><br>For more information on this event visit the Queens Museum website
 
 
 ## Audio
