@@ -213,9 +213,7 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 
 ## Videos
 
-**Reviewing Renewal: A Willet’s Point Walk**
-with Dr. Jack Eichenbaum, Queens Borough Historian
-@ Queens Museum, Saturday, January 11, 12:30 pm - 2 pm
+**Reviewing Renewal: A Willet’s Point Walk**<br>with Dr. Jack Eichenbaum, Queens Borough Historian<br>@ Queens Museum, Saturday, January 11, 12:30 pm - 2 pm
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-mxOUe7Quw8" frameborder="0" allowfullscreen></iframe>
 
