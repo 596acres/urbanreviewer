@@ -6,6 +6,7 @@ published: true
 
 
 
+
 # Archive
 
 In this archive you can find documentation of talks, discussions, film screenings, tours, and other events that took place as part of or relating to the Urban Reviewer. In the past, two major presentations of the Urban Reviewer took place at the **Queens Museum (“Reviewing Renewal”)** in early 2015 and as part of **Spontaneous Interventions on Governor’s Island** in summer 2014. 
@@ -253,4 +254,4 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 * [![](img/archive/SI_3_thumb.jpg)](img/archive/SI_3.jpg)
 * [![](img/archive/SI_4_thumb.jpg)](img/archive/SI_4.jpg)
 
-<p>_To view more photos from the redisency at Spontaneous Interventions, please visit [596 Acres' website](http://596acres.org/en/photos/album/52/)._
+<p>_To view more photos from the residency at Spontaneous Interventions, please visit [596 Acres' website](http://596acres.org/en/photos/album/52/)._
