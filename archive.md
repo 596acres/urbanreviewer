@@ -215,34 +215,34 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 
 ## Videos
 
-**Reviewing Renewal: A Willet’s Point Walk**<br>with Dr. Jack Eichenbaum, Queens Borough Historian @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event visit the Queens Museum website_
+**Reviewing Renewal: A Willet’s Point Walk**<br>with Dr. Jack Eichenbaum, Queens Borough Historian @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-mxOUe7Quw8" frameborder="0" allowfullscreen></iframe><br>
 
-**Reviewing Renewal: “Who Makes A Neighborhood?”**<br>a reading by author DW Gibson @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event visit the Queens Museum website_
+**Reviewing Renewal: “Who Makes A Neighborhood?”**<br>a reading by author DW Gibson @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/cOA2GqYkWqo" frameborder="0" allowfullscreen></iframe><br>
 
-**Reviewing Renewal: On the Model and Modelling** <br>with Peter Richardson @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event visit the Queens Museum website_
+**Reviewing Renewal: On the Model and Modelling** <br>with Peter Richardson @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u6VUZDtGhBE" frameborder="0" allowfullscreen></iframe>
 
-**Reviewing Mitchell Lama: The Past, Present and Future of Affordable Housing in NYC** <br> hosted by the Planners Network NYC, with Charles Chawalko, Jackie Peters, Alexis Smallwood, and moderated by Katie Goldstein @ Queens Museum, Sat, January 18, 2015<br>_For more information on this event visit the Queens Museum website_
+**Reviewing Mitchell Lama: The Past, Present and Future of Affordable Housing in NYC** <br> hosted by the Planners Network NYC, with Charles Chawalko, Jackie Peters, Alexis Smallwood, and moderated by Katie Goldstein @ Queens Museum, Sat, January 18, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9oaIKDIZeE0" frameborder="0" allowfullscreen></iframe>
 
-**Reviewing Renewal: The Manhattan Projects Tour** <br>by Samuel Zipp @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event visit the Queens Museum website_
+**Reviewing Renewal: The Manhattan Projects Tour** <br>by Samuel Zipp @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5Ul1rCDhJrk" frameborder="0" allowfullscreen></iframe>
 
-**Reviewing Renewal: Before Lincoln Center** <br>with Jennifer Hock and Mariana Mogilevich, organized by Oksana Mironova, @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event visit the Queens Museum website_
+**Reviewing Renewal: Before Lincoln Center** <br>with Jennifer Hock and Mariana Mogilevich, organized by Oksana Mironova, @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oaxaZ9ZnqE4" frameborder="0" allowfullscreen></iframe>
 
-**Reviewing Renewal: Queens** <br>with Dr. Jack Eichenbaum and Kalin Callaghan @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event visit the Queens Museum website_
+**Reviewing Renewal: Queens** <br>with Dr. Jack Eichenbaum and Kalin Callaghan @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ixxZtCgEGz4" frameborder="0" allowfullscreen></iframe>
 
-**Reviewing Renewal: What happens to a neighborhood “renewed?”** <br>with Marci Reaven, Damaris Reyes, Joel Feingold, Gabrielle Bendiner-Viani, and the Layered SPURA / City Studio @ Queens Museum, Sat, February 1, 2015<br>_For more information on this event visit the Queens Museum website_
+**Reviewing Renewal: What happens to a neighborhood “renewed?”** <br>with Marci Reaven, Damaris Reyes, Joel Feingold, Gabrielle Bendiner-Viani, and the Layered SPURA / City Studio @ Queens Museum, Sat, February 1, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-ANv5NlDz8U" frameborder="0" allowfullscreen></iframe>
 
-**Reviewing Renewal: Urban Renewal is Scapegoated to Justify Current Conditions of Spatial Domination** <br>an artist’s walk & talk with Damon Rich @ Queens Museum, Sat, February 1, 2015<br>_For more information on this event visit the Queens Museum website_
+**Reviewing Renewal: Urban Renewal is Scapegoated to Justify Current Conditions of Spatial Domination** <br>an artist’s walk & talk with Damon Rich @ Queens Museum, Sat, February 1, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zhBjtbdg15M" frameborder="0" allowfullscreen></iframe>
 
-**Reviewing Renewal: From Redlining to Gentrification** <br>program by the University of Orange with Dr. Mindy Fullilove, Molly Rose Kaufman, Rod Wallace, Havanna Fisher, and Aubrey Murdock @ Queens Museum, Sat, February 1, 2015<br>_For more information on this event visit the Queens Museum website_
+**Reviewing Renewal: From Redlining to Gentrification** <br>program by the University of Orange with Dr. Mindy Fullilove, Molly Rose Kaufman, Rod Wallace, Havanna Fisher, and Aubrey Murdock @ Queens Museum, Sat, February 1, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JBHDYO5BZTE" frameborder="0" allowfullscreen></iframe>
 
 ## Audio
