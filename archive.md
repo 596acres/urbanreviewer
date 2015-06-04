@@ -224,6 +224,9 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 **Reviewing Renewal: On the Model and Modelling** <br>with Peter Richardson @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event visit the Queens Museum website_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u6VUZDtGhBE" frameborder="0" allowfullscreen></iframe>
 
+**Reviewing Mitchell Lama: The Past, Present and Future of Affordable Housing in NYC** <br> hosted by the Planners Network NYC, with Charles Chawalko, Jackie Peters, Alexis Smallwood, and moderated by Katie Goldstein @ Queens Museum, Sat, January 18, 2015<br>_For more information on this event visit the Queens Museum website_
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9oaIKDIZeE0" frameborder="0" allowfullscreen></iframe>
+
 **Reviewing Renewal: The Manhattan Projects Tour** <br>by Samuel Zipp @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event visit the Queens Museum website_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5Ul1rCDhJrk" frameborder="0" allowfullscreen></iframe>
 
