@@ -7,6 +7,7 @@ published: true
 
 
 
+
 # Archive
 
 In this archive you can find documentation of talks, discussions, film screenings, tours, and other events that took place as part of or relating to the Urban Reviewer. In the past, two major presentations of the Urban Reviewer took place at the **Queens Museum (“Reviewing Renewal”)** in early 2015 and as part of **Spontaneous Interventions on Governor’s Island** in summer 2014. 
@@ -228,6 +229,18 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 
 **Reviewing Renewal: Before Lincoln Center** <br>with Jennifer Hock and Mariana Mogilevich, organized by Oksana Mironova, @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event visit the Queens Museum website_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oaxaZ9ZnqE4" frameborder="0" allowfullscreen></iframe>
+
+**Reviewing Renewal: Queens** <br>with Dr. Jack Eichenbaum and Kalin Callaghan @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event visit the Queens Museum website_
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ixxZtCgEGz4" frameborder="0" allowfullscreen></iframe>
+
+**Reviewing Renewal: What happens to a neighborhood “renewed?”** <br>with Marci Reaven, Damaris Reyes, Joel Feingold, Gabrielle Bendiner-Viani, and the Layered SPURA / City Studio @ Queens Museum, Sat, February 1, 2015<br>_For more information on this event visit the Queens Museum website_
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-ANv5NlDz8U" frameborder="0" allowfullscreen></iframe>
+
+**Reviewing Renewal: Urban Renewal is Scapegoated to Justify Current Conditions of Spatial Domination** <br>an artist’s walk & talk with Damon Rich @ Queens Museum, Sat, February 1, 2015<br>_For more information on this event visit the Queens Museum website_
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zhBjtbdg15M" frameborder="0" allowfullscreen></iframe>
+
+**Reviewing Renewal: From Redlining to Gentrification** <br>program by the University of Orange with Dr. Mindy Fullilove, Molly Rose Kaufman, Rod Wallace, Havanna Fisher, and Aubrey Murdock @ Queens Museum, Sat, February 1, 2015<br>_For more information on this event visit the Queens Museum website_
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JBHDYO5BZTE" frameborder="0" allowfullscreen></iframe>
 
 ## Audio
 
