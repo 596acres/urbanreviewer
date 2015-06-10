@@ -259,13 +259,13 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 
 **Reviewing Renewal at the Queens Museum** 
 
-* [![](img/archive/RR1thumb.jpg)](img/archive/RR1.jpg)
-* [![](img/archive/RR2thumb.jpg)](img/archive/RR2.jpg)
-* [![](img/archive/RR3thumb.jpg)](img/archive/RR3.jpg)
-* [![](img/archive/RR4thumb.jpg)](img/archive/RR4.jpg)
-* [![](img/archive/RR5thumb.jpg)](img/archive/RR5.jpg)
-* [![](img/archive/RR6thumb.jpg)](img/archive/RR6.jpg)
-* [![](img/archive/RR7thumb.jpg)](img/archive/RR7.jpg)
+* [![](img/archive/RR_1_thumb.jpg)](img/archive/RR_1.jpg)
+* [![](img/archive/RR_2_thumb.jpg)](img/archive/RR_2.jpg)
+* [![](img/archive/RR_3_thumb.jpg)](img/archive/RR_3.jpg)
+* [![](img/archive/RR_4_thumb.jpg)](img/archive/RR_4.jpg)
+* [![](img/archive/RR_5_thumb.jpg)](img/archive/RR_5.jpg)
+* [![](img/archive/RR_6_thumb.jpg)](img/archive/RR_6.jpg)
+* [![](img/archive/RR_7_thumb.jpg)](img/archive/RR_7.jpg)
 
 <p>_To view more photos from each programming day, please select: [January 11 (opening day)](http://596acres.org/en/photos/album/53/), [January 18](http://596acres.org/en/photos/album/54/), [January 25](http://596acres.org/en/photos/album/55/), [February 1](http://596acres.org/en/photos/album/56/), [February 8 (closing day)](http://596acres.org/en/photos/album/57/)._
 
