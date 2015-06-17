@@ -10,6 +10,7 @@ published: true
 
 
 
+
 # Archive
 
 In this archive you can find documentation of talks, discussions, film screenings, tours, and other events that took place as part of or relating to the Urban Reviewer. In the past, two major presentations of the Urban Reviewer took place at the **Queens Museum (“Reviewing Renewal”)** in early 2015 and as part of **Spontaneous Interventions on Governor’s Island** in summer 2014. 
@@ -249,6 +250,9 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 
 **Reviewing Renewal: From Redlining to Gentrification** <br>program by the University of Orange with Dr. Mindy Fullilove, Molly Rose Kaufman, Rod Wallace, Havanna Fisher, and Aubrey Murdock @ Queens Museum, Sat, February 1, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JBHDYO5BZTE" frameborder="0" allowfullscreen></iframe>
+
+This program inspired the participants to create _The Domino Effect_. Watch it here, too!  
+<iframe src="https://player.vimeo.com/video/126115082" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/126115082">The Domino Effect</a> from <a href="https://vimeo.com/user30030704">Aubrey Murdock</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 ## Audio
 
