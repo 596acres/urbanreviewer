@@ -12,6 +12,7 @@ published: true
 
 
 
+
 # Archive
 
 In this archive you can find documentation of talks, discussions, film screenings, tours, and other events that took place as part of or relating to the Urban Reviewer. In the past, two major presentations of the Urban Reviewer took place at the **Queens Museum (“Reviewing Renewal”)** in early 2015 and as part of **Spontaneous Interventions on Governor’s Island** in summer 2014. 
@@ -225,7 +226,7 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 **Reviewing Renewal: On the Model and Modelling** <br>with Peter Richardson, [Mapzen](https://mapzen.com/) @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u6VUZDtGhBE" frameborder="0" allowfullscreen></iframe>
 
-**Reviewing Mitchell Lama: The Past, Present and Future of Affordable Housing in NYC** <br>hosted by the Planners Network NYC, with Charles Chawalko, Jackie Peters, Alexis Smallwood, and moderated by Katie Goldstein @ Queens Museum, Sat, January 18, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
+**Reviewing Mitchell Lama: The Past, Present and Future of Affordable Housing in NYC** <br>hosted by the Planners Network NYC, with Charles Chawalko, Jackie Peters, Alexis Smallwood, and moderated by Katie Goldstein @ Queens Museum, Sat, January 18, 2015. Recorded by Molly Garfinkel, [Citylore](http://citylore.org/).<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9oaIKDIZeE0" frameborder="0" allowfullscreen></iframe>
 
 **Reviewing Renewal: The Manhattan Projects Tour** <br>by Samuel Zipp @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
@@ -257,7 +258,7 @@ This program inspired the participants to create _The Domino Effect_. Watch it h
 **Reviewing Renewal: “Who Makes A Neighborhood?”**<br>a reading by author DW Gibson @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/192441338&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 
-**Reviewing Mitchell Lama: The Past, Present and Future of Affordable Housing in NYC** <br>hosted by the Planners Network NYC, with Charles Chawalko, Jackie Peters, Alexis Smallwood, and moderated by Katie Goldstein @ Queens Museum, Sat, January 18, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
+**Reviewing Mitchell Lama: The Past, Present and Future of Affordable Housing in NYC** <br>hosted by the Planners Network NYC, with Charles Chawalko, Jackie Peters, Alexis Smallwood, and moderated by Katie Goldstein @ Queens Museum, Sat, January 18, 2015. Recorded by Molly Garfinkel, [Citylore](http://citylore.org/).<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/187240925&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
 
 ## Photos
