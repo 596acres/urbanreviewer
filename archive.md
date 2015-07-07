@@ -224,7 +224,7 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 
 ## Videos
 
-**Reviewing Renewal: A Willet’s Point Walk**<br>with Dr. Jack Eichenbaum, Queens Borough Historian @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
+**Reviewing Renewal: A Willet’s Point Walk**<br>with [Dr. Jack Eichenbaum](http://www.geognyc.com/?page_id=9 ), Queens Borough Historian @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-mxOUe7Quw8" frameborder="0" allowfullscreen></iframe><br>
 
 **Reviewing Renewal: On the Model and Modelling** <br>with Peter Richardson, [Mapzen](https://mapzen.com/) @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
@@ -242,7 +242,7 @@ If those who own "neighborhood" as place are not "neighborhood" as people then t
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Na2oQ32YpOw" frameborder="0" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EHWfzeNU8Uo" frameborder="0" allowfullscreen></iframe>
 
-**Reviewing Renewal: Queens** <br>with Dr. Jack Eichenbaum and Kalin Callaghan @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
+**Reviewing Renewal: Queens** <br>with Dr. [Jack Eichenbaum](http://www.geognyc.com/?page_id=9 ) and Kalin Callaghan @ Queens Museum, Sat, January 25, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ixxZtCgEGz4" frameborder="0" allowfullscreen></iframe>
 
 **Reviewing Renewal: What happens to a neighborhood “renewed?”** <br>with Marci Reaven, Damaris Reyes, Joel Feingold, Gabrielle Bendiner-Viani, and the Layered SPURA / City Studio @ Queens Museum, Sat, February 1, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_
