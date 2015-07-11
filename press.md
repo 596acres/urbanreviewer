@@ -8,7 +8,7 @@ published: true
 
 # Press
 
-[Dear New Yorkers, Your Neighborhood is a Slum](http://thoughtcatalog.com/roxanne-earley/2015/02/dear-new-yorkers-your-neighborhood-is-a-slum/)(Review of Reviewing Renewal at the Queens Museum)
+[Dear New Yorkers, Your Neighborhood is a Slum](http://thoughtcatalog.com/roxanne-earley/2015/02/dear-new-yorkers-your-neighborhood-is-a-slum/) (a review of Reviewing Renewal at the Queens Museum)
 Thought Catalogue | by Roxanne Earley | 2/5/2015
 
 [A Look At Willets Point Before Demolition &
