@@ -4,6 +4,7 @@ title: About
 published: true
 ---
 
+
 # About
 
 **Reviewing Past Urban Plans > Discovering Present Impact > Supporting Future Actions**
@@ -38,26 +39,6 @@ grateful for the space they provided for this project. If you would like to find
 data for a specific borough or plan, you can find the data on
 [GitHub](https://github.com/596acres/urbanreviewer/tree/gh-pages/data/geojson/us/ny/nyc/).
 
-## Reviewing Renewal Presentations
-
-**Reviewing Renewal on the Queens Museum Panorama, 2015**
-
-From January 11 to February 8, 2015, the Urban Reviewer came to life as an intervention on the Panorama of the City of New York at the Queens Museum for [Reviewing Renewal](http://www.queensmuseum.org/exhibitions/2015/01/05/reviewing-renewal/). We put all 155+ Urban Renewal Area Plans that NYC ever adopted on the panorama, with accompanying programs every Sunday and wall treatments that invited visitors to see and shape urban renewal in our city. Writing for Thought Catalouge, Roxanne Earley reviewed the show: [Dear New Yorkers, Your Neighborhood is a Slum](http://thoughtcatalog.com/roxanne-earley/2015/02/dear-new-yorkers-your-neighborhood-is-a-slum/) (February 5, 2015). Documentation from the show will be available on line later in 2015.
-
-<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/192441338&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-
-_Curator:_ Paula Z. Segal, Esq., 596 Acres, Inc.  
-_Exhibition Design:_ Mary Bereschka, Greg Mihalko, Stephan von Muehlen  
-_Design:_ Partner & Partners  
-_Event Production:_ Amy Fitzgerald, Oksana Mironova  
-_Documentation:_ Badrul Hisham Ismail, Christina Sukhgian Houle, Molly Garfinkel (City Lore)  
-
-Photos of each programming day: [January 11](http://596acres.org/en/photos/album/53/); [January 18](http://596acres.org/en/photos/album/54/); [January 25](http://596acres.org/en/photos/album/55/); [February 1](http://596acres.org/en/photos/album/56/); [February 8](http://596acres.org/en/photos/album/57/).
-
-**Urban Reviewer part of Spontaneous Interventions on Governor's Island, 2014**
-
-We experimented with bringing the Urban Reviewer into a physical space for the first time during 596 Acres' residency on Governor's Island as part of [Spontaneous Interventions](http://www.spontaneousinterventions.org/) in Summer 2014. [Photos here](http://596acres.org/en/photos/album/52/). 
-
 ## Outcomes
 
 One of the reasons we are excited to be making the plans accessible is that they include places that were cleared with the intention of creating open public spaces. In our work through [596 Acres](http://596acres.org/), we have already found two and helped neighbors transform them into something better: 
@@ -69,16 +50,6 @@ One of the reasons we are excited to be making the plans accessible is that they
 - The Keap Fourth Community Garden in South Williamsburg was a vacant lot two years ago that we noticed was part of an Urban Renewal Plan and designated to be Open Space. The 596 Acres team put signs on it and helped folks get together and they got no resistance from the relevant agencies. It has been transferred to Parks and there was a formal ribbon cutting on June 4, 2014, more than 20 years after the lot was planned as Open Space.
 
 - The Edgemere Urban Renewal Plan (Queens) contains dozens of lots planned as Open Space. Last year, we put signs on the set of the lots that was designated as the Edgemere Urban Renewal Park in the plans. Today, neighbors who saw these signs are running the [Edgemere Farm](http://596acres.org/en/lot/4158370033/).
-
-## Press
-
-Thanks to [Technical.ly](http://technical.ly/brooklyn/2014/06/25/urban-re-viewer-launches-documenting-urban-renewal-era-maps/), [CityLab](http://www.citylab.com/design/2014/06/every-master-plan-in-new-york-city-history-collected-in-a-single-place/373307/), [Planetizen](http://www.planetizen.com/node/69987), [Untapped Cities](http://untappedcities.com/2014/07/04/fun-maps-the-urban-reviewer-map-by-596-acres-shows-us-master-plans-since-1952/), [TechPresident](http://techpresident.com/news/25143/urban-reviewer-maps-new-yorks-forgotten-master-plans), [Urban Omnibus](http://urbanomnibus.net/2014/11/you-are-now-entering-an-active-urban-renewal-area/) and [Fast Company](http://www.fastcoexist.com/3038089/mapping-new-yorks-vacant-lots-to-use-them-to-create-a-more-vibrant-city) for telling the story of the Urban Reviewer. 
-
-[#urbanreviewer on Twitter](https://twitter.com/search?src=typd&q=%23urbanreviewer) to join the conversation.
-
-CartoDB [Map of the Week](http://blog.cartodb.com/map-of-the-week-urban-reviewer/).  
-
-[![Planetizen Top 10 Websites 2014](img/planetizen_badge.png)](http://www.planetizen.com/websites/2014)
 
 ## Our Team
 
