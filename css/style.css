@@ -368,6 +368,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .page h2 {
   font-size: 18px;
 }
+.page h3 {
+  margin-top: 70px;
+}
 .page-header {
   background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #444;
