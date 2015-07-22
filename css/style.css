@@ -2170,6 +2170,7 @@ input[type="button"].btn-block {
 }
 .leaflet-control.leaflet-bar {
   background-color: transparent;
+  border: none;
 }
 .leaflet-control.leaflet-bar .leaflet-control-zoom-in,
 .leaflet-control.leaflet-bar .leaflet-control-zoom-out {
@@ -2188,6 +2189,9 @@ input[type="button"].btn-block {
 }
 .leaflet-control.leaflet-bar .leaflet-control-zoom-out {
   margin-top: 5px;
+}
+.leaflet-touch .leaflet-control-layers {
+  border: 3px solid #000000;
 }
 .leaflet-popup-content-wrapper {
   background: #000000;

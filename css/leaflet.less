@@ -28,6 +28,7 @@
 
     &.leaflet-bar {
         background-color: transparent;
+        border: none;
 
         .leaflet-control-zoom-in,
         .leaflet-control-zoom-out {
@@ -47,6 +48,12 @@
         .leaflet-control-zoom-out {
             margin-top: 5px;
         }
+    }
+}
+
+.leaflet-touch {
+    .leaflet-control-layers {
+        border: 3px solid @control-border;
     }
 }
 
