@@ -4,6 +4,7 @@ title: References
 published: true
 ---
 
+
 # References
 
 ## References
@@ -84,7 +85,7 @@ The pastor of a Lutheran church near the Tompkins Square urban renewal area wrot
 City Limits Magazine (January 2011)  
 In January 2011, City Limits magazine published an issue about city planning in New York.  There are a series of articles in this issue that explore in depth how planning happens in New York City.  City Limits looks at the past, present and possible future of planning in New York, with reporting from the South Bronx to the Brooklyn waterfront to suburban Staten Island and lessons from Miami to Portland.  The ultimate question explored is “whose dreams will decide” the future of the city?  
 
-**“Boston’s West End: Urban Obsolescence in Mid-Twentieth Century America,”**  
+**“[Boston’s West End: Urban Obsolescence in Mid-Twentieth Century America](http://www.urbanreviewer.org/media/Abramson%20West%20End.pdf),”**  
 Daniel Abrahamson chapter in _Governing by Design: Architecture, Politics and Economy in the 20th Century_ (2012)  
 Daniel Abrahamson explains how planners and policy makers understanding of neighborhoods changed in the 20th century using the case study of Boston’s West End--a neighborhood that Boston’s City Planning Board declared to be “obsolete” in 1951.  Abrahamson investigates the contested politics surrounding the classification of obsolescence and the shift in how neighborhoods slated for annihilation were described from metaphors of irrelevant technology to metaphors of disease. 
 
