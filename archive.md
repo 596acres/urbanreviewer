@@ -15,6 +15,7 @@ published: true
 
 
 
+
 # Archive
 
 In this archive you can find documentation of talks, discussions, film screenings, tours, and other events that took place as part of or relating to the Urban Reviewer. In the past, two major presentations of the Urban Reviewer took place at the **Queens Museum (“Reviewing Renewal”)** in early 2015 and as part of **Spontaneous Interventions on Governor’s Island** in summer 2014. 
@@ -24,7 +25,11 @@ In this archive you can find documentation of talks, discussions, film screening
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A8xPMS-hzxU" frameborder="0" allowfullscreen></iframe>
 
-From **January 11 to February 8, 2015**, the Urban Reviewer came to life as an intervention on the Panorama of the City of New York at the **Queens Museum** for **Reviewing Renewal**. We put all 155+ Urban Renewal Area Plans that NYC ever adopted on the Panorama, with accompanying programs every Sunday and wall treatments that invited visitors to see and shape urban renewal in our city. For more information on the exhibition, including a full program of related events, please visit the websites of [596 Acres](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/) the [Queens Museum](http://www.queensmuseum.org/2015/01/reviewing-renewal). Click on VIDEOS in the menu the left to see complete documentation of the programs. 
+From **January 11 to February 8, 2015**, the Urban Reviewer came to life as an intervention on the Panorama of the City of New York at the **Queens Museum** for **Reviewing Renewal**. We put all 155+ Urban Renewal Area Plans that NYC ever adopted on the Panorama, with accompanying programs every Sunday and wall treatments that invited visitors to see and shape urban renewal in our city. For more information on the exhibition, including a full program of related events, please visit the websites of [596 Acres](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/) the [Queens Museum](http://www.queensmuseum.org/2015/01/reviewing-renewal). 
+
+For Reviewing Renewal, we also created the first ever printed atlas of Urban Renewal Area Planning 1949-2015. You can download it [here](http://www.urbanreviewer.org/media/QueensMuseum_Broadsheet_ReviewingRenewal.pdf). 
+
+Click on VIDEOS & AUDIO in the menu the left to see complete documentation of the programs. 
 
 Curator: Paula Z. Segal, Esq., 596 Acres, Inc.
 Exhibition Design: Mary Bereschka, Greg Mihalko, Stephan von Muehlen 
