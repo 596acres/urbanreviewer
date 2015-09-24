@@ -59,7 +59,7 @@ A walking tour of the Willets Point Urban Renewal Area with Dr. Jack Eichenbaum,
 
 **Reviewing Renewal: Adam Purple and the Garden of Eden** <br>by Harvey Wang and Amy Brost.<br>
 REST IN POWER REST IN PEACE, ADAM PURPLE.<br> 
-<iframe src="https://player.vimeo.com/video/29275235" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/29275235" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br>
 In 1975, on the crime-ridden Lower East Side, Adam Purple started a garden behind his tenement home. By 1986, The Garden of Eden was world famous and had grown to 15,000 square feet. For Adam – a social activist, philosopher, artist, and revolutionary – the Garden was the medium of his political and artistic expression. It was razed by the city in 1986 after a protracted court battle. This film documents the creation of this artwork and its ultimate destruction.  Winner of the "Neighborhood Award" at the Lower East Side Film Festival.
 
 **Reviewing Renewal: On the Model and Modelling** <br>with Peter Richardson, [Mapzen](https://mapzen.com/) @ Queens Museum, Sat, January 11, 2015<br>_For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_<br>
