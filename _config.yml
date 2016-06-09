@@ -1,5 +1,4 @@
 name: Urban Reviewer
-markdown: redcarpet
 include: [plans]
 exclude: ['Gruntfile.js', 'Guardfile', 'bower.json', '/data', '/scripts']
 encoding: utf-8
