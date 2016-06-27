@@ -66,10 +66,13 @@ In 1975, on the crime-ridden Lower East Side, Adam Purple started a garden behin
 
 **Reviewing Renewal: On the Model and Modelling** 
 with Peter Richardson, [Mapzen](https://mapzen.com/) @ Queens Museum, Sat, January 11, 2015  _For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)_  
+  
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u6VUZDtGhBE" frameborder="0" allowfullscreen></iframe>
 
 **Reviewing Mitchell Lama: The Past, Present and Future of Affordable Housing in NYC**   hosted by the Planners Network NYC, with Charles Chawalko, Jackie Peters, Alexis Smallwood, and moderated by Katie Goldstein @ Queens Museum, Sat, January 18, 2015. Recorded by Molly Garfinkel, [City Lore](http://citylore.org/).  
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9oaIKDIZeE0" frameborder="0" allowfullscreen></iframe>  
+
 Planners Network NYC hosted a discussion on the past, present and future of the Mitchell Lama program, one of New York's most important and embattled affordable housing initiatives. _For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)._
 
 **Reviewing Renewal: The Manhattan Projects Tour**   by Samuel Zipp @ Queens Museum, Sat, January 25, 2015  
