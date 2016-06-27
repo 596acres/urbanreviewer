@@ -23,9 +23,6 @@ published: true
 
 # Archive
 
-REST IN POWER REST IN PEACE, ADAM PURPLE.<br> 
-<iframe src="https://player.vimeo.com/video/29275235" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br>
-
 In this archive you can find documentation of talks, discussions, film screenings, tours, and other events that took place as part of or relating to the Urban Reviewer. In the past, two major presentations of the Urban Reviewer took place at the **Queens Museum (“Reviewing Renewal”)** in early 2015 and as part of **Spontaneous Interventions on Governor’s Island** in summer 2014. 
 
 
@@ -54,7 +51,11 @@ We experimented with bringing the Urban Reviewer into a physical space for the f
 ## Videos
 
 **Reviewing Renewal: A Willet’s Point Walk**<br>with [Dr. Jack Eichenbaum](http://www.geognyc.com/?page_id=9), Queens Borough Historian @ Queens Museum, Sat, January 11, 2015<br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-mxOUe7Quw8" frameborder="0" allowfullscreen></iframe><br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-mxOUe7Quw8" frameborder="0" allowfullscreen></iframe>
+
+<br>
+
 A walking tour of the Willets Point Urban Renewal Area with Dr. Jack Eichenbaum, Queens Borough Historian. East of Citifield (the New York Mets baseball stadium) is a sewerless hardscrabble area of auto junkyards and related businesses that has twice beaten back attempts at redevelopment. But as it is located between the new stadium and a booming Chinatown in Flushing, public and private interests are again trying to transform “Willets Point.” _For more information on this event, please visit [596 Acres' website](http://596acres.org/news/2014/12/23/596-acres-presents-the-urban-reviewer-on-the-queens-museum-panorama/)._
 
 **Reviewing Renewal: Adam Purple and the Garden of Eden** <br>by Harvey Wang and Amy Brost.<br>
