@@ -121,9 +121,11 @@ DW Gibson is the author of The Edge Becomes the Center: An Oral History of 21st 
 * [![](img/archive/RR_4_thumb.jpg)](img/archive/RR_4.jpg)
 * [![](img/archive/RR_5_thumb.jpg)](img/archive/RR_5.jpg)
 * [![](img/archive/RR_6_thumb.jpg)](img/archive/RR_6.jpg)
-* [![](img/archive/RR_7_thumb.jpg)](img/archive/RR_7.jpg)
+* [![](img/archive/RR_7_thumb.jpg)](img/archive/RR_7.jpg)  
 
-_To view more photos from each programming day, please select: [January 11 (opening day)](http://596acres.org/en/photos/album/53/), [January 18](http://596acres.org/en/photos/album/54/), [January 25](http://596acres.org/en/photos/album/55/), [February 1](http://596acres.org/en/photos/album/56/), [February 8 (closing day)](http://596acres.org/en/photos/album/57/)._
+_To view more photos from each programming day, please select: 
+
+[January 11 (opening day)](http://596acres.org/en/photos/album/53/), [January 18](http://596acres.org/en/photos/album/54/), [January 25](http://596acres.org/en/photos/album/55/), [February 1](http://596acres.org/en/photos/album/56/), [February 8 (closing day)](http://596acres.org/en/photos/album/57/)._
 
 **Urban Reviewer at Spontaneous Interventions on Governor's Island** 
 
@@ -131,7 +133,7 @@ _To view more photos from each programming day, please select: [January 11 (open
 * [![](img/archive/SI_2_thumb.jpg)](img/archive/SI_2.jpg)
 * [![](img/archive/SI_3_thumb.jpg)](img/archive/SI_3.jpg)
 * [![](img/archive/SI_4_thumb.jpg)](img/archive/SI_4.jpg)
-  
+
 _To view more photos from the residency at Spontaneous Interventions, please visit [596 Acres' website](http://596acres.org/en/photos/album/52/)._
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
