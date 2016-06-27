@@ -50,7 +50,7 @@ We experimented with bringing the Urban Reviewer into a physical space for the f
 
 ## Videos
 
-**Reviewing Renewal: A Willet’s Point Walk**<br>with [Dr. Jack Eichenbaum](http://www.geognyc.com/?page_id=9), Queens Borough Historian @ Queens Museum, Sat, January 11, 2015
+**Reviewing Renewal: A Willet’s Point Walk**  with [Dr. Jack Eichenbaum](http://www.geognyc.com/?page_id=9), Queens Borough Historian @ Queens Museum, Sat, January 11, 2015
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-mxOUe7Quw8" frameborder="0" allowfullscreen></iframe>
 
