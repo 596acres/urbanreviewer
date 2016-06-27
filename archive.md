@@ -132,8 +132,8 @@ DW Gibson is the author of The Edge Becomes the Center: An Oral History of 21st 
 * [![](img/archive/SI_3_thumb.jpg)](img/archive/SI_3.jpg)
 * [![](img/archive/SI_4_thumb.jpg)](img/archive/SI_4.jpg)
   
-_To view more photos from the residency at Spontaneous Interventions, please visit [596 Acres' website](http://596acres.org/en/photos/album/52/).
+_To view more photos from the residency at Spontaneous Interventions, please visit [596 Acres' website](http://596acres.org/en/photos/album/52/)._
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-  This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
