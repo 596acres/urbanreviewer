@@ -131,7 +131,7 @@ For more information on this event, please visit [596 Acres' website](http://596
 <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/192441338&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>  
 
 
-DW Gibson is the author of The Edge Becomes the Center: An Oral History of 21st Century Gentrification. His work has appeared in such publications as The New York Times, The Washington Post,The Daily Beast, The Village Voice, and The Caravan. He has been a contributor to NPR’s All Things Considered and is the director of the documentary, Not Working. www.dwgibson.net
+DW Gibson is the author of The Edge Becomes the Center: An Oral History of 21st Century Gentrification. His work has appeared in such publications as The New York Times, The Washington Post,The Daily Beast, The Village Voice, and The Caravan. He has been a contributor to NPR’s All Things Considered and is the director of the documentary, Not Working. [www.dwgibson.net](www.dwgibson.net)
 
 ## Photos
 
