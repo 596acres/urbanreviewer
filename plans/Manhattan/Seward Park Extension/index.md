@@ -10,4 +10,6 @@ published: true
 
 The Seward Park Extension plan was approved in 1965, last revised in 1983, and expired in 2005. It delineates residential, commercial, and public and semi-public uses for the lots in the plan area.
 
+Development is moving forward at the site as of this writing in 2016, despite continued conflicts about the right of those families displaced in the 1960s to return to the area and the best future for the commununity. Read more in Urban Omnibus: [In the Same Room without Screaming]( http://urbanomnibus.net/2016/07/in-the-same-room-without-screaming/), by Gabrielle Bendiner-Viani, July 28, 2016.
+
 See [References](http://www.urbanreviewer.org/#page=references.html).
