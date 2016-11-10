@@ -11,4 +11,6 @@ published: true
 
 The South Bronx plan was adopted in 1967, last revised in 1994, and expired in 2007. It designates residential, commercial, open space, public, and semi-public uses for lots in the plan area.
 
-See [References](http://www.urbanreviewer.org/#page=references.html). 
+Here is a story that places planning for the South Bronx via the Model Cities program in context: [Model Cities Redux](http://urbanomnibus.net/2016/10/model-cities-redux/) by Susanne Schindler (Urban Omnibus, October 26, 2016).	 
+
+See [References](http://www.urbanreviewer.org/#page=references.html).
