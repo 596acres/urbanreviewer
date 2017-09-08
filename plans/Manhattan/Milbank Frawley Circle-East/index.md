@@ -10,4 +10,6 @@ The Milbank Frawley Circle–East plan was adopted in 1994, last revised in 2003
 
 You can read some of the 1965 NYC Department of City Planning Study that led to the eventual adoption of the plan [here](https://drive.google.com/drive/folders/0B0R59QsmZxIydlFkVGVmQU9yVmc). This scan was made in 2016 at the National Archives in Washington DC by Charles Chawalko. 
 
+The 1967 City Planning Commission report on the occasion of the plan's approval is [here](https://drive.google.com/open?id=0B9k_zNeDs7q-SHVWNl8zR1R2ZHc). The Third Amended Plan (1970) is [here](https://drive.google.com/open?id=0B9k_zNeDs7q-dWIxNFhrWG9oZE0) (both retrieved from the Department of City Planning Archives via the Freedom of Information Law).
+
 See [References](http://www.urbanreviewer.org/#page=references.html).
