@@ -4,7 +4,7 @@ var eventEmitter = $({});
 var state = {};
 
 var minYear = 1952,
-    maxYear = 2014;
+    maxYear = (new Date()).getFullYear();
 
 var $active,
     $dateRange,
