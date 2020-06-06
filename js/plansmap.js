@@ -68,11 +68,15 @@ module.exports = {
 
         L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-        var streets = L.mapbox.tileLayer('urbanreviewer.8b5195d9', {
-                accessToken: 'pk.eyJ1IjoiZWJyZWxzZm9yZCIsImEiOiI2VFFWT21ZIn0.qhtAhoVTOPzFwWAi7YHr_Q',
-                detectRetina: true 
-            })
-            .addTo(map);
+        var streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_token={accessToken}', {
+            attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+            detectRetina: true,
+            tileSize: 512,
+            maxZoom: 18,
+            zoomOffset: -1,
+            id: 'urbanreviewer/ckatva3cz2g8d1itdu51tt3zt',
+            accessToken: 'pk.eyJ1IjoidXJiYW5yZXZpZXdlciIsImEiOiJDeWJrNG1zIn0.WcU_wA3WIwvkFy178qe3-w'
+        }).addTo(map);
 
         var satellite = new L.BingLayer('Ajio1n0EgmAAvT3zLndCpHrYR_LHJDgfDU6B0tV_1RClr7OFLzy4RnkLXlSdkJ_x');
 
