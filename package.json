@@ -8,7 +8,7 @@
     "jsurl": "^0.1.0",
     "querystring": "^0.2.0",
     "typeahead.js": "^0.10.2",
-    "underscore": "^1.6.0"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "browserify": "^4.2.3",
