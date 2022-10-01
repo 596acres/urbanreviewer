@@ -194,7 +194,7 @@ module.exports = {
     highlightLot: function (options) {
         unHighlightLot();
 
-        var url = 'http://urbanreviewer.cartodb.com/api/v2/sql?q=',
+        var url = 'https://urbanreviewer.cartodb.com/api/v2/sql?q=',
             whereConditions = [];
         options = options || {};
         if (options.block) {

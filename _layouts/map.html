@@ -6,9 +6,7 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="canonical" href="http://www.smartsign.com/urbanreviewer" />
-
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
         <link rel="stylesheet" href="css/MyFontsWebfontsKit.css" />
         <link rel="stylesheet" href="css/style.min.css">
     </head>
@@ -66,10 +64,10 @@
             <span class="icon-bar"></span>
         </button>
 
-        <script src="http://maps.googleapis.com/maps/api/js"></script>
-        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
         <script src="bower_components/cartodb.js/dist/cartodb.noleaflet.js"></script>
         <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.standalone.js"></script>
 
@@ -81,22 +79,6 @@
         {% else %}
             <script src="js/bundle.dev.js"></script>
         {% endif %}
-
-        <!-- Piwik -->
-        <script type="text/javascript">
-          var _paq = _paq || [];
-          _paq.push(['trackPageView']);
-          _paq.push(['enableLinkTracking']);
-          (function() {
-            var u=(("https:" == document.location.protocol) ? "https" : "http") + "://fiveninesix.webfactional.com/analytics/";
-            _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['setSiteId', 1]);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
-            g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-          })();
-        </script>
-        <noscript><p><img src="http://fiveninesix.webfactional.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-        <!-- End Piwik Code -->
 
         <script type="text/javascript" src="//use.typekit.net/gvq5mto.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>

@@ -1,4 +1,4 @@
-var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql/';
+var sqlApiBase = 'https://urbanreviewer.cartodb.com/api/v2/sql/';
 
 function getSqlUrl(sql) {
     return sqlApiBase + '?q=' + encodeURIComponent(sql);

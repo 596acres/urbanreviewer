@@ -3891,7 +3891,7 @@ module.exports = {
 };
 
 },{}],"/home/eric/Documents/596/urbanreviewer/urbanreviewer/js/cartodbapi.js":[function(require,module,exports){
-var sqlApiBase = 'http://urbanreviewer.cartodb.com/api/v2/sql/';
+var sqlApiBase = 'https://urbanreviewer.cartodb.com/api/v2/sql/';
 
 function getSqlUrl(sql) {
     return sqlApiBase + '?q=' + encodeURIComponent(sql);
@@ -5288,14 +5288,6 @@ module.exports = {
 
         L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-        /*
-        var streets = L.mapbox.tileLayer('urbanreviewer.8b5195d9', {
-                accessToken: 'pk.eyJ1IjoiZWJyZWxzZm9yZCIsImEiOiI2VFFWT21ZIn0.qhtAhoVTOPzFwWAi7YHr_Q',
-                detectRetina: true 
-            })
-            .addTo(map);
-            */
-
         var streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}@2x?access_token={accessToken}', {
             attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
             detectRetina: true,
@@ -5422,7 +5414,7 @@ module.exports = {
     highlightLot: function (options) {
         unHighlightLot();
 
-        var url = 'http://urbanreviewer.cartodb.com/api/v2/sql?q=',
+        var url = 'https://urbanreviewer.cartodb.com/api/v2/sql?q=',
             whereConditions = [];
         options = options || {};
         if (options.block) {
