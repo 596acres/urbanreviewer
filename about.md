@@ -13,7 +13,9 @@ The City of New York has adopted over 150 master plans for our neighborhoods. Yo
 
 Neighborhood master plans - often called “urban renewal plans” - were adopted to get federal funding for acquiring land, relocating the people living there, demolishing the structures and making way for new public and private development. Plan adoptions started in 1949 and many plans remain active today. Development in the plan areas sometimes happened, like Lincoln Center, and sometimes didn't, like many still-vacant lots in East New York and Bushwick. Areas were selected for renewal because they were considered blighted or obsolete. The "blight" designation always came from outside the communities that got that label - from inspectors working for the mayor’s Committee on Slum Clearance in the early period and Housing Preservation and Development (HPD) employees in the later period. 
 
-596 Acres has teamed up with Partner & Partners and SmartSign to produce a comprehensive online map [showing all the adopted neighborhood master plans](http://www.nyc.gov/html/hpd/html/developers/urban-renewal.shtml) for New York City. It has taken us nearly two years to follow up on a [Freedom of Information Law request](media/596URPFOILletter_take2.pdf) for records of those plans and meticulous translation of paper plans into machine-readable spreadsheets to make this map. 
+596 Acres has teamed up with Partner & Partners and SmartSign to produce a comprehensive online map showing all the adopted neighborhood master plans for New York City. After being granted access to the plan documents due to a [Freedom of Information Law request](media/596URPFOILletter_take2.pdf), our team performed a meticulous translation into machine-readable spreadsheets to make this map. 
+
+**UPDATE: A few years after we placed this information online, the City's Department of Housing Preservation and Development put Urban Renewal data [online](https://www.nyc.gov/site/hpd/services-and-information/urban-renewal.page) and created a map, too. The City's tool doesn't have information by specific block/lot, but they did finally make the underlying documents available. These are the documents that we had to request via FOIL in 2012 (see METHODOLODY below)**
  
 The plans were written with a great city in mind. Huge swaths were designated for demolition, to be paid for with federal dollars. Lots that were designated this way to justify the funding for demolition had to be included in a plan that stated what they "should" be - designations like "housing," "industrial," and "open space."
 
@@ -22,7 +24,9 @@ The plans were written with a great city in mind. Huge swaths were designated fo
 
 ## Methodology
 
-These plans have existed in paper form in HPD's offices, but have been inaccessible to the public until now. Our request for access to the agency records was granted in 2012 and we opted for the right to inspect these records instead of having the agency make copies for us at 25 cents per page. Our team of trained volunteer records inspectors examined each plan and listed all the lots that were included in it, including the dispositions that were promised where those were available. These volunteers spent over 100 hours inspecting the records. A few plans were completely missing from the stacks that HPD provided, so our research team looked for them in community archives and on the internet.
+These plans have existed in paper form in HPD's offices, but were inaccessible to the public until 2022. 
+
+Our request for access to the agency records was granted in 2012 and we opted for the right to inspect these records instead of having the agency make copies for us at 25 cents per page. Our team of trained volunteer records inspectors examined each plan and listed all the lots that were included in it, including the dispositions that were promised where those were available. These volunteers spent over 100 hours inspecting the records. A few plans were completely missing from the stacks that HPD provided, so our research team looked for them in community archives and on the internet.
 
 ![Stack of plan records](img/paper.jpg)
 
