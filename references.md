@@ -8,21 +8,19 @@ published: true
 # References
 
 ## References
-We made this map by investigating the urban renewal and neighborhood redevelopment master plans that NYC Housing Preservation and Development (HPD) has in their archives and by relying on a few secondary sources produced by NYC Government offices. 
+We originally made this map in 2014 by investigating the urban renewal and neighborhood redevelopment master plans that NYC Housing Preservation and Development (HPD) has in their archives and by relying on a few secondary sources produced by NYC Government offices. Although we would love to share the actual plans here, we can’t because we could not afford to purchase copies at 25 cents per page from HPD
 
-Although we would love to share the actual plans here, we can’t because we could not afford to purchase copies at 25 cents per page from HPD; this is the statutory rate under the [New York State Freedom of Information Law](http://www.dos.ny.gov/coog/foil2.html) (FOIL). FOIL also requires government agencies to make their documents [available for inspection](http://www.urbanreviewer.org/media/596URPFOILletter_take2.pdf); we took advantage of that portion of the law to arrange for a team of dedicated volunteers to visit the HPD Records Access office regularly for about a year to extract the information you see on the NYC Urban Reviewer from the documents. Our volunteers were not allowed to photograph or make copies of the plans. 
+25 cents per page is the statutory rate under the [New York State Freedom of Information Law](http://www.dos.ny.gov/coog/foil2.html) (FOIL). FOIL also requires government agencies to make their documents [available for inspection](http://www.urbanreviewer.org/media/596URPFOILletter_take2.pdf); we took advantage of that portion of the law to arrange for a team of dedicated volunteers to visit the HPD Records Access office regularly for about a year to extract the information you see on the NYC Urban Reviewer from the documents. Our volunteers were not allowed to photograph or make copies of the plans. 
 
 Here are two books that we found particularly helpful: 
 NYC Department of Housing Preservation and Development. _Community Development Progress Report: 1968._  Prepared and edited by Nathan Sobel. New York City, 1968.   
 
-NYC Department of Housing Preservation and Development. _Atlas of Urban Renewal Project Areas in the City of New York._  Prepared and edited by Nathan Sobel.  New York City, 1984.  
+NYC Department of Housing Preservation and Development. _Atlas of Urban Renewal Project Areas in the City of New York._  Prepared and edited by Nathan Sobel.  New York City, 1984. 
 
-A full bibliography is available upon request. 
-
-_There is a bill in the NYC Council called the [OpenFOIL bill](http://legistar.council.nyc.gov/LegislationDetail.aspx?ID=1796964&GUID=125D4F8F-E4DE-47CA-882D-2C607A5EA819&Options=ID%7CText%7C) that would make a big difference in our ability to see and share government documents: it requires city agencies to post all requested documents to a public web portal after even a single request. If this law was in effect today, HPD would be obliged to post all the plans below. As it is, you have to rely on the careful notes taken by [our volunteers](http://www.urbanreviewer.org/#page=about.html)._
+In 2017, the City Council passed a law requiring HPD to make urban renewal data available to the public. See [City Council Approves Bill to Increase Transparency For Urban Renewal Areas The Low-Down](https://www.thelodownny.com/leslog/2017/12/city-council-approves-bill-to-increase-transparency-for-urban-renewal-areas.html) | Ed Litvak | 12/12/2017. The bill became [law](https://nyc.legistar1.com/nyc/attachments/f6a21032-ecd2-4197-ba05-f415caa39ecf.pdf) in January 2018 and HPD posted its [Urban Renewal database](https://www.nyc.gov/site/hpd/services-and-information/urban-renewal.page) in January 2020; as of January 2024, that database does not include specific property information, but HPD has posted urban renewal area boundaries and plan documents that we had to inspect in person in 2014. 
 
 ## Missing Plans
-HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD has not yet produced, details are missing about planned uses for the included lots. We are continuing to look for the following plans that were missing from HPD's responses to our numerous requests to date:
+In 2014, HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD has not yet produced, details are missing about planned uses for the included lots. We are continuing to look for the following plans that were missing from HPD's responses to our numerous requests to date:
 
 **Brooklyn**  
 - 49th Street-1st Avenue (adopted approx. 1972)*  
