@@ -41,4 +41,4 @@ Planetizen | By James Brasuell | 1/25/2014
 
 CartoDB [Map of the Week](http://blog.cartodb.com/map-of-the-week-urban-reviewer/) 
 
-[![Planetizen Top 10 Websites 2014](img/planetizen_badge.png)](http://www.planetizen.com/websites/2014)
+[![Planetizen Top 10 Websites 2014](img/planetizen_badge.png)](https://www.planetizen.com/features/71298-top-10-websites-2014)
