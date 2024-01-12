@@ -17,7 +17,7 @@ published: true
 ### Model Cities
 <a id="model-cities"></a>
 
-by Haja Worley, with editorial support from Cindy Worley
+by Haja Worley, with editorial support from Cindy Worley (2014)
 
 _In 1966 Congress approved the Model Cities Act, which sought to change how urban renewal took place in American Cities. Part of President Lyndon B. Johnson’s War on Poverty, Model Cities responded to both criticism of how urban renewal had been conducted so far and the growing problems in the country’s inner cities, which by then had let to a series of summer “riots.” Designed to spur comprehensive renewal in some of the most troubled urban neighborhoods, Model Cities plans were meant to consider the social and economic health of neighborhoods, and not just their physical condition. Education, jobs training, and healthcare would be planned for alongside new housing and community facilities._
 
@@ -47,7 +47,7 @@ I feel strongly about getting young people involved in “building things up” 
 Presently, I co-host a radio program  called “Harlem 411” on a local community radio station at CUNY here in Harlem.  We cover community events, local, national and international news, and interview people who have information or services of value to offer others.  I rely a lot on making links, “connecting the dots,” so to speak, and using the airwaves to educate, alert and organize.  I also engineer a program called “Inside Housing and Communities,” which covers many facets of urban development.  So in a way things have come full circle.
 
 ### “We could have studied city-making”
-by Matthew Delsesto<a id="city-making"></a>
+by Matthew Delsesto<a id="city-making"></a> (2014)
 
 _In the street outside a school  
 what the children learn  
@@ -108,7 +108,7 @@ I had not considered that an agriculture project could be a paternalistic interv
 But the question still remains, will I, will we, learn the “secret lesson” of these recurring tragedies? On the ruins advanced by harsh wooden sticks of racist segregations, poverty programs, or good intentions, can we see what else is emerging now?  What kinds of practices have sustained people through these painful moments of destruction, and where are we able to study and practice this next generation of city making?
 
 ### Qué era y qué es la renovación urbana en Nueva York? / _What Was, And What Is, Urban Renewal in New York City?_
-by Mariana Mogilevich<a id="what-was-what-is"></a>
+by Mariana Mogilevich<a id="what-was-what-is"></a> (2014)
 
 En nuestra ciudad, de tan alta densidad, no se encuentran muchos terrenos baldíos de gran superficie; sin embargo, existen. Los hay en el Broadway Triangle, en Brooklyn, en la Seward Park Urban Renewal Area (SPURA) del Lower East Side y en partes de Edgemere y de Willets Point en Queens. La ciudad adquirió estos terrenos y demolió los edificios como parte de proyectos de reurbanización. Lo que vaya a pasar con ellos está aun en el aire. Para entender qué pasó y que podría pasar en el futuro, tenemos que conocer la historia de la renovación urbana en Nueva York. Este proceso, aunque empezó  hace más de sesenta años, sigue siendo un factor activo y polémico de cambio en los barrios de Nueva York.  
 
@@ -161,7 +161,7 @@ Algunos proyectos recientes o actuales de la ciudad, como los de Willets Point o
 _Some recent and current urban renewal projects, such as those at Willets Point or Atlantic Yards, have raised questions about who benefits from the city’s plans. To make way for the Metrotech office park in Downtown Brooklyn, the city cleared historic rowhouses that may have been stops on the Underground Railroad. And other sites, designated and cleared a long time ago, remain vacant and awaiting redevelopment. The city’s urban renewal plans are not ancient history. The story of urban renewal is still being written, with the fate and future of many sites in the balance._
 
 ### Who Makes A Neighborhood? 
-by DW Gibson (you can listen to DW read the essay below [here](https://soundcloud.com/596-acres/who-makes-a-neighborhood-by-dw-gibson))<a id="who-makes-neighborhood"></a>
+by DW Gibson (you can listen to DW read the essay below [here](https://soundcloud.com/596-acres/who-makes-a-neighborhood-by-dw-gibson))<a id="who-makes-neighborhood"></a> (2014)
 
 The question "Who makes a neighborhood?" provokes very different answers from those who develop land and those who live on that land.
 
