@@ -11,6 +11,7 @@ published: true
 # Press
 
 [City Council Approves Bill to Increase Transparency For Urban Renewal Areas](https://www.thelodownny.com/leslog/2017/12/city-council-approves-bill-to-increase-transparency-for-urban-renewal-areas.html)
+
 The Low-Down | Ed Litvak | 12/12/2017
 
 [Dear New Yorkers, Your Neighborhood is a Slum](http://thoughtcatalog.com/roxanne-earley/2015/02/dear-new-yorkers-your-neighborhood-is-a-slum/) (a review of Reviewing Renewal at the Queens Museum)  
