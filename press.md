@@ -10,6 +10,10 @@ published: true
 
 # Press
 
+[City Council Approves Bill to Increase Transparency For Urban Renewal Areas]
+(https://www.thelodownny.com/leslog/2017/12/city-council-approves-bill-to-increase-transparency-for-urban-renewal-areas.html)
+The Low-Down | Ed Litvak | 12/12/2017
+
 [Dear New Yorkers, Your Neighborhood is a Slum](http://thoughtcatalog.com/roxanne-earley/2015/02/dear-new-yorkers-your-neighborhood-is-a-slum/) (a review of Reviewing Renewal at the Queens Museum)  
 Thought Catalogue | by Roxanne Earley | 2/5/2015
 
@@ -23,7 +27,8 @@ Fast Company | By Zoe Mendelson | 11/10/2014
 [You Are Now Entering An Active Urban Renewal Area](http://urbanomnibus.net/2014/11/you-are-now-entering-an-active-urban-renewal-area/)  
 Urban Omnibus | By Jonathan Tarleton | 11/5/2014
 
-[Fun Maps: The Urban Reviewer Map by 596 Acres Shows us Master Plans since 1952](http://untappedcities.com/2014/07/04/fun-maps-the-urban-reviewer-map-by-596-acres-shows-us-master-plans-since-1952/)  Untapped Cities | By billy hagberg | 7/4/2014
+[Fun Maps: The Urban Reviewer Map by 596 Acres Shows us Master Plans since 1952](http://untappedcities.com/2014/07/04/fun-maps-the-urban-reviewer-map-by-596-acres-shows-us-master-plans-since-1952/)  
+Untapped Cities | By billy hagberg | 7/4/2014
 
 [Urban Reviewer Maps New York's Forgotten Master Plans](http://techpresident.com/news/25143/urban-reviewer-maps-new-yorks-forgotten-master-plans)  
 TechPresident | By Sam Roudman | 6/19/2014
