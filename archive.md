@@ -157,7 +157,7 @@ _To view more photos from each programming day, please select:
 * [![](img/archive/SI_3_thumb.jpg)](img/archive/SI_3.jpg)
 * [![](img/archive/SI_4_thumb.jpg)](img/archive/SI_4.jpg)
 
-_To view more photos from the residency at Spontaneous Interventions, please visit [596 Acres' website](http://596acres.org/en/photos/album/52/)._
+_To view more photos from the residency at Spontaneous Interventions, please visit [596 Acres' website](https://596acres.org/gallery/urban-reviewer-at-spontaneous-interventions-on-governors-island/)._
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
