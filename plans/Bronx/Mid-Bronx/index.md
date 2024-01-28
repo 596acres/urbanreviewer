@@ -8,4 +8,4 @@ published: true
 
 The Mid-Bronx plan was adopted in 1982, last revised in 1998, and expires in 2022. It demarcates residential and public open space areas for lots in the plan area.
 
-See [References](http://www.urbanreviewer.org/#page=references.html). 
+[NYC Housing Preservation and Development, Mid-Bronx Industrial First Amended Urban Renewal Plan, First Minor Change (1998).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/mid-bronx-industrial-first-amended-urp-first-minor-change.pdf)
