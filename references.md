@@ -19,34 +19,8 @@ Here are two books that we found particularly helpful:
 
 In 2017, the City Council passed a bill requiring HPD to make urban renewal data available to the public. See [City Council Approves Bill to Increase Transparency For Urban Renewal Areas The Low-Down](https://www.thelodownny.com/leslog/2017/12/city-council-approves-bill-to-increase-transparency-for-urban-renewal-areas.html) | Ed Litvak | 12/12/2017. The bill became [law](https://nyc.legistar1.com/nyc/attachments/f6a21032-ecd2-4197-ba05-f415caa39ecf.pdf) in January 2018 and HPD posted its [Urban Renewal database](https://www.nyc.gov/site/hpd/services-and-information/urban-renewal.page) in January 2020; as of January 2024, that database does not include specific property information, but HPD has complied with the law by posting urban renewal area boundaries and plan documents that we had to inspect in person in 2014. 
 
-## Missing Plans
-In 2014, HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD has not yet produced, details are missing about planned uses for the included lots. We are continuing to look for the following plans that were missing from HPD's responses to our numerous requests to date:
-
-**Brooklyn**  
-- 49th Street-1st Avenue (adopted approx. 1972)*  
-- Bergen Street (adopted approx. 1972)*  
-- Lindsay Park (adopted in 1962)  
-- Lindsay-Bushwick (adopted approx. 1969)  
-- Rutland Road (adopted approx. 1971)*  
-- Wallabout (adopted 1989)  
-
-**Manhattan**  
-- Bella Vista (adopted approx. 1973)  
-- Corlears Hook (adopted 1952)  
-- East 3rd Street-Avenue C (adopted approx. 1969)*  
-- Hester-Allen Street (adopted approx. 1969)*  
-- Morningside-Manhattanville (adopted approx. 1956)  
-- Penn Station South (adopted 1955)  
-- Seward Park (adopted approx. 1952) (This one really surprises us! It’s a really high profile stalled redevelopment that has gotten some [recent coverage in the New York Times](http://www.nytimes.com/2014/03/23/nyregion/they-kept-a-lower-east-side-lot-vacant-for-decades.html?_r=0).)  
-- United Nations (adopted 1970)  
-- West Park (adopted 1952)  
-
-**Queens**  
-- College Point  
-
-This list will be updated and detailed planned use information will be added as it becomes available. If you have the most recent revision of any of the plans above and would like to share it, please [contact us](#page=contact.html). 
-
-* HPD's records reflect that these plans have been lost. We are searching for them in other City archives. 
+## Missing Information about Planned Uses and a Missing Plan
+In 2014, HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD did not produce in 2014, details are missing about planned uses for the included lots. Since HPD made plans availabe online in 2020, we direct you to those. Records remain missing for the College Point Area Plan and there is no entry on the map.
 
 ## Further Investigation
 _What is urban renewal and master planning for our neighborhoods?  Who makes comprehensive neighborhood plans and why?  How have decisions been made about master planning in our cities?  What kinds of narratives were used to promote urban renewal plans?_
