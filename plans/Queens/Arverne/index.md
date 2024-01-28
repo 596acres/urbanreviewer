@@ -11,6 +11,5 @@ published: true
 
 The Arverne plan was adopted in 1968, last revised in 2003 (second Amendment), and expires in 2043, with the exception of some sites that expired in 2008. The plan calls for residential use with commercial overlay, industrial/manufacturing use, open space including playground, recreation center and public/charter school, parking, flooding protection, and demapping and widening of streets.
 
-See the Second Amendment now posted on HPD's website [here](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/arverne-second-amended-urp.pdf). 
+[NYC Housing Preservation and Development, Arvene Second Amended Urban Renewal Area Plan (2003).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/arverne-second-amended-urp.pdf). 
 
-[References](http://www.urbanreviewer.org/#page=references.html).
