@@ -8,4 +8,4 @@ published: true
 
 The University Heights I plan was adopted in 1980 and expired in 2000. It designates the lots in the plan area for residential use.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, University Heights I Urban Renewal Area Plan (1988).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/university-heights-urp.pdf)
