@@ -9,3 +9,5 @@ primarily calls for industrial use, with 10% of the industrial lots to be
 landscaped open space, and limited residential use.
 
 ![James J. Lyons in the Atlas of Urban Renewal](James J. Lyons.jpg)
+
+https://www.nyc.gov/assets/hpd/downloads/pdfs/services/james-j-lyons-first-amended-urp.pdf
