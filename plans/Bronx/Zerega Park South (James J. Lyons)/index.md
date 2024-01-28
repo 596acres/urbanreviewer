@@ -7,5 +7,4 @@ The Zerega Park South (James J. Lyons) plan for the South Zerega Avenue urban re
 
 ![James J. Lyons in the Atlas of Urban Renewal](James J. Lyons.jpg)
 
-[NYC Housing Preservation and Development, James J. Lyons First Amended Urban Renewal Area Plan (2008).]
-(https://www.nyc.gov/assets/hpd/downloads/pdfs/services/james-j-lyons-first-amended-urp.pdf)
+[NYC Housing Preservation and Development, James J. Lyons First Amended Urban Renewal Area Plan (2008).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/james-j-lyons-first-amended-urp.pdf)
