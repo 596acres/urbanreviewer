@@ -8,4 +8,4 @@ published: true
 
 The Coney Island I plan was adopted in 1968, last revised in 2006, and expired in 2008. It includes residential, commercial, community facility, manufacturing, and heavy commercial uses along with public and semi-public improvements for lots in the plan area.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Coney Island I Eleventh Amended Urban Renewal Area Plan (2006).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/coney-island-i-eleventh-amended-urp.pdf)
