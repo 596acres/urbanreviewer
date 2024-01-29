@@ -8,4 +8,4 @@ published: true
 
 The Coney Island Creek plan was adopted in 1970 and expired in 2008. It proposes to "conform the structures, size of parcels, and parking and loading facilities to industrial zoning."
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Coney Island Creek Industrial Urban Renewal Area Plan (1970).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/coney-island-creek-urp.pdf)
