@@ -8,4 +8,4 @@ published: true
 
 The Cadman Plaza plan was adopted in 1962, last revised in 1982, and expired in 2002. It promotes uses including residential (either rehabilitated or cleared and redeveloped), retail commercial, recreational areas, parking garages, and street widenings for the plan area.
 
-[Housing Preservation and Development, Cadman Plaza Second Amended Urban Renewal Plan (1982).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/cadman-plaza-second-amended-urp.pdf)
+[NYC Housing Preservation and Development, Cadman Plaza Second Amended Urban Renewal Plan (1982).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/cadman-plaza-second-amended-urp.pdf)
