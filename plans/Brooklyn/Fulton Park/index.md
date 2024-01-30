@@ -10,4 +10,4 @@ The Fulton Park plan, a spin-off of the Central Brooklyn urban renewal area, was
 
 You can read the 1965 NYC Department of City Planning Study that led to the eventual adoption of the plan [here](https://drive.google.com/a/newschool.edu/file/d/0B0R59QsmZxIyUFpfSmZhSktGMU0/view?usp=sharing). This scan was made in 2016 at the National Archives in Washington DC by Charles Chawalko. 
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Fulton Park Second Amended Urban Renewal Area Plan (2003).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/fulton-park-second-amended-urp.pdf)
