@@ -10,4 +10,4 @@ published: true
 
 The Coney Island West plan was adopted in 1966, last revised in 1980, and expired in 2006. It is for commercial and community facility uses including community center, day care center, and professional office space, along with public and semi-public uses including park recreation facilities.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Coney Island West Third Amended Urban Renewal Area Plan (1981).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/coney-island-west-third-amended-urp.pdf)
