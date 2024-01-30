@@ -11,4 +11,4 @@ published: true
 
 The Crown Heights plan was adopted in 1976, last revised in 2002, and expires in 2016. It includes residential, community facility, and accessory parking uses for lots in the plan area.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Crown Heights Fifth Amended Urban Renewal Area Plan (2002).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/crown-heights-fifth-amended-urp.pdf)
