@@ -1,6 +1,6 @@
 ---
 layout: plan
-title: Flatlands
+title: Flatlands Industrial
 published: true
 ---
 
