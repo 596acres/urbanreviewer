@@ -21,13 +21,16 @@ In 2017, the City Council passed a bill requiring HPD to make urban renewal data
 
 ## Missing Information about Planned Uses and Missing Plans
 In 2014, HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD did not produce in 2014, details are missing about planned uses for the included lots. Since HPD made plans availabe online in 2020, we direct you to those. Records remain missing for the following areas: 
+
 *Queens*
 - College Point
 - Flushing Municipal Parking Lot #1
 - Seaside-Rockaway
+
 *Brooklyn*
 - Middleton–Lorimer
 - North Twin Pines
+
 *Bronx*
 - University Heights I
 
