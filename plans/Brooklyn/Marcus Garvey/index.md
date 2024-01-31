@@ -10,4 +10,4 @@ published: true
 
 The Marcus Garvey Park Village plan was adopted in 1968, last revised in 1989, and expired in 2008. It calls for residential, commercial, public, semi-public, open space, and alternate uses in the plan area.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Marcus Garvey Park Village Eighth Amended Urban Renewal Area Plan (2008).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/marcus-garvey-eighth-amended-urp.pdf)
