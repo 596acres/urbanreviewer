@@ -8,4 +8,4 @@ published: true
 
 The Rutland Road plan was adopted in 1971 and expired in 2011. It calls for residential and public space on lots in the plan area. 
 
-https://www.nyc.gov/assets/hpd/downloads/pdfs/services/rutland-road-urp.pdf
+[NYC Housing Preservation and Development, Rutland Road Urban Renewal Area Plan (1971).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/rutland-road-urp.pdf)
