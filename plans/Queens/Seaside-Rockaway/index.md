@@ -8,5 +8,3 @@ published: true
 ![Seaside-Rockaway, NYC Department of Housing Preservation and Development. Atlas of Urban Renewal Project Areas in the City of New York. Prepared and edited by Nathan Sobel. New York City, 1984.](Seaside-Rockaway.jpg)
 
 The Seaside-Rockaway plan was adopted in 1958 and expired in 1998. It calls for middle-income residential, recreational, and commercial retail uses in the plan area.
-
-See [References](http://www.urbanreviewer.org/#page=references.html).
