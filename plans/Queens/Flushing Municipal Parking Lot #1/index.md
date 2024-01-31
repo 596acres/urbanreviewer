@@ -4,7 +4,7 @@ title: "Flushing Municipal Parking Lot #1"
 published: true
 ---
 
-The Flushing Municipal Parking Lot #1 plan was adopted in 1954 and expired in
+The Flushing Municipal Parking Lot # 1 plan was adopted in 1954 and expired in
 2004. It calls for the plan area to be used for municipal parking. The lots that
 were cleared for renewal mostly consisted of detached working-class houses
 surrounding the historic Macedonia African Methodist Episcopal Church in a
