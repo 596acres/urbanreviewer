@@ -23,12 +23,12 @@ In 2017, the City Council passed a bill requiring HPD to make urban renewal data
 In 2014, HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD did not produce in 2014, details are missing about planned uses for the included lots. Since HPD made plans availabe online in 2020, we direct you to those. Records remain missing for the following areas: 
 
 *Queens*
-- [Flushing Municipal Parking Lot #1] (https://596acres.github.io/urbanreviewer/#map=18/40.7615/-73.8283&plan=Flushing+Municipal+Parking+Lot+%231)
-- [Seaside-Rockaway] (https://596acres.github.io/urbanreviewer/#map=16/40.5823/-73.8259&plan=Seaside-Rockaway)
+- [Flushing Municipal Parking Lot #1](https://596acres.github.io/urbanreviewer/#map=18/40.7615/-73.8283&plan=Flushing+Municipal+Parking+Lot+%231)
+- [Seaside-Rockaway](https://596acres.github.io/urbanreviewer/#map=16/40.5823/-73.8259&plan=Seaside-Rockaway)
 
 *Brooklyn*
-- [Middleton–Lorimer] (https://596acres.github.io/urbanreviewer/#map=17/40.7018/-73.9542&plan=Middleton-Lorimer)
-- [North Twin Pines] (https://596acres.github.io/urbanreviewer/#map=17/40.6548/-73.8896&plan=North+Twin+Pines)
+- [Middleton–Lorimer](https://596acres.github.io/urbanreviewer/#map=17/40.7018/-73.9542&plan=Middleton-Lorimer)
+- [North Twin Pines](https://596acres.github.io/urbanreviewer/#map=17/40.6548/-73.8896&plan=North+Twin+Pines)
 
 *Bronx*
 - [University Heights I](https://596acres.github.io/urbanreviewer/#map=18/40.8527/-73.9138&plan=University+Heights+I)
