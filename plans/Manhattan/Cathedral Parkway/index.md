@@ -9,4 +9,4 @@ published: true
 
 The Cathedral Parkway plan was adopted in 1968, last revised in 2004, and expires in 2008. It designates residential, commercial, public and semi-public, and public open space uses for lots in the plan area.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Cathedral Parkway Fifth Amended Urban Renewal Plan (2008).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/cathedral-parkway-fifth-amended-urp.pdf)
