@@ -4,6 +4,6 @@ title: Wallabout
 published: true
 ---
 
-The Wallabout plan was adopted in 1989. HPD has not yet made the plan available to our team. 
+The Wallabout plan was adopted in 1989 and expires in 2029.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Department of Housing Preservation and Development, Wallabout Urban Renewal Area Plan (1989).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/wallabout-urp.pdf)
