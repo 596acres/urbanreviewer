@@ -19,4 +19,4 @@ The plan calls for residential and commercial uses and preserves the Liz Christy
 
 More about how the community resisted the original plan put forward by the City administration in 1959, and created this plan to save the existing housing stock, start a community land trust and provided hundreds of units of low income cooperative housing: [http://coopersquare.org/about-us/our-historical-accomplishments](http://coopersquare.org/about-us/our-historical-accomplishments)
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Cooper Square Second Amended Renewal Area Plan (2001).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/cooper-square-second-amended-urp.pdf)
