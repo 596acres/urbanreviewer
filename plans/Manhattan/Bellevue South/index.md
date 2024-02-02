@@ -11,4 +11,4 @@ published: true
 
 The Bellevue South plan was adopted in 1964 and expired in 2004. Its intention is to promote residental, public, and semi-public uses and public park space for lots in the plan area.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Bellevue South Third Amended Urban Renewal Area Plan, Third Minor Change (1971).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/bellevue-south-third-amended-urp-third-minor-change.pdf)
