@@ -9,4 +9,4 @@ published: true
 
 The Baltic Street plan was adopted in 1982 and expired in 2021. It permitted residential, community facility, and commercial uses for lots in the plan area.
 
-[NYC Housing Preservation and Development, Baltic Street Community Development Plan rev. 1 (1991)](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/baltic-street-urp.pdf).
+[NYC Housing Preservation and Development, Baltic Street First Amended Community Development Plan (1991)](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/baltic-street-urp.pdf).
