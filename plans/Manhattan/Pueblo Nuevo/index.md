@@ -6,7 +6,7 @@ published: true
 
 ![Pueblo Nuevo in the Atlas of Urban Renewal](Pueblo Nuevo.jpg)
 
-The Pueblo Nuevo plan was adopted in 1975, last revised in 1983, and expires in 2015. It assigns residential and institutional uses for the lots in the plan area.
+The Pueblo Nuevo plan was adopted in 1975, last revised in 1984, and expired in 2015. It assigns residential and institutional uses for the lots in the plan area.
 
-See [References](http://www.urbanreviewer.org/#page=references.html). 
-https://www.nyc.gov/assets/hpd/downloads/pdfs/services/pueblo-nuevo-third-amended-urp.pdf
+[NYC Housing Preservation and Development, Pueblo Nuevo Third Amended Urban Renewal Area Plan (1984).]
+(https://www.nyc.gov/assets/hpd/downloads/pdfs/services/pueblo-nuevo-third-amended-urp.pdf)
