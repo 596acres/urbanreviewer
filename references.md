@@ -23,6 +23,7 @@ In 2014, HPD provided us with a list of all the plans that ever existed but was 
 - [Corlears Hook](https://596acres.github.io/urbanreviewer/#map=17/40.7138/-73.9789&plan=Corlears+Hook)
 - [Morningside-Manhattanville](https://596acres.github.io/urbanreviewer/#map=17/40.8125/-73.9587&plan=Morningside-Manhattanville)
 - [North Harlem](https://596acres.github.io/urbanreviewer/#map=17/40.8172/-73.9369&plan=North+Harlem)
+- [Tompkins Square](https://596acres.github.io/urbanreviewer/#map=17/40.7263/-73.9761&plan=Tompkins+Square)
 
 *Brooklyn*
 - [Middleton–Lorimer](https://596acres.github.io/urbanreviewer/#map=17/40.7018/-73.9542&plan=Middleton-Lorimer)
