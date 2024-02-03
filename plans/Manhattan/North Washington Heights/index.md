@@ -9,6 +9,6 @@ published: true
 ![North Washington Heights in the Atlas of Urban Renewal](North Washington Heights Map 2 or 3.jpg)
 ![North Washington Heights in the Atlas of Urban Renewal](North Washington Heights Map 3 or 3.jpg)
 
-The North Washington Heights plan was adopted in 1980 and expired in 2000. It designates lots in the plan area for residential use.
+The North Washington Heights plan was adopted in 1981 and expired in 2000. It designates lots in the plan area for residential use.
 
-See [References](http://www.urbanreviewer.org/#page=references.html). 
+[NYC Housing Preservation and Development, North Washington Heights Urban Renewal Area Plan (1981).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/north-washington-heights-urp.pdf)
