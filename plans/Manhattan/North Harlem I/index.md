@@ -8,4 +8,6 @@ published: true
 
 The North Harlem plan was adopted in 1952 and expired in 1992. It designates community space and moderate-income residential uses for lots in the plan area. HPD has not yet made the plan available to our team.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+NYC Housing Preservation and Development, North Harlem Third Amended Urban Renewal Area Plan, Third Minor Change (1985).
+
+https://www.nyc.gov/site/hpd/services-and-information/urban-renewal-details.page?areaId=32
