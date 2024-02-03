@@ -12,4 +12,4 @@ The Seward Park Extension plan was approved in 1965, last revised in 1983, and e
 
 Development is moving forward at the site as of this writing in 2016, despite continued conflicts about the right of those families displaced in the 1960s to return to the area and the best future for the commununity. Read more in Urban Omnibus: [In the Same Room without Screaming]( http://urbanomnibus.net/2016/07/in-the-same-room-without-screaming/), by Gabrielle Bendiner-Viani, July 28, 2016.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development,  Seward Park Extension First Amended Urban Renewal Area Plan, Second Minor Change (1983).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/seward-park-extension-first-amended-urp-second-minor-change.pdf)
