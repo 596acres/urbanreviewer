@@ -37,7 +37,6 @@ In 2014, HPD provided us with a list of all the plans that ever existed but was 
 
 *Bronx*
 - [University Heights I](https://596acres.github.io/urbanreviewer/#map=18/40.8527/-73.9138&plan=University+Heights+I)
-
 ## Further Investigation
 _What is urban renewal and master planning for our neighborhoods?  Who makes comprehensive neighborhood plans and why?  How have decisions been made about master planning in our cities?  What kinds of narratives were used to promote urban renewal plans?_
 
