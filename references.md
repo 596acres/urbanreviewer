@@ -7,7 +7,6 @@ published: true
 
 # References
 
-## References
 We originally made this map in 2014 by investigating the urban renewal and neighborhood redevelopment master plans that NYC Housing Preservation and Development (HPD) has in their archives and by relying on a few secondary sources produced by NYC Government offices. Although we would love to share the actual plans here, we can’t because we could not afford to purchase copies at 25 cents per page from HPD.
 
 25 cents per page is the statutory rate under the [New York State Freedom of Information Law](http://www.dos.ny.gov/coog/foil2.html) (FOIL). FOIL also requires government agencies to make their documents [available for inspection](http://www.urbanreviewer.org/media/596URPFOILletter_take2.pdf); we took advantage of that portion of the law to arrange for a team of dedicated volunteers to visit the HPD Records Access office regularly for about a year to extract the information you see on the NYC Urban Reviewer from the documents. Our volunteers were not allowed to photograph or make copies of the plans. 
@@ -18,23 +17,18 @@ Here are two books that we found particularly helpful:
 -NYC Department of Housing Preservation and Development. _Atlas of Urban Renewal Project Areas in the City of New York._  Prepared and edited by Nathan Sobel.  New York City, 1984. 
 
 In 2017, the City Council passed a bill requiring HPD to make urban renewal data available to the public. See [Ed Litvak, City Council Approves Bill to Increase Transparency For Urban Renewal Areas, The Low-Down (Dec 12, 2017)](https://www.thelodownny.com/leslog/2017/12/city-council-approves-bill-to-increase-transparency-for-urban-renewal-areas.html). The bill became [law](https://nyc.legistar1.com/nyc/attachments/f6a21032-ecd2-4197-ba05-f415caa39ecf.pdf) in January 2018 and HPD posted its [Urban Renewal database](https://www.nyc.gov/site/hpd/services-and-information/urban-renewal.page) in January 2020; as of January 2024, that database does not include specific property information, but HPD has complied with the law by posting urban renewal area boundaries and plan documents that we had to inspect in person in 2014. 
-
 ## Missing Information about Planned Uses and Missing Plans
 In 2014, HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD did not produce in 2014, details are missing about planned uses for the included lots. Since HPD made plans availabe online in 2020, we direct you to those. Records remain missing for the following areas: 
-
 *Manhattan*
 - [Bella Vista](https://596acres.github.io/urbanreviewer/#map=18/40.7887/-73.9477&plan=Bella+Vista)
 - [Corlears Hook](https://596acres.github.io/urbanreviewer/#map=17/40.7138/-73.9789&plan=Corlears+Hook)
 - [Morningside-Manhattanville](https://596acres.github.io/urbanreviewer/#map=17/40.8125/-73.9587&plan=Morningside-Manhattanville)
-
 *Brooklyn*
 - [Middleton–Lorimer](https://596acres.github.io/urbanreviewer/#map=17/40.7018/-73.9542&plan=Middleton-Lorimer)
 - [North Twin Pines](https://596acres.github.io/urbanreviewer/#map=17/40.6548/-73.8896&plan=North+Twin+Pines)
-
 *Queens*
 - [Flushing Municipal Parking Lot #1](https://596acres.github.io/urbanreviewer/#map=18/40.7615/-73.8283&plan=Flushing+Municipal+Parking+Lot+%231)
 - [Seaside-Rockaway](https://596acres.github.io/urbanreviewer/#map=16/40.5823/-73.8259&plan=Seaside-Rockaway)
-
 *Bronx*
 - [University Heights I](https://596acres.github.io/urbanreviewer/#map=18/40.8527/-73.9138&plan=University+Heights+I)
 ## Further Investigation
