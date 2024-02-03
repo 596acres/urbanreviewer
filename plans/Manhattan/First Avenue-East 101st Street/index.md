@@ -10,4 +10,4 @@ published: true
 
 The First Avenue–East 101st Street plan was adopted in 1966 and expired in 2005. It designates residential, recreational, community facility, and parking uses for the plan area.
 
-https://www.nyc.gov/assets/hpd/downloads/pdfs/services/first-avenue-east-101st-street-urp.pdf
+[NYC Housing Preservation and Development, First Avenue-East 101st Street Urban Renewal Area Plan (1966).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/first-avenue-east-101st-street-urp.pdf)
