@@ -9,4 +9,4 @@ published: true
 
 The West Park plan was adopted in 1952 and expired in 1992. It calls for moderate-income residential space with provisions for recreational, institutional, and commercial facilities in the plan area. HPD has not yet made the plan available to our team.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[Committee on Slum Clearance, West Park Second Revision in the Approved Redevelopment Plan (1961).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/west-park-urp-second-revision.pdf)
