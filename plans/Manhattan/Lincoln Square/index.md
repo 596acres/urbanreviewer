@@ -13,7 +13,7 @@ published: true
 
 The Lincoln Square plan was adopted in 1957, last revised in 1988, and expired in 1997. It provides for the development of Lincoln Center (a performing arts center) and includes a range of other uses: residential, retail, commercial, public park, school, playground, and institutional (both collegiate and Red Cross).
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Lincoln Square Fifth Amended Urban Renewal Area Plan (1989).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/lincoln-square-fifth-amended-urp.pdf)
 
 You can see the **Preliminary Report of the Lincoln Square Project**, published by the Committee on Slum Clearance in 1956 and [digitized from the Columbia University libraries here](https://archive.org/details/preliminaryrepor00newy_0). 
 
