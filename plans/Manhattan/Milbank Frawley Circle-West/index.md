@@ -10,4 +10,4 @@ You can read some of the 1965 NYC Department of City Planning Study that led to 
 
 The 1967 City Planning Commission report on the occasion of the plan's approval is [here](https://drive.google.com/open?id=0B9k_zNeDs7q-SHVWNl8zR1R2ZHc). The Third Amended Plan (1970) is [here](https://drive.google.com/open?id=0B9k_zNeDs7q-dWIxNFhrWG9oZE0) (both retrieved from the Department of City Planning Archives via the Freedom of Information Law).
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Milbank Frawley Circle-West Second Amended Urban Renewal Area Plan (2003).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/milbank-frawley-circle-west-second-amended-urp.pdf)
