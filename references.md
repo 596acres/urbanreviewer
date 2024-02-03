@@ -5,8 +5,6 @@ published: true
 ---
 
 
-# References
-
 We originally made this map in 2014 by investigating the urban renewal and neighborhood redevelopment master plans that NYC Housing Preservation and Development (HPD) has in their archives and by relying on a few secondary sources produced by NYC Government offices. Although we would love to share the actual plans here, we can’t because we could not afford to purchase copies at 25 cents per page from HPD.
 
 25 cents per page is the statutory rate under the [New York State Freedom of Information Law](http://www.dos.ny.gov/coog/foil2.html) (FOIL). FOIL also requires government agencies to make their documents [available for inspection](http://www.urbanreviewer.org/media/596URPFOILletter_take2.pdf); we took advantage of that portion of the law to arrange for a team of dedicated volunteers to visit the HPD Records Access office regularly for about a year to extract the information you see on the NYC Urban Reviewer from the documents. Our volunteers were not allowed to photograph or make copies of the plans. 
