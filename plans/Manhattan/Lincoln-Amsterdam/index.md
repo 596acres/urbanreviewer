@@ -9,4 +9,4 @@ published: true
 
 The Lincoln–Amsterdam plan was adopted in 1964, last revised in 1967, and expired in 2004. It designates low-income residential, moderate-income residential with retail commercial, public, and semi-public uses for the plan area.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+See [References](http://www.urbanreviewer.org/#page=references.html).(1968)(https://www.nyc.gov/assets/hpd/downloads/pdfs/services/lincoln-amsterdam-urp-first-minor-change.pdf)
