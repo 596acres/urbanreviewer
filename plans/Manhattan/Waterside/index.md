@@ -9,4 +9,4 @@ published: true
 
 The Waterside plan was adopted in 1967 and will expire in 2066. It proposes new residential development with appurtenant accessory uses including parks and open space in the plan area.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Waterside First Amended Urban Renewal Area Plan (2019).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/waterside-first-amended-urp.pdf)
