@@ -12,11 +12,8 @@ The Washington Street plan was adopted in 1962, last revised in 1992, and expire
 
 Some reference materials:
 
-Public Development Corporation, http://s-media.nyc.gov/agencies/lpc/arch_reports/326.pdf (1986).
-
 Diane Alyssa Jackier, [Moving Historic Structures: The Washington Street Urban Renewal Project](https://repository.upenn.edu/cgi/viewcontent.cgi?article=1446&context=hp_theses), Penn School of Design Thesis (2001).
 
 The Columbia University Libraries have Herbert B. Oppenheimer's architectural drawings for the project, 1960s-1980s, in its collection. You can find information [here](http://www.columbia.edu/cu/lweb/archival/collections/ldpd_10979295/).
 
-
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, Washington Square Ninth Amended Urban Renewal Area Plan, First Minor Change (1993).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/washington-street-ninth-amended-urp-first-minor-change.pdf)
