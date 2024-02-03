@@ -17,16 +17,20 @@ Here are two books that we found particularly helpful:
 In 2017, the City Council passed a bill requiring HPD to make urban renewal data available to the public. See [Ed Litvak, City Council Approves Bill to Increase Transparency For Urban Renewal Areas, The Low-Down (Dec 12, 2017)](https://www.thelodownny.com/leslog/2017/12/city-council-approves-bill-to-increase-transparency-for-urban-renewal-areas.html). The bill became [law](https://nyc.legistar1.com/nyc/attachments/f6a21032-ecd2-4197-ba05-f415caa39ecf.pdf) in January 2018 and HPD posted its [Urban Renewal database](https://www.nyc.gov/site/hpd/services-and-information/urban-renewal.page) in January 2020; as of January 2024, that database does not include specific property information, but HPD has complied with the law by posting urban renewal area boundaries and plan documents that we had to inspect in person in 2014. 
 ## Missing Information about Planned Uses and Missing Plans
 In 2014, HPD provided us with a list of all the plans that ever existed but was not able to actually give us access to all the plans on their list. Although the NYC Urban Reviewer map contains each of those plans, for the ones that HPD did not produce in 2014, details are missing about planned uses for the included lots. Since HPD made plans availabe online in 2020, we direct you to those. Records remain missing for the following areas: 
+
 *Manhattan*
 - [Bella Vista](https://596acres.github.io/urbanreviewer/#map=18/40.7887/-73.9477&plan=Bella+Vista)
 - [Corlears Hook](https://596acres.github.io/urbanreviewer/#map=17/40.7138/-73.9789&plan=Corlears+Hook)
 - [Morningside-Manhattanville](https://596acres.github.io/urbanreviewer/#map=17/40.8125/-73.9587&plan=Morningside-Manhattanville)
+
 *Brooklyn*
 - [Middleton–Lorimer](https://596acres.github.io/urbanreviewer/#map=17/40.7018/-73.9542&plan=Middleton-Lorimer)
 - [North Twin Pines](https://596acres.github.io/urbanreviewer/#map=17/40.6548/-73.8896&plan=North+Twin+Pines)
+
 *Queens*
 - [Flushing Municipal Parking Lot #1](https://596acres.github.io/urbanreviewer/#map=18/40.7615/-73.8283&plan=Flushing+Municipal+Parking+Lot+%231)
 - [Seaside-Rockaway](https://596acres.github.io/urbanreviewer/#map=16/40.5823/-73.8259&plan=Seaside-Rockaway)
+
 *Bronx*
 - [University Heights I](https://596acres.github.io/urbanreviewer/#map=18/40.8527/-73.9138&plan=University+Heights+I)
 ## Further Investigation
