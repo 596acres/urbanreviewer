@@ -15,4 +15,4 @@ published: true
 
 The Harlem–East Harlem plan was adopted in 1968, last revised in 2008, and expires in 2020. It outlines residential, commercial, institutional (including schools, libraries, community centers, hospitals, and other essential service uses), and industrial uses for lots in the plan area.
 
-See [References](http://www.urbanreviewer.org/#page=references.html). An early revision (from 1973) is available [here](https://drive.google.com/file/d/0B9k_zNeDs7q-cEJhOVJhTUszU1k/view?usp=sharing).
+[NYC Housing Preservation and Development, Harlem-East Harlem Sixteenth Amended Urban Renewal Area Plan, Minor Change (2021).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/harlem-east-harlem-sixteenth-amended-second-minor-change-urp.pdf) An early revision (from 1973) is available [here](https://drive.google.com/file/d/0B9k_zNeDs7q-cEJhOVJhTUszU1k/view?usp=sharing).
