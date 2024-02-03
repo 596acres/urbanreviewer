@@ -11,4 +11,4 @@ published: true
 
 The East River plan was adopted in 1966, last revised in 1969, and expired in 2006. It calls for residential use.
 
-See [References](http://www.urbanreviewer.org/#page=references.html).
+[NYC Housing Preservation and Development, East River First Amended Urban Renewal Area Plan (1970).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/east-river-first-amended-urp.pdf)
