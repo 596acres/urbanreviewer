@@ -9,4 +9,4 @@ published: true
 
 The Harlem plan was adopted in 1952 and expired in 1992. It calls for middle-income housing, commercial retail, parking, playground, and open space on the lots in the plan area. We mapped this plan based on the following document: Committee on Slum Clearance Plans (1951), _Harlem: Slum Clearance Plan Under Title 1 of the Housing Act of 1949_, adopted 1952. HPD has not yet made the plan available to our team.
 
-[NYC Housing Preservation and Development, Harlem First Amended Urban Renewal Area Plan (1956).](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/harlem-first-amended-urp.pdf)
+[NYC Housing Preservation and Development, Harlem First Amended Urban Renewal Area Plan (1956)("THE REDEVELOPMENT PLAN FOR HARLEM SLUM CLEARANCE PROJECT UNDER TITLE I OF THE HOUSING ACT OF 1949 "](https://www.nyc.gov/assets/hpd/downloads/pdfs/services/harlem-first-amended-urp.pdf)
