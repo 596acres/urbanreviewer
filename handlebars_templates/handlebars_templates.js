@@ -29,32 +29,28 @@ this["JST"]["handlebars_templates/lots.hbs"] = Handlebars.template({"1":function
     + alias4(((helper = (helper = helpers.block || (depth0 != null ? depth0.block : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"block","hash":{},"data":data}) : helper)))
     + "\" data-lot=\""
     + alias4(((helper = (helper = helpers.lot || (depth0 != null ? depth0.lot : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"lot","hash":{},"data":data}) : helper)))
-    + "\">\n            <div class=\"lot-external-links\">\n"
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.in_596 : depth0),{"name":"if","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "                <a title=\"View on OASIS\" href=\"http://www.oasisnyc.net/map.aspx?etabs=1&zoomto=lot:"
-    + alias4(((helper = (helper = helpers.bbl || (depth0 != null ? depth0.bbl : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"bbl","hash":{},"data":data}) : helper)))
-    + "\" target=\"_blank\"><img width=\"22\" height=\"22\" src=\"img/oasis.ico\" /></a>\n            </div>\n            <h3>"
+    + "\">\n            <div class=\"lot-external-links\">\n                <a title=\"View on ZOLA\"\n                href=\"https://zola.planning.nyc.gov/l/lot/"
+    + alias4(((helper = (helper = helpers.borough_code || (depth0 != null ? depth0.borough_code : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"borough_code","hash":{},"data":data}) : helper)))
+    + "/"
+    + alias4(((helper = (helper = helpers.block || (depth0 != null ? depth0.block : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"block","hash":{},"data":data}) : helper)))
+    + "/"
+    + alias4(((helper = (helper = helpers.lot || (depth0 != null ? depth0.lot : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"lot","hash":{},"data":data}) : helper)))
+    + "\" target=\"_blank\">ZOLA</a>\n            </div>\n            <h3>"
     + alias4(((helper = (helper = helpers.borough || (depth0 != null ? depth0.borough : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"borough","hash":{},"data":data}) : helper)))
     + " block "
     + alias4(((helper = (helper = helpers.block || (depth0 != null ? depth0.block : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"block","hash":{},"data":data}) : helper)))
     + ", lot "
     + alias4(((helper = (helper = helpers.lot || (depth0 != null ? depth0.lot : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"lot","hash":{},"data":data}) : helper)))
     + "</h3>\n            <div>Planned use: \n"
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.disposition : depth0),{"name":"if","hash":{},"fn":container.program(4, data, 0),"inverse":container.program(6, data, 0),"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.disposition : depth0),{"name":"if","hash":{},"fn":container.program(2, data, 0),"inverse":container.program(4, data, 0),"data":data})) != null ? stack1 : "")
     + "            </div>\n        </li>\n";
 },"2":function(container,depth0,helpers,partials,data) {
-    var helper;
-
-  return "                <a href=\"http://livinglotsnyc.org/lot/"
-    + container.escapeExpression(((helper = (helper = helpers.bbl || (depth0 != null ? depth0.bbl : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"bbl","hash":{},"data":data}) : helper)))
-    + "/\" target=\"_blank\" title=\"View on Living Lots NYC\"><img width=\"22\" height=\"22\" src=\"img/livinglotsnyc.png\" /></a>\n";
-},"4":function(container,depth0,helpers,partials,data) {
     var helper;
 
   return "                "
     + container.escapeExpression(((helper = (helper = helpers.disposition || (depth0 != null ? depth0.disposition : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"disposition","hash":{},"data":data}) : helper)))
     + "\n";
-},"6":function(container,depth0,helpers,partials,data) {
+},"4":function(container,depth0,helpers,partials,data) {
     return "                unknown\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;

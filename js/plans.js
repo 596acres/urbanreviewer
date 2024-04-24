@@ -72,7 +72,7 @@ function loadDetails(planName, success) {
 
 function loadLots($target, planName) {
     var sql = 
-        "SELECT p.borough AS borough, l.bbl AS bbl, l.block AS block, " +
+        "SELECT p.borough AS borough, LEFT(l.bbl, 1) AS borough_code, l.bbl AS bbl, l.block AS block, " +
             "l.lot AS lot, l.disposition_display AS disposition, " +
             "l.in_596 as in_596 " +
         "FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id " +
