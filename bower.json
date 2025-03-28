@@ -13,7 +13,6 @@
     "tests"
   ],
   "dependencies": {
-    "cartodb.js": "~3.8.11",
     "handlebars": "~1.3.0",
     "jqrangeslider": "~5.7.0",
     "leaflet-active-area": "https://github.com/Mappy/Leaflet-active-area.git",

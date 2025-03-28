@@ -1,3 +1,4 @@
+var _ = require('underscore');
 var jsurl = require('jsurl');
 var querystring = require('querystring');
 

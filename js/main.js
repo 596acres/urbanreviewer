@@ -1,11 +1,10 @@
 require('bootstrap.tooltip');
-var _ = require('underscore');
 
-var cartodbapi = require('./cartodbapi');
 var filters = require('./filters');
 var hash = require('./hash');
 var highlights = require('./highlights');
 var pages = require('./pages');
+var plansdata = require('./plansdata');
 var planlist = require('./planlist');
 var plans = require('./plans');
 var plansmap = require('./plansmap');
@@ -177,6 +176,7 @@ function loadFilters(alreadyOpen) {
         .on('change', function (e, filters) {
             addPlansToPlanList(filters);
             pushState('Filters');
+            search.update();
         });
 
     $('#filters-plan-list-link').click(function () {
@@ -201,17 +201,17 @@ function loadPlanList(alreadyOpen) {
         $target = $('#right-pane');
     }
 
-    var $content = $(template({
-        decades: [
-            [1950, 1959],
-            [1960, 1969],
-            [1970, 1979],
-            [1980, 1989],
-            [1990, 1999],
-            [2000, 2009],
-            [2010, 2019]
-        ]
-    }));
+    const startYear = 1950;
+    const currentYear = new Date().getFullYear();
+    const decades = [];
+
+    let nextDecade = startYear;
+    do {
+        decades.push([nextDecade, nextDecade + 9]);
+        nextDecade += 10;
+    } while (nextDecade < currentYear);
+
+    var $content = $(template({ decades }));
     if (!alreadyOpen) {
         $content.hide();
     }
@@ -235,7 +235,11 @@ function unloadPlanList() {
     }
 }
 
-$(document).ready(function () {
+async function initData() {
+    return await plansdata.init();
+}
+
+async function initInterface() {
     require('./gallery').init();
 
     /*
@@ -292,6 +296,7 @@ $(document).ready(function () {
             pushState();
         })
         .on('planlotclick', function (data) {
+            console.log('click', data);
             // Don't load the plan again
             if (currentPlan && data.plan_name === currentPlan) {
                 return;
@@ -479,5 +484,11 @@ $(document).ready(function () {
     $('.intro-text-dismiss').click(function () {
         $('.intro-text').slideUp();
         return false;
+    });
+}
+
+$(document).ready(function () {
+    initData().then(function () {
+        initInterface();
     });
 });

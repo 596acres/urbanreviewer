@@ -2,8 +2,11 @@
   "name": "urbanreviewer",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "js/main.js",
   "dependencies": {
+    "@turf/buffer": "^7.2.0",
+    "@turf/convex": "^7.2.0",
+    "@turf/helpers": "^7.2.0",
     "grunt-cli": "^1.3.2",
     "jsurl": "^0.1.0",
     "querystring": "^0.2.0",
@@ -11,16 +14,16 @@
     "underscore": "^1.6.0"
   },
   "devDependencies": {
-    "browserify": "^4.2.3",
+    "browserify": "^17.0.1",
     "browserify-shim": "^3.8.3",
-    "grunt": "^0.4.5",
-    "grunt-browserify": "^3.5.0",
-    "grunt-contrib-cssmin": "^0.12.2",
-    "grunt-contrib-handlebars": "^1.0.0",
-    "grunt-contrib-jshint": "^0.11.1",
-    "grunt-contrib-less": "^1.0.0",
-    "grunt-contrib-uglify": "^0.8.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt": "^1.6.1",
+    "grunt-browserify": "^6.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-handlebars": "^2.0.0",
+    "grunt-contrib-jshint": "^3.2.0",
+    "grunt-contrib-less": "^3.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-contrib-watch": "^1.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
