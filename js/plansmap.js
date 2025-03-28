@@ -1,9 +1,8 @@
 var geotransforms = require('./geotransforms');
 var plansdata = require('./plansdata');
-
-require('../bower_components/leaflet-active-area/src/L.activearea');
-require('../bower_components/leaflet-plugins/layer/tile/Bing');
-require('../bower_components/leaflet-usermarker/src/leaflet.usermarker');
+require('leaflet-active-area');
+require('leaflet-plugins/layer/tile/Bing');
+require('leaflet-usermarker');
 
 var map,
     currentMode = 'daymode',
@@ -287,7 +286,7 @@ module.exports = {
                 style: function () {
                     var strokeColor = $('body').is('.night-mode') ? '#fff' : '#000';
                     return {
-                        clickable: label !== 'select',
+                        interactive: label !== 'select',
                         color: strokeColor,
                         dashArray: '10 10 1 10',
                         fill: true,

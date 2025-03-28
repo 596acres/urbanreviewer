@@ -26,9 +26,10 @@ module.exports = {
             source: plansBloodhound.ttAdapter()
         });
 
+        const component = this;
         $(selector).on('keyup', function (e) {
             if (e.keyCode === 13) {
-                search(selector, $(selector).val());
+                component.search(selector, $(selector).val());
             }
         });
 
