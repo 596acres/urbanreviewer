@@ -2,8 +2,7 @@ var geotransforms = require('./geotransforms');
 var plansdata = require('./plansdata');
 require('leaflet-active-area');
 require('leaflet-plugins/layer/tile/Bing');
-
-require('../bower_components/leaflet-usermarker/src/leaflet.usermarker');
+require('leaflet-usermarker');
 
 var map,
     currentMode = 'daymode',
