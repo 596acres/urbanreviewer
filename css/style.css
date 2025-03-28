@@ -264,6 +264,7 @@ input[type="search"]::-webkit-search-results-decoration {
   left: 10%;
   right: 10%;
   position: absolute;
+  z-index: 1000;
 }
 #date-range-picker-container.narrow-sidebar {
   right: 35%;
