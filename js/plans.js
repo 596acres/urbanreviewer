@@ -2,7 +2,7 @@ require('bootstrap.carousel');
 require('jquery.colorbox');
 require('jquery.scrollTo');
 var _ = require('underscore');
-var cartodbapi = require('./cartodbapi');
+var plansdata = require('./plansdata');
 var plansmap = require('./plansmap');
 var sidebar = require('./sidebar');
 
@@ -61,46 +61,34 @@ function addPlanContent($location, borough, planName) {
     });
 }
 
-function loadDetails(planName, success) {
-    var sql = "SELECT *, EXTRACT(YEAR FROM updated) AS last_updated " +
-       "FROM plans WHERE name = '" + planName + "'";
-    cartodbapi.getJSON(sql, function (results) {
-        row = results.rows[0];
-        success(row);
-    });
-}
-
 function loadLots($target, planName) {
-    var sql = 
-        "SELECT p.borough AS borough, LEFT(l.bbl, 1) AS borough_code, l.bbl AS bbl, l.block AS block, " +
-            "l.lot AS lot, l.disposition_display AS disposition, " +
-            "l.in_596 as in_596 " +
-        "FROM lots l LEFT OUTER JOIN plans p ON l.plan_id=p.cartodb_id " +
-        "WHERE p.name='" + planName + "' " +
-        "ORDER BY l.block, l.lot";
-    cartodbapi.getJSON(sql, function (data) {
-        var lots_template = JST['handlebars_templates/lots.hbs'];
-        var content = lots_template(data);
-        $target.append(content);
-        $('.lot-count').text(data.rows.length);
-        $('.lot').on({
-            mouseenter: function () {
-                plansmap.highlightLot($(this).data());
-            },
-            mouseleave: function () {
-                plansmap.unHighlightLot();
-            }
-        });
+    const lots = {
+        rows: plansdata.getPlanLots(planName)
+            .map(l => ({
+                ...l.properties,
+                borough_code: l.properties.bbl.slice(0, 1),
+                disposition: l.properties.disposition_display,
+            }))
+    };
+
+    const lots_template = JST['handlebars_templates/lots.hbs'];
+    const content = lots_template(lots);
+
+    $target.append(content);
+    $('.lot-count').text(lots.rows.length);
+
+    $('.lot').on({
+        mouseenter: function () {
+            plansmap.highlightLot($(this).data());
+        },
+        mouseleave: function () {
+            plansmap.unHighlightLot();
+        }
     });
 }
 
 function cleanData(row) {
     cleaned = _.extend({}, row);
-    if (row.adopted) {
-        // We want the year exactly as it appears in CartoDB, not modified for 
-        // timezone
-        cleaned.adopted = row.adopted.slice(0, row.adopted.indexOf('-'));
-    }
 
     if (row.status) {
         if (row.status === 'active') {
@@ -122,27 +110,26 @@ function unhighlightLot() {
 
 module.exports = {
 
-    load: function ($target, options) {
+    load: async function ($target, options) {
         sidebar.open();
-        loadDetails(options.plan_name, function (row) {
-            row = cleanData(row);
+        let row = plansdata.getPlan(options.plan_name);
+        row = cleanData(row);
 
-            // Load basic template for the plan
-            var template = JST['handlebars_templates/plan.hbs'];
-            templateContent = template(row);
-            sidebar.open(templateContent);
+        // Load basic template for the plan
+        var template = JST['handlebars_templates/plan.hbs'];
+        templateContent = template(row);
+        sidebar.open(templateContent);
 
-            // Measure available width and set the header's width to it
-            var headerWidth = $target.innerWidth() - $('.panel-toggle').outerWidth();
-            $('.plan-header-content').width(headerWidth);
+        // Measure available width and set the header's width to it
+        var headerWidth = $target.innerWidth() - $('.panel-toggle').outerWidth();
+        $('.plan-header-content').width(headerWidth);
 
-            // Load details for the plan
-            var $details = $target.find('#plan-details');
-            addPlanContent($details, row.borough, options.plan_name);
+        // Load details for the plan
+        var $details = $target.find('#plan-details');
+        addPlanContent($details, row.borough, options.plan_name);
 
-            // Load the plan's lots
-            loadLots($('#lots-content'), options.plan_name);
-        });
+        // Load the plan's lots
+        loadLots($('#lots-content'), options.plan_name);
 
         scrollToHeight = $('#right-pane').height() / 2;
     },

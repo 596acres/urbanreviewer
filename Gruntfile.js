@@ -28,6 +28,9 @@ module.exports = function(grunt) {
         },
 
         jshint: {
+            options: {
+                esversion: 9
+            },
             all: {
                 files: {
                     src: [
@@ -68,6 +71,11 @@ module.exports = function(grunt) {
         },
 
         watch: {
+            browserify: {
+                files: ['js/*.js'],
+                tasks: ['browserify']
+            },
+
             jshint: {
                 files: ['js/*.js'],
                 tasks: ['jshint']

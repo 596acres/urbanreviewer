@@ -1,8 +1,5 @@
-var _ = require('underscore');
-var cartodbapi = require('./cartodbapi');
-var cartocss = require('./cartocss').cartocss;
-var plansfilters = require('./plansfilters');
-var singleminded = require('./singleminded');
+var geotransforms = require('./geotransforms');
+var plansdata = require('./plansdata');
 
 require('../bower_components/leaflet-active-area/src/L.activearea');
 require('../bower_components/leaflet-plugins/layer/tile/Bing');
@@ -13,31 +10,72 @@ var map,
     currentPlan,
     filters = {},
     lotsLayer,
-    highlightCartoCSS,
-    highlightedLotLayer,
+    hiddenLots = [], // Lots filtered out
+    highlightedLots = [],
     planOutlines = {},
     planOutlinesNames = {},
     planOutlinesPopups = {},
     userMarker;
 
+function updateStyle(lotFeature, opts = {}) {
+    const { dispositions, mode, plan, public_vacant } = opts;
+
+    let newStyle = {
+        color: 'black',
+        weight: 0.5,
+        opacity: 0.75,
+        fillColor: 'black',
+        fillOpacity: 0.5,
+    };
+
+    if (mode === 'nightmode') {
+        newStyle.color = newStyle.fillColor = 'white';
+    }
+
+    if (plan && lotFeature.feature.properties.plan_name === plan) {
+        newStyle.fillColor = '#F9EF6C';
+    }
+
+    if (dispositions && dispositions.length > 0 || public_vacant) {
+        const { disposition_filterable, in_596 } = lotFeature.feature.properties;
+        let matchesFilters = (
+            (
+                (dispositions && dispositions.length === 0) ||
+                dispositions.includes(disposition_filterable)
+            ) && (!public_vacant || in_596)
+        );
+
+        if (matchesFilters) {
+            newStyle.color = newStyle.fillColor = '#CFA470';
+        }
+    }
+
+    lotFeature.setStyle(newStyle);
+}
 
 function updateStyles() {
     // Update the plan's styles using the current state
-    lotsLayer.setCartoCSS(cartocss({ 
+    const opts = {
         dispositions: filters.dispositions,
         mode: currentMode,
         plan: currentPlan,
         public_vacant: filters.publicVacant,
-    }));
+    };
+    lotsLayer.getLayers().forEach(l => updateStyle(l, opts));
 }
 
 function unHighlightLot(e) {
     if (!planOutlinesPopups.hover) {
         map.closePopup();
     }
-    highlightedLotLayer.clearLayers();           
-    singleminded.forget('highlightLot_centroid');
-    singleminded.forget('highlightLot_geometry');
+
+    const opts = {
+        dispositions: filters.dispositions,
+        mode: currentMode,
+        plan: currentPlan,
+        public_vacant: filters.publicVacant,
+    };
+    highlightedLots.forEach(l => updateStyle(l, opts));
 }
 
 function unhighlightLotsInPlan() {
@@ -58,7 +96,6 @@ function clearPlanOutline(options) {
 }
 
 module.exports = {
-
     init: function (id, onLotsLayerReady) {
         map = L.map(id, {
             maxZoom: 18,
@@ -89,72 +126,52 @@ module.exports = {
             position: 'bottomleft'
         }).addTo(map);
 
-        cartodb.createLayer(map, {
-            cartodb_logo: false,
-            user_name: 'urbanreviewer',
-            type: 'cartodb',
-            sublayers: [{
-                cartocss: cartocss(),
-                interactivity: 'block, lot, plan_name, borough',
-                sql: 'SELECT l.*, p.name AS plan_name, p.borough AS borough FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id'
-            }]
-        })
-        .addTo(map)
-        .done(function (layer) {
-            lotsLayer = layer.getSubLayer(0);
-            lotsLayer.setInteraction(true);
-            layer.on('featureClick', function (e, latlng, pos, data, sublayerIndex) {
-                map.fire('planlotclick', data);
-            });
+        lotsLayer = L.geoJson(plansdata.getLots(), {
+            style: f => {
+                return {
+                    color: 'black',
+                    weight: 0.5,
+                    opacity: 0.75,
+                    fillOpacity: 0.5,
+                };
+            },
+        }).addTo(map);
 
-            layer.on('featureOver', function (e, latlng, pos, data) {
-                // Update mouse cursor when over a feature
-                $('#' + map._container.id).css('cursor', 'pointer');
-                data.latlng = latlng;
-                map.fire('planlotover', data);
-            });
-            layer.on('featureOut', function (e, latlng, pos, data) {
-                // Reset mouse cursor when no longer over a feature
-                var grabStyle = 'cursor: grab; cursor: -moz-grab; cursor: -webkit-grab;';
-                $('#' + map._container.id).attr('style',  grabStyle);
-                map.fire('planlotout', data);
-            });
-
-            map.addLayer(layer, false);
-            onLotsLayerReady();
-
-            streets.bringToBack();
-            map
-                .on('baselayerchange', function (e) {
-                    $('body').toggleClass('night-mode', e.name === 'satellite');
-                    currentMode = e.name === 'satellite' ? 'nightmode' : 'daymode';
-                    updateStyles();
-                    e.layer.bringToBack();
-                })
-                .on('mousemove', function (e) {
-                    if (!e.latlng) { return; }
-
-                    // If we're no longer over the hover outline, close it
-                    var hoverOutline = planOutlines.hover;
-                    if (!(hoverOutline && hoverOutline.getLayers().length > 0 && hoverOutline.getBounds())) { return; }
-                    if (!hoverOutline.getBounds().contains(e.latlng)) {
-                        if (planOutlinesPopups.hover) {
-                            map.closePopup();
-                        }
-                        clearPlanOutline({ label: 'hover' });
-                    }
-                });
+        lotsLayer.on('click', (e) => {
+            map.fire('planlotclick', e.layer.feature.properties);
         });
 
-        highlightedLotLayer = L.geoJson(null, {
-            style: function (feature) {
-                return {
-                    color: '#000',
-                    fill: false,
-                    weight: 3
-                };
-            }
-        }).addTo(map);
+        lotsLayer.on('mouseover', (e) => {
+            map.fire('planlotover', e.layer.feature.properties);
+        });
+
+        lotsLayer.on('mouseout', (e) => {
+            map.fire('planlotout', e.layer.feature.properties);
+        });
+
+        onLotsLayerReady();
+
+        // map.whenReady(() => streets.bringToBack());
+        map
+            .on('baselayerchange', function (e) {
+                $('body').toggleClass('night-mode', e.name === 'satellite');
+                currentMode = e.name === 'satellite' ? 'nightmode' : 'daymode';
+                updateStyles();
+                e.layer.bringToBack();
+            })
+            .on('mousemove', function (e) {
+                if (!e.latlng) { return; }
+
+                // If we're no longer over the hover outline, close it
+                var hoverOutline = planOutlines.hover;
+                if (!(hoverOutline && hoverOutline.getLayers().length > 0 && hoverOutline.getBounds())) { return; }
+                if (!hoverOutline.getBounds().contains(e.latlng)) {
+                    if (planOutlinesPopups.hover) {
+                        map.closePopup();
+                    }
+                    clearPlanOutline({ label: 'hover' });
+                }
+            });
 
         return map;
     },
@@ -185,41 +202,49 @@ module.exports = {
     },
 
     filterLotsLayer: function (filters, extendLastFilters) {
-        var sql = "SELECT l.*, p.name AS plan_name, p.borough AS borough " +
-            "FROM lots l LEFT JOIN plans p ON l.plan_id = p.cartodb_id " +
-            plansfilters.getWhereClause(filters, extendLastFilters);
-        lotsLayer.setSQL(sql);
+        const filteredPlanIds = plansdata.getPlans(filters, extendLastFilters).map(p => p.cartodb_id);
+
+        // Lots to remove from map
+        const toRemove = lotsLayer.getLayers().filter(l => {
+            return !filteredPlanIds.includes(l.feature.properties.plan_id);
+        });
+
+        // Lots to bring back from hidden area
+        const toAdd = hiddenLots.filter(l => {
+            return filteredPlanIds.includes(l.feature.properties.plan_id);
+        });
+
+        const toAddIds = toAdd.map(l => l.feature.properties.cartodb_id);
+        toAdd.forEach(l => lotsLayer.addLayer(l));
+        hiddenLots = hiddenLots.filter(l => !toAddIds.includes(l.feature.properties.cartodb_id));
+
+        toRemove.forEach(l => {
+            lotsLayer.removeLayer(l);
+            hiddenLots.push(l);
+        });
     },
 
     highlightLot: function (options) {
         unHighlightLot();
 
-        var url = 'https://urbanreviewer.cartodb.com/api/v2/sql?q=',
-            whereConditions = [];
-        options = options || {};
-        if (options.block) {
-            whereConditions.push('l.block = ' + options.block);
-        }
-        if (options.borough) {
-            whereConditions.push("p.borough = '" + options.borough + "'");
-        }
-        if (options.lot) {
-            whereConditions.push('l.lot = ' + options.lot);
-        }
-        if (options.plan_name) {
-            whereConditions.push("p.name = '" + options.plan_name + "'");
-        }
+        lotsLayer.getLayers().forEach(l => {
+            const { block, borough, lot, plan_name } = l.feature.properties;
 
-        // Get geometry
-        var geometrySql = 'SELECT l.the_geom AS the_geom ' +
-                'FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id ';
-        geometrySql += ' WHERE ' + whereConditions.join(' AND ');
-        geometrySql = encodeURIComponent(geometrySql);
-        singleminded.remember('highlightLot_geometry', 
-            $.get(url + geometrySql + '&format=GeoJSON', function (data) {
-                highlightedLotLayer.addData(data);           
-            })
-        );
+            let matches = (
+                (!options.block || block === options.block) &&
+                (!options.borough || borough === options.borough) &&
+                (!options.lot || lot === options.lot) &&
+                (!options.plan_name || plan_name === options.plan_name)
+            );
+            
+            if (matches) {
+                highlightedLots.push(l);
+                l.setStyle({
+                    color: '#000',
+                    weight: 3
+                });
+            }
+        });
     },
 
     unHighlightLot: unHighlightLot,
@@ -259,10 +284,10 @@ module.exports = {
         }
         else {
             outline = planOutlines[label] = L.geoJson(null, {
-                style: function (feature) {
+                style: function () {
                     var strokeColor = $('body').is('.night-mode') ? '#fff' : '#000';
                     return {
-                        clickable: true,
+                        clickable: label !== 'select',
                         color: strokeColor,
                         dashArray: '10 10 1 10',
                         fill: true,
@@ -279,35 +304,36 @@ module.exports = {
                         map.fire('planout', { label: label });
                     })
                     .on('click', function () {
+                        planOutlines[label].getLayers().forEach(l => {
+                            l.setStyle({ interactive: false, fillOpacity: 0 });
+                        });
                         map.fire('planclick', { plan_name: planOutlinesNames[label] });
                     });
             }
         }
 
         planOutlinesNames[label] = planName;
-        var sql = "SELECT ST_Buffer(ST_ConvexHull(ST_Union(l.the_geom)), 0.0001) AS the_geom " + 
-                  "FROM lots l LEFT JOIN plans p ON p.cartodb_id = l.plan_id " +
-                  "WHERE p.name = '" + planName + "'";
-        cartodbapi.getGeoJSON(sql, function (data) {
-            outline.addData(data);
-            
-            if (options.zoomToPlan === true) {
-                map.fitBounds(outline.getBounds(), {
-                    padding: [25, 25]            
-                });
-            }
 
-            if (options.popup) {
-                var popupOptions = {
-                    autoPan: false,
-                    closeButton: false
-                };
-                planOutlinesPopups[label] = L.popup(popupOptions)
-                    .setLatLng(outline.getBounds().getCenter())
-                    .setContent(planName)
-                    .openOn(map);
-            }
-        });
+        const buffer = geotransforms.convexBuffer(plansdata.getPlanLots(planName));
+
+        outline.addData(buffer);
+            
+        if (options.zoomToPlan === true) {
+            map.fitBounds(outline.getBounds(), {
+                padding: [25, 25]            
+            });
+        }
+
+        if (options.popup) {
+            var popupOptions = {
+                autoPan: false,
+                closeButton: false
+            };
+            planOutlinesPopups[label] = L.popup(popupOptions)
+                .setLatLng(outline.getBounds().getCenter())
+                .setContent(planName)
+                .openOn(map);
+        }
     },
 
     addUserMarker: function (latlng) {

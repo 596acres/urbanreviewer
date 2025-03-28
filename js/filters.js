@@ -1,3 +1,4 @@
+var _ = require('underscore');
 var plansmap = require('./plansmap');
 
 var eventEmitter = $({});
@@ -156,14 +157,11 @@ module.exports = {
             $lastUpdated = $(options.lastUpdated);
             $lastUpdated
                 .change(function () {
-                    var selected = $(this).find(':selected'),
-                        min = selected.data('min'),
-                        max = selected.data('max');
-                    updateState({ start: min, end: max });
-                    plansmap.filterLotsLayer({
-                        lastUpdatedMin: min,
-                        lastUpdatedMax: max 
-                    }, true);
+                    const selected = $(this).find(':selected'),
+                        lastUpdatedMin = selected.data('min'),
+                        lastUpdatedMax = selected.data('max');
+                    updateState({ lastUpdatedMin, lastUpdatedMax });
+                    plansmap.filterLotsLayer({ lastUpdatedMin, lastUpdatedMax }, true);
                 })
                 .val(state.lastUpdatedMin)
                 .trigger('change');

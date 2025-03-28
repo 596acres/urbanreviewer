@@ -1,5 +1,4 @@
-var cartodbapi = require('./cartodbapi');
-var plansfilters = require('./plansfilters');
+var plansdata = require('./plansdata');
 var plansmap = require('./plansmap');
 
 function addToPage(filters, $target, callback) {
@@ -22,12 +21,7 @@ function addToPage(filters, $target, callback) {
 }
 
 function load(filters, extend, callback) {
-    var whereClause = plansfilters.getWhereClause(filters, extend),
-        sql = 'SELECT p.name, extract(YEAR FROM p.adopted) as adopted ' + 
-            'FROM plans p ' + whereClause + ' ORDER BY p.name';
-    cartodbapi.getJSON(sql, function (results) {
-        callback(results.rows);
-    });
+    return callback(plansdata.getPlans(filters, extend));
 }
 
 module.exports = {
