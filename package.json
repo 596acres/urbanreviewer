@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "browserify": "^17.0.1",
-    "browserify-shim": "^3.8.3",
+    "browserify-shim": "^3.8.16",
     "grunt": "^1.6.1",
     "grunt-browserify": "^6.0.0",
     "grunt-contrib-cssmin": "^4.0.0",
